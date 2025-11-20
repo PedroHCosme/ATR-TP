@@ -16,7 +16,7 @@
 int main() {
     // Gera e imprime o mapa da mina
     std::cout << "Gerando mapa da mina..." << std::endl;
-    MineGenerator mineGen(21, 21); // Tamanho 21x21
+    MineGenerator mineGen(61, 61); // Tamanho 21x21
     mineGen.generate();
     mineGen.print();
     std::cout << "Mapa gerado com sucesso!" << std::endl;

@@ -89,7 +89,7 @@ void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, const std::vec
     std::default_random_engine generator;
     
     // Configuração dos geradores de ruído
-    std::normal_distribution<float> noise_pos(0.0, 1.0); // Ruído reduzido para 1m para não pular paredes na simulação
+    std::normal_distribution<float> noise_pos(0.0, 1.0); 
     std::normal_distribution<float> noise_ang(0.0, 2.0); 
     std::uniform_real_distribution<float> temp_dist(80, 100);
 
