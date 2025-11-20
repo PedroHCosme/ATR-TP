@@ -2,6 +2,7 @@
 #define TASK_TRATAMENTO_SENSORES_H
 
 #include "gerenciador_dados.h"
+#include <vector>
 
 /**
  * @brief Esta é a nossa única Produtora para o buffer circular.
@@ -10,8 +11,9 @@
  * (neste caso, simulando-os) e colocá-los no buffer para processamento.
  *
  * @param gerenciadorDados Referência para o objeto GerenciadorDados.
+ * @param mapa Referência para o mapa da mina (grid de caracteres).
  */
-void task_tratamento_sensores(GerenciadorDados& gerenciadorDados);
+void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, const std::vector<std::vector<char>>& mapa);
 
 /**
  * @brief Calcula o próximo valor da Média Móvel Exponencial (EMA).

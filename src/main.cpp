@@ -3,6 +3,7 @@
 #include "gerenciador_dados.h"
 #include "task_tratamento_sensores.h"
 #include "task_logica_comando.h"
+#include "mine_generator.h"
 
 /**
  * @brief Função principal do sistema.
@@ -13,6 +14,13 @@
  * @return int Código de saída do programa.
  */
 int main() {
+    // Gera e imprime o mapa da mina
+    std::cout << "Gerando mapa da mina..." << std::endl;
+    MineGenerator mineGen(21, 21); // Tamanho 21x21
+    mineGen.generate();
+    mineGen.print();
+    std::cout << "Mapa gerado com sucesso!" << std::endl;
+
     // Instancia o gerenciador de dados compartilhado
     GerenciadorDados gerenciadorDados;
 
@@ -25,7 +33,8 @@ int main() {
 
     // Cria e inicia as threads
     // t1: Produtora de dados (Lê sensores e escreve no buffer)
-    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados));
+    // Passamos o mapa gerado para a task de sensores para detecção de colisão
+    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::cref(mineGen.getMinefield()));
     
     // t2: Consumidora de dados (Lê do buffer e toma decisões)
     std::thread t2(task_logica_comando, std::ref(gerenciadorDados));
