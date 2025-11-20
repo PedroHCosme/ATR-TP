@@ -4,6 +4,7 @@
 #include "task_tratamento_sensores.h"
 #include "task_logica_comando.h"
 #include "mine_generator.h"
+#include "simulacao_mina.h"
 
 /**
  * @brief Função principal do sistema.
@@ -24,6 +25,9 @@ int main() {
     // Instancia o gerenciador de dados compartilhado
     GerenciadorDados gerenciadorDados;
 
+    // Instancia a Simulação Física
+    SimulacaoMina simulacao(mineGen.getMinefield(), 1); // 1 caminhão
+
     // Inicializa o estado do veículo e os comandos do operador
     EstadoVeiculo estadoInicial = {false, false}; // Sem defeito, modo manual
     gerenciadorDados.setEstadoVeiculo(estadoInicial);
@@ -32,14 +36,24 @@ int main() {
     gerenciadorDados.setComandosOperador(comandosIniciais);
 
     // Cria e inicia as threads
+
+    // t_sim: Thread dedicada à física do mundo
+    std::thread t_sim([&simulacao]() {
+        while(true) {
+            simulacao.atualizar_passo_tempo();
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+    });
+
     // t1: Produtora de dados (Lê sensores e escreve no buffer)
-    // Passamos o mapa gerado para a task de sensores para detecção de colisão
-    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::cref(mineGen.getMinefield()));
+    // Agora passa a referência da simulação e o ID do caminhão (0)
+    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(simulacao), 0);
     
     // t2: Consumidora de dados (Lê do buffer e toma decisões)
     std::thread t2(task_logica_comando, std::ref(gerenciadorDados));
 
     // Aguarda as threads terminarem (loop infinito nas tasks, então o main fica bloqueado aqui)
+    t_sim.join();
     t1.join();
     t2.join();
 

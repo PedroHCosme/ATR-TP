@@ -4,35 +4,7 @@
 #include <vector>
 #include <mutex>
 #include <condition_variable>
-
-// Estruturas de dados
-struct DadosSensores
-{
-    int i_posicao_x;
-    int i_posicao_y;
-    int i_angulo_x;
-    int i_temperatura;
-    bool i_falha_eletrica;
-    bool i_falha_hidraulica;
-    int o_aceleracao;
-    int o_direcao;
-};
-
-struct EstadoVeiculo
-{
-    bool e_defeito;
-    bool e_automatico;
-};
-
-struct ComandosOperador
-{
-    bool c_automatico;
-    bool c_man;
-    bool c_rearme;
-    bool c_acelerar;
-    bool c_direita;
-    bool c_esquerda;
-};
+#include "dados.h"
 
 // Declaração da classe GerenciadorDados
 class GerenciadorDados {

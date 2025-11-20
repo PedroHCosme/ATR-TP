@@ -14,7 +14,7 @@ struct CaminhaoFisico {
     float velocidade;               // Velocidade em m/s
     float o_aceleracao;              // Aceleração em m/s²
     float o_direcao;                 // Direção desejada em graus
-    int i_temperatura;          // Temperatura do motor
+    float i_temperatura;          // Temperatura do motor
     bool i_falha_eletrica;
     bool i_falha_hidraulica;
     int temperatuta_ambiente; // Temperatura ambiente

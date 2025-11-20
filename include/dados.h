@@ -7,6 +7,8 @@
  */
 struct DadosSensores
 {
+    int id; // Identificador do veículo
+    
     int i_posicao_x; // Posição do veículo no eixo x, com relação 
                     // a um referencial absoluto em solo obtido
                     // pelos sensores de posição.
