@@ -13,7 +13,17 @@
  */
 void task_tratamento_sensores(GerenciadorDados& gerenciadorDados);
 
-void moving_average_filter();
+/**
+ * @brief Calcula o próximo valor da Média Móvel Exponencial (EMA).
+ * 
+ * Esta função aplica a fórmula da média móvel exponencial, que dá mais peso 
+ * aos dados recentes, tornando-a mais sensível a mudanças novas do que a média simples.
+ * 
+ * @param valor_atual O valor bruto lido do sensor agora.
+ * @param media_anterior O valor da EMA calculado no passo anterior.
+ * @return float O novo valor da EMA.
+ */
+float calcular_media_movel_exponencial(float valor_atual, float media_anterior);
 
 
 
