@@ -5,6 +5,7 @@
 #include "gerenciador_dados.h"
 #include "task_tratamento_sensores.h"
 #include "task_logica_comando.h"
+#include "task_monitoramento_falhas.h"
 #include "mine_generator.h"
 #include "simulacao_mina.h"
 #include "utils/sleep_asynch.h"
@@ -78,10 +79,17 @@ int main() {
     std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(simulacao), 0);
     std::thread t2(task_logica_comando, std::ref(gerenciadorDados));
 
+    // t3: Monitoramento de Falhas (Lê sensores e envia eventos para a lógica de comando)
+    std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(simulacao), 0);
+
+    // t3: Monitoramento de Falhas (Lê sensores e envia eventos para a lógica de comando)
+    std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(simulacao), 0);
+
     // Aguarda
     t_sim.join();
     t1.join();
     t2.join();
+    t3.join();
 
     return 0;
 }
