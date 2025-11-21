@@ -1,0 +1,51 @@
+\doxysection{gerenciador\+\_\+dados.\+h}
+\hypertarget{gerenciador__dados_8h_source}{}\label{gerenciador__dados_8h_source}\index{include/gerenciador\_dados.h@{include/gerenciador\_dados.h}}
+\mbox{\hyperlink{gerenciador__dados_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ GERENCIADOR\_DADOS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ GERENCIADOR\_DADOS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}dados.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGerenciadorDados_a9e2f191e7ea869de9b525190266d8bb6}{GerenciadorDados}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ TAMANHO\_BUFFER\ =\ 200;\ }
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<DadosSensores>\ dadosSensores;\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ indice\_escrita\ =\ 0;\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ indice\_leitura\ =\ 0;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ contador\_dados\ =\ 0;\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{structEstadoVeiculo}{EstadoVeiculo}}\ estadoVeiculo;\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{structComandosOperador}{ComandosOperador}}\ comandosOperador;\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ mtx;\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::condition\_variable\ cv\_dados;\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classGerenciadorDados_a9e2f191e7ea869de9b525190266d8bb6}{GerenciadorDados}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGerenciadorDados_a09fe49dc2ad61794270d6d8cfae026e4}{setDados}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structDadosSensores}{DadosSensores}}\&\ dados);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{structDadosSensores}{DadosSensores}}\ \mbox{\hyperlink{classGerenciadorDados_aed53e1fd924c25883bbd16af346f6d79}{getDados}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGerenciadorDados_a31f36344d3e26896b2434096d27f4498}{setEstadoVeiculo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structEstadoVeiculo}{EstadoVeiculo}}\&\ estado);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{structEstadoVeiculo}{EstadoVeiculo}}\ \mbox{\hyperlink{classGerenciadorDados_a868fbfceb7029aa53843b05d1dd9caa0}{getEstadoVeiculo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGerenciadorDados_ab55730d78ba7a00157ccb1c53e90e6b0}{setComandosOperador}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structComandosOperador}{ComandosOperador}}\&\ comandos);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{structComandosOperador}{ComandosOperador}}\ \mbox{\hyperlink{classGerenciadorDados_a3df52f211194ddbca256f71b58d88957}{getComandosOperador}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGerenciadorDados_ad60667ca9837e5382bbd4838e4bdc81c}{atualizarEstadoVeiculo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structEstadoVeiculo}{EstadoVeiculo}}\&\ estado);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGerenciadorDados_aa3149e34e89165bbcf1509822c1768ff}{atualizarComandosOperador}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structComandosOperador}{ComandosOperador}}\&\ comandos);}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GERENCIADOR\_DADOS\_H}}
+
+\end{DoxyCode}

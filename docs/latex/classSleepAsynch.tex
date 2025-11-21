@@ -1,0 +1,73 @@
+\doxysection{Sleep\+Asynch Class Reference}
+\hypertarget{classSleepAsynch}{}\label{classSleepAsynch}\index{SleepAsynch@{SleepAsynch}}
+
+
+Classe auxiliar para gerenciar temporizadores assíncronos.  
+
+
+
+
+{\ttfamily \#include $<$sleep\+\_\+asynch.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSleepAsynch_abf800cd2953dff13fa8daf44c334e803}\label{classSleepAsynch_abf800cd2953dff13fa8daf44c334e803} 
+using {\bfseries Callback} = std\+::function$<$void(const boost\+::system\+::error\+\_\+code\&)$>$
+\begin{DoxyCompactList}\small\item\em Tipo para o callback a ser executado após o tempo de espera. Recebe um boost\+::system\+::error\+\_\+code indicando o status da conclusão (sucesso ou cancelamento). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSleepAsynch_a18358c597ab5cd9cc1cb05f5ec4eea49}{Sleep\+Asynch}} (boost\+::asio\+::io\+\_\+context \&io)
+\begin{DoxyCompactList}\small\item\em Construtor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSleepAsynch_a5b91228b357a7606026e77ea8b4b0f65}{sleep\+\_\+for}} (std\+::chrono\+::milliseconds duration, \mbox{\hyperlink{classSleepAsynch_abf800cd2953dff13fa8daf44c334e803}{Callback}} on\+\_\+complete)
+\begin{DoxyCompactList}\small\item\em Inicia uma espera assíncrona. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe auxiliar para gerenciar temporizadores assíncronos. 
+
+Permite agendar a execução de callbacks após um determinado período de tempo, sem bloquear a thread de execução, utilizando o io\+\_\+context do Boost.\+Asio. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSleepAsynch_a18358c597ab5cd9cc1cb05f5ec4eea49}\index{SleepAsynch@{SleepAsynch}!SleepAsynch@{SleepAsynch}}
+\index{SleepAsynch@{SleepAsynch}!SleepAsynch@{SleepAsynch}}
+\doxysubsubsection{\texorpdfstring{SleepAsynch()}{SleepAsynch()}}
+{\footnotesize\ttfamily \label{classSleepAsynch_a18358c597ab5cd9cc1cb05f5ec4eea49} 
+Sleep\+Asynch\+::\+Sleep\+Asynch (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+context \&}]{io}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construtor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io} & Referência para o contexto de I/O do Boost.\+Asio. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSleepAsynch_a5b91228b357a7606026e77ea8b4b0f65}\index{SleepAsynch@{SleepAsynch}!sleep\_for@{sleep\_for}}
+\index{sleep\_for@{sleep\_for}!SleepAsynch@{SleepAsynch}}
+\doxysubsubsection{\texorpdfstring{sleep\_for()}{sleep\_for()}}
+{\footnotesize\ttfamily \label{classSleepAsynch_a5b91228b357a7606026e77ea8b4b0f65} 
+void Sleep\+Asynch\+::sleep\+\_\+for (\begin{DoxyParamCaption}\item[{std\+::chrono\+::milliseconds}]{duration}{, }\item[{\mbox{\hyperlink{classSleepAsynch_abf800cd2953dff13fa8daf44c334e803}{Callback}}}]{on\+\_\+complete}{}\end{DoxyParamCaption})}
+
+
+
+Inicia uma espera assíncrona. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & Duração do tempo de espera (em milissegundos). \\
+\hline
+{\em on\+\_\+complete} & Função callback a ser chamada quando o tempo expirar. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/utils/\mbox{\hyperlink{sleep__asynch_8h}{sleep\+\_\+asynch.\+h}}\item 
+src/utils/sleep\+\_\+asynch.\+cpp\end{DoxyCompactItemize}

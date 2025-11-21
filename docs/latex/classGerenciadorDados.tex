@@ -1,0 +1,205 @@
+\doxysection{Gerenciador\+Dados Class Reference}
+\hypertarget{classGerenciadorDados}{}\label{classGerenciadorDados}\index{GerenciadorDados@{GerenciadorDados}}
+
+
+Classe que implementa o padrão Monitor para gerenciar o acesso aos dados compartilhados.  
+
+
+
+
+{\ttfamily \#include $<$gerenciador\+\_\+dados.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGerenciadorDados_a9e2f191e7ea869de9b525190266d8bb6}{Gerenciador\+Dados}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa o buffer e os estados. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorDados_a09fe49dc2ad61794270d6d8cfae026e4}{set\+Dados}} (const \mbox{\hyperlink{structDadosSensores}{Dados\+Sensores}} \&dados)
+\begin{DoxyCompactList}\small\item\em Insere novos dados de sensores no buffer circular. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structDadosSensores}{Dados\+Sensores}} \mbox{\hyperlink{classGerenciadorDados_aed53e1fd924c25883bbd16af346f6d79}{get\+Dados}} ()
+\begin{DoxyCompactList}\small\item\em Recupera o dado mais antigo do buffer circular. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorDados_a31f36344d3e26896b2434096d27f4498}{set\+Estado\+Veiculo}} (const \mbox{\hyperlink{structEstadoVeiculo}{Estado\+Veiculo}} \&estado)
+\begin{DoxyCompactList}\small\item\em Atualiza o estado operacional do veículo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structEstadoVeiculo}{Estado\+Veiculo}} \mbox{\hyperlink{classGerenciadorDados_a868fbfceb7029aa53843b05d1dd9caa0}{get\+Estado\+Veiculo}} () const
+\begin{DoxyCompactList}\small\item\em Obtém o estado operacional atual do veículo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorDados_ab55730d78ba7a00157ccb1c53e90e6b0}{set\+Comandos\+Operador}} (const \mbox{\hyperlink{structComandosOperador}{Comandos\+Operador}} \&comandos)
+\begin{DoxyCompactList}\small\item\em Define os comandos do operador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structComandosOperador}{Comandos\+Operador}} \mbox{\hyperlink{classGerenciadorDados_a3df52f211194ddbca256f71b58d88957}{get\+Comandos\+Operador}} () const
+\begin{DoxyCompactList}\small\item\em Obtém os comandos atuais do operador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorDados_ad60667ca9837e5382bbd4838e4bdc81c}{atualizar\+Estado\+Veiculo}} (const \mbox{\hyperlink{structEstadoVeiculo}{Estado\+Veiculo}} \&estado)
+\begin{DoxyCompactList}\small\item\em Atualiza atomicamente o estado do veículo (alias para set\+Estado\+Veiculo). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorDados_aa3149e34e89165bbcf1509822c1768ff}{atualizar\+Comandos\+Operador}} (const \mbox{\hyperlink{structComandosOperador}{Comandos\+Operador}} \&comandos)
+\begin{DoxyCompactList}\small\item\em Atualiza atomicamente os comandos do operador (alias para set\+Comandos\+Operador). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que implementa o padrão Monitor para gerenciar o acesso aos dados compartilhados. 
+
+Esta classe encapsula o buffer circular de dados dos sensores, bem como o estado atual do veículo e os comandos do operador. Fornece métodos thread-\/safe para leitura e escrita, garantindo a integridade dos dados em um ambiente multithread. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGerenciadorDados_a9e2f191e7ea869de9b525190266d8bb6}\index{GerenciadorDados@{GerenciadorDados}!GerenciadorDados@{GerenciadorDados}}
+\index{GerenciadorDados@{GerenciadorDados}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{GerenciadorDados()}{GerenciadorDados()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_a9e2f191e7ea869de9b525190266d8bb6} 
+Gerenciador\+Dados\+::\+Gerenciador\+Dados (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. Inicializa o buffer e os estados. 
+
+Construtor da classe \doxylink{classGerenciadorDados}{Gerenciador\+Dados}. Inicializa o buffer de dados de sensores com um tamanho pré-\/definido. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGerenciadorDados_aa3149e34e89165bbcf1509822c1768ff}\index{GerenciadorDados@{GerenciadorDados}!atualizarComandosOperador@{atualizarComandosOperador}}
+\index{atualizarComandosOperador@{atualizarComandosOperador}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{atualizarComandosOperador()}{atualizarComandosOperador()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_aa3149e34e89165bbcf1509822c1768ff} 
+void Gerenciador\+Dados\+::atualizar\+Comandos\+Operador (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structComandosOperador}{Comandos\+Operador}} \&}]{comandos}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza atomicamente os comandos do operador (alias para set\+Comandos\+Operador). 
+
+Atualiza os comandos do operador.
+
+
+\begin{DoxyParams}{Parameters}
+{\em comandos} & Novos comandos.\\
+\hline
+{\em comandos} & Os novos comandos do operador a serem atualizados. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGerenciadorDados_ad60667ca9837e5382bbd4838e4bdc81c}\index{GerenciadorDados@{GerenciadorDados}!atualizarEstadoVeiculo@{atualizarEstadoVeiculo}}
+\index{atualizarEstadoVeiculo@{atualizarEstadoVeiculo}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{atualizarEstadoVeiculo()}{atualizarEstadoVeiculo()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_ad60667ca9837e5382bbd4838e4bdc81c} 
+void Gerenciador\+Dados\+::atualizar\+Estado\+Veiculo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEstadoVeiculo}{Estado\+Veiculo}} \&}]{estado}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza atomicamente o estado do veículo (alias para set\+Estado\+Veiculo). 
+
+Atualiza o estado do veículo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em estado} & Novo estado.\\
+\hline
+{\em estado} & O novo estado do veículo a ser atualizado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGerenciadorDados_a3df52f211194ddbca256f71b58d88957}\index{GerenciadorDados@{GerenciadorDados}!getComandosOperador@{getComandosOperador}}
+\index{getComandosOperador@{getComandosOperador}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{getComandosOperador()}{getComandosOperador()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_a3df52f211194ddbca256f71b58d88957} 
+\mbox{\hyperlink{structComandosOperador}{Comandos\+Operador}} Gerenciador\+Dados\+::get\+Comandos\+Operador (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtém os comandos atuais do operador. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structComandosOperador}{Comandos\+Operador} Comandos atuais.
+
+Os comandos atuais do operador. 
+\end{DoxyReturn}
+\Hypertarget{classGerenciadorDados_aed53e1fd924c25883bbd16af346f6d79}\index{GerenciadorDados@{GerenciadorDados}!getDados@{getDados}}
+\index{getDados@{getDados}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{getDados()}{getDados()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_aed53e1fd924c25883bbd16af346f6d79} 
+\mbox{\hyperlink{structDadosSensores}{Dados\+Sensores}} Gerenciador\+Dados\+::get\+Dados (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recupera o dado mais antigo do buffer circular. 
+
+Obtém dados de sensores do buffer circular. Esta função é segura para threads. Se o buffer estiver vazio, a thread que chama aguardará até que haja dados disponíveis. Notifica um produtor em espera após remover os dados.
+
+Atua como Consumidor. Bloqueia a thread se o buffer estiver vazio até que novos dados estejam disponíveis.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structDadosSensores}{Dados\+Sensores} Estrutura com os dados lidos.
+
+Os dados dos sensores lidos do buffer. 
+\end{DoxyReturn}
+\Hypertarget{classGerenciadorDados_a868fbfceb7029aa53843b05d1dd9caa0}\index{GerenciadorDados@{GerenciadorDados}!getEstadoVeiculo@{getEstadoVeiculo}}
+\index{getEstadoVeiculo@{getEstadoVeiculo}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{getEstadoVeiculo()}{getEstadoVeiculo()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_a868fbfceb7029aa53843b05d1dd9caa0} 
+\mbox{\hyperlink{structEstadoVeiculo}{Estado\+Veiculo}} Gerenciador\+Dados\+::get\+Estado\+Veiculo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtém o estado operacional atual do veículo. 
+
+Obtém o estado atual do veículo.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structEstadoVeiculo}{Estado\+Veiculo} Estado atual.
+
+O estado atual do veículo. 
+\end{DoxyReturn}
+\Hypertarget{classGerenciadorDados_ab55730d78ba7a00157ccb1c53e90e6b0}\index{GerenciadorDados@{GerenciadorDados}!setComandosOperador@{setComandosOperador}}
+\index{setComandosOperador@{setComandosOperador}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{setComandosOperador()}{setComandosOperador()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_ab55730d78ba7a00157ccb1c53e90e6b0} 
+void Gerenciador\+Dados\+::set\+Comandos\+Operador (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structComandosOperador}{Comandos\+Operador}} \&}]{comandos}{}\end{DoxyParamCaption})}
+
+
+
+Define os comandos do operador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comandos} & Novos comandos do operador.\\
+\hline
+{\em comandos} & Os novos comandos do operador. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGerenciadorDados_a09fe49dc2ad61794270d6d8cfae026e4}\index{GerenciadorDados@{GerenciadorDados}!setDados@{setDados}}
+\index{setDados@{setDados}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{setDados()}{setDados()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_a09fe49dc2ad61794270d6d8cfae026e4} 
+void Gerenciador\+Dados\+::set\+Dados (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structDadosSensores}{Dados\+Sensores}} \&}]{dados}{}\end{DoxyParamCaption})}
+
+
+
+Insere novos dados de sensores no buffer circular. 
+
+Adiciona dados de sensores ao buffer circular. Esta função é segura para threads. Se o buffer estiver cheio, a thread que chama aguardará até que haja espaço. Notifica um consumidor em espera após adicionar os dados.
+
+Atua como Produtor. Se o buffer estiver cheio, sobrescreve o dado mais antigo. Notifica consumidores aguardando dados.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dados} & Estrutura contendo as leituras dos sensores.\\
+\hline
+{\em dados} & Os dados dos sensores a serem adicionados. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGerenciadorDados_a31f36344d3e26896b2434096d27f4498}\index{GerenciadorDados@{GerenciadorDados}!setEstadoVeiculo@{setEstadoVeiculo}}
+\index{setEstadoVeiculo@{setEstadoVeiculo}!GerenciadorDados@{GerenciadorDados}}
+\doxysubsubsection{\texorpdfstring{setEstadoVeiculo()}{setEstadoVeiculo()}}
+{\footnotesize\ttfamily \label{classGerenciadorDados_a31f36344d3e26896b2434096d27f4498} 
+void Gerenciador\+Dados\+::set\+Estado\+Veiculo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEstadoVeiculo}{Estado\+Veiculo}} \&}]{estado}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza o estado operacional do veículo. 
+
+Define o estado do veículo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em estado} & Novo estado do veículo.\\
+\hline
+{\em estado} & O novo estado do veículo. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gerenciador__dados_8h}{gerenciador\+\_\+dados.\+h}}\item 
+src/gerenciador\+\_\+dados.\+cpp\end{DoxyCompactItemize}

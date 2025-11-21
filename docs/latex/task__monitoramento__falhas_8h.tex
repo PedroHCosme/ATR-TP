@@ -1,0 +1,44 @@
+\doxysection{include/task\+\_\+monitoramento\+\_\+falhas.h File Reference}
+\hypertarget{task__monitoramento__falhas_8h}{}\label{task__monitoramento__falhas_8h}\index{include/task\_monitoramento\_falhas.h@{include/task\_monitoramento\_falhas.h}}
+
+
+Definição da tarefa de monitoramento e tratamento de falhas.  
+
+
+{\ttfamily \#include "{}gerenciador\+\_\+dados.\+h"{}}\newline
+{\ttfamily \#include "{}eventos\+\_\+sistema.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{task__monitoramento__falhas_8h_a77f387cdb1af8ea01dd9fb5a1ead1202}{task\+\_\+tratamento\+\_\+falhas}} (\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&gerenciador\+Dados, \mbox{\hyperlink{classSimulacaoMina}{Simulacao\+Mina}} \&simulacao, \mbox{\hyperlink{classEventosSistema}{Eventos\+Sistema}} \&eventos)
+\begin{DoxyCompactList}\small\item\em Tarefa responsável por monitorar a saúde do sistema e tratar falhas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definição da tarefa de monitoramento e tratamento de falhas. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{task__monitoramento__falhas_8h_a77f387cdb1af8ea01dd9fb5a1ead1202}\index{task\_monitoramento\_falhas.h@{task\_monitoramento\_falhas.h}!task\_tratamento\_falhas@{task\_tratamento\_falhas}}
+\index{task\_tratamento\_falhas@{task\_tratamento\_falhas}!task\_monitoramento\_falhas.h@{task\_monitoramento\_falhas.h}}
+\doxysubsubsection{\texorpdfstring{task\_tratamento\_falhas()}{task\_tratamento\_falhas()}}
+{\footnotesize\ttfamily \label{task__monitoramento__falhas_8h_a77f387cdb1af8ea01dd9fb5a1ead1202} 
+void task\+\_\+tratamento\+\_\+falhas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&}]{gerenciador\+Dados}{, }\item[{\mbox{\hyperlink{classSimulacaoMina}{Simulacao\+Mina}} \&}]{simulacao}{, }\item[{\mbox{\hyperlink{classEventosSistema}{Eventos\+Sistema}} \&}]{eventos}{}\end{DoxyParamCaption})}
+
+
+
+Tarefa responsável por monitorar a saúde do sistema e tratar falhas. 
+
+Verifica periodicamente os dados dos sensores e o estado da simulação em busca de anomalias (ex\+: superaquecimento, falhas elétricas). Caso detecte um problema, sinaliza o evento correspondente para que o sistema possa reagir (ex\+: parada de emergência).
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerenciador\+Dados} & Referência para o gerenciador de dados. \\
+\hline
+{\em simulacao} & Referência para a simulação física (para injeção/verificação de falhas reais). \\
+\hline
+{\em eventos} & Referência para o sistema de sinalização de eventos. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,38 @@
+\doxysection{include/task\+\_\+controle\+\_\+navegacao.h File Reference}
+\hypertarget{task__controle__navegacao_8h}{}\label{task__controle__navegacao_8h}\index{include/task\_controle\_navegacao.h@{include/task\_controle\_navegacao.h}}
+
+
+Definição da tarefa de controle de navegação autônoma.  
+
+
+{\ttfamily \#include "{}gerenciador\+\_\+dados.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{task__controle__navegacao_8h_a4cdbd0b8978edcc4a71119c74993aa74}{task\+\_\+controle\+\_\+navegacao}} (\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&gerenciador\+Dados)
+\begin{DoxyCompactList}\small\item\em Tarefa responsável pelo controle de navegação do veículo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definição da tarefa de controle de navegação autônoma. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{task__controle__navegacao_8h_a4cdbd0b8978edcc4a71119c74993aa74}\index{task\_controle\_navegacao.h@{task\_controle\_navegacao.h}!task\_controle\_navegacao@{task\_controle\_navegacao}}
+\index{task\_controle\_navegacao@{task\_controle\_navegacao}!task\_controle\_navegacao.h@{task\_controle\_navegacao.h}}
+\doxysubsubsection{\texorpdfstring{task\_controle\_navegacao()}{task\_controle\_navegacao()}}
+{\footnotesize\ttfamily \label{task__controle__navegacao_8h_a4cdbd0b8978edcc4a71119c74993aa74} 
+void task\+\_\+controle\+\_\+navegacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&}]{gerenciador\+Dados}{}\end{DoxyParamCaption})}
+
+
+
+Tarefa responsável pelo controle de navegação do veículo. 
+
+Esta função implementa a lógica de controle de alto nível. Ela consome dados processados do buffer, avalia o estado atual e os objetivos, e gera comandos de atuação (aceleração e direção) para manter o veículo na trajetória desejada ou reagir a obstáculos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerenciador\+Dados} & Referência para o objeto compartilhado \doxylink{classGerenciadorDados}{Gerenciador\+Dados}. \\
+\hline
+\end{DoxyParams}

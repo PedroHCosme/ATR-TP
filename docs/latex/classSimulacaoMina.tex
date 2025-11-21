@@ -1,0 +1,105 @@
+\doxysection{Simulacao\+Mina Class Reference}
+\hypertarget{classSimulacaoMina}{}\label{classSimulacaoMina}\index{SimulacaoMina@{SimulacaoMina}}
+
+
+Motor de simulação física do ambiente de mineração.  
+
+
+
+
+{\ttfamily \#include $<$simulacao\+\_\+mina.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSimulacaoMina_abe78de94b725b1de8d2dfbabf83dd7da}{Simulacao\+Mina}} (const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&mapa\+\_\+ref, int num\+\_\+caminhoes)
+\begin{DoxyCompactList}\small\item\em Construtor da simulação. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimulacaoMina_aee23078da259531c7cf109871011f2e2}{atualizar\+\_\+passo\+\_\+tempo}} ()
+\begin{DoxyCompactList}\small\item\em Avança a simulação em um passo de tempo (dt). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimulacaoMina_aeb29dff98be491a231362c283f9a9fb4}{set\+Comando\+Atuador}} (int id\+\_\+caminhao, int aceleracao, int direcao)
+\begin{DoxyCompactList}\small\item\em Define os comandos de atuação para um caminhão específico. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCaminhaoFisico}{Caminhao\+Fisico}} \mbox{\hyperlink{classSimulacaoMina_a895f7e5d7f1782af9e71d74c6811a92c}{get\+Estado\+Real}} (int id\+\_\+caminhao)
+\begin{DoxyCompactList}\small\item\em Obtém o estado físico real de um caminhão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Motor de simulação física do ambiente de mineração. 
+
+Responsável por manter o estado "{}real"{} do mundo, calcular a física de movimento (modelo de bicicleta), termodinâmica básica e detecção de colisões com o mapa. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSimulacaoMina_abe78de94b725b1de8d2dfbabf83dd7da}\index{SimulacaoMina@{SimulacaoMina}!SimulacaoMina@{SimulacaoMina}}
+\index{SimulacaoMina@{SimulacaoMina}!SimulacaoMina@{SimulacaoMina}}
+\doxysubsubsection{\texorpdfstring{SimulacaoMina()}{SimulacaoMina()}}
+{\footnotesize\ttfamily \label{classSimulacaoMina_abe78de94b725b1de8d2dfbabf83dd7da} 
+Simulacao\+Mina\+::\+Simulacao\+Mina (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&}]{mapa\+\_\+ref}{, }\item[{int}]{num\+\_\+caminhoes}{}\end{DoxyParamCaption})}
+
+
+
+Construtor da simulação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mapa\+\_\+ref} & Referência para o mapa gerado (grid de caracteres). \\
+\hline
+{\em num\+\_\+caminhoes} & Número de caminhões a serem instanciados. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSimulacaoMina_aee23078da259531c7cf109871011f2e2}\index{SimulacaoMina@{SimulacaoMina}!atualizar\_passo\_tempo@{atualizar\_passo\_tempo}}
+\index{atualizar\_passo\_tempo@{atualizar\_passo\_tempo}!SimulacaoMina@{SimulacaoMina}}
+\doxysubsubsection{\texorpdfstring{atualizar\_passo\_tempo()}{atualizar\_passo\_tempo()}}
+{\footnotesize\ttfamily \label{classSimulacaoMina_aee23078da259531c7cf109871011f2e2} 
+void Simulacao\+Mina\+::atualizar\+\_\+passo\+\_\+tempo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Avança a simulação em um passo de tempo (dt). 
+
+Atualiza a física de todos os veículos, incluindo movimento e temperatura. Deve ser chamado periodicamente por uma thread dedicada. \Hypertarget{classSimulacaoMina_a895f7e5d7f1782af9e71d74c6811a92c}\index{SimulacaoMina@{SimulacaoMina}!getEstadoReal@{getEstadoReal}}
+\index{getEstadoReal@{getEstadoReal}!SimulacaoMina@{SimulacaoMina}}
+\doxysubsubsection{\texorpdfstring{getEstadoReal()}{getEstadoReal()}}
+{\footnotesize\ttfamily \label{classSimulacaoMina_a895f7e5d7f1782af9e71d74c6811a92c} 
+\mbox{\hyperlink{structCaminhaoFisico}{Caminhao\+Fisico}} Simulacao\+Mina\+::get\+Estado\+Real (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+caminhao}{}\end{DoxyParamCaption})}
+
+
+
+Obtém o estado físico real de um caminhão. 
+
+Usado pelos sensores para gerar leituras (que podem ter ruído adicionado posteriormente).
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+caminhao} & ID do caminhão. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structCaminhaoFisico}{Caminhao\+Fisico} Cópia do estado atual do caminhão. 
+\end{DoxyReturn}
+\Hypertarget{classSimulacaoMina_aeb29dff98be491a231362c283f9a9fb4}\index{SimulacaoMina@{SimulacaoMina}!setComandoAtuador@{setComandoAtuador}}
+\index{setComandoAtuador@{setComandoAtuador}!SimulacaoMina@{SimulacaoMina}}
+\doxysubsubsection{\texorpdfstring{setComandoAtuador()}{setComandoAtuador()}}
+{\footnotesize\ttfamily \label{classSimulacaoMina_aeb29dff98be491a231362c283f9a9fb4} 
+void Simulacao\+Mina\+::set\+Comando\+Atuador (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+caminhao}{, }\item[{int}]{aceleracao}{, }\item[{int}]{direcao}{}\end{DoxyParamCaption})}
+
+
+
+Define os comandos de atuação para um caminhão específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+caminhao} & ID do caminhão alvo. \\
+\hline
+{\em aceleracao} & Valor de aceleração comandado. \\
+\hline
+{\em direcao} & Valor de direção comandado. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{simulacao__mina_8h}{simulacao\+\_\+mina.\+h}}\item 
+src/simulacao\+\_\+mina.\+cpp\end{DoxyCompactItemize}

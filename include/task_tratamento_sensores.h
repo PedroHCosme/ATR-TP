@@ -1,3 +1,8 @@
+/**
+ * @file task_tratamento_sensores.h
+ * @brief Definição da tarefa de aquisição e processamento de sensores.
+ */
+
 #ifndef TASK_TRATAMENTO_SENSORES_H
 #define TASK_TRATAMENTO_SENSORES_H
 
@@ -7,26 +12,27 @@
 class SimulacaoMina;
 
 /**
- * @brief Esta é a nossa única Produtora para o buffer circular.
+ * @brief Tarefa produtora responsável pela leitura e pré-processamento dos sensores.
  *
- * É o "olho" do caminhão, responsável por ler os dados dos sensores
- * (neste caso, simulando-os) e colocá-los no buffer para processamento.
+ * Esta função simula a aquisição de dados consultando o estado "real" na simulação física,
+ * aplica ruído gaussiano para simular imperfeições dos sensores reais, e aplica
+ * filtros (como EMA) antes de disponibilizar os dados no buffer compartilhado.
  *
- * @param gerenciadorDados Referência para o objeto GerenciadorDados.
- * @param simulacao Referência para a simulação física.
- * @param id_caminhao ID do caminhão a ser monitorado.
+ * @param gerenciadorDados Referência para o objeto GerenciadorDados onde os dados serão escritos.
+ * @param simulacao Referência para a simulação física de onde a "verdade" é lida.
+ * @param id_caminhao ID do caminhão cujos sensores estão sendo lidos.
  */
 void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, SimulacaoMina& simulacao, int id_caminhao);
 
 /**
  * @brief Calcula o próximo valor da Média Móvel Exponencial (EMA).
  * 
- * Esta função aplica a fórmula da média móvel exponencial, que dá mais peso 
- * aos dados recentes, tornando-a mais sensível a mudanças novas do que a média simples.
+ * Filtro digital simples utilizado para suavizar leituras ruidosas dos sensores.
+ * A fórmula utilizada é: EMA_atual = (Valor_atual - EMA_anterior) * K + EMA_anterior.
  * 
- * @param valor_atual O valor bruto lido do sensor agora.
+ * @param valor_atual O valor bruto lido do sensor no instante atual.
  * @param media_anterior O valor da EMA calculado no passo anterior.
- * @return float O novo valor da EMA.
+ * @return float O novo valor suavizado da EMA.
  */
 float calcular_media_movel_exponencial(float valor_atual, float media_anterior);
 

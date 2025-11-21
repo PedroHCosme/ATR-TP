@@ -1,0 +1,55 @@
+\doxysection{simulacao\+\_\+mina.\+h}
+\hypertarget{simulacao__mina_8h_source}{}\label{simulacao__mina_8h_source}\index{include/simulacao\_mina.h@{include/simulacao\_mina.h}}
+\mbox{\hyperlink{simulacao__mina_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SIMULACAO\_MINA\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SIMULACAO\_MINA\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <random>}\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}dados.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCaminhaoFisico}{CaminhaoFisico}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCaminhaoFisico_a3bc5369b046c6aec35b23f133184d7ee}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{float}\ i\_posicao\_x,\ \mbox{\hyperlink{structCaminhaoFisico_a362bfe9d3dbde18070a4c7f6babbc156}{i\_posicao\_y}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structCaminhaoFisico_af1cf5f7b3908a89fe68577cbb06f5f7d}{i\_angulo\_x}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structCaminhaoFisico_ac57e05b1fc08fad70c91f5bf0b249673}{velocidade}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structCaminhaoFisico_a247ed97c8438b4c839df1e5a226f2a51}{o\_aceleracao}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structCaminhaoFisico_a6989fe66a934a78e83f34d1383c11b47}{o\_direcao}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structCaminhaoFisico_acb737a26b562c1246d40f8f7a31852af}{i\_temperatura}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structCaminhaoFisico_a0646abc619463ae2bfa4b61ec2e3c834}{i\_falha\_eletrica}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structCaminhaoFisico_a670fb96f25a7d5ab6a416254ff4adab2}{i\_falha\_hidraulica}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structCaminhaoFisico_a0165e8722dc352884b627297120e8891}{temperatuta\_ambiente}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSimulacaoMina_abe78de94b725b1de8d2dfbabf83dd7da}{SimulacaoMina}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<CaminhaoFisico>\ frota;\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<char>>\&\ mapa;\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ mtx\_simulacao;\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ dt;\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classSimulacaoMina_abe78de94b725b1de8d2dfbabf83dd7da}{SimulacaoMina}}(\textcolor{keyword}{const}\ std::vector<std::vector<char>>\&\ mapa\_ref,\ \textcolor{keywordtype}{int}\ num\_caminhoes);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimulacaoMina_aee23078da259531c7cf109871011f2e2}{atualizar\_passo\_tempo}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimulacaoMina_aeb29dff98be491a231362c283f9a9fb4}{setComandoAtuador}}(\textcolor{keywordtype}{int}\ id\_caminhao,\ \textcolor{keywordtype}{int}\ aceleracao,\ \textcolor{keywordtype}{int}\ direcao);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{structCaminhaoFisico}{CaminhaoFisico}}\ \mbox{\hyperlink{classSimulacaoMina_a895f7e5d7f1782af9e71d74c6811a92c}{getEstadoReal}}(\textcolor{keywordtype}{int}\ id\_caminhao);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ modelo\_bicicleta(\mbox{\hyperlink{structCaminhaoFisico}{CaminhaoFisico}}\&\ caminhao);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ modelo\_maquina\_termica(\mbox{\hyperlink{structCaminhaoFisico}{CaminhaoFisico}}\&\ caminhao);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ verificar\_colisao(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ angulo);}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SIMULACAO\_MINA\_H}}
+
+\end{DoxyCode}

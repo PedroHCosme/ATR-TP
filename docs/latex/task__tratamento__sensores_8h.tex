@@ -1,0 +1,90 @@
+\doxysection{include/task\+\_\+tratamento\+\_\+sensores.h File Reference}
+\hypertarget{task__tratamento__sensores_8h}{}\label{task__tratamento__sensores_8h}\index{include/task\_tratamento\_sensores.h@{include/task\_tratamento\_sensores.h}}
+
+
+Definição da tarefa de aquisição e processamento de sensores.  
+
+
+{\ttfamily \#include "{}gerenciador\+\_\+dados.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{task__tratamento__sensores_8h_af54988672c6832b7bf994f129637c6ab}{task\+\_\+tratamento\+\_\+sensores}} (\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&gerenciador\+Dados, \mbox{\hyperlink{classSimulacaoMina}{Simulacao\+Mina}} \&simulacao, int id\+\_\+caminhao)
+\begin{DoxyCompactList}\small\item\em Tarefa produtora responsável pela leitura e pré-\/processamento dos sensores. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{task__tratamento__sensores_8h_ad5af3b8d30661d7c2efff5c7aa73a4de}{calcular\+\_\+media\+\_\+movel\+\_\+exponencial}} (float valor\+\_\+atual, float media\+\_\+anterior)
+\begin{DoxyCompactList}\small\item\em Calcula o próximo valor da Média Móvel Exponencial (EMA). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definição da tarefa de aquisição e processamento de sensores. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{task__tratamento__sensores_8h_ad5af3b8d30661d7c2efff5c7aa73a4de}\index{task\_tratamento\_sensores.h@{task\_tratamento\_sensores.h}!calcular\_media\_movel\_exponencial@{calcular\_media\_movel\_exponencial}}
+\index{calcular\_media\_movel\_exponencial@{calcular\_media\_movel\_exponencial}!task\_tratamento\_sensores.h@{task\_tratamento\_sensores.h}}
+\doxysubsubsection{\texorpdfstring{calcular\_media\_movel\_exponencial()}{calcular\_media\_movel\_exponencial()}}
+{\footnotesize\ttfamily \label{task__tratamento__sensores_8h_ad5af3b8d30661d7c2efff5c7aa73a4de} 
+float calcular\+\_\+media\+\_\+movel\+\_\+exponencial (\begin{DoxyParamCaption}\item[{float}]{valor\+\_\+atual}{, }\item[{float}]{media\+\_\+anterior}{}\end{DoxyParamCaption})}
+
+
+
+Calcula o próximo valor da Média Móvel Exponencial (EMA). 
+
+Filtro digital simples utilizado para suavizar leituras ruidosas dos sensores. A fórmula utilizada é\+: EMA\+\_\+atual = (Valor\+\_\+atual -\/ EMA\+\_\+anterior) \texorpdfstring{$\ast$}{*} K + EMA\+\_\+anterior.
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor\+\_\+atual} & O valor bruto lido do sensor no instante atual. \\
+\hline
+{\em media\+\_\+anterior} & O valor da EMA calculado no passo anterior. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float O novo valor suavizado da EMA.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em valor\+\_\+atual} & O valor bruto lido do sensor agora. \\
+\hline
+{\em media\+\_\+anterior} & O valor da EMA calculado no passo anterior. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float O novo valor da EMA. 
+\end{DoxyReturn}
+\Hypertarget{task__tratamento__sensores_8h_af54988672c6832b7bf994f129637c6ab}\index{task\_tratamento\_sensores.h@{task\_tratamento\_sensores.h}!task\_tratamento\_sensores@{task\_tratamento\_sensores}}
+\index{task\_tratamento\_sensores@{task\_tratamento\_sensores}!task\_tratamento\_sensores.h@{task\_tratamento\_sensores.h}}
+\doxysubsubsection{\texorpdfstring{task\_tratamento\_sensores()}{task\_tratamento\_sensores()}}
+{\footnotesize\ttfamily \label{task__tratamento__sensores_8h_af54988672c6832b7bf994f129637c6ab} 
+void task\+\_\+tratamento\+\_\+sensores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&}]{gerenciador\+Dados}{, }\item[{\mbox{\hyperlink{classSimulacaoMina}{Simulacao\+Mina}} \&}]{simulacao}{, }\item[{int}]{id\+\_\+caminhao}{}\end{DoxyParamCaption})}
+
+
+
+Tarefa produtora responsável pela leitura e pré-\/processamento dos sensores. 
+
+Esta função simula a aquisição de dados consultando o estado "{}real"{} na simulação física, aplica ruído gaussiano para simular imperfeições dos sensores reais, e aplica filtros (como EMA) antes de disponibilizar os dados no buffer compartilhado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerenciador\+Dados} & Referência para o objeto \doxylink{classGerenciadorDados}{Gerenciador\+Dados} onde os dados serão escritos. \\
+\hline
+{\em simulacao} & Referência para a simulação física de onde a "{}verdade"{} é lida. \\
+\hline
+{\em id\+\_\+caminhao} & ID do caminhão cujos sensores estão sendo lidos.\\
+\hline
+\end{DoxyParams}
+Tarefa produtora responsável pela leitura e pré-\/processamento dos sensores.
+
+Esta função simula a leitura de sensores de um caminhão em movimento dentro do mapa gerado. Agora ela atua como uma "{}leitora burra"{}, consultando a simulação física.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerenciador\+Dados} & Referência para o gerenciador de dados compartilhado. \\
+\hline
+{\em simulacao} & Referência para a simulação física. \\
+\hline
+{\em id\+\_\+caminhao} & ID do caminhão a ser monitorado. \\
+\hline
+\end{DoxyParams}

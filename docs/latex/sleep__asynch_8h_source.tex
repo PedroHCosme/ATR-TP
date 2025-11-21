@@ -1,0 +1,28 @@
+\doxysection{sleep\+\_\+asynch.\+h}
+\hypertarget{sleep__asynch_8h_source}{}\label{sleep__asynch_8h_source}\index{include/utils/sleep\_asynch.h@{include/utils/sleep\_asynch.h}}
+\mbox{\hyperlink{sleep__asynch_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SLEEP\_ASYNCH\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SLEEP\_ASYNCH\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSleepAsynch_a18358c597ab5cd9cc1cb05f5ec4eea49}{SleepAsynch}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classSleepAsynch_a18358c597ab5cd9cc1cb05f5ec4eea49}{SleepAsynch}}(boost::asio::io\_context\&\ io);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classSleepAsynch_abf800cd2953dff13fa8daf44c334e803}{Callback}}\ =\ std::function<void(\textcolor{keyword}{const}\ boost::system::error\_code\&)>;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSleepAsynch_a5b91228b357a7606026e77ea8b4b0f65}{sleep\_for}}(std::chrono::milliseconds\ duration,\ \mbox{\hyperlink{classSleepAsynch_abf800cd2953dff13fa8daf44c334e803}{Callback}}\ on\_complete);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ boost::asio::steady\_timer\ timer\_;\ }
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SLEEP\_ASYNCH\_H}}
+
+\end{DoxyCode}

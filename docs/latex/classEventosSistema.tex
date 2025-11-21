@@ -1,0 +1,75 @@
+\doxysection{Eventos\+Sistema Class Reference}
+\hypertarget{classEventosSistema}{}\label{classEventosSistema}\index{EventosSistema@{EventosSistema}}
+
+
+Classe responsável pela sincronização e notificação de eventos críticos do sistema.  
+
+
+
+
+{\ttfamily \#include $<$eventos\+\_\+sistema.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEventosSistema_a2c9ca5ae94ceffbe0b6e87a96d051443}{sinalizar\+\_\+falha}} (int codigo)
+\begin{DoxyCompactList}\small\item\em Sinaliza a ocorrência de uma falha no sistema. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventosSistema_ab7205d047616c7a0ba4491b1126e1be4}{verificar\+\_\+estado\+\_\+falha}} ()
+\begin{DoxyCompactList}\small\item\em Verifica se existe uma falha crítica ativa no momento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventosSistema_a3c3dcf9d62fcae4561baf05b5c7f51cc}{resetar\+\_\+falhas}} ()
+\begin{DoxyCompactList}\small\item\em Reseta o estado de falha do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pela sincronização e notificação de eventos críticos do sistema. 
+
+Esta classe atua como um monitor thread-\/safe para gerenciar o estado de falhas do sistema. Permite que tarefas sinalizem a ocorrência de falhas e que outras tarefas verifiquem ou aguardem por esses eventos. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEventosSistema_a3c3dcf9d62fcae4561baf05b5c7f51cc}\index{EventosSistema@{EventosSistema}!resetar\_falhas@{resetar\_falhas}}
+\index{resetar\_falhas@{resetar\_falhas}!EventosSistema@{EventosSistema}}
+\doxysubsubsection{\texorpdfstring{resetar\_falhas()}{resetar\_falhas()}}
+{\footnotesize\ttfamily \label{classEventosSistema_a3c3dcf9d62fcae4561baf05b5c7f51cc} 
+void Eventos\+Sistema\+::resetar\+\_\+falhas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reseta o estado de falha do sistema. 
+
+Limpa a flag de falha crítica e o código de erro, permitindo que o sistema retorne à operação normal. Geralmente chamado após o tratamento da falha. \Hypertarget{classEventosSistema_a2c9ca5ae94ceffbe0b6e87a96d051443}\index{EventosSistema@{EventosSistema}!sinalizar\_falha@{sinalizar\_falha}}
+\index{sinalizar\_falha@{sinalizar\_falha}!EventosSistema@{EventosSistema}}
+\doxysubsubsection{\texorpdfstring{sinalizar\_falha()}{sinalizar\_falha()}}
+{\footnotesize\ttfamily \label{classEventosSistema_a2c9ca5ae94ceffbe0b6e87a96d051443} 
+void Eventos\+Sistema\+::sinalizar\+\_\+falha (\begin{DoxyParamCaption}\item[{int}]{codigo}{}\end{DoxyParamCaption})}
+
+
+
+Sinaliza a ocorrência de uma falha no sistema. 
+
+Este método deve ser chamado pelas tarefas de monitoramento quando uma anomalia é detectada. Ele atualiza o estado interno e notifica as threads interessadas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código inteiro representando o tipo de falha. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classEventosSistema_ab7205d047616c7a0ba4491b1126e1be4}\index{EventosSistema@{EventosSistema}!verificar\_estado\_falha@{verificar\_estado\_falha}}
+\index{verificar\_estado\_falha@{verificar\_estado\_falha}!EventosSistema@{EventosSistema}}
+\doxysubsubsection{\texorpdfstring{verificar\_estado\_falha()}{verificar\_estado\_falha()}}
+{\footnotesize\ttfamily \label{classEventosSistema_ab7205d047616c7a0ba4491b1126e1be4} 
+bool Eventos\+Sistema\+::verificar\+\_\+estado\+\_\+falha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se existe uma falha crítica ativa no momento. 
+
+\begin{DoxyReturn}{Returns}
+true Se houver uma falha crítica não tratada. 
+
+false Se o sistema estiver operando normalmente. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{eventos__sistema_8h}{eventos\+\_\+sistema.\+h}}\end{DoxyCompactItemize}

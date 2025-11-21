@@ -1,0 +1,41 @@
+\doxysection{include/task\+\_\+logica\+\_\+comando.h File Reference}
+\hypertarget{task__logica__comando_8h}{}\label{task__logica__comando_8h}\index{include/task\_logica\_comando.h@{include/task\_logica\_comando.h}}
+
+
+Definição da tarefa de lógica de comando e supervisão.  
+
+
+{\ttfamily \#include "{}gerenciador\+\_\+dados.\+h"{}}\newline
+{\ttfamily \#include "{}eventos\+\_\+sistema.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{task__logica__comando_8h_a862061da7cebefacd3badc2502839b14}{task\+\_\+logica\+\_\+comando}} (\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&gerenciador\+Dados, \mbox{\hyperlink{classEventosSistema}{Eventos\+Sistema}} \&eventos)
+\begin{DoxyCompactList}\small\item\em Tarefa responsável pela lógica de comando central e tomada de decisão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definição da tarefa de lógica de comando e supervisão. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{task__logica__comando_8h_a862061da7cebefacd3badc2502839b14}\index{task\_logica\_comando.h@{task\_logica\_comando.h}!task\_logica\_comando@{task\_logica\_comando}}
+\index{task\_logica\_comando@{task\_logica\_comando}!task\_logica\_comando.h@{task\_logica\_comando.h}}
+\doxysubsubsection{\texorpdfstring{task\_logica\_comando()}{task\_logica\_comando()}}
+{\footnotesize\ttfamily \label{task__logica__comando_8h_a862061da7cebefacd3badc2502839b14} 
+void task\+\_\+logica\+\_\+comando (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGerenciadorDados}{Gerenciador\+Dados}} \&}]{gerenciador\+Dados}{, }\item[{\mbox{\hyperlink{classEventosSistema}{Eventos\+Sistema}} \&}]{eventos}{}\end{DoxyParamCaption})}
+
+
+
+Tarefa responsável pela lógica de comando central e tomada de decisão. 
+
+Atua como o "{}cérebro"{} do sistema, integrando entradas do operador, dados de sensores e eventos do sistema para determinar o modo de operação (Manual/\+Automático) e gerenciar transições de estado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerenciador\+Dados} & Referência para o gerenciador de dados compartilhado. \\
+\hline
+{\em eventos} & Referência para o sistema de eventos e falhas. \\
+\hline
+\end{DoxyParams}

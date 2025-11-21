@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATR - Documentação do Projeto de Caminhão Autônomo</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --code-bg: #f8f9fa;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        nav {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: white;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        nav h3 {
+            padding-left: 20px;
+            font-size: 1.2rem;
+            color: #ecf0f1;
+            border-bottom: 1px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 10px 20px;
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            padding-left: 25px;
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 250px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h1 { border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; }
+        h2 { margin-top: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
+
+        /* Code Blocks & Structs */
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #e83e8c;
+            background-color: var(--code-bg);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .class-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .member-list dt {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+        
+        .member-list dd {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .tag-thread { background-color: #e1f5fe; color: #0288d1; }
+        .tag-struct { background-color: #f3e5f5; color: #7b1fa2; }
+        .tag-logic { background-color: #e8f5e9; color: #388e3c; }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h3>ATR - Automação</h3>
+    <ul>
+        <li><a href="#visao-geral">Visão Geral</a></li>
+        <li><a href="#arquitetura">Arquitetura do Sistema</a></li>
+        <li><a href="#estruturas-dados">Estruturas de Dados</a></li>
+        <li><a href="#gerenciador-dados">Gerenciador de Dados</a></li>
+        <li><a href="#tasks">Tasks (Threads)</a></li>
+        <li><a href="#dependencias">Dependências</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="visao-geral">
+        <h1>Visão Geral do Projeto</h1>
+        <p>
+            Este projeto implementa o software embarcado para um <strong>Caminhão de Mineração Autônomo</strong>. 
+            O sistema opera em tempo real, utilizando arquitetura multithread para processar sensores, 
+            tomar decisões de navegação e monitorar falhas simultaneamente.
+        </p>
+        <p>
+            O núcleo do sistema utiliza o padrão <em>Produtor-Consumidor</em> mediado por um gerenciador de dados thread-safe, 
+            permitindo que múltiplas tarefas (tratamento de sensores, lógica de comando, monitoramento) acessem o estado do veículo de forma segura.
+        </p>
+    </section>
+
+    <section id="arquitetura">
+        <h2>Arquitetura do Sistema</h2>
+        <p>O sistema é composto pelos seguintes módulos principais:</p>
+        <ul>
+            <li><strong>Main Loop (Simulação):</strong> Utiliza <code>boost::asio</code> para gerenciar o passo de tempo da simulação física da mina de forma assíncrona.</li>
+            <li><strong>Shared Memory (Gerenciador):</strong> Um monitor que protege o acesso aos dados dos sensores e comandos.</li>
+            <li><strong>Tasks:</strong> Threads independentes que realizam funções específicas (Leitura, Controle, Monitoramento).</li>
+        </ul>
+    </section>
+
+    <section id="estruturas-dados">
+        <h2>Estruturas de Dados Globais</h2>
+        <p>Definidas em <code>include/dados.h</code>. Estas estruturas são a base da comunicação entre as threads.</p>
+
+        <div class="class-card">
+            <h3><span class="tag tag-struct">struct</span> DadosSensores</h3>
+            <p>Armazena a telemetria crua ou pré-processada do veículo.</p>
+            <dl class="member-list">
+                <dt><code>int id</code></dt>
+                <dd>Identificador único do veículo na mina.</dd>
+                
+                <dt><code>int i_posicao_x, i_posicao_y</code></dt>
+                <dd>Coordenadas absolutas no solo.</dd>
+
+                <dt><code>int i_angulo_x</code></dt>
+                <dd>Direção angular (Head) do veículo (0 = Leste).</dd>
+
+                <dt><code>int i_temperatura</code></dt>
+                <dd>Temperatura do motor (-100 a +200). 
+                    <br><em>Alerta: > 95°C | Defeito: > 120°C</em></dd>
+
+                <dt><code>bool i_falha_eletrica, i_falha_hidraulica</code></dt>
+                <dd>Flags booleanas indicando falhas críticas nos subsistemas.</dd>
+
+                <dt><code>int o_aceleracao</code></dt>
+                <dd>Output de aceleração (-100% a 100%).</dd>
+
+                <dt><code>int o_direcao</code></dt>
+                <dd>Output de esterçamento (-180° a 180°).</dd>
+            </dl>
+        </div>
+
+        <div class="class-card">
+            <h3><span class="tag tag-struct">struct</span> EstadoVeiculo</h3>
+            <p>Define o modo de operação e saúde do sistema.</p>
+            <dl class="member-list">
+                <dt><code>bool e_defeito</code></dt>
+                <dd>1: Veículo em estado de falha (parada de emergência). 0: Operacional.</dd>
+                <dt><code>bool e_automatico</code></dt>
+                <dd>1: Modo Autônomo. 0: Modo Manual.</dd>
+            </dl>
+        </div>
+
+        <div class="class-card">
+            <h3><span class="tag tag-struct">struct</span> ComandosOperador</h3>
+            <p>Inputs recebidos da estação de controle ou joystick.</p>
+            <dl class="member-list">
+                <dt><code>bool c_automatico / c_man</code></dt>
+                <dd>Solicitação de troca de modo (Auto/Manual).</dd>
+                <dt><code>bool c_rearme</code></dt>
+                <dd>Tentativa de limpar o estado de defeito.</dd>
+                <dt><code>bool c_acelerar, c_direita, c_esquerda</code></dt>
+                <dd>Comandos de movimentação manual.</dd>
+            </dl>
+        </div>
+    </section>
+
+    <section id="gerenciador-dados">
+        <h2>Classe: GerenciadorDados</h2>
+        <p>Localização: <code>include/gerenciador_dados.h</code></p>
+        <p>Atua como um Monitor (Thread-Safe) protegendo os recursos compartilhados. Utiliza <code>std::mutex</code> para garantir exclusão mútua.</p>
+
+        <h3>Métodos Principais</h3>
+        <pre><code>// Define os dados dos sensores (usado pelas tasks produtoras)
+void setDados(const DadosSensores& dados);
+
+// Recupera dados (usado pelas tasks consumidoras)
+DadosSensores getDados();
+
+// Atualiza e recupera o estado da máquina de estados do veículo
+void setEstadoVeiculo(const EstadoVeiculo& estado);
+EstadoVeiculo getEstadoVeiculo() const;
+
+// Interface para comandos do operador
+void setComandosOperador(const ComandosOperador& comandos);</code></pre>
+    </section>
+
+    <section id="tasks">
+        <h2>Tasks (Threads do Sistema)</h2>
+        <p>As tarefas são funções executadas em threads paralelas (<code>std::thread</code>), instanciadas no <code>main.cpp</code>.</p>
+
+        <div class="class-card">
+            <h3><span class="tag tag-thread">Thread T1</span> task_tratamento_sensores</h3>
+            <p><strong>Responsabilidade:</strong> Aquisição de Dados e Filtragem.</p>
+            <p>Lê os dados brutos da <code>SimulacaoMina</code>, aplica filtros (como Média Móvel Exponencial) para reduzir ruído e escreve no <code>GerenciadorDados</code>.</p>
+            <p><em>Filtro implementado:</em> <code>calcular_media_movel_exponencial(valor_atual, media_anterior)</code>.</p>
+        </div>
+
+        <div class="class-card">
+            <h3><span class="tag tag-thread">Thread T2</span> task_logica_comando</h3>
+            <p><strong>Responsabilidade:</strong> Tomada de Decisão (Cérebro).</p>
+            <p>Consome dados do <code>GerenciadorDados</code>. Baseado no modo (Manual/Automático) e nos sensores, define a aceleração e direção do veículo.</p>
+            <p>Recebe também eventos do sistema (ex: falhas detectadas).</p>
+        </div>
+
+        <div class="class-card">
+            <h3><span class="tag tag-thread">Thread T3</span> task_monitoramento_falhas</h3>
+            <p><strong>Responsabilidade:</strong> Segurança e Diagnóstico.</p>
+            <p>Monitora continuamente os sensores em busca de anomalias (ex: temperatura > 120°C, flags de falha elétrica/hidráulica). Se uma falha é detectada, deve sinalizar para o sistema parar ou entrar em modo de segurança.</p>
+        </div>
+
+        <div class="class-card">
+            <h3><span class="tag tag-logic">Main Loop</span> Simulação Assíncrona</h3>
+            <p>Localização: <code>src/main.cpp</code></p>
+            <p>O loop principal não roda em uma thread <code>while(true)</code> comum, mas sim agendado via <code>boost::asio</code> e <code>SleepAsynch</code>.</p>
+            <ul>
+                <li>Gera o mapa da mina (<code>MineGenerator</code>).</li>
+                <li>Atualiza a física da simulação a cada 100ms.</li>
+                <li>Coordena a execução das threads de tasks.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="dependencias">
+        <h2>Dependências e Bibliotecas</h2>
+        <ul>
+            <li><strong>C++ Standard Library (STL):</strong> Threading, Mutex, Vector, Functional.</li>
+            <li><strong>Boost.Asio:</strong> Para gerenciamento assíncrono de temporizadores e I/O (Contexto de execução da simulação).</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Gerado automaticamente com base nos arquivos fonte do projeto ATR-TP.</p>
+    </footer>
+</main>
+
+</body>
+</html>

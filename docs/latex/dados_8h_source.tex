@@ -1,0 +1,71 @@
+\doxysection{dados.\+h}
+\hypertarget{dados_8h_source}{}\label{dados_8h_source}\index{include/dados.h@{include/dados.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DADOS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DADOS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDadosSensores}{DadosSensores}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ \textcolor{comment}{//\ Identificador\ do\ veículo}}
+\DoxyCodeLine{00011\ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ i\_posicao\_x;\ \textcolor{comment}{//\ Posição\ do\ veículo\ no\ eixo\ x,\ com\ relação\ }}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ um\ referencial\ absoluto\ em\ solo\ obtido}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pelos\ sensores\ de\ posição.}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ i\_posicao\_y;\ \textcolor{comment}{//\ Posição\ do\ veículo\ no\ eixo\ y,\ com\ relação\ }}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ um\ referencial\ absoluto\ em\ solo\ obtido}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pelos\ sensores\ de\ posição.}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ i\_angulo\_x;\ \textcolor{comment}{//\ Direção\ angular\ da\ frente\ do\ veículo\ com}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ relação\ à\ direção\ leste\ (leste\ =\ ângulo}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ zero),\ obtido\ pelos\ sensores\ inerciais.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ i\_temperatura;\ \textcolor{comment}{//\ Temperatura\ do\ motor\ (varia\ entre\ -\/100\ e}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ +200).\ Essa\ temperatura\ possui\ um\ nível}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ de\ alerta\ se\ 𝑇\ >\ 95\ °C\ e\ gera\ defeito\ se}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 𝑇\ >\ 120\ °C}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ i\_falha\_eletrica;\ \textcolor{comment}{//\ Se\ for\ true,\ indica\ presença\ de\ falha\ no}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sistema\ elétrico\ do\ veículo}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ i\_falha\_hidraulica;\ \textcolor{comment}{//\ Se\ for\ true,\ indica\ presença\ de\ falha\ no}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sistema\ hidráulico\ do\ veículo}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ o\_aceleracao;\ \textcolor{comment}{//Determina\ a\ aceleração\ do\ veículo\ em}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ percentual\ (-\/100\ a\ 100\%)}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ o\_direcao;\ \textcolor{comment}{//\ Determina\ a\ direção\ do\ veículo\ em\ graus\ (-\/180\ a\ 180°).\ Ao\ acelerar,}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ veículo\ se\ moverá\ nessa\ direção.}}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEstadoVeiculo}{EstadoVeiculo}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ e\_defeito;\ \textcolor{comment}{//Estado\ que\ identifica\ a\ presença\ de}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ defeito\ ou\ defeito\ não\ reconhecido\ pelo}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ operador\ (1:defeito,\ 0:\ sem\ defeito)}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ e\_automatico;\ \textcolor{comment}{//Estado\ que\ identifica\ o\ modo\ de\ operação}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ veículo\ (0:\ manual,\ 1:\ automático)}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structComandosOperador}{ComandosOperador}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ c\_automatico;\ \textcolor{comment}{//\ Se\ true,\ indica\ que\ o\ operador\ deseja}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ colocar\ o\ veículo\ em\ modo\ automático.}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ false,\ indica\ que\ o\ operador\ deseja}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ colocar\ o\ veículo\ em\ modo\ manual.}}
+\DoxyCodeLine{00064\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ c\_man;\ \textcolor{comment}{//\ Se\ true,\ indica\ que\ o\ operador\ deseja}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ colocar\ o\ veículo\ em\ modo\ manual.}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ c\_rearme;\ \textcolor{comment}{//Comando\ para\ rearmar\ algum\ defeito\ que}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tenha\ ocorrido\ no\ caminhão.}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ c\_acelerar;\ \textcolor{comment}{//\ Comando\ para\ acelerar\ o\ veículo.}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ c\_direita;\ \textcolor{comment}{//\ Comando\ para\ virar\ o\ veículo\ à\ direita.}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ c\_esquerda;\ \textcolor{comment}{//\ Comando\ para\ virar\ o\ veículo\ à\ esquerda.}}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DADOS\_H}}
+
+\end{DoxyCode}

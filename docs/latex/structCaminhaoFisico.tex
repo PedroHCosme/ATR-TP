@@ -1,0 +1,57 @@
+\doxysection{Caminhao\+Fisico Struct Reference}
+\hypertarget{structCaminhaoFisico}{}\label{structCaminhaoFisico}\index{CaminhaoFisico@{CaminhaoFisico}}
+
+
+Representa o estado físico completo de um caminhão na simulação.  
+
+
+
+
+{\ttfamily \#include $<$simulacao\+\_\+mina.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structCaminhaoFisico_a3bc5369b046c6aec35b23f133184d7ee}\label{structCaminhaoFisico_a3bc5369b046c6aec35b23f133184d7ee} 
+int {\bfseries id}
+\begin{DoxyCompactList}\small\item\em Identificador único do caminhão. \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_a067a4d94e647bc0e7f0fcb05a8861f32}\label{structCaminhaoFisico_a067a4d94e647bc0e7f0fcb05a8861f32} 
+float {\bfseries i\+\_\+posicao\+\_\+x}
+\item 
+\Hypertarget{structCaminhaoFisico_a362bfe9d3dbde18070a4c7f6babbc156}\label{structCaminhaoFisico_a362bfe9d3dbde18070a4c7f6babbc156} 
+float {\bfseries i\+\_\+posicao\+\_\+y}
+\begin{DoxyCompactList}\small\item\em Posição global em metros. \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_af1cf5f7b3908a89fe68577cbb06f5f7d}\label{structCaminhaoFisico_af1cf5f7b3908a89fe68577cbb06f5f7d} 
+float {\bfseries i\+\_\+angulo\+\_\+x}
+\begin{DoxyCompactList}\small\item\em Orientação em graus (0 = Leste). \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_ac57e05b1fc08fad70c91f5bf0b249673}\label{structCaminhaoFisico_ac57e05b1fc08fad70c91f5bf0b249673} 
+float {\bfseries velocidade}
+\begin{DoxyCompactList}\small\item\em Velocidade linear atual em m/s. \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_a247ed97c8438b4c839df1e5a226f2a51}\label{structCaminhaoFisico_a247ed97c8438b4c839df1e5a226f2a51} 
+float {\bfseries o\+\_\+aceleracao}
+\begin{DoxyCompactList}\small\item\em Comando de aceleração atual (m/s²). \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_a6989fe66a934a78e83f34d1383c11b47}\label{structCaminhaoFisico_a6989fe66a934a78e83f34d1383c11b47} 
+float {\bfseries o\+\_\+direcao}
+\begin{DoxyCompactList}\small\item\em Comando de direção atual (graus). \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_acb737a26b562c1246d40f8f7a31852af}\label{structCaminhaoFisico_acb737a26b562c1246d40f8f7a31852af} 
+float {\bfseries i\+\_\+temperatura}
+\begin{DoxyCompactList}\small\item\em Temperatura interna do motor (°C). \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_a0646abc619463ae2bfa4b61ec2e3c834}\label{structCaminhaoFisico_a0646abc619463ae2bfa4b61ec2e3c834} 
+bool {\bfseries i\+\_\+falha\+\_\+eletrica}
+\begin{DoxyCompactList}\small\item\em Flag de falha elétrica injetada. \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_a670fb96f25a7d5ab6a416254ff4adab2}\label{structCaminhaoFisico_a670fb96f25a7d5ab6a416254ff4adab2} 
+bool {\bfseries i\+\_\+falha\+\_\+hidraulica}
+\begin{DoxyCompactList}\small\item\em Flag de falha hidráulica injetada. \end{DoxyCompactList}\item 
+\Hypertarget{structCaminhaoFisico_a0165e8722dc352884b627297120e8891}\label{structCaminhaoFisico_a0165e8722dc352884b627297120e8891} 
+int {\bfseries temperatuta\+\_\+ambiente}
+\begin{DoxyCompactList}\small\item\em Temperatura ambiente local (°C). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa o estado físico completo de um caminhão na simulação. 
+
+Contém variáveis de estado contínuas (posição float, velocidade, temperatura) que representam a "{}verdade"{} do mundo físico, antes de serem discretizadas ou ruidosas pelos sensores. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{simulacao__mina_8h}{simulacao\+\_\+mina.\+h}}\end{DoxyCompactItemize}

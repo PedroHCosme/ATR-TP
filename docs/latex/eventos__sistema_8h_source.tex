@@ -1,0 +1,30 @@
+\doxysection{eventos\+\_\+sistema.\+h}
+\hypertarget{eventos__sistema_8h_source}{}\label{eventos__sistema_8h_source}\index{include/eventos\_sistema.h@{include/eventos\_sistema.h}}
+\mbox{\hyperlink{eventos__sistema_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ EVENTOS\_SISTEMA\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ EVENTOS\_SISTEMA\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEventosSistema}{EventosSistema}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ std::mutex\ mtx;\ }
+\DoxyCodeLine{00025\ \ \ \ \ std::condition\_variable\ cv\_falha;\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ falha\_critica\_detectada\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ codigo\_falha\ =\ 0;\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventosSistema_a2c9ca5ae94ceffbe0b6e87a96d051443}{sinalizar\_falha}}(\textcolor{keywordtype}{int}\ codigo);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventosSistema_ab7205d047616c7a0ba4491b1126e1be4}{verificar\_estado\_falha}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventosSistema_a3c3dcf9d62fcae4561baf05b5c7f51cc}{resetar\_falhas}}();}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EVENTOS\_SISTEMA\_H}}
+
+\end{DoxyCode}

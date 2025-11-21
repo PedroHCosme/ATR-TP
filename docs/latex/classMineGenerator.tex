@@ -1,0 +1,71 @@
+\doxysection{Mine\+Generator Class Reference}
+\hypertarget{classMineGenerator}{}\label{classMineGenerator}\index{MineGenerator@{MineGenerator}}
+
+
+Gera um mapa de mina (labirinto) usando o algoritmo Recursive Backtracker.  
+
+
+
+
+{\ttfamily \#include $<$mine\+\_\+generator.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMineGenerator_aea4fff45ec4e51881209127f1b3f08ab}{Mine\+Generator}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Construtor. \end{DoxyCompactList}\item 
+\Hypertarget{classMineGenerator_a07d191caa0f7ec520e4fa7630b33b865}\label{classMineGenerator_a07d191caa0f7ec520e4fa7630b33b865} 
+void {\bfseries generate} ()
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo de geração da mina. \end{DoxyCompactList}\item 
+\Hypertarget{classMineGenerator_a450b9129b3f4d0f991c2c6e42919db91}\label{classMineGenerator_a450b9129b3f4d0f991c2c6e42919db91} 
+void {\bfseries print} ()
+\begin{DoxyCompactList}\small\item\em Imprime o mapa no console para visualização. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \& \mbox{\hyperlink{classMineGenerator_a9340316433784974b3b5253963b90872}{get\+Minefield}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o mapa gerado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gera um mapa de mina (labirinto) usando o algoritmo Recursive Backtracker. 
+
+O mapa é representado por uma grid onde\+: 0 = Espaço vazio (caminho) 1 = Parede (rocha) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMineGenerator_aea4fff45ec4e51881209127f1b3f08ab}\index{MineGenerator@{MineGenerator}!MineGenerator@{MineGenerator}}
+\index{MineGenerator@{MineGenerator}!MineGenerator@{MineGenerator}}
+\doxysubsubsection{\texorpdfstring{MineGenerator()}{MineGenerator()}}
+{\footnotesize\ttfamily \label{classMineGenerator_aea4fff45ec4e51881209127f1b3f08ab} 
+Mine\+Generator\+::\+Mine\+Generator (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Construtor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Largura do mapa (será ajustada para ímpar se necessário). \\
+\hline
+{\em height} & Altura do mapa (será ajustada para ímpar se necessário). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMineGenerator_a9340316433784974b3b5253963b90872}\index{MineGenerator@{MineGenerator}!getMinefield@{getMinefield}}
+\index{getMinefield@{getMinefield}!MineGenerator@{MineGenerator}}
+\doxysubsubsection{\texorpdfstring{getMinefield()}{getMinefield()}}
+{\footnotesize\ttfamily \label{classMineGenerator_a9340316433784974b3b5253963b90872} 
+const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \& Mine\+Generator\+::get\+Minefield (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna o mapa gerado. 
+
+\begin{DoxyReturn}{Returns}
+Referência constante para a matriz do mapa. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/mine\+\_\+generator.\+h\item 
+src/mine\+\_\+generator.\+cpp\end{DoxyCompactItemize}
