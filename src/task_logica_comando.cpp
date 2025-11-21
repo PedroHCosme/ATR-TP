@@ -3,26 +3,28 @@
 #include <chrono>
 #include <thread>
 
-void task_logica_comando(GerenciadorDados& gerenciadorDados) {
+void task_logica_comando(GerenciadorDados& gerenciadorDados, EventosSistema& eventos) {
     while (true) {
         DadosSensores dados = gerenciadorDados.getDados();
         ComandosOperador comandos = gerenciadorDados.getComandosOperador();
         EstadoVeiculo estado = gerenciadorDados.getEstadoVeiculo();
 
-        // Lógica de decisão com base nos dados, comandos e estado
-        // Exemplo: verificar temperatura
-        if (dados.i_temperatura > 120) {
+        if (eventos.verificar_estado_falha()) {
             estado.e_defeito = true;
-            std::cout << "Defeito: Temperatura do motor muito alta!" << std::endl;
-        } else if (dados.i_temperatura > 95) {
-            std::cout << "Alerta: Temperatura do motor elevada!" << std::endl;
+            std::cout << "[Logica] Falha crítica detectada! Código de falha: " << eventos.get_codigo_falha() << "\n";
+            // adicionar lógica para lidar com falha
         }
-
         // Exemplo: Mudar modo de operação
         if (comandos.c_automatico) {
             estado.e_automatico = true;
         } else if (comandos.c_man) {
             estado.e_automatico = false;
+        }
+
+        // Rearme do sistema (limpa defeito)
+        if (comandos.c_rearme && estado.e_defeito) {
+            std::cout << "[Logica] Comando de REARME recebido. Limpando estado de defeito.\n";
+            estado.e_defeito = false;
         }
 
         gerenciadorDados.atualizarEstadoVeiculo(estado);

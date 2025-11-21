@@ -1,5 +1,5 @@
-#ifndef TASK_LOGICA_COMANDO_H
-#define TASK_LOGICA_COMANDO_H
+#ifndef TASK_CONTROLE_NAVEGACAO_H
+#define TASK_CONTROLE_NAVEGACAO_H
 
 #include "gerenciador_dados.h"
 
@@ -12,6 +12,6 @@
  *
  * @param gerenciadorDados Referência para o objeto GerenciadorDados.
  */
-void task_logica_comando(GerenciadorDados& gerenciadorDados, EventosSistema& eventos);
+void task_controle_navegacao(GerenciadorDados& gerenciadorDados);
 
-#endif // TASK_LOGICA_COMANDO_H
+#endif // TASK_CONTROLE_NAVEGACAO_H
