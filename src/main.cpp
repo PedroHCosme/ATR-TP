@@ -1,10 +1,13 @@
 #include <iostream>
 #include <thread>
+#include <functional> 
+#include <boost/asio.hpp> 
 #include "gerenciador_dados.h"
 #include "task_tratamento_sensores.h"
 #include "task_logica_comando.h"
 #include "mine_generator.h"
 #include "simulacao_mina.h"
+#include "utils/sleep_asynch.h"
 
 /**
  * @brief Função principal do sistema.
@@ -15,12 +18,16 @@
  * @return int Código de saída do programa.
  */
 int main() {
+    boost::asio::io_context io; // Contexto para operações assíncronas
     // Gera e imprime o mapa da mina
     std::cout << "Gerando mapa da mina..." << std::endl;
-    MineGenerator mineGen(61, 61); // Tamanho 21x21
+    MineGenerator mineGen(7, 7); // Tamanho 31x31
     mineGen.generate();
     mineGen.print();
     std::cout << "Mapa gerado com sucesso!" << std::endl;
+
+    //Instancia Sleep assincrono
+    SleepAsynch sleepAsynch(io);
 
     // Instancia o gerenciador de dados compartilhado
     GerenciadorDados gerenciadorDados;
@@ -35,28 +42,46 @@ int main() {
     ComandosOperador comandosIniciais = {false, true, false, false, false, false}; // Modo manual, sem outros comandos
     gerenciadorDados.setComandosOperador(comandosIniciais);
 
-    // Cria e inicia as threads
+    // Loop de Simulação Assíncrona da Mina
 
-    // t_sim: Thread dedicada à física do mundo
-    std::thread t_sim([&simulacao]() {
-        while(true) {
-            simulacao.atualizar_passo_tempo();
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        }
+    std::function<void()> loop_sim_mina;
+    
+    loop_sim_mina = [&simulacao, &sleepAsynch, &loop_sim_mina]() {
+        // 1. Executa a lógica
+        simulacao.atualizar_passo_tempo();
+
+        // 2. Agenda a próxima execução
+        sleepAsynch.sleep_for(std::chrono::milliseconds(100), 
+            [&loop_sim_mina](const boost::system::error_code& ec) {
+                if (!ec) {
+                    // Se não houve erro (ex: cancelamento), chama a função de novo
+                    loop_sim_mina(); 
+                }
+            }
+        );
+    };
+
+    // Dá o pontapé inicial no loop
+    loop_sim_mina();
+
+    // --- DEFINIÇÃO DAS THREADS ---
+
+    // t_sim: roda o motor do ASIO. 
+    // O io.run() vai ficar preso executando o loop_sim_mina indefinidamente.
+    std::thread t_sim([&io]() {
+        // O io_context.run() processa os timers e callbacks
+        boost::asio::executor_work_guard<boost::asio::io_context::executor_type> work_guard(io.get_executor());
+        io.run();
     });
 
-    // t1: Produtora de dados (Lê sensores e escreve no buffer)
-    // Agora passa a referência da simulação e o ID do caminhão (0)
+    // t1 e t2 continuam iguais (elas são threads independentes)
     std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(simulacao), 0);
-    
-    // t2: Consumidora de dados (Lê do buffer e toma decisões)
     std::thread t2(task_logica_comando, std::ref(gerenciadorDados));
 
-    // Aguarda as threads terminarem (loop infinito nas tasks, então o main fica bloqueado aqui)
+    // Aguarda
     t_sim.join();
     t1.join();
     t2.join();
 
     return 0;
 }
-
