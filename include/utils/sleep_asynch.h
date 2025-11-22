@@ -34,13 +34,14 @@ public:
     /**
      * @brief Inicia uma espera assíncrona.
      * 
-     * @param duration Duração do tempo de espera (em milissegundos).
+     * @param period Duração do tempo de espera (em milissegundos).
      * @param on_complete Função callback a ser chamada quando o tempo expirar.
      */
-    void sleep_for(std::chrono::milliseconds duration, Callback on_complete);
+    void wait_next_tick(std::chrono::milliseconds period, Callback on_complete);
 
 private:
     boost::asio::steady_timer timer_; ///< Temporizador interno do Boost.Asio.
+    std::chrono::steady_clock::time_point next_wake_time_; ///< Próximo tempo de despertar programado.
 };
 
 #endif // SLEEP_ASYNCH_H

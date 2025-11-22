@@ -52,7 +52,7 @@ int main() {
         simulacao.atualizar_passo_tempo();
 
         // 2. Agenda a próxima execução
-        sleepAsynch.sleep_for(std::chrono::milliseconds(100), 
+        sleepAsynch.wait_next_tick(std::chrono::milliseconds(100), 
             [&loop_sim_mina](const boost::system::error_code& ec) {
                 if (!ec) {
                     // Se não houve erro (ex: cancelamento), chama a função de novo

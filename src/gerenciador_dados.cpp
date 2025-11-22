@@ -16,7 +16,6 @@ GerenciadorDados::GerenciadorDados(): dadosSensores(TAMANHO_BUFFER) {
  */
 void GerenciadorDados::setDados(const DadosSensores& dados) {
     std::unique_lock<std::mutex> lock(mtx);
-    cv_dados.wait(lock, [this] { return dadosSensores.size() < dadosSensores.capacity(); });
     //O push_back em um circular_buffer sobrescreve o dado mais antigo se o buffer estiver cheio.
     dadosSensores.push_back(dados);
     cv_dados.notify_one();

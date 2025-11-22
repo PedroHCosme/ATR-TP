@@ -13,27 +13,6 @@
 #include "dados.h"
 
 /**
- * @struct CaminhaoFisico
- * @brief Representa o estado físico completo de um caminhão na simulação.
- * 
- * Contém variáveis de estado contínuas (posição float, velocidade, temperatura)
- * que representam a "verdade" do mundo físico, antes de serem discretizadas
- * ou ruidosas pelos sensores.
- */
-struct CaminhaoFisico {
-    int id;                         ///< Identificador único do caminhão.
-    float i_posicao_x, i_posicao_y; ///< Posição global em metros.
-    float i_angulo_x;               ///< Orientação em graus (0 = Leste).
-    float velocidade;               ///< Velocidade linear atual em m/s.
-    float o_aceleracao;             ///< Comando de aceleração atual (m/s²).
-    float o_direcao;                ///< Comando de direção atual (graus).
-    float i_temperatura;            ///< Temperatura interna do motor (°C).
-    bool i_falha_eletrica;          ///< Flag de falha elétrica injetada.
-    bool i_falha_hidraulica;        ///< Flag de falha hidráulica injetada.
-    int temperatuta_ambiente;       ///< Temperatura ambiente local (°C).
-};
-
-/**
  * @class SimulacaoMina
  * @brief Motor de simulação física do ambiente de mineração.
  * 
