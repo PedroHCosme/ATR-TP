@@ -33,7 +33,7 @@ SimulacaoMina::SimulacaoMina(const std::vector<std::vector<char>>& mapa_ref, int
         c.i_angulo_x = 0.0f;
         c.velocidade = 20.0f; // Velocidade inicial
         c.i_temperatura = 85; // Temperatura inicial
-        c.temperatuta_ambiente = 25;
+        c.temperatura_ambiente = 12;
         c.i_falha_eletrica = false;
         c.i_falha_hidraulica = false;
         
@@ -76,7 +76,7 @@ void SimulacaoMina::modelo_maquina_termica(CaminhaoFisico& caminhao) {
     // Modelo termodinâmico simples
     // Aquece proporcionalmente à velocidade, esfria em direção à temperatura ambiente
     float heat_gen = std::abs(caminhao.velocidade) * 0.5f; 
-    float heat_loss = 0.1f * (caminhao.i_temperatura - caminhao.temperatuta_ambiente);
+    float heat_loss = 0.1f * (caminhao.i_temperatura - caminhao.temperatura_ambiente);
     
     caminhao.i_temperatura += (heat_gen - heat_loss) * dt;
 }

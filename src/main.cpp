@@ -8,6 +8,7 @@
 // #include "task_monitoramento_falhas.h"
 #include "mine_generator.h"
 #include "simulacao_mina.h"
+#include "drivers/simulacao_driver.h"
 #include "utils/sleep_asynch.h"
 
 /**
@@ -29,12 +30,16 @@ int main() {
 
     //Instancia Sleep assincrono
     SleepAsynch sleepAsynch(io);
+    
 
     // Instancia o gerenciador de dados compartilhado
     GerenciadorDados gerenciadorDados;
 
     // Instancia a Simulação Física
     SimulacaoMina simulacao(mineGen.getMinefield(), 1); // 1 caminhão
+    
+    //Instancia o Driver de Simulação
+    SimulacaoDriver simulacaoDriver(simulacao);
 
     // Inicializa o estado do veículo e os comandos do operador
     EstadoVeiculo estadoInicial = {false, false}; // Sem defeito, modo manual
@@ -85,7 +90,7 @@ int main() {
     });
 
     // t1 e t2 continuam iguais (elas são threads independentes)
-    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(simulacao), 0);
+    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(simulacaoDriver), 0);
     // std::thread t2(task_logica_comando, std::ref(gerenciadorDados), std::ref(eventos));
 
     // t3: Monitoramento de Falhas (Lê sensores e envia eventos para a lógica de comando)

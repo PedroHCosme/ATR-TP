@@ -32,7 +32,7 @@ float calcular_media_movel_exponencial(float valor_atual, float media_anterior) 
  * @param simulacao Referência para a simulação física.
  * @param id_caminhao ID do caminhão a ser monitorado.
  */
-void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, SimulacaoMina& simulacao, int id_caminhao) {
+void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, ISensorDriver& driver, int id_caminhao) {
     std::default_random_engine generator;
     
     // Configuração dos geradores de ruído
@@ -48,8 +48,8 @@ void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, SimulacaoMina&
 
     while (true) {
         // --- 1. Leitura do Estado Real da Simulação ---
-        CaminhaoFisico estadoReal = simulacao.getEstadoReal(id_caminhao);
-
+        CaminhaoFisico estadoReal = driver.readSensorData(id_caminhao);
+        
         // --- 2. Aplicação de Ruído (Simulação de Sensores) ---
         float raw_pos_x_f = estadoReal.i_posicao_x + noise_pos(generator);
         float raw_pos_y_f = estadoReal.i_posicao_y + noise_pos(generator);

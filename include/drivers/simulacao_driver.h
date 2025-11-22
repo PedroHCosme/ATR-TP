@@ -15,7 +15,7 @@ class SimulacaoDriver : public ISensorDriver {
     //implementação do método da interface
     CaminhaoFisico readSensorData(int id_caminhao) override {
         return simulacao.getEstadoReal(id_caminhao);
-        
-}
+    }
+};
 
 #endif // SIMULACAO_DRIVER_H

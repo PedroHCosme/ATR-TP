@@ -7,6 +7,7 @@
 #define TASK_TRATAMENTO_SENSORES_H
 
 #include "gerenciador_dados.h"
+#include "interfaces/i_sensor_driver.h"
 #include <vector>
 
 class SimulacaoMina;
@@ -22,7 +23,7 @@ class SimulacaoMina;
  * @param simulacao Referência para a simulação física de onde a "verdade" é lida.
  * @param id_caminhao ID do caminhão cujos sensores estão sendo lidos.
  */
-void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, SimulacaoMina& simulacao, int id_caminhao);
+void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, ISensorDriver& driver, int id_caminhao);
 
 /**
  * @brief Calcula o próximo valor da Média Móvel Exponencial (EMA).
