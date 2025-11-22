@@ -5,9 +5,7 @@
  * @brief Construtor da classe GerenciadorDados.
  * Inicializa o buffer de dados de sensores com um tamanho pré-definido.
  */
-GerenciadorDados::GerenciadorDados() {
-    dadosSensores.resize(TAMANHO_BUFFER);
-    // Inicialização de outros membros se necessário
+GerenciadorDados::GerenciadorDados(): dadosSensores(TAMANHO_BUFFER) {
 }
 
 /**
@@ -18,10 +16,9 @@ GerenciadorDados::GerenciadorDados() {
  */
 void GerenciadorDados::setDados(const DadosSensores& dados) {
     std::unique_lock<std::mutex> lock(mtx);
-    cv_dados.wait(lock, [this] { return contador_dados < TAMANHO_BUFFER; });
-    dadosSensores[indice_escrita] = dados;
-    indice_escrita = (indice_escrita + 1) % TAMANHO_BUFFER;
-    contador_dados++;
+    cv_dados.wait(lock, [this] { return dadosSensores.size() < dadosSensores.capacity(); });
+    //O push_back em um circular_buffer sobrescreve o dado mais antigo se o buffer estiver cheio.
+    dadosSensores.push_back(dados);
     cv_dados.notify_one();
 }
 
@@ -33,10 +30,9 @@ void GerenciadorDados::setDados(const DadosSensores& dados) {
  */
 DadosSensores GerenciadorDados::getDados() {
     std::unique_lock<std::mutex> lock(mtx);
-    cv_dados.wait(lock, [this] { return contador_dados > 0; });
-    DadosSensores dados = dadosSensores[indice_leitura];
-    indice_leitura = (indice_leitura + 1) % TAMANHO_BUFFER;
-    contador_dados--;
+    cv_dados.wait(lock, [this] { return dadosSensores.size() > 0; });
+    DadosSensores dados = dadosSensores.front();
+    dadosSensores.pop_front();
     cv_dados.notify_one();
     return dados;
 }
@@ -93,4 +89,13 @@ void GerenciadorDados::atualizarEstadoVeiculo(const EstadoVeiculo& estado) {
 void GerenciadorDados::atualizarComandosOperador(const ComandosOperador& comandos) {
     std::lock_guard<std::mutex> lock(mtx);
     comandosOperador = comandos;
+}
+
+/**
+ * @brief Obtém o número atual de elementos no buffer.
+ * @return int Número de elementos no buffer.
+ */
+int GerenciadorDados::getContadorDados() const {
+    std::lock_guard<std::mutex> lock(mtx);
+    return dadosSensores.size();
 }

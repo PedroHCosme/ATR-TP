@@ -6,7 +6,7 @@
 #ifndef GERENCIADOR_DADOS_H
 #define GERENCIADOR_DADOS_H
 
-#include <vector>
+#include <boost/circular_buffer.hpp>
 #include <mutex>
 #include <condition_variable>
 #include "dados.h"
@@ -22,11 +22,7 @@
 class GerenciadorDados {
 private:
     const int TAMANHO_BUFFER = 200; ///< Tamanho máximo do buffer circular.
-    std::vector<DadosSensores> dadosSensores; ///< Buffer circular para armazenar histórico de leituras.
-    int indice_escrita = 0; ///< Índice para a próxima escrita no buffer.
-    int indice_leitura = 0; ///< Índice para a próxima leitura no buffer.
-    int contador_dados = 0; ///< Contador de elementos atualmente no buffer.
-
+    boost::circular_buffer<DadosSensores> dadosSensores; ///< Buffer circular para armazenar histórico de leituras.
     EstadoVeiculo estadoVeiculo; ///< Estado atual do veículo.
     ComandosOperador comandosOperador; ///< Comandos atuais do operador.
 
@@ -94,6 +90,12 @@ public:
      * @param comandos Novos comandos.
      */
     void atualizarComandosOperador(const ComandosOperador& comandos);
+
+    /**
+     * @brief Obtém o número atual de elementos no buffer.
+     * @return int Número de elementos no buffer.
+     */
+    int getContadorDados() const;
 };
 
 #endif // GERENCIADOR_DADOS_H

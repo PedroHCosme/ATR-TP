@@ -4,8 +4,8 @@
 #include <boost/asio.hpp> 
 #include "gerenciador_dados.h"
 #include "task_tratamento_sensores.h"
-#include "task_logica_comando.h"
-#include "task_monitoramento_falhas.h"
+// #include "task_logica_comando.h"
+// #include "task_monitoramento_falhas.h"
 #include "mine_generator.h"
 #include "simulacao_mina.h"
 #include "utils/sleep_asynch.h"
@@ -65,6 +65,15 @@ int main() {
     // Dá o pontapé inicial no loop
     loop_sim_mina();
 
+    // --- Thread para monitoramento do buffer ---
+    std::thread t_monitor([&gerenciadorDados]() {
+        while(true) {
+            int tamanho = gerenciadorDados.getContadorDados();
+            std::cout << "[BUFFER] Tamanho atual: " << tamanho << "/200" << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    });
+
     // --- DEFINIÇÃO DAS THREADS ---
 
     // t_sim: roda o motor do ASIO. 
@@ -77,19 +86,17 @@ int main() {
 
     // t1 e t2 continuam iguais (elas são threads independentes)
     std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(simulacao), 0);
-    std::thread t2(task_logica_comando, std::ref(gerenciadorDados));
+    // std::thread t2(task_logica_comando, std::ref(gerenciadorDados), std::ref(eventos));
 
     // t3: Monitoramento de Falhas (Lê sensores e envia eventos para a lógica de comando)
-    std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(simulacao), 0);
-
-    // t3: Monitoramento de Falhas (Lê sensores e envia eventos para a lógica de comando)
-    std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(simulacao), 0);
+    // std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(simulacao), std::ref(eventos));
 
     // Aguarda
     t_sim.join();
+    t_monitor.join();
     t1.join();
-    t2.join();
-    t3.join();
+    // t2.join();
+    // t3.join();
 
     return 0;
 }
