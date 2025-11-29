@@ -2,9 +2,10 @@
 #define SIMULACAO_DRIVER_H
 
 #include "../interfaces/i_sensor_driver.h"
+#include "../interfaces/i_veiculo_driver.h"
 #include "../simulacao_mina.h"
 
-class SimulacaoDriver : public ISensorDriver {
+class SimulacaoDriver : public ISensorDriver, public IVeiculoDriver {
     private:
     //referencia para a simulação física
     SimulacaoMina& simulacao;
@@ -12,10 +13,11 @@ class SimulacaoDriver : public ISensorDriver {
     //construtor
     SimulacaoDriver(SimulacaoMina& sim) : simulacao(sim) {}
 
-    //implementação do método da interface
-    CaminhaoFisico readSensorData(int id_caminhao) override {
-        return simulacao.getEstadoReal(id_caminhao);
-    }
+    //declaração do método da interface do sensor
+    CaminhaoFisico readSensorData(int id_caminhao) override;
+
+    //declaração do método da interface do veículo
+    void setAtuadores(int aceleracao, int direcao) override;
 };
 
 #endif // SIMULACAO_DRIVER_H

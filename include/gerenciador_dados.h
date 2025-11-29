@@ -11,90 +11,57 @@
 #include <condition_variable>
 #include "dados.h"
 
-/**
- * @class GerenciadorDados
- * @brief Classe que implementa o padrão Monitor para gerenciar o acesso aos dados compartilhados.
- * 
- * Esta classe encapsula o buffer circular de dados dos sensores, bem como o estado
- * atual do veículo e os comandos do operador. Fornece métodos thread-safe para
- * leitura e escrita, garantindo a integridade dos dados em um ambiente multithread.
- */
 class GerenciadorDados {
 private:
-    const int TAMANHO_BUFFER = 200; ///< Tamanho máximo do buffer circular.
-    boost::circular_buffer<DadosSensores> dadosSensores; ///< Buffer circular para armazenar histórico de leituras.
-    EstadoVeiculo estadoVeiculo; ///< Estado atual do veículo.
-    ComandosOperador comandosOperador; ///< Comandos atuais do operador.
+    const int TAMANHO_BUFFER = 200;
+    
+    // STREAM: Histórico para log/auditoria (FIFO)
+    boost::circular_buffer<DadosSensores> bufferHistorico;
+    
+    // SNAPSHOT: Estado mais recente para controle em tempo real (LVC - Last Value Cache)
+    DadosSensores ultimoEstado;
 
-    mutable std::mutex mtx; ///< Mutex para exclusão mútua.
-    std::condition_variable cv_dados; ///< Variável de condição para sincronização de produtores/consumidores.
+    EstadoVeiculo estadoVeiculo;
+    ComandosOperador comandosOperador;
+
+    mutable std::mutex mtx; 
+    std::condition_variable cv_dados; 
 
 public:
-    /**
-     * @brief Construtor padrão. Inicializa o buffer e os estados.
-     */
     GerenciadorDados();
 
     /**
-     * @brief Insere novos dados de sensores no buffer circular.
-     * 
-     * Atua como Produtor. Se o buffer estiver cheio, sobrescreve o dado mais antigo.
-     * Notifica consumidores aguardando dados.
-     * 
-     * @param dados Estrutura contendo as leituras dos sensores.
+     * @brief PRODUTOR: Insere dados no sistema.
+     * Atualiza tanto o histórico (buffer) quanto o snapshot (estado atual).
+     * Thread-safe e não bloqueante (sobrescreve se buffer cheio).
      */
     void setDados(const DadosSensores& dados);
 
     /**
-     * @brief Recupera o dado mais antigo do buffer circular.
-     * 
-     * Atua como Consumidor. Bloqueia a thread se o buffer estiver vazio até que
-     * novos dados estejam disponíveis.
-     * 
-     * @return DadosSensores Estrutura com os dados lidos.
+     * @brief CONSUMIDOR DE LOG: Retira o dado mais antigo do histórico.
+     * Use apenas para tarefas que precisam salvar o histórico (Coletor de Dados).
+     * BLOQUEANTE: Espera se o buffer estiver vazio.
      */
-    DadosSensores getDados();
+    DadosSensores consumirDados();
 
     /**
-     * @brief Atualiza o estado operacional do veículo.
-     * @param estado Novo estado do veículo.
+     * @brief LEITOR DE CONTROLE: Lê o estado mais recente sem remover do buffer.
+     * Use para Navegação e Lógica de Comando.
+     * NÃO BLOQUEANTE: Retorna imediatamente a última cópia conhecida.
      */
+    DadosSensores lerUltimoEstado() const;
+
+    // --- Getters e Setters de Estado (Mantidos iguais) ---
     void setEstadoVeiculo(const EstadoVeiculo& estado);
-
-    /**
-     * @brief Obtém o estado operacional atual do veículo.
-     * @return EstadoVeiculo Estado atual.
-     */
     EstadoVeiculo getEstadoVeiculo() const;
 
-    /**
-     * @brief Define os comandos do operador.
-     * @param comandos Novos comandos do operador.
-     */
     void setComandosOperador(const ComandosOperador& comandos);
-
-    /**
-     * @brief Obtém os comandos atuais do operador.
-     * @return ComandosOperador Comandos atuais.
-     */
     ComandosOperador getComandosOperador() const;
 
-    /**
-     * @brief Atualiza atomicamente o estado do veículo (alias para setEstadoVeiculo).
-     * @param estado Novo estado.
-     */
     void atualizarEstadoVeiculo(const EstadoVeiculo& estado);
-
-    /**
-     * @brief Atualiza atomicamente os comandos do operador (alias para setComandosOperador).
-     * @param comandos Novos comandos.
-     */
     void atualizarComandosOperador(const ComandosOperador& comandos);
 
-    /**
-     * @brief Obtém o número atual de elementos no buffer.
-     * @return int Número de elementos no buffer.
-     */
+    // Retorna tamanho do buffer (para monitoramento)
     int getContadorDados() const;
 };
 

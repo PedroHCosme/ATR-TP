@@ -81,6 +81,7 @@ void task_tratamento_sensores(GerenciadorDados& gerenciadorDados, ISensorDriver&
         novosDados.i_posicao_x = static_cast<int>(ema_pos_x);
         novosDados.i_posicao_y = static_cast<int>(ema_pos_y);
         novosDados.i_angulo_x = static_cast<int>(ema_ang_x);
+        novosDados.i_velocidade = static_cast<int>(estadoReal.velocidade); // Copia do físico para o sensor
         novosDados.i_falha_eletrica = estadoReal.i_falha_eletrica; 
         novosDados.i_falha_hidraulica = estadoReal.i_falha_hidraulica; 
 

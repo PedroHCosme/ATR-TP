@@ -2,106 +2,122 @@
 #include <thread>
 #include <functional> 
 #include <boost/asio.hpp> 
+
+// Includes do Sistema
 #include "gerenciador_dados.h"
-#include "task_tratamento_sensores.h"
-// #include "task_logica_comando.h"
-// #include "task_monitoramento_falhas.h"
 #include "mine_generator.h"
 #include "simulacao_mina.h"
 #include "drivers/simulacao_driver.h"
 #include "utils/sleep_asynch.h"
 
+// Includes das Tasks
+#include "task_tratamento_sensores.h"
+#include "task_logica_comando.h"
+#include "task_controle_navegacao.h" 
+// #include "task_monitoramento_falhas.h" // (Implementar depois)
+
 /**
  * @brief Função principal do sistema.
- * 
- * Inicializa o gerenciador de dados, configura o estado inicial do veículo
- * e inicia as threads responsáveis pelas tarefas do sistema.
- * 
- * @return int Código de saída do programa.
  */
 int main() {
-    boost::asio::io_context io; // Contexto para operações assíncronas
-    // Gera e imprime o mapa da mina
+    // --- 1. SETUP INICIAL ---
+    boost::asio::io_context io; // Motor assíncrono
+    SleepAsynch sleepAsynch(io); // Controlador de tempo preciso
+
     std::cout << "Gerando mapa da mina..." << std::endl;
-    MineGenerator mineGen(7, 7); // Tamanho 31x31
+    MineGenerator mineGen(61, 61); // Mapa maior para navegar
     mineGen.generate();
-    mineGen.print();
+    // mineGen.print(); // Comentei para não poluir o terminal na execução
     std::cout << "Mapa gerado com sucesso!" << std::endl;
 
-    //Instancia Sleep assincrono
-    SleepAsynch sleepAsynch(io);
+    // --- 2. INSTANCIAÇÃO DOS OBJETOS COMPARTILHADOS ---
     
-
-    // Instancia o gerenciador de dados compartilhado
+    // O Monitor (Buffer Circular + Estados)
     GerenciadorDados gerenciadorDados;
 
-    // Instancia a Simulação Física
+    // A Física (Mundo Real Simulado)
     SimulacaoMina simulacao(mineGen.getMinefield(), 1); // 1 caminhão
     
-    //Instancia o Driver de Simulação
-    SimulacaoDriver simulacaoDriver(simulacao);
+    // O Adaptador (HAL - Hardware Abstraction Layer)
+    // Ele conecta a simulação às interfaces ISensorDriver e IVeiculoDriver
+    SimulacaoDriver driverUniversal(simulacao);
 
-    // Inicializa o estado do veículo e os comandos do operador
+    // --- 3. CONFIGURAÇÃO DE ESTADO INICIAL ---
     EstadoVeiculo estadoInicial = {false, false}; // Sem defeito, modo manual
     gerenciadorDados.setEstadoVeiculo(estadoInicial);
 
-    ComandosOperador comandosIniciais = {false, true, false, false, false, false}; // Modo manual, sem outros comandos
+    // Começamos em MANUAL, com FREIO (sem acelerar)
+    ComandosOperador comandosIniciais = {
+        false, // c_automatico
+        true,  // c_man
+        false, // c_rearme
+        false, // c_acelerar
+        false, // c_direita
+        false  // c_esquerda
+    }; 
     gerenciadorDados.setComandosOperador(comandosIniciais);
 
-    // Loop de Simulação Assíncrona da Mina
-
+    // --- 4. LOOP DA SIMULAÇÃO FÍSICA (ASSÍNCRONO) ---
+    // Este loop roda a "física do mundo" independente das tasks do software embarcado
     std::function<void()> loop_sim_mina;
     
     loop_sim_mina = [&simulacao, &sleepAsynch, &loop_sim_mina]() {
-        // 1. Executa a lógica
+        // 1. Atualiza a física (movimento, temperatura, colisões)
         simulacao.atualizar_passo_tempo();
 
-        // 2. Agenda a próxima execução
+        // 2. Agenda a próxima execução para manter 10Hz (100ms) cravados
         sleepAsynch.wait_next_tick(std::chrono::milliseconds(100), 
             [&loop_sim_mina](const boost::system::error_code& ec) {
-                if (!ec) {
-                    // Se não houve erro (ex: cancelamento), chama a função de novo
-                    loop_sim_mina(); 
-                }
+                if (!ec) loop_sim_mina(); 
             }
         );
     };
 
-    // Dá o pontapé inicial no loop
+    // Start na simulação
     loop_sim_mina();
 
-    // --- Thread para monitoramento do buffer ---
+    // --- 5. CRIAÇÃO DAS THREADS (O SISTEMA EMBARCADO) ---
+
+    // Thread A: Monitoramento (Apenas para debug visual)
     std::thread t_monitor([&gerenciadorDados]() {
         while(true) {
             int tamanho = gerenciadorDados.getContadorDados();
-            std::cout << "[BUFFER] Tamanho atual: " << tamanho << "/200" << std::endl;
+            EstadoVeiculo est = gerenciadorDados.getEstadoVeiculo();
+            std::cout << "[MONITOR] Buffer: " << tamanho << "/200 | "
+                      << "Modo: " << (est.e_automatico ? "AUTO" : "MANUAL") 
+                      << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     });
 
-    // --- DEFINIÇÃO DAS THREADS ---
-
-    // t_sim: roda o motor do ASIO. 
-    // O io.run() vai ficar preso executando o loop_sim_mina indefinidamente.
+    // Thread B: Motor do ASIO (Roda a simulação física)
     std::thread t_sim([&io]() {
-        // O io_context.run() processa os timers e callbacks
         boost::asio::executor_work_guard<boost::asio::io_context::executor_type> work_guard(io.get_executor());
         io.run();
     });
 
-    // t1 e t2 continuam iguais (elas são threads independentes)
-    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(simulacaoDriver), 0);
-    // std::thread t2(task_logica_comando, std::ref(gerenciadorDados), std::ref(eventos));
+    // Thread 1: Tratamento de Sensores (PRODUTOR)
+    // Recebe o driverUniversal como ISensorDriver
+    std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(driverUniversal), 0);
+    
+    // Thread 2: Lógica de Comando (CONSUMIDOR / GERENTE)
+    // Lê do buffer e atualiza o estado (Auto/Manual/Falha)
+    std::thread t2(task_logica_comando, std::ref(gerenciadorDados));
 
-    // t3: Monitoramento de Falhas (Lê sensores e envia eventos para a lógica de comando)
-    // std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(simulacao), std::ref(eventos));
+    // Thread 3: Controle de Navegação (CONSUMIDOR / PILOTO)
+    // Lê estado e envia comandos para o driverUniversal (como IVeiculoDriver)
+    std::thread t_navegacao(task_controle_navegacao, std::ref(gerenciadorDados), std::ref(driverUniversal));
 
-    // Aguarda
+    // Thread 4: Monitoramento de Falhas (Se implementada)
+    // std::thread t3(task_monitoramento_falhas, ...);
+
+    // --- 6. AGUARDA O FIM (JOIN) ---
+    // Como as tasks têm loops infinitos, o programa fica preso aqui rodando.
     t_sim.join();
     t_monitor.join();
     t1.join();
-    // t2.join();
-    // t3.join();
+    t2.join();
+    t_navegacao.join();
 
     return 0;
 }

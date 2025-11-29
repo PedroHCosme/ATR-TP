@@ -20,6 +20,9 @@ struct DadosSensores
                     // relação à direção leste (leste = ângulo
                     // zero), obtido pelos sensores inerciais.
 
+    int i_velocidade; // Velocidade atual do veículo em m/s,
+                      // obtida pelos sensores de velocidade.
+
     int i_temperatura; // Temperatura do motor (varia entre -100 e
                     // +200). Essa temperatura possui um nível
                     // de alerta se 𝑇 > 95 °C e gera defeito se
