@@ -1,0 +1,28 @@
+# Compiled binaries and objects
+bin/
+obj/
+
+# Doxygen documentation
+docs/html/
+docs/latex/
+
+# Logs
+*.log
+mosquitto/log/
+
+# Mosquitto persistence
+mosquitto/data/
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Data files (if generated)
+sensor_data.csv

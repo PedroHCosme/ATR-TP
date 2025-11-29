@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <iomanip>
 #include <sstream>
+#include <iostream>
 
 InterfaceCaminhao::InterfaceCaminhao(GerenciadorDados& d, EventosSistema& e)
     : dados(d), eventos(e), running(false) {
@@ -62,6 +63,12 @@ void InterfaceCaminhao::close() {
 }
 
 void InterfaceCaminhao::run() {
+    if (!win_header || !win_telemetry || !win_status || !win_controls) {
+        endwin();
+        std::cerr << "Erro: Terminal muito pequeno para a interface!" << std::endl;
+        return;
+    }
+
     draw_borders(); // Desenha a estrutura estática uma única vez
     update_controls(); // Controles são estáticos
 
@@ -78,6 +85,7 @@ void InterfaceCaminhao::run() {
 }
 
 void InterfaceCaminhao::draw_borders() {
+    if (!win_header) return;
     // Header
     wclear(win_header);
     box(win_header, 0, 0);
@@ -215,69 +223,52 @@ void InterfaceCaminhao::update_controls() {
 
 void InterfaceCaminhao::handle_input() {
     int ch = getch();
-    if (ch == ERR) return;
-
+    
     ComandosOperador cmd = dados.getComandosOperador();
 
-    switch (ch) {
-        case 'q':
-        case 'Q':
-            running = false;
-            break;
-        case 'a':
-        case 'A':
-            cmd.c_automatico = true;
-            cmd.c_man = false;
-            break;
-        case 'm':
-        case 'M':
-            cmd.c_automatico = false;
-            cmd.c_man = true;
-            break;
-        case 'r':
-        case 'R':
-            cmd.c_rearme = true;
-            dados.setComandosOperador(cmd);
-            // O rearme é um pulso, mas aqui setamos true. 
-            // A lógica de comando deve tratar ou devemos resetar depois.
-            // Vamos deixar true por um ciclo e a task logica limpa ou nós limpamos no proximo loop?
-            // Melhor: setar true, e a task logica consome.
-            // Mas para garantir, vamos deixar a task logica lidar com a borda de subida se possivel.
-            // Simplificação: Deixamos true aqui, e no proximo loop (100ms depois) podemos desligar se quisermos,
-            // mas como é um teclado, o usuario aperta e solta.
-            // Vamos fazer um "pulse" manual simples:
-            // Na verdade, o ideal é que a tecla R ative o rearme momentaneamente.
-            break;
-        case KEY_UP:
-            if (cmd.c_man) cmd.c_acelerar = true;
-            break;
-        case KEY_LEFT:
-            if (cmd.c_man) cmd.c_esquerda = true;
-            break;
-        case KEY_RIGHT:
-            if (cmd.c_man) cmd.c_direita = true;
-            break;
-        case ' ':
-            // Freio
-            cmd.c_acelerar = false;
-            break;
+    // Reset de comandos momentâneos no modo manual
+    // Se nenhuma tecla for pressionada (ch == ERR), ou se for outra tecla,
+    // assumimos que o operador soltou o acelerador/volante.
+    if (cmd.c_man) {
+        cmd.c_acelerar = false;
+        cmd.c_esquerda = false;
+        cmd.c_direita = false;
+        cmd.c_rearme = false;
     }
 
-    // Reset de teclas de movimento se não estiverem pressionadas?
-    // O getch pega um evento. Se o usuario segura, repete.
-    // Se solta, para de vir eventos.
-    // Para simular "enquanto pressionado", precisariamos de um estado.
-    // Mas como o loop é rápido, podemos assumir que se não veio tecla, não está acelerando.
-    // Porem, getch tem timeout. Se timeout, ch == ERR.
-    if (ch == ERR) {
-        // Nenhuma tecla pressionada recentemente
-        // No modo manual, isso significa soltar o acelerador e volante centralizar?
-        // Vamos assumir comportamento de "soltou, parou".
-        if (cmd.c_man) {
-            cmd.c_acelerar = false;
-            cmd.c_esquerda = false;
-            cmd.c_direita = false;
-            cmd.c_rearme = false; // Reset rearme
+    if (ch != ERR) {
+        switch (ch) {
+            case 'q':
+            case 'Q':
+                running = false;
+                break;
+            case 'a':
+            case 'A':
+                cmd.c_automatico = true;
+                cmd.c_man = false;
+                break;
+            case 'm':
+            case 'M':
+                cmd.c_automatico = false;
+                cmd.c_man = true;
+                break;
+            case 'r':
+            case 'R':
+                cmd.c_rearme = true;
+                break;
+            case KEY_UP:
+                if (cmd.c_man) cmd.c_acelerar = true;
+                break;
+            case KEY_LEFT:
+                if (cmd.c_man) cmd.c_esquerda = true;
+                break;
+            case KEY_RIGHT:
+                if (cmd.c_man) cmd.c_direita = true;
+                break;
+            case ' ':
+                // Freio
+                cmd.c_acelerar = false;
+                break;
         }
     }
 
