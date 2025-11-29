@@ -60,13 +60,98 @@ void task_controle_navegacao(GerenciadorDados& dados, EventosSistema& eventos) {
             controlador.setpoint_angulo = static_cast<float>(leituraAtual.i_angulo_x);
             
         } else {
-            // --- MODO AUTOMÁTICO (Controle P) ---
+            // --- MODO AUTOMÁTICO (Controle P + Obstacle Avoidance) ---
             
-            // Controle de Velocidade
+            // 1. Controle de Velocidade (Mantém velocidade constante)
             float erro_vel = controlador.setpoint_velocidade - static_cast<float>(leituraAtual.i_velocidade);
             saida_aceleracao = (int)(erro_vel * controlador.kp_vel);
 
-            // Controle de Direção
+            // 2. Navegação Reativa (Wall Following / Center Keeping)
+            // Como não temos LIDAR real, vamos usar a posição absoluta para simular
+            // um sensor que detecta o centro do corredor.
+            
+            const float CELL_SIZE = 10.0f;
+            float pos_x = static_cast<float>(leituraAtual.i_posicao_x);
+            float pos_y = static_cast<float>(leituraAtual.i_posicao_y);
+            
+            // Calcula a posição relativa dentro da célula (0 a 10)
+            float cell_offset_x = fmod(pos_x, CELL_SIZE);
+            float cell_offset_y = fmod(pos_y, CELL_SIZE);
+            
+            // O centro da célula é 5.0
+            float erro_centro_x = 5.0f - cell_offset_x;
+            float erro_centro_y = 5.0f - cell_offset_y;
+            
+            // Determina a orientação principal do corredor (N/S ou E/W)
+            // Simplificação: Se o ângulo é próximo de 0 ou 180, estamos indo Leste/Oeste -> Corrigir Y
+            // Se o ângulo é próximo de 90 ou -90, estamos indo Norte/Sul -> Corrigir X
+            
+            float angulo_atual = static_cast<float>(leituraAtual.i_angulo_x);
+            float target_angle = controlador.setpoint_angulo; // Mantém o objetivo original por padrão
+
+            // Lógica simples de "Manter no Centro"
+            if ((angulo_atual >= -45 && angulo_atual <= 45) || (angulo_atual >= 135 || angulo_atual <= -135)) {
+                // Movimento Horizontal (Leste/Oeste): Corrigir erro em Y
+                // Se erro_centro_y > 0, estamos muito "acima" (y pequeno), precisamos descer (aumentar y)
+                // Para aumentar Y indo para Leste (0 graus), precisamos virar levemente para 90 (Esquerda/Direita?)
+                // Angulo 0 = Leste. Y aumenta para "Baixo" no grid visual, mas na física Y aumenta para "Sul"?
+                // Vamos assumir Y aumenta para baixo.
+                // Se Y está pequeno (offset < 5), erro > 0. Precisamos aumentar Y.
+                // Se estamos indo para Leste (0), virar para Direita (positivo) aumenta Y?
+                // Depende do sistema de coordenadas. Geralmente Y aumenta para baixo em grids.
+                // Se Y aumenta para baixo:
+                // Indo Leste (0): Virar Direita (>0) aumenta Y.
+                // Erro > 0 (estamos acima) -> Queremos descer -> Virar Direita.
+                
+                // Fator de correção de centralização
+                float correcao_centro = erro_centro_y * 5.0f; // Ganho proporcional
+                
+                // Se estamos indo para Oeste (180/-180):
+                // Virar Direita (diminui angulo?) -> Y diminui?
+                // Vamos simplificar: Ajustar o setpoint de ângulo para apontar para o centro Y da célula.
+                
+                // Mas espere, o setpoint_angulo original é fixo em 0.0 no struct?
+                // O código original não atualizava o setpoint_angulo no modo automático!
+                // Ele só usava o valor inicial 0.0. Isso explica porque ele batia na parede se o corredor virasse.
+                // Precisamos de um Planejador de Caminho ou seguir o corredor.
+                
+                // Como não temos mapa aqui, vamos fazer um "Braitenberg Vehicle" simples:
+                // Se bater, vira (já feito na física).
+                // Para navegar, vamos tentar manter o ângulo atual se estiver livre, 
+                // mas corrigir para o centro da célula.
+                
+                // Melhoria: O "setpoint_angulo" deve vir de algum lugar.
+                // Se não temos path planning, o caminhão vai andar em linha reta (0 graus) para sempre.
+                // Vamos fazer ele andar aleatoriamente nas interseções?
+                // Ou apenas seguir em frente e corrigir o centro.
+                
+                // Correção Y:
+                if (abs(angulo_atual) < 90) { // Indo Leste
+                     target_angle = 0.0f + correcao_centro; 
+                } else { // Indo Oeste
+                     target_angle = 180.0f - correcao_centro;
+                }
+
+            } else {
+                // Movimento Vertical (Norte/Sul): Corrigir erro em X
+                float correcao_centro = -erro_centro_x * 5.0f; // Invertido?
+                // Se X está pequeno (offset < 5), erro > 0. Precisamos aumentar X.
+                // Indo Sul (90): Virar Esquerda (<90) aumenta X?
+                // 0=Leste, 90=Sul.
+                // Virar para 0 (Esquerda relativa ao Sul) aumenta X.
+                // Então diminuir ângulo aumenta X.
+                // Erro > 0 -> Queremos aumentar X -> Diminuir ângulo.
+                
+                if (angulo_atual > 0) { // Indo Sul (90)
+                    target_angle = 90.0f - correcao_centro;
+                } else { // Indo Norte (-90)
+                    target_angle = -90.0f + correcao_centro;
+                }
+            }
+            
+            controlador.setpoint_angulo = target_angle;
+
+            // Controle de Direção (PID)
             float erro_ang = controlador.setpoint_angulo - static_cast<float>(leituraAtual.i_angulo_x);
             
             // Normalização do erro angular (-180 a 180)

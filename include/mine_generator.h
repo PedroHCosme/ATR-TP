@@ -27,6 +27,18 @@ public:
     void generate();
 
     /**
+     * @brief Adiciona salas de escavação (áreas abertas) ao mapa.
+     * @param numRooms Número de salas a serem criadas.
+     */
+    void addRooms(int numRooms);
+
+    /**
+     * @brief Alarga os túneis transformando paredes aleatórias em caminhos.
+     * @param probability Probabilidade (0.0 a 1.0) de uma parede adjacente a um caminho ser removida.
+     */
+    void widenTunnels(float probability);
+
+    /**
      * @brief Imprime o mapa no console para visualização.
      */
     void print();
