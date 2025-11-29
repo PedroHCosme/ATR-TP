@@ -78,6 +78,16 @@ struct ComandosOperador
 };
 
 /**
+ * @struct ComandosAtuador
+ * @brief Armazena os comandos de controle gerados pela navegação para os atuadores.
+ */
+struct ComandosAtuador
+{
+    int aceleracao; // Percentual de aceleração (-100 a 100%)
+    int direcao;    // Ângulo de direção (-180 a 180 graus)
+};
+
+/**
  * @struct CaminhaoFisico
  * @brief Representa o estado físico completo de um caminhão na simulação.
  * 

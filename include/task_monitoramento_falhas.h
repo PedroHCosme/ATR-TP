@@ -1,28 +1,27 @@
 /**
  * @file task_monitoramento_falhas.h
- * @brief Definição da tarefa de monitoramento e tratamento de falhas.
+ * @brief Monitoramento de saúde e segurança do veículo.
  */
 
-#ifndef TASK_TRATAMENTO_FALHAS_H
-#define TASK_TRATAMENTO_FALHAS_H
+#ifndef TASK_MONITORAMENTO_FALHAS_H
+#define TASK_MONITORAMENTO_FALHAS_H
 
 #include "gerenciador_dados.h"
 #include "eventos_sistema.h"
-#include <vector>
 
-class SimulacaoMina;
+class ISensorDriver;
 
 /**
- * @brief Tarefa responsável por monitorar a saúde do sistema e tratar falhas.
- *
- * Verifica periodicamente os dados dos sensores e o estado da simulação em busca
- * de anomalias (ex: superaquecimento, falhas elétricas). Caso detecte um problema,
- * sinaliza o evento correspondente para que o sistema possa reagir (ex: parada de emergência).
- *
- * @param gerenciadorDados Referência para o gerenciador de dados.
- * @param simulacao Referência para a simulação física (para injeção/verificação de falhas reais).
- * @param eventos Referência para o sistema de sinalização de eventos.
+ * @brief Tarefa de Segurança (Watchdog).
+ * 
+ * Monitora continuamente o Snapshot (estado mais recente) dos sensores.
+ * Se detectar temperatura crítica ou flags de falha elétrica/hidráulica,
+ * sinaliza o sistema de eventos (EventosSistema).
+ * 
+ * @param gerenciadorDados Referência para o banco de dados central.
+ * @param eventos Referência para o sistema de eventos.
+ * @param driver Referência para o driver de sensores (leitura direta).
  */
-void task_tratamento_falhas(GerenciadorDados& gerenciadorDados, SimulacaoMina& simulacao, EventosSistema& eventos);
+void task_monitoramento_falhas(GerenciadorDados& gerenciadorDados, EventosSistema& eventos, ISensorDriver& driver);
 
-#endif // TASK_TRATAMENTO_FALHAS_H
+#endif // TASK_MONITORAMENTO_FALHAS_H

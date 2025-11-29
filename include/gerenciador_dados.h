@@ -23,6 +23,7 @@ private:
 
     EstadoVeiculo estadoVeiculo;
     ComandosOperador comandosOperador;
+    ComandosAtuador comandosAtuador;
 
     mutable std::mutex mtx; 
     std::condition_variable cv_dados; 
@@ -60,6 +61,10 @@ public:
 
     void atualizarEstadoVeiculo(const EstadoVeiculo& estado);
     void atualizarComandosOperador(const ComandosOperador& comandos);
+
+    // --- Acesso Direto à Memória de Atuação (Novo) ---
+    void setComandosAtuador(const ComandosAtuador& comandos);
+    ComandosAtuador getComandosAtuador() const;
 
     // Retorna tamanho do buffer (para monitoramento)
     int getContadorDados() const;

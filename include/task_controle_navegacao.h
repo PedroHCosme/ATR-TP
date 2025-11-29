@@ -7,6 +7,7 @@
 #define TASK_CONTROLE_NAVEGACAO_H
 
 #include "gerenciador_dados.h"
+#include "eventos_sistema.h"
 
 class IVeiculoDriver;
 
@@ -18,9 +19,9 @@ class IVeiculoDriver;
  * de atuação (aceleração e direção) para manter o veículo na trajetória desejada
  * ou reagir a obstáculos.
  *
- * @param gerenciadorDados Referência para o objeto compartilhado GerenciadorDados.
- * @param driver Referência para o driver universal (interface de controle do veículo).
+ * @param dados Referência para o gerenciador de dados.
+ * @param eventos Referência para o sistema de eventos (para parada de emergência).
  */
-void task_controle_navegacao(GerenciadorDados& gerenciadorDados, IVeiculoDriver& driver);
+void task_controle_navegacao(GerenciadorDados& dados, EventosSistema& eventos);
 
 #endif // TASK_CONTROLE_NAVEGACAO_H

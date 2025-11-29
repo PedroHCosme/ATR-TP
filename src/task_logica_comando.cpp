@@ -1,11 +1,10 @@
 #include "task_logica_comando.h"
-#include "interfaces/i_veiculo_driver.h"
 #include "utils/sleep_asynch.h" // Inclua seu utilitário
 #include <boost/asio.hpp>       // Necessário para o motor de tempo
 #include <iostream>
-#include <functional>           // Para std::function
+#include <functional>           
 
-void task_logica_comando(GerenciadorDados& gerenciadorDados, EventosSistema& eventos, IVeiculoDriver& driver) {
+void task_logica_comando(GerenciadorDados& gerenciadorDados, EventosSistema& eventos) {
     // 1. Configuração do Motor de Tempo Local (Exclusivo desta thread)
     boost::asio::io_context io;
     SleepAsynch timer(io);
@@ -21,10 +20,13 @@ void task_logica_comando(GerenciadorDados& gerenciadorDados, EventosSistema& eve
         ComandosOperador comandos = gerenciadorDados.getComandosOperador();
         EstadoVeiculo estado = gerenciadorDados.getEstadoVeiculo();
 
-        // Monitoramento de Temperatura
-        if (dados.i_temperatura > 120) {
-            estado.e_defeito = true;
-            std::cout << "[Logica] DEFEITO: Temperatura critica (" << dados.i_temperatura << ")!" << std::endl;
+        // Monitoramento de Falhas via Eventos (Linha Vermelha)
+        // A Lógica de Comando reage ao evento setando o estado oficial do veículo
+        if (eventos.verificar_estado_falha()) {
+            if (!estado.e_defeito) {
+                estado.e_defeito = true;
+                std::cout << "[Logica] Evento de falha detectado! Entrando em modo DEFEITO." << std::endl;
+            }
         }
 
         // Modos de Operação
@@ -36,8 +38,9 @@ void task_logica_comando(GerenciadorDados& gerenciadorDados, EventosSistema& eve
 
         // Rearme
         if (comandos.c_rearme && estado.e_defeito) {
-            std::cout << "[Logica] REARME recebido. Sistema reiniciado.\n";
+            std::cout << "[Logica] REARME recebido. Resetando falhas e reiniciando sistema.\n";
             estado.e_defeito = false;
+            eventos.resetar_falhas(); // Limpa a flag no sistema de eventos
         }
 
         gerenciadorDados.atualizarEstadoVeiculo(estado);

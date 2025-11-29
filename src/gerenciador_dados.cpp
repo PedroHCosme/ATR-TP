@@ -70,6 +70,16 @@ void GerenciadorDados::atualizarComandosOperador(const ComandosOperador& comando
     comandosOperador = comandos;
 }
 
+void GerenciadorDados::setComandosAtuador(const ComandosAtuador& comandos) {
+    std::lock_guard<std::mutex> lock(mtx);
+    comandosAtuador = comandos;
+}
+
+ComandosAtuador GerenciadorDados::getComandosAtuador() const {
+    std::lock_guard<std::mutex> lock(mtx);
+    return comandosAtuador;
+}
+
 int GerenciadorDados::getContadorDados() const {
     std::lock_guard<std::mutex> lock(mtx);
     return bufferHistorico.size();

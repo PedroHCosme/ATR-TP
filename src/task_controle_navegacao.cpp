@@ -8,14 +8,14 @@
 #include <algorithm> 
 
 struct ControladorEstado {
-    float setpoint_velocidade = 20.0f; // Queremos 20 m/s
+    float setpoint_velocidade = 8000.0f; 
     float setpoint_angulo = 0.0f;
     
     float kp_vel = 2.0f; 
     float kp_ang = 1.5f; 
 };
 
-void task_controle_navegacao(GerenciadorDados& dados, IVeiculoDriver& driver) {
+void task_controle_navegacao(GerenciadorDados& dados, EventosSistema& eventos) {
     // 1. Configuração do Motor de Tempo Local (Loop de eventos dedicado)
     boost::asio::io_context io;
     SleepAsynch timer(io);
@@ -37,10 +37,14 @@ void task_controle_navegacao(GerenciadorDados& dados, IVeiculoDriver& driver) {
         int saida_aceleracao = 0;
         int saida_direcao = 0;
 
-        if (estado.e_defeito) {
+        // VERIFICAÇÃO DE SEGURANÇA VIA EVENTOS (Linha Vermelha)
+        if (eventos.verificar_estado_falha()) {
             saida_aceleracao = 0;
-            // Opcional: Logar apenas na mudança de estado para não poluir
-            // std::cout << "[NAVEGACAO] Parada de Emergencia!" << std::endl;
+            // Se houver falha crítica, paramos imediatamente.
+        
+        } else if (estado.e_defeito) {
+            saida_aceleracao = 0;
+            // Mantido para compatibilidade com flags antigas
         
         } else if (!estado.e_automatico) {
             // --- MODO MANUAL ---
@@ -52,7 +56,6 @@ void task_controle_navegacao(GerenciadorDados& dados, IVeiculoDriver& driver) {
             else saida_direcao = 0; 
 
             // Bumpless Transfer: Atualiza setpoints para a realidade atual
-            // Assim, ao ativar o automático, o erro inicial é zero.
             controlador.setpoint_velocidade = static_cast<float>(leituraAtual.i_velocidade);
             controlador.setpoint_angulo = static_cast<float>(leituraAtual.i_angulo_x);
             
@@ -79,8 +82,11 @@ void task_controle_navegacao(GerenciadorDados& dados, IVeiculoDriver& driver) {
             if (saida_direcao < -180) saida_direcao = -180;
         }
 
-        // ENVIO DO COMANDO
-        driver.setAtuadores(saida_aceleracao, saida_direcao);
+        // ENVIO DO COMANDO (ESCRITA DIRETA NA MEMÓRIA)
+        ComandosAtuador cmd;
+        cmd.aceleracao = saida_aceleracao;
+        cmd.direcao = saida_direcao;
+        dados.setComandosAtuador(cmd);
 
         // --- FIM DA LÓGICA ---
 

@@ -31,11 +31,16 @@ SimulacaoMina::SimulacaoMina(const std::vector<std::vector<char>>& mapa_ref, int
         c.i_posicao_x = start_x;
         c.i_posicao_y = start_y;
         c.i_angulo_x = 0.0f;
-        c.velocidade = 20.0f; // Velocidade inicial
+        c.velocidade = 20.0f; 
+        c.o_aceleracao = 10.0f; 
+        c.o_direcao = 0.0f; // Direção inicial
         c.i_temperatura = 85; // Temperatura inicial
         c.temperatura_ambiente = 12;
         c.i_falha_eletrica = false;
         c.i_falha_hidraulica = false;
+        
+        std::cout << "[DEBUG-INIT] Caminhao " << i << " criado. Pos: (" << start_x << "," << start_y 
+                  << ") Vel: " << c.velocidade << " Acel: " << c.o_aceleracao << std::endl;
         
         frota.push_back(c);
     }
@@ -50,26 +55,53 @@ void SimulacaoMina::atualizar_passo_tempo() {
 }
 
 void SimulacaoMina::modelo_bicicleta(CaminhaoFisico& caminhao) {
+    // Debug antes de atualizar
+    // std::cout << "[DEBUG-PRE-UPD] Vel: " << caminhao.velocidade << " Acel: " << caminhao.o_aceleracao << std::endl;
+
+    // 1. Atualiza velocidade baseado na aceleração (conversão de % para aceleração real)
+    // o_aceleracao vai de -100 a 100%, convertemos para m/s²
+    float aceleracao_real = caminhao.o_aceleracao * 0.2f; // Máximo de 20 m/s²
+    caminhao.velocidade += aceleracao_real * dt;
+    
+    // Limita velocidade (não pode ser negativa em modelo simplificado)
+    if (caminhao.velocidade < 0.0f) caminhao.velocidade = 0.0f;
+    if (caminhao.velocidade > 25.0f) caminhao.velocidade = 25.0f; // Limite máximo ~90 km/h
+    
+    // 2. Atualiza direção baseado no comando o_direcao
+    // No modo manual, o_direcao já é o ângulo absoluto
+    // Aplicamos uma taxa de giro gradual para suavizar
+    float diff_angulo = caminhao.o_direcao - caminhao.i_angulo_x;
+    while (diff_angulo > 180.0f) diff_angulo -= 360.0f;
+    while (diff_angulo < -180.0f) diff_angulo += 360.0f;
+    
+    float taxa_giro = 50.0f; // graus por segundo
+    float ajuste = std::max(-taxa_giro * dt, std::min(taxa_giro * dt, diff_angulo));
+    caminhao.i_angulo_x += ajuste;
+    
+    if (caminhao.i_angulo_x >= 360.0f) caminhao.i_angulo_x -= 360.0f;
+    if (caminhao.i_angulo_x < 0.0f) caminhao.i_angulo_x += 360.0f;
+    
+    // 3. Calcula nova posição baseada na velocidade e direção
     float rad_ang = caminhao.i_angulo_x * M_PI / 180.0f;
     float next_x = caminhao.i_posicao_x + caminhao.velocidade * std::cos(rad_ang) * dt;
     float next_y = caminhao.i_posicao_y + caminhao.velocidade * std::sin(rad_ang) * dt;
 
     if (verificar_colisao(next_x, next_y, caminhao.i_angulo_x)) {
-        // Colisão detectada: Inverte direção e adiciona variação
-        std::cout << "!!! COLISÃO DETECTADA (Simulação) !!! Virando..." << std::endl;
+        // Colisão detectada: Para o caminhão e inverte direção
+        std::cout << "!!! COLISÃO DETECTADA (Simulação) !!! Parando e virando..." << std::endl;
+        caminhao.velocidade = 0.0f; // Para imediatamente
         caminhao.i_angulo_x += 180.0f + (std::rand() % 60 - 30);
         if (caminhao.i_angulo_x >= 360.0f) caminhao.i_angulo_x -= 360.0f;
         if (caminhao.i_angulo_x < 0.0f) caminhao.i_angulo_x += 360.0f;
     } else {
-        // Caminho livre
+        // Caminho livre - atualiza posição
         caminhao.i_posicao_x = next_x;
         caminhao.i_posicao_y = next_y;
-        
-        // Variação aleatória para exploração
-        if (std::rand() % 10 == 0) {
-             caminhao.i_angulo_x += (std::rand() % 10 - 5);
-        }
     }
+    
+    // Debug: Print de velocidade e aceleração
+    std::cout << "[DEBUG-FISICA] Vel: " << caminhao.velocidade 
+              << " | Acel: " << caminhao.o_aceleracao << "% | Ang: " << caminhao.i_angulo_x << "°" << std::endl;
 }
 
 void SimulacaoMina::modelo_maquina_termica(CaminhaoFisico& caminhao) {
@@ -78,7 +110,12 @@ void SimulacaoMina::modelo_maquina_termica(CaminhaoFisico& caminhao) {
     float heat_gen = std::abs(caminhao.velocidade) * 0.5f; 
     float heat_loss = 0.1f * (caminhao.i_temperatura - caminhao.temperatura_ambiente);
     
+    float temp_anterior = caminhao.i_temperatura;
     caminhao.i_temperatura += (heat_gen - heat_loss) * dt;
+    
+    // Debug: Print de temperatura a cada atualização
+    std::cout << "[DEBUG-FISICA] Temp: " << temp_anterior << " -> " << caminhao.i_temperatura 
+              << " | Vel: " << caminhao.velocidade << " | Heat+" << heat_gen << " -" << heat_loss << std::endl;
 }
 
 bool SimulacaoMina::verificar_colisao(float x, float y, float angulo) {
@@ -119,6 +156,7 @@ CaminhaoFisico SimulacaoMina::getEstadoReal(int id_caminhao) {
 void SimulacaoMina::setComandoAtuador(int id_caminhao, int aceleracao, int direcao) {
     std::lock_guard<std::mutex> lock(mtx_simulacao);
     if(id_caminhao >= 0 && id_caminhao < (int)frota.size()) {
+        std::cout << "[DEBUG-ATUADOR] Recebido: Acel=" << aceleracao << "% | Dir=" << direcao << "°" << std::endl;
         frota[id_caminhao].o_aceleracao = aceleracao;
         frota[id_caminhao].o_direcao = direcao;
     }

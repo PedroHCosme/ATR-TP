@@ -15,7 +15,7 @@
 #include "task_tratamento_sensores.h"
 #include "task_logica_comando.h"
 #include "task_controle_navegacao.h" 
-// #include "task_monitoramento_falhas.h" // (Implementar depois)
+#include "task_monitoramento_falhas.h"
 
 /**
  * @brief Função principal do sistema.
@@ -65,7 +65,12 @@ int main() {
     // Este loop roda a "física do mundo" independente das tasks do software embarcado
     std::function<void()> loop_sim_mina;
     
-    loop_sim_mina = [&simulacao, &sleepAsynch, &loop_sim_mina]() {
+    loop_sim_mina = [&simulacao, &sleepAsynch, &loop_sim_mina, &gerenciadorDados]() {
+        // 0. Lê comandos de atuação da memória compartilhada (GerenciadorDados)
+        // Isso simula o hardware lendo os registradores de atuação escritos pelo controle
+        ComandosAtuador cmd = gerenciadorDados.getComandosAtuador();
+        simulacao.setComandoAtuador(0, cmd.aceleracao, cmd.direcao);
+
         // 1. Atualiza a física (movimento, temperatura, colisões)
         simulacao.atualizar_passo_tempo();
 
@@ -106,21 +111,21 @@ int main() {
     
     // Thread 2: Lógica de Comando (CONSUMIDOR / GERENTE)
     // Lê do buffer e atualiza o estado (Auto/Manual/Falha)
-    std::thread t2(task_logica_comando, std::ref(gerenciadorDados), std::ref(eventos), std::ref(driverUniversal));
+    std::thread t2(task_logica_comando, std::ref(gerenciadorDados), std::ref(eventos));
 
     // Thread 3: Controle de Navegação (CONSUMIDOR / PILOTO)
     // Lê estado e envia comandos para o driverUniversal (como IVeiculoDriver)
-    std::thread t_navegacao(task_controle_navegacao, std::ref(gerenciadorDados), std::ref(driverUniversal));
+    std::thread t_navegacao(task_controle_navegacao, std::ref(gerenciadorDados), std::ref(eventos));
 
-    // Thread 4: Monitoramento de Falhas (Se implementada)
-    // std::thread t3(task_monitoramento_falhas, ...);
-
+    // Thread 4: Monitoramento de Falhas 
+    std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(eventos), std::ref(driverUniversal));
     // --- 6. AGUARDA O FIM (JOIN) ---
     // Como as tasks têm loops infinitos, o programa fica preso aqui rodando.
     t_sim.join();
     t_monitor.join();
     t1.join();
     t2.join();
+    t3.join();
     t_navegacao.join();
 
     return 0;
