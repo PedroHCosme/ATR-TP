@@ -17,7 +17,7 @@ TARGET = $(BIN_DIR)/app
 all: $(TARGET)
 
 $(TARGET): $(OBJS) | $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses
 
 # Pattern rule that handles subdirectories
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp

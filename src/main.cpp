@@ -2,6 +2,7 @@
 #include <thread>
 #include <functional> 
 #include <boost/asio.hpp> 
+#include <fstream> // Para ofstream
 
 // Includes do Sistema
 #include "gerenciador_dados.h"
@@ -10,6 +11,7 @@
 #include "drivers/simulacao_driver.h"
 #include "utils/sleep_asynch.h"
 #include "eventos_sistema.h"
+#include "interface_simulacao.h" // TUI
 
 // Includes das Tasks
 #include "task_tratamento_sensores.h"
@@ -21,6 +23,12 @@
  * @brief Função principal do sistema.
  */
 int main() {
+    // Redireciona std::cout para arquivo para não quebrar a TUI (ncurses)
+    // Usamos rdbuf para redirecionar apenas o stream C++, mantendo stdout (C) livre para ncurses
+    std::ofstream logfile("simulacao.log");
+    std::streambuf* cout_backup = std::cout.rdbuf();
+    std::cout.rdbuf(logfile.rdbuf());
+
     // --- 1. SETUP INICIAL ---
     boost::asio::io_context io; // Motor assíncrono
     SleepAsynch sleepAsynch(io); // Controlador de tempo preciso
@@ -85,48 +93,49 @@ int main() {
     // Start na simulação
     loop_sim_mina();
 
-    // --- 5. CRIAÇÃO DAS THREADS (O SISTEMA EMBARCADO) ---
-
-    // Thread A: Monitoramento (Apenas para debug visual)
-    std::thread t_monitor([&gerenciadorDados]() {
-        while(true) {
-            int tamanho = gerenciadorDados.getContadorDados();
-            EstadoVeiculo est = gerenciadorDados.getEstadoVeiculo();
-            std::cout << "[MONITOR] Buffer: " << tamanho << "/200 | "
-                      << "Modo: " << (est.e_automatico ? "AUTO" : "MANUAL") 
-                      << std::endl;
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-    });
-
     // Thread B: Motor do ASIO (Roda a simulação física)
     std::thread t_sim([&io]() {
         boost::asio::executor_work_guard<boost::asio::io_context::executor_type> work_guard(io.get_executor());
         io.run();
     });
 
+    // --- 5. CRIAÇÃO DAS THREADS (O SISTEMA EMBARCADO) ---
+
     // Thread 1: Tratamento de Sensores (PRODUTOR)
-    // Recebe o driverUniversal como ISensorDriver
     std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados), std::ref(driverUniversal), 0);
     
     // Thread 2: Lógica de Comando (CONSUMIDOR / GERENTE)
-    // Lê do buffer e atualiza o estado (Auto/Manual/Falha)
     std::thread t2(task_logica_comando, std::ref(gerenciadorDados), std::ref(eventos));
 
     // Thread 3: Controle de Navegação (CONSUMIDOR / PILOTO)
-    // Lê estado e envia comandos para o driverUniversal (como IVeiculoDriver)
     std::thread t_navegacao(task_controle_navegacao, std::ref(gerenciadorDados), std::ref(eventos));
 
     // Thread 4: Monitoramento de Falhas 
     std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados), std::ref(eventos), std::ref(driverUniversal));
-    // --- 6. AGUARDA O FIM (JOIN) ---
-    // Como as tasks têm loops infinitos, o programa fica preso aqui rodando.
-    t_sim.join();
-    t_monitor.join();
-    t1.join();
-    t2.join();
-    t3.join();
-    t_navegacao.join();
+
+    // --- 6. INTERFACE GRÁFICA (TUI) ---
+    // Roda na thread principal e bloqueia até o usuário sair
+    InterfaceSimulacao interface(simulacao, gerenciadorDados, eventos, mineGen.getMinefield());
+    interface.init();
+    interface.run(); // Bloqueia aqui
+    interface.close();
+
+    // --- 7. ENCERRAMENTO ---
+    // Quando a interface fecha, forçamos a saída (pois as threads estão em loop infinito)
+    // O ideal seria ter um sinal de shutdown, mas exit(0) resolve para a simulação.
+    
+    // Restaura cout antes de sair (opcional, mas boa prática)
+    std::cout.rdbuf(cout_backup);
+    std::cout << "Encerrando simulacao..." << std::endl;
+    
+    io.stop();
+    
+    // Detach nas threads para permitir o encerramento do processo
+    t_sim.detach();
+    t1.detach();
+    t2.detach();
+    t3.detach();
+    t_navegacao.detach();
 
     return 0;
 }

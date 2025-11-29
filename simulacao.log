@@ -1,0 +1,3483 @@
+Gerando mapa da mina...
+Mapa gerado com sucesso!
+[DEBUG-INIT] Caminhao 0 criado. Pos: (15,15) Vel: 20 Acel: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 85 -> 85.27 | Vel: 20 | Heat+10 -7.3
+[DEBUG-SENSOR] Temp Real: 85.27 | Com Ruido: 85.3296 | Inteiro: 85
+[DEBUG-MONITOR] Temperatura Real (Driver): 85.27 C
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 85.27 -> 85.5373 | Vel: 20 | Heat+10 -7.327
+[DEBUG-SENSOR] Temp Real: 85.5373 | Com Ruido: 85.3863 | Inteiro: 85
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 85.5373 -> 85.8019 | Vel: 20 | Heat+10 -7.35373
+[DEBUG-SENSOR] Temp Real: 85.8019 | Com Ruido: 85.4838 | Inteiro: 85
+[DEBUG-SENSOR] Temp Real: 85.8019 | Com Ruido: 85.4838 | Inteiro: 85
+[DEBUG-MONITOR] Temperatura Real (Driver): 85.8019 C
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 85.8019 -> 86.0639 | Vel: 20 | Heat+10 -7.38019
+[DEBUG-SENSOR] Temp Real: 86.0639 | Com Ruido: 85.9783 | Inteiro: 85
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 86.0639 -> 86.3233 | Vel: 20 | Heat+10 -7.40639
+[DEBUG-MONITOR] Temperatura Real (Driver): 86.3233 C
+[DEBUG-SENSOR] Temp Real: 86.3233 | Com Ruido: 86.4538 | Inteiro: 86
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 86.3233 -> 86.58 | Vel: 20 | Heat+10 -7.43233
+[DEBUG-SENSOR] Temp Real: 86.58 | Com Ruido: 86.2341 | Inteiro: 86
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 86.58 -> 86.8342 | Vel: 20 | Heat+10 -7.458
+[DEBUG-MONITOR] Temperatura Real (Driver): 86.8342 C
+[DEBUG-SENSOR] Temp Real: 86.8342 | Com Ruido: 87.4925 | Inteiro: 87
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 86.8342 -> 87.0859 | Vel: 20 | Heat+10 -7.48342
+[DEBUG-SENSOR] Temp Real: 87.0859 | Com Ruido: 87.4264 | Inteiro: 87
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 87.0859 -> 87.335 | Vel: 20 | Heat+10 -7.50859
+[DEBUG-MONITOR] Temperatura Real (Driver): 87.335 C
+[DEBUG-SENSOR] Temp Real: 87.335 | Com Ruido: 87.1016 | Inteiro: 87
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 20 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 87.335 -> 87.5817 | Vel: 20 | Heat+10 -7.5335
+[DEBUG-SENSOR] Temp Real: 87.5817 | Com Ruido: 86.7473 | Inteiro: 86
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+!!! COLISÃO DETECTADA (Simulação) !!! Parando e virando...
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 193°
+[DEBUG-FISICA] Temp: 87.5817 -> 86.8259 | Vel: 0 | Heat+0 -7.55817
+[DEBUG-MONITOR] Temperatura Real (Driver): 86.8259 C
+[DEBUG-SENSOR] Temp Real: 86.8259 | Com Ruido: 87.3035 | Inteiro: 87
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 198°
+[DEBUG-FISICA] Temp: 86.8259 -> 86.0776 | Vel: 0 | Heat+0 -7.48259
+[DEBUG-SENSOR] Temp Real: 86.0776 | Com Ruido: 86.0614 | Inteiro: 86
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 203°
+[DEBUG-FISICA] Temp: 86.0776 -> 85.3368 | Vel: 0 | Heat+0 -7.40776
+[DEBUG-MONITOR] Temperatura Real (Driver): 85.3368 C
+[DEBUG-SENSOR] Temp Real: 85.3368 | Com Ruido: 85.126 | Inteiro: 85
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 208°
+[DEBUG-FISICA] Temp: 85.3368 -> 84.6035 | Vel: 0 | Heat+0 -7.33368
+[DEBUG-SENSOR] Temp Real: 84.6035 | Com Ruido: 84.483 | Inteiro: 84
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 213°
+[DEBUG-FISICA] Temp: 84.6035 -> 83.8774 | Vel: 0 | Heat+0 -7.26035
+[DEBUG-MONITOR] Temperatura Real (Driver): 83.8774 C
+[DEBUG-SENSOR] Temp Real: 83.8774 | Com Ruido: 84.261 | Inteiro: 84
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 218°
+[DEBUG-FISICA] Temp: 83.8774 -> 83.1586 | Vel: 0 | Heat+0 -7.18774
+[DEBUG-SENSOR] Temp Real: 83.1586 | Com Ruido: 83.5299 | Inteiro: 83
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 223°
+[DEBUG-FISICA] Temp: 83.1586 -> 82.4471 | Vel: 0 | Heat+0 -7.11586
+[DEBUG-MONITOR] Temperatura Real (Driver): 82.4471 C
+[DEBUG-SENSOR] Temp Real: 82.4471 | Com Ruido: 82.068 | Inteiro: 82
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 228°
+[DEBUG-FISICA] Temp: 82.4471 -> 81.7426 | Vel: 0 | Heat+0 -7.04471
+[DEBUG-SENSOR] Temp Real: 81.7426 | Com Ruido: 81.2204 | Inteiro: 81
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 233°
+[DEBUG-FISICA] Temp: 81.7426 -> 81.0452 | Vel: 0 | Heat+0 -6.97426
+[DEBUG-MONITOR] Temperatura Real (Driver): 81.0452 C
+[DEBUG-SENSOR] Temp Real: 81.0452 | Com Ruido: 80.7549 | Inteiro: 80
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 238°
+[DEBUG-FISICA] Temp: 81.0452 -> 80.3547 | Vel: 0 | Heat+0 -6.90452
+[DEBUG-SENSOR] Temp Real: 80.3547 | Com Ruido: 79.5634 | Inteiro: 79
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 243°
+[DEBUG-FISICA] Temp: 80.3547 -> 79.6712 | Vel: 0 | Heat+0 -6.83547
+[DEBUG-MONITOR] Temperatura Real (Driver): 79.6712 C
+[DEBUG-SENSOR] Temp Real: 79.6712 | Com Ruido: 79.5991 | Inteiro: 79
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 248°
+[DEBUG-FISICA] Temp: 79.6712 -> 78.9945 | Vel: 0 | Heat+0 -6.76712
+[DEBUG-SENSOR] Temp Real: 78.9945 | Com Ruido: 80.6281 | Inteiro: 80
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 253°
+[DEBUG-FISICA] Temp: 78.9945 -> 78.3245 | Vel: 0 | Heat+0 -6.69945
+[DEBUG-MONITOR] Temperatura Real (Driver): 78.3245 C
+[DEBUG-SENSOR] Temp Real: 78.3245 | Com Ruido: 77.9821 | Inteiro: 77
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 258°
+[DEBUG-FISICA] Temp: 78.3245 -> 77.6613 | Vel: 0 | Heat+0 -6.63245
+[DEBUG-SENSOR] Temp Real: 77.6613 | Com Ruido: 77.8602 | Inteiro: 77
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 263°
+[DEBUG-FISICA] Temp: 77.6613 -> 77.0046 | Vel: 0 | Heat+0 -6.56613
+[DEBUG-MONITOR] Temperatura Real (Driver): 77.0046 C
+[DEBUG-SENSOR] Temp Real: 77.0046 | Com Ruido: 77.2295 | Inteiro: 77
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 268°
+[DEBUG-FISICA] Temp: 77.0046 -> 76.3546 | Vel: 0 | Heat+0 -6.50046
+[DEBUG-SENSOR] Temp Real: 76.3546 | Com Ruido: 75.921 | Inteiro: 75
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 273°
+[DEBUG-FISICA] Temp: 76.3546 -> 75.7111 | Vel: 0 | Heat+0 -6.43546
+[DEBUG-MONITOR] Temperatura Real (Driver): 75.7111 C
+[DEBUG-SENSOR] Temp Real: 75.7111 | Com Ruido: 75.9783 | Inteiro: 75
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 278°
+[DEBUG-FISICA] Temp: 75.7111 -> 75.0739 | Vel: 0 | Heat+0 -6.37111
+[DEBUG-SENSOR] Temp Real: 75.0739 | Com Ruido: 75.1268 | Inteiro: 75
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 283°
+[DEBUG-FISICA] Temp: 75.0739 -> 74.4432 | Vel: 0 | Heat+0 -6.30739
+[DEBUG-MONITOR] Temperatura Real (Driver): 74.4432 C
+[DEBUG-SENSOR] Temp Real: 74.4432 | Com Ruido: 74.4045 | Inteiro: 74
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 288°
+[DEBUG-FISICA] Temp: 74.4432 -> 73.8188 | Vel: 0 | Heat+0 -6.24432
+[DEBUG-SENSOR] Temp Real: 73.8188 | Com Ruido: 72.9826 | Inteiro: 72
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 293°
+[DEBUG-FISICA] Temp: 73.8188 -> 73.2006 | Vel: 0 | Heat+0 -6.18188
+[DEBUG-MONITOR] Temperatura Real (Driver): 73.2006 C
+[DEBUG-SENSOR] Temp Real: 73.2006 | Com Ruido: 73.3752 | Inteiro: 73
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 298°
+[DEBUG-FISICA] Temp: 73.2006 -> 72.5886 | Vel: 0 | Heat+0 -6.12006
+[DEBUG-SENSOR] Temp Real: 72.5886 | Com Ruido: 72.1576 | Inteiro: 72
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 303°
+[DEBUG-FISICA] Temp: 72.5886 -> 71.9827 | Vel: 0 | Heat+0 -6.05886
+[DEBUG-MONITOR] Temperatura Real (Driver): 71.9827 C
+[DEBUG-SENSOR] Temp Real: 71.9827 | Com Ruido: 71.4342 | Inteiro: 71
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 308°
+[DEBUG-FISICA] Temp: 71.9827 -> 71.3829 | Vel: 0 | Heat+0 -5.99827
+[DEBUG-SENSOR] Temp Real: 71.3829 | Com Ruido: 71.2702 | Inteiro: 71
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 313°
+[DEBUG-FISICA] Temp: 71.3829 -> 70.789 | Vel: 0 | Heat+0 -5.93829
+[DEBUG-MONITOR] Temperatura Real (Driver): 70.789 C
+[DEBUG-SENSOR] Temp Real: 70.789 | Com Ruido: 70.6727 | Inteiro: 70
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 318°
+[DEBUG-FISICA] Temp: 70.789 -> 70.2011 | Vel: 0 | Heat+0 -5.8789
+[DEBUG-SENSOR] Temp Real: 70.2011 | Com Ruido: 70.9379 | Inteiro: 70
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 323°
+[DEBUG-FISICA] Temp: 70.2011 -> 69.6191 | Vel: 0 | Heat+0 -5.82011
+[DEBUG-MONITOR] Temperatura Real (Driver): 69.6191 C
+[DEBUG-SENSOR] Temp Real: 69.6191 | Com Ruido: 69.9159 | Inteiro: 69
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 328°
+[DEBUG-FISICA] Temp: 69.6191 -> 69.0429 | Vel: 0 | Heat+0 -5.76191
+[DEBUG-SENSOR] Temp Real: 69.0429 | Com Ruido: 68.8375 | Inteiro: 68
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 333°
+[DEBUG-FISICA] Temp: 69.0429 -> 68.4725 | Vel: 0 | Heat+0 -5.70429
+[DEBUG-MONITOR] Temperatura Real (Driver): 68.4725 C
+[DEBUG-SENSOR] Temp Real: 68.4725 | Com Ruido: 68.5421 | Inteiro: 68
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 338°
+[DEBUG-FISICA] Temp: 68.4725 -> 67.9078 | Vel: 0 | Heat+0 -5.64725
+[DEBUG-SENSOR] Temp Real: 67.9078 | Com Ruido: 68.1444 | Inteiro: 68
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 343°
+[DEBUG-FISICA] Temp: 67.9078 -> 67.3487 | Vel: 0 | Heat+0 -5.59078
+[DEBUG-MONITOR] Temperatura Real (Driver): 67.3487 C
+[DEBUG-SENSOR] Temp Real: 67.3487 | Com Ruido: 67.9203 | Inteiro: 67
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 348°
+[DEBUG-FISICA] Temp: 67.3487 -> 66.7952 | Vel: 0 | Heat+0 -5.53487
+[DEBUG-SENSOR] Temp Real: 66.7952 | Com Ruido: 68.2772 | Inteiro: 68
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 353°
+[DEBUG-FISICA] Temp: 66.7952 -> 66.2473 | Vel: 0 | Heat+0 -5.47952
+[DEBUG-MONITOR] Temperatura Real (Driver): 66.2473 C
+[DEBUG-SENSOR] Temp Real: 66.2473 | Com Ruido: 66.4467 | Inteiro: 66
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 358°
+[DEBUG-FISICA] Temp: 66.2473 -> 65.7048 | Vel: 0 | Heat+0 -5.42473
+[DEBUG-SENSOR] Temp Real: 65.7048 | Com Ruido: 66.0463 | Inteiro: 66
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 65.7048 -> 65.1677 | Vel: 0 | Heat+0 -5.37048
+[DEBUG-MONITOR] Temperatura Real (Driver): 65.1677 C
+[DEBUG-SENSOR] Temp Real: 65.1677 | Com Ruido: 65.12 | Inteiro: 65
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 65.1677 -> 64.6361 | Vel: 0 | Heat+0 -5.31677
+[DEBUG-SENSOR] Temp Real: 64.6361 | Com Ruido: 65.5568 | Inteiro: 65
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 64.6361 -> 64.1097 | Vel: 0 | Heat+0 -5.26361
+[DEBUG-MONITOR] Temperatura Real (Driver): 64.1097 C
+[DEBUG-SENSOR] Temp Real: 64.1097 | Com Ruido: 63.9719 | Inteiro: 63
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 64.1097 -> 63.5886 | Vel: 0 | Heat+0 -5.21097
+[DEBUG-SENSOR] Temp Real: 63.5886 | Com Ruido: 62.8624 | Inteiro: 62
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 63.5886 -> 63.0727 | Vel: 0 | Heat+0 -5.15886
+[DEBUG-MONITOR] Temperatura Real (Driver): 63.0727 C
+[DEBUG-SENSOR] Temp Real: 63.0727 | Com Ruido: 62.4642 | Inteiro: 62
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 63.0727 -> 62.562 | Vel: 0 | Heat+0 -5.10727
+[DEBUG-SENSOR] Temp Real: 62.562 | Com Ruido: 62.2776 | Inteiro: 62
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 62.562 -> 62.0564 | Vel: 0 | Heat+0 -5.0562
+[DEBUG-MONITOR] Temperatura Real (Driver): 62.0564 C
+[DEBUG-SENSOR] Temp Real: 62.0564 | Com Ruido: 62.6306 | Inteiro: 62
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 62.0564 -> 61.5558 | Vel: 0 | Heat+0 -5.00564
+[DEBUG-SENSOR] Temp Real: 61.5558 | Com Ruido: 62.1362 | Inteiro: 62
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 61.5558 -> 61.0603 | Vel: 0 | Heat+0 -4.95558
+[DEBUG-MONITOR] Temperatura Real (Driver): 61.0603 C
+[DEBUG-SENSOR] Temp Real: 61.0603 | Com Ruido: 60.7353 | Inteiro: 60
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 61.0603 -> 60.5697 | Vel: 0 | Heat+0 -4.90603
+[DEBUG-SENSOR] Temp Real: 60.5697 | Com Ruido: 60.245 | Inteiro: 60
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 60.5697 -> 60.084 | Vel: 0 | Heat+0 -4.85697
+[DEBUG-MONITOR] Temperatura Real (Driver): 60.084 C
+[DEBUG-SENSOR] Temp Real: 60.084 | Com Ruido: 60.4287 | Inteiro: 60
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 60.084 -> 59.6031 | Vel: 0 | Heat+0 -4.8084
+[DEBUG-SENSOR] Temp Real: 59.6031 | Com Ruido: 59.9393 | Inteiro: 59
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 59.6031 -> 59.1271 | Vel: 0 | Heat+0 -4.76031
+[DEBUG-MONITOR] Temperatura Real (Driver): 59.1271 C
+[DEBUG-SENSOR] Temp Real: 59.1271 | Com Ruido: 58.5311 | Inteiro: 58
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 59.1271 -> 58.6558 | Vel: 0 | Heat+0 -4.71271
+[DEBUG-SENSOR] Temp Real: 58.6558 | Com Ruido: 58.8421 | Inteiro: 58
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 58.6558 -> 58.1893 | Vel: 0 | Heat+0 -4.66558
+[DEBUG-MONITOR] Temperatura Real (Driver): 58.1893 C
+[DEBUG-SENSOR] Temp Real: 58.1893 | Com Ruido: 58.6786 | Inteiro: 58
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 58.1893 -> 57.7274 | Vel: 0 | Heat+0 -4.61893
+[DEBUG-SENSOR] Temp Real: 57.7274 | Com Ruido: 58.0528 | Inteiro: 58
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 57.7274 -> 57.2701 | Vel: 0 | Heat+0 -4.57274
+[DEBUG-MONITOR] Temperatura Real (Driver): 57.2701 C
+[DEBUG-SENSOR] Temp Real: 57.2701 | Com Ruido: 56.9106 | Inteiro: 56
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 57.2701 -> 56.8174 | Vel: 0 | Heat+0 -4.52701
+[DEBUG-SENSOR] Temp Real: 56.8174 | Com Ruido: 56.2758 | Inteiro: 56
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 56.8174 -> 56.3692 | Vel: 0 | Heat+0 -4.48174
+[DEBUG-MONITOR] Temperatura Real (Driver): 56.3692 C
+[DEBUG-SENSOR] Temp Real: 56.3692 | Com Ruido: 56.9796 | Inteiro: 56
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 56.3692 -> 55.9255 | Vel: 0 | Heat+0 -4.43692
+[DEBUG-SENSOR] Temp Real: 55.9255 | Com Ruido: 55.4133 | Inteiro: 55
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 55.9255 -> 55.4863 | Vel: 0 | Heat+0 -4.39255
+[DEBUG-MONITOR] Temperatura Real (Driver): 55.4863 C
+[DEBUG-SENSOR] Temp Real: 55.4863 | Com Ruido: 55.0526 | Inteiro: 55
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 55.4863 -> 55.0514 | Vel: 0 | Heat+0 -4.34863
+[DEBUG-SENSOR] Temp Real: 55.0514 | Com Ruido: 55.6148 | Inteiro: 55
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 55.0514 -> 54.6209 | Vel: 0 | Heat+0 -4.30514
+[DEBUG-MONITOR] Temperatura Real (Driver): 54.6209 C
+[DEBUG-SENSOR] Temp Real: 54.6209 | Com Ruido: 54.2532 | Inteiro: 54
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 54.6209 -> 54.1947 | Vel: 0 | Heat+0 -4.26209
+[DEBUG-SENSOR] Temp Real: 54.1947 | Com Ruido: 53.5114 | Inteiro: 53
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 54.1947 -> 53.7727 | Vel: 0 | Heat+0 -4.21947
+[DEBUG-MONITOR] Temperatura Real (Driver): 53.7727 C
+[DEBUG-SENSOR] Temp Real: 53.7727 | Com Ruido: 53.0965 | Inteiro: 53
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 53.7727 -> 53.355 | Vel: 0 | Heat+0 -4.17727
+[DEBUG-SENSOR] Temp Real: 53.355 | Com Ruido: 52.997 | Inteiro: 52
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 53.355 -> 52.9415 | Vel: 0 | Heat+0 -4.1355
+[DEBUG-MONITOR] Temperatura Real (Driver): 52.9415 C
+[DEBUG-SENSOR] Temp Real: 52.9415 | Com Ruido: 53.2915 | Inteiro: 53
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 52.9415 -> 52.532 | Vel: 0 | Heat+0 -4.09415
+[DEBUG-SENSOR] Temp Real: 52.532 | Com Ruido: 52.5008 | Inteiro: 52
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 52.532 -> 52.1267 | Vel: 0 | Heat+0 -4.0532
+[DEBUG-MONITOR] Temperatura Real (Driver): 52.1267 C
+[DEBUG-SENSOR] Temp Real: 52.1267 | Com Ruido: 51.5323 | Inteiro: 51
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 52.1267 -> 51.7255 | Vel: 0 | Heat+0 -4.01267
+[DEBUG-SENSOR] Temp Real: 51.7255 | Com Ruido: 52.3729 | Inteiro: 52
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 51.7255 -> 51.3282 | Vel: 0 | Heat+0 -3.97255
+[DEBUG-MONITOR] Temperatura Real (Driver): 51.3282 C
+[DEBUG-SENSOR] Temp Real: 51.3282 | Com Ruido: 51.6477 | Inteiro: 51
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 51.3282 -> 50.9349 | Vel: 0 | Heat+0 -3.93282
+[DEBUG-SENSOR] Temp Real: 50.9349 | Com Ruido: 50.6996 | Inteiro: 50
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 50.9349 -> 50.5456 | Vel: 0 | Heat+0 -3.89349
+[DEBUG-MONITOR] Temperatura Real (Driver): 50.5456 C
+[DEBUG-SENSOR] Temp Real: 50.5456 | Com Ruido: 51.3031 | Inteiro: 51
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 50.5456 -> 50.1601 | Vel: 0 | Heat+0 -3.85456
+[DEBUG-SENSOR] Temp Real: 50.1601 | Com Ruido: 50.4082 | Inteiro: 50
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 50.1601 -> 49.7785 | Vel: 0 | Heat+0 -3.81601
+[DEBUG-MONITOR] Temperatura Real (Driver): 49.7785 C
+[DEBUG-SENSOR] Temp Real: 49.7785 | Com Ruido: 49.7117 | Inteiro: 49
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 49.7785 -> 49.4007 | Vel: 0 | Heat+0 -3.77785
+[DEBUG-SENSOR] Temp Real: 49.4007 | Com Ruido: 49.3921 | Inteiro: 49
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 49.4007 -> 49.0267 | Vel: 0 | Heat+0 -3.74007
+[DEBUG-MONITOR] Temperatura Real (Driver): 49.0267 C
+[DEBUG-SENSOR] Temp Real: 49.0267 | Com Ruido: 49.7971 | Inteiro: 49
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 49.0267 -> 48.6565 | Vel: 0 | Heat+0 -3.70267
+[DEBUG-SENSOR] Temp Real: 48.6565 | Com Ruido: 47.9628 | Inteiro: 47
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 48.6565 -> 48.2899 | Vel: 0 | Heat+0 -3.66565
+[DEBUG-MONITOR] Temperatura Real (Driver): 48.2899 C
+[DEBUG-SENSOR] Temp Real: 48.2899 | Com Ruido: 47.7223 | Inteiro: 47
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 48.2899 -> 47.927 | Vel: 0 | Heat+0 -3.62899
+[DEBUG-SENSOR] Temp Real: 47.927 | Com Ruido: 48.4834 | Inteiro: 48
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 47.927 -> 47.5677 | Vel: 0 | Heat+0 -3.5927
+[DEBUG-MONITOR] Temperatura Real (Driver): 47.5677 C
+[DEBUG-SENSOR] Temp Real: 47.5677 | Com Ruido: 48.2171 | Inteiro: 48
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 47.5677 -> 47.212 | Vel: 0 | Heat+0 -3.55677
+[DEBUG-SENSOR] Temp Real: 47.212 | Com Ruido: 45.8203 | Inteiro: 45
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 47.212 -> 46.8599 | Vel: 0 | Heat+0 -3.5212
+[DEBUG-MONITOR] Temperatura Real (Driver): 46.8599 C
+[DEBUG-SENSOR] Temp Real: 46.8599 | Com Ruido: 46.2884 | Inteiro: 46
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 46.8599 -> 46.5113 | Vel: 0 | Heat+0 -3.48599
+[DEBUG-SENSOR] Temp Real: 46.5113 | Com Ruido: 47.1246 | Inteiro: 47
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 46.5113 -> 46.1662 | Vel: 0 | Heat+0 -3.45113
+[DEBUG-MONITOR] Temperatura Real (Driver): 46.1662 C
+[DEBUG-SENSOR] Temp Real: 46.1662 | Com Ruido: 46.7693 | Inteiro: 46
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 46.1662 -> 45.8245 | Vel: 0 | Heat+0 -3.41662
+[DEBUG-SENSOR] Temp Real: 45.8245 | Com Ruido: 45.0388 | Inteiro: 45
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 45.8245 -> 45.4863 | Vel: 0 | Heat+0 -3.38245
+[DEBUG-MONITOR] Temperatura Real (Driver): 45.4863 C
+[DEBUG-SENSOR] Temp Real: 45.4863 | Com Ruido: 45.2505 | Inteiro: 45
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 45.4863 -> 45.1514 | Vel: 0 | Heat+0 -3.34863
+[DEBUG-SENSOR] Temp Real: 45.1514 | Com Ruido: 44.3773 | Inteiro: 44
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 45.1514 -> 44.8199 | Vel: 0 | Heat+0 -3.31514
+[DEBUG-MONITOR] Temperatura Real (Driver): 44.8199 C
+[DEBUG-SENSOR] Temp Real: 44.8199 | Com Ruido: 44.7011 | Inteiro: 44
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 44.8199 -> 44.4917 | Vel: 0 | Heat+0 -3.28199
+[DEBUG-SENSOR] Temp Real: 44.4917 | Com Ruido: 44.3349 | Inteiro: 44
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 44.4917 -> 44.1668 | Vel: 0 | Heat+0 -3.24917
+[DEBUG-MONITOR] Temperatura Real (Driver): 44.1668 C
+[DEBUG-SENSOR] Temp Real: 44.1668 | Com Ruido: 44.7074 | Inteiro: 44
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 44.1668 -> 43.8451 | Vel: 0 | Heat+0 -3.21668
+[DEBUG-SENSOR] Temp Real: 43.8451 | Com Ruido: 43.6446 | Inteiro: 43
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 43.8451 -> 43.5267 | Vel: 0 | Heat+0 -3.18451
+[DEBUG-MONITOR] Temperatura Real (Driver): 43.5267 C
+[DEBUG-SENSOR] Temp Real: 43.5267 | Com Ruido: 44.1312 | Inteiro: 44
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 43.5267 -> 43.2114 | Vel: 0 | Heat+0 -3.15267
+[DEBUG-SENSOR] Temp Real: 43.2114 | Com Ruido: 43.7835 | Inteiro: 43
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 43.2114 -> 42.8993 | Vel: 0 | Heat+0 -3.12114
+[DEBUG-MONITOR] Temperatura Real (Driver): 42.8993 C
+[DEBUG-SENSOR] Temp Real: 42.8993 | Com Ruido: 42.5402 | Inteiro: 42
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 42.8993 -> 42.5903 | Vel: 0 | Heat+0 -3.08993
+[DEBUG-SENSOR] Temp Real: 42.5903 | Com Ruido: 42.2192 | Inteiro: 42
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 42.5903 -> 42.2844 | Vel: 0 | Heat+0 -3.05903
+[DEBUG-MONITOR] Temperatura Real (Driver): 42.2844 C
+[DEBUG-SENSOR] Temp Real: 42.2844 | Com Ruido: 43.4618 | Inteiro: 43
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 42.2844 -> 41.9816 | Vel: 0 | Heat+0 -3.02844
+[DEBUG-SENSOR] Temp Real: 41.9816 | Com Ruido: 41.8277 | Inteiro: 41
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 41.9816 -> 41.6818 | Vel: 0 | Heat+0 -2.99816
+[DEBUG-MONITOR] Temperatura Real (Driver): 41.6818 C
+[DEBUG-SENSOR] Temp Real: 41.6818 | Com Ruido: 41.8793 | Inteiro: 41
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 41.6818 -> 41.3849 | Vel: 0 | Heat+0 -2.96818
+[DEBUG-SENSOR] Temp Real: 41.3849 | Com Ruido: 41.3613 | Inteiro: 41
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 41.3849 -> 41.0911 | Vel: 0 | Heat+0 -2.93849
+[DEBUG-MONITOR] Temperatura Real (Driver): 41.0911 C
+[DEBUG-SENSOR] Temp Real: 41.0911 | Com Ruido: 41.3762 | Inteiro: 41
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 41.0911 -> 40.8002 | Vel: 0 | Heat+0 -2.90911
+[DEBUG-SENSOR] Temp Real: 40.8002 | Com Ruido: 40.7175 | Inteiro: 40
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 40.8002 -> 40.5122 | Vel: 0 | Heat+0 -2.88002
+[DEBUG-MONITOR] Temperatura Real (Driver): 40.5122 C
+[DEBUG-SENSOR] Temp Real: 40.5122 | Com Ruido: 39.609 | Inteiro: 39
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 40.5122 -> 40.227 | Vel: 0 | Heat+0 -2.85122
+[DEBUG-SENSOR] Temp Real: 40.227 | Com Ruido: 39.8292 | Inteiro: 39
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 40.227 -> 39.9448 | Vel: 0 | Heat+0 -2.8227
+[DEBUG-MONITOR] Temperatura Real (Driver): 39.9448 C
+[DEBUG-SENSOR] Temp Real: 39.9448 | Com Ruido: 40.2621 | Inteiro: 40
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 39.9448 -> 39.6653 | Vel: 0 | Heat+0 -2.79448
+[DEBUG-SENSOR] Temp Real: 39.6653 | Com Ruido: 39.5844 | Inteiro: 39
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 39.6653 -> 39.3887 | Vel: 0 | Heat+0 -2.76653
+[DEBUG-MONITOR] Temperatura Real (Driver): 39.3887 C
+[DEBUG-SENSOR] Temp Real: 39.3887 | Com Ruido: 39.3137 | Inteiro: 39
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 39.3887 -> 39.1148 | Vel: 0 | Heat+0 -2.73887
+[DEBUG-SENSOR] Temp Real: 39.1148 | Com Ruido: 38.7164 | Inteiro: 38
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 39.1148 -> 38.8436 | Vel: 0 | Heat+0 -2.71148
+[DEBUG-MONITOR] Temperatura Real (Driver): 38.8436 C
+[DEBUG-SENSOR] Temp Real: 38.8436 | Com Ruido: 39.2699 | Inteiro: 39
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 38.8436 -> 38.5752 | Vel: 0 | Heat+0 -2.68436
+[DEBUG-SENSOR] Temp Real: 38.5752 | Com Ruido: 38.7731 | Inteiro: 38
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 38.5752 -> 38.3094 | Vel: 0 | Heat+0 -2.65752
+[DEBUG-MONITOR] Temperatura Real (Driver): 38.3094 C
+[DEBUG-SENSOR] Temp Real: 38.3094 | Com Ruido: 38.6632 | Inteiro: 38
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 38.3094 -> 38.0464 | Vel: 0 | Heat+0 -2.63094
+[DEBUG-SENSOR] Temp Real: 38.0464 | Com Ruido: 37.7264 | Inteiro: 37
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 38.0464 -> 37.7859 | Vel: 0 | Heat+0 -2.60464
+[DEBUG-MONITOR] Temperatura Real (Driver): 37.7859 C
+[DEBUG-SENSOR] Temp Real: 37.7859 | Com Ruido: 37.9724 | Inteiro: 37
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 37.7859 -> 37.528 | Vel: 0 | Heat+0 -2.57859
+[DEBUG-SENSOR] Temp Real: 37.528 | Com Ruido: 36.9494 | Inteiro: 36
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 37.528 -> 37.2728 | Vel: 0 | Heat+0 -2.5528
+[DEBUG-MONITOR] Temperatura Real (Driver): 37.2728 C
+[DEBUG-SENSOR] Temp Real: 37.2728 | Com Ruido: 36.8195 | Inteiro: 36
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 37.2728 -> 37.02 | Vel: 0 | Heat+0 -2.52728
+[DEBUG-SENSOR] Temp Real: 37.02 | Com Ruido: 37.6217 | Inteiro: 37
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 37.02 -> 36.7698 | Vel: 0 | Heat+0 -2.502
+[DEBUG-MONITOR] Temperatura Real (Driver): 36.7698 C
+[DEBUG-SENSOR] Temp Real: 36.7698 | Com Ruido: 37.305 | Inteiro: 37
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 36.7698 -> 36.5221 | Vel: 0 | Heat+0 -2.47698
+[DEBUG-SENSOR] Temp Real: 36.5221 | Com Ruido: 37.0397 | Inteiro: 37
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 36.5221 -> 36.2769 | Vel: 0 | Heat+0 -2.45221
+[DEBUG-MONITOR] Temperatura Real (Driver): 36.2769 C
+[DEBUG-SENSOR] Temp Real: 36.2769 | Com Ruido: 35.6747 | Inteiro: 35
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 36.2769 -> 36.0341 | Vel: 0 | Heat+0 -2.42769
+[DEBUG-SENSOR] Temp Real: 36.0341 | Com Ruido: 34.7724 | Inteiro: 34
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 36.0341 -> 35.7938 | Vel: 0 | Heat+0 -2.40341
+[DEBUG-MONITOR] Temperatura Real (Driver): 35.7938 C
+[DEBUG-SENSOR] Temp Real: 35.7938 | Com Ruido: 35.5321 | Inteiro: 35
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 35.7938 -> 35.5559 | Vel: 0 | Heat+0 -2.37938
+[DEBUG-SENSOR] Temp Real: 35.5559 | Com Ruido: 36.0518 | Inteiro: 36
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 35.5559 -> 35.3203 | Vel: 0 | Heat+0 -2.35559
+[DEBUG-MONITOR] Temperatura Real (Driver): 35.3203 C
+[DEBUG-SENSOR] Temp Real: 35.3203 | Com Ruido: 35.6983 | Inteiro: 35
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 35.3203 -> 35.0871 | Vel: 0 | Heat+0 -2.33203
+[DEBUG-SENSOR] Temp Real: 35.0871 | Com Ruido: 35.0592 | Inteiro: 35
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 35.0871 -> 34.8562 | Vel: 0 | Heat+0 -2.30871
+[DEBUG-MONITOR] Temperatura Real (Driver): 34.8562 C
+[DEBUG-SENSOR] Temp Real: 34.8562 | Com Ruido: 34.7996 | Inteiro: 34
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 34.8562 -> 34.6277 | Vel: 0 | Heat+0 -2.28562
+[DEBUG-SENSOR] Temp Real: 34.6277 | Com Ruido: 34.4616 | Inteiro: 34
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 34.6277 -> 34.4014 | Vel: 0 | Heat+0 -2.26277
+[DEBUG-MONITOR] Temperatura Real (Driver): 34.4014 C
+[DEBUG-SENSOR] Temp Real: 34.4014 | Com Ruido: 34.8462 | Inteiro: 34
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 34.4014 -> 34.1774 | Vel: 0 | Heat+0 -2.24014
+[DEBUG-SENSOR] Temp Real: 34.1774 | Com Ruido: 34.709 | Inteiro: 34
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 34.1774 -> 33.9556 | Vel: 0 | Heat+0 -2.21774
+[DEBUG-MONITOR] Temperatura Real (Driver): 33.9556 C
+[DEBUG-SENSOR] Temp Real: 33.9556 | Com Ruido: 33.7478 | Inteiro: 33
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 33.9556 -> 33.736 | Vel: 0 | Heat+0 -2.19556
+[DEBUG-SENSOR] Temp Real: 33.736 | Com Ruido: 33.8411 | Inteiro: 33
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 33.736 -> 33.5187 | Vel: 0 | Heat+0 -2.1736
+[DEBUG-MONITOR] Temperatura Real (Driver): 33.5187 C
+[DEBUG-SENSOR] Temp Real: 33.5187 | Com Ruido: 33.6092 | Inteiro: 33
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 33.5187 -> 33.3035 | Vel: 0 | Heat+0 -2.15187
+[DEBUG-SENSOR] Temp Real: 33.3035 | Com Ruido: 33.6769 | Inteiro: 33
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 33.3035 -> 33.0905 | Vel: 0 | Heat+0 -2.13035
+[DEBUG-MONITOR] Temperatura Real (Driver): 33.0905 C
+[DEBUG-SENSOR] Temp Real: 33.0905 | Com Ruido: 33.2118 | Inteiro: 33
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 33.0905 -> 32.8796 | Vel: 0 | Heat+0 -2.10905
+[DEBUG-SENSOR] Temp Real: 32.8796 | Com Ruido: 32.004 | Inteiro: 32
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 32.8796 -> 32.6708 | Vel: 0 | Heat+0 -2.08796
+[DEBUG-MONITOR] Temperatura Real (Driver): 32.6708 C
+[DEBUG-SENSOR] Temp Real: 32.6708 | Com Ruido: 34.0609 | Inteiro: 34
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 32.6708 -> 32.4641 | Vel: 0 | Heat+0 -2.06708
+[DEBUG-SENSOR] Temp Real: 32.4641 | Com Ruido: 32.3694 | Inteiro: 32
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 32.4641 -> 32.2594 | Vel: 0 | Heat+0 -2.04641
+[DEBUG-MONITOR] Temperatura Real (Driver): 32.2594 C
+[DEBUG-SENSOR] Temp Real: 32.2594 | Com Ruido: 32.2055 | Inteiro: 32
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 32.2594 -> 32.0568 | Vel: 0 | Heat+0 -2.02594
+[DEBUG-SENSOR] Temp Real: 32.0568 | Com Ruido: 32.036 | Inteiro: 32
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 32.0568 -> 31.8563 | Vel: 0 | Heat+0 -2.00568
+[DEBUG-MONITOR] Temperatura Real (Driver): 31.8563 C
+[DEBUG-SENSOR] Temp Real: 31.8563 | Com Ruido: 30.5664 | Inteiro: 30
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 31.8563 -> 31.6577 | Vel: 0 | Heat+0 -1.98563
+[DEBUG-SENSOR] Temp Real: 31.6577 | Com Ruido: 32.9311 | Inteiro: 32
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 31.6577 -> 31.4611 | Vel: 0 | Heat+0 -1.96577
+[DEBUG-MONITOR] Temperatura Real (Driver): 31.4611 C
+[DEBUG-SENSOR] Temp Real: 31.4611 | Com Ruido: 30.5802 | Inteiro: 30
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 31.4611 -> 31.2665 | Vel: 0 | Heat+0 -1.94611
+[DEBUG-SENSOR] Temp Real: 31.2665 | Com Ruido: 31.4014 | Inteiro: 31
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 31.2665 -> 31.0738 | Vel: 0 | Heat+0 -1.92665
+[DEBUG-MONITOR] Temperatura Real (Driver): 31.0738 C
+[DEBUG-SENSOR] Temp Real: 31.0738 | Com Ruido: 31.5539 | Inteiro: 31
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 31.0738 -> 30.8831 | Vel: 0 | Heat+0 -1.90738
+[DEBUG-SENSOR] Temp Real: 30.8831 | Com Ruido: 31.1544 | Inteiro: 31
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 30.8831 -> 30.6943 | Vel: 0 | Heat+0 -1.88831
+[DEBUG-MONITOR] Temperatura Real (Driver): 30.6943 C
+[DEBUG-SENSOR] Temp Real: 30.6943 | Com Ruido: 30.1633 | Inteiro: 30
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 30.6943 -> 30.5073 | Vel: 0 | Heat+0 -1.86943
+[DEBUG-SENSOR] Temp Real: 30.5073 | Com Ruido: 30.5169 | Inteiro: 30
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 30.5073 -> 30.3222 | Vel: 0 | Heat+0 -1.85073
+[DEBUG-MONITOR] Temperatura Real (Driver): 30.3222 C
+[DEBUG-SENSOR] Temp Real: 30.3222 | Com Ruido: 29.3404 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 30.3222 -> 30.139 | Vel: 0 | Heat+0 -1.83222
+[DEBUG-SENSOR] Temp Real: 30.139 | Com Ruido: 29.768 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 30.139 -> 29.9576 | Vel: 0 | Heat+0 -1.8139
+[DEBUG-MONITOR] Temperatura Real (Driver): 29.9576 C
+[DEBUG-SENSOR] Temp Real: 29.9576 | Com Ruido: 29.2389 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 29.9576 -> 29.7781 | Vel: 0 | Heat+0 -1.79576
+[DEBUG-SENSOR] Temp Real: 29.7781 | Com Ruido: 29.7425 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 29.7781 -> 29.6003 | Vel: 0 | Heat+0 -1.77781
+[DEBUG-MONITOR] Temperatura Real (Driver): 29.6003 C
+[DEBUG-SENSOR] Temp Real: 29.6003 | Com Ruido: 28.4581 | Inteiro: 28
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 29.6003 -> 29.4243 | Vel: 0 | Heat+0 -1.76003
+[DEBUG-SENSOR] Temp Real: 29.4243 | Com Ruido: 29.1191 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 29.4243 -> 29.25 | Vel: 0 | Heat+0 -1.74243
+[DEBUG-MONITOR] Temperatura Real (Driver): 29.25 C
+[DEBUG-SENSOR] Temp Real: 29.25 | Com Ruido: 28.9401 | Inteiro: 28
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 29.25 -> 29.0775 | Vel: 0 | Heat+0 -1.725
+[DEBUG-SENSOR] Temp Real: 29.0775 | Com Ruido: 29.3317 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 29.0775 -> 28.9068 | Vel: 0 | Heat+0 -1.70775
+[DEBUG-MONITOR] Temperatura Real (Driver): 28.9068 C
+[DEBUG-SENSOR] Temp Real: 28.9068 | Com Ruido: 29.0269 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 28.9068 -> 28.7377 | Vel: 0 | Heat+0 -1.69068
+[DEBUG-SENSOR] Temp Real: 28.7377 | Com Ruido: 29.2487 | Inteiro: 29
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 28.7377 -> 28.5703 | Vel: 0 | Heat+0 -1.67377
+[DEBUG-MONITOR] Temperatura Real (Driver): 28.5703 C
+[DEBUG-SENSOR] Temp Real: 28.5703 | Com Ruido: 28.8271 | Inteiro: 28
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 28.5703 -> 28.4046 | Vel: 0 | Heat+0 -1.65703
+[DEBUG-SENSOR] Temp Real: 28.4046 | Com Ruido: 28.5727 | Inteiro: 28
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 28.4046 -> 28.2406 | Vel: 0 | Heat+0 -1.64046
+[DEBUG-MONITOR] Temperatura Real (Driver): 28.2406 C
+[DEBUG-SENSOR] Temp Real: 28.2406 | Com Ruido: 27.8834 | Inteiro: 27
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 28.2406 -> 28.0782 | Vel: 0 | Heat+0 -1.62406
+[DEBUG-SENSOR] Temp Real: 28.0782 | Com Ruido: 27.9557 | Inteiro: 27
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 28.0782 -> 27.9174 | Vel: 0 | Heat+0 -1.60782
+[DEBUG-MONITOR] Temperatura Real (Driver): 27.9174 C
+[DEBUG-SENSOR] Temp Real: 27.9174 | Com Ruido: 28.0753 | Inteiro: 28
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 27.9174 -> 27.7582 | Vel: 0 | Heat+0 -1.59174
+[DEBUG-SENSOR] Temp Real: 27.7582 | Com Ruido: 27.9799 | Inteiro: 27
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 27.7582 -> 27.6006 | Vel: 0 | Heat+0 -1.57582
+[DEBUG-MONITOR] Temperatura Real (Driver): 27.6006 C
+[DEBUG-SENSOR] Temp Real: 27.6006 | Com Ruido: 28.366 | Inteiro: 28
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 27.6006 -> 27.4446 | Vel: 0 | Heat+0 -1.56006
+[DEBUG-SENSOR] Temp Real: 27.4446 | Com Ruido: 26.9657 | Inteiro: 26
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 27.4446 -> 27.2902 | Vel: 0 | Heat+0 -1.54446
+[DEBUG-MONITOR] Temperatura Real (Driver): 27.2902 C
+[DEBUG-SENSOR] Temp Real: 27.2902 | Com Ruido: 28.0241 | Inteiro: 28
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 27.2902 -> 27.1373 | Vel: 0 | Heat+0 -1.52902
+[DEBUG-SENSOR] Temp Real: 27.1373 | Com Ruido: 27.6588 | Inteiro: 27
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 27.1373 -> 26.9859 | Vel: 0 | Heat+0 -1.51373
+[DEBUG-MONITOR] Temperatura Real (Driver): 26.9859 C
+[DEBUG-SENSOR] Temp Real: 26.9859 | Com Ruido: 25.1404 | Inteiro: 25
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 26.9859 -> 26.836 | Vel: 0 | Heat+0 -1.49859
+[DEBUG-SENSOR] Temp Real: 26.836 | Com Ruido: 26.6793 | Inteiro: 26
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 26.836 -> 26.6877 | Vel: 0 | Heat+0 -1.4836
+[DEBUG-MONITOR] Temperatura Real (Driver): 26.6877 C
+[DEBUG-SENSOR] Temp Real: 26.6877 | Com Ruido: 26.6504 | Inteiro: 26
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 26.6877 -> 26.5408 | Vel: 0 | Heat+0 -1.46877
+[DEBUG-SENSOR] Temp Real: 26.5408 | Com Ruido: 26.7324 | Inteiro: 26
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 26.5408 -> 26.3954 | Vel: 0 | Heat+0 -1.45408
+[DEBUG-MONITOR] Temperatura Real (Driver): 26.3954 C
+[DEBUG-SENSOR] Temp Real: 26.3954 | Com Ruido: 27.4219 | Inteiro: 27
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 26.3954 -> 26.2514 | Vel: 0 | Heat+0 -1.43954
+[DEBUG-SENSOR] Temp Real: 26.2514 | Com Ruido: 25.5357 | Inteiro: 25
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 26.2514 -> 26.1089 | Vel: 0 | Heat+0 -1.42514
+[DEBUG-MONITOR] Temperatura Real (Driver): 26.1089 C
+[DEBUG-SENSOR] Temp Real: 26.1089 | Com Ruido: 25.7103 | Inteiro: 25
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 26.1089 -> 25.9678 | Vel: 0 | Heat+0 -1.41089
+[DEBUG-SENSOR] Temp Real: 25.9678 | Com Ruido: 26.7797 | Inteiro: 26
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.9678 -> 25.8282 | Vel: 0 | Heat+0 -1.39678
+[DEBUG-MONITOR] Temperatura Real (Driver): 25.8282 C
+[DEBUG-SENSOR] Temp Real: 25.8282 | Com Ruido: 26.5187 | Inteiro: 26
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.8282 -> 25.6899 | Vel: 0 | Heat+0 -1.38282
+[DEBUG-SENSOR] Temp Real: 25.6899 | Com Ruido: 26.3453 | Inteiro: 26
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.6899 -> 25.553 | Vel: 0 | Heat+0 -1.36899
+[DEBUG-MONITOR] Temperatura Real (Driver): 25.553 C
+[DEBUG-SENSOR] Temp Real: 25.553 | Com Ruido: 25.1486 | Inteiro: 25
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.553 -> 25.4174 | Vel: 0 | Heat+0 -1.3553
+[DEBUG-SENSOR] Temp Real: 25.4174 | Com Ruido: 25.6379 | Inteiro: 25
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.4174 -> 25.2833 | Vel: 0 | Heat+0 -1.34174
+[DEBUG-MONITOR] Temperatura Real (Driver): 25.2833 C
+[DEBUG-SENSOR] Temp Real: 25.2833 | Com Ruido: 25.4493 | Inteiro: 25
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.2833 -> 25.1504 | Vel: 0 | Heat+0 -1.32833
+[DEBUG-SENSOR] Temp Real: 25.1504 | Com Ruido: 23.9646 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.1504 -> 25.0189 | Vel: 0 | Heat+0 -1.31504
+[DEBUG-MONITOR] Temperatura Real (Driver): 25.0189 C
+[DEBUG-SENSOR] Temp Real: 25.0189 | Com Ruido: 24.9899 | Inteiro: 24
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 25.0189 -> 24.8887 | Vel: 0 | Heat+0 -1.30189
+[DEBUG-SENSOR] Temp Real: 24.8887 | Com Ruido: 24.5768 | Inteiro: 24
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.8887 -> 24.7599 | Vel: 0 | Heat+0 -1.28887
+[DEBUG-MONITOR] Temperatura Real (Driver): 24.7599 C
+[DEBUG-SENSOR] Temp Real: 24.7599 | Com Ruido: 23.8897 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.7599 -> 24.6323 | Vel: 0 | Heat+0 -1.27599
+[DEBUG-SENSOR] Temp Real: 24.6323 | Com Ruido: 24.2227 | Inteiro: 24
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.6323 -> 24.5059 | Vel: 0 | Heat+0 -1.26323
+[DEBUG-MONITOR] Temperatura Real (Driver): 24.5059 C
+[DEBUG-SENSOR] Temp Real: 24.5059 | Com Ruido: 24.6587 | Inteiro: 24
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.5059 -> 24.3809 | Vel: 0 | Heat+0 -1.25059
+[DEBUG-SENSOR] Temp Real: 24.3809 | Com Ruido: 23.6942 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.3809 -> 24.2571 | Vel: 0 | Heat+0 -1.23809
+[DEBUG-MONITOR] Temperatura Real (Driver): 24.2571 C
+[DEBUG-SENSOR] Temp Real: 24.2571 | Com Ruido: 24.3271 | Inteiro: 24
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.2571 -> 24.1345 | Vel: 0 | Heat+0 -1.22571
+[DEBUG-SENSOR] Temp Real: 24.1345 | Com Ruido: 24.4745 | Inteiro: 24
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.1345 -> 24.0132 | Vel: 0 | Heat+0 -1.21345
+[DEBUG-MONITOR] Temperatura Real (Driver): 24.0132 C
+[DEBUG-SENSOR] Temp Real: 24.0132 | Com Ruido: 25.0778 | Inteiro: 25
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 24.0132 -> 23.893 | Vel: 0 | Heat+0 -1.20132
+[DEBUG-SENSOR] Temp Real: 23.893 | Com Ruido: 23.2809 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.893 -> 23.7741 | Vel: 0 | Heat+0 -1.1893
+[DEBUG-MONITOR] Temperatura Real (Driver): 23.7741 C
+[DEBUG-SENSOR] Temp Real: 23.7741 | Com Ruido: 23.7867 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.7741 -> 23.6564 | Vel: 0 | Heat+0 -1.17741
+[DEBUG-SENSOR] Temp Real: 23.6564 | Com Ruido: 23.912 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.6564 -> 23.5398 | Vel: 0 | Heat+0 -1.16564
+[DEBUG-MONITOR] Temperatura Real (Driver): 23.5398 C
+[DEBUG-SENSOR] Temp Real: 23.5398 | Com Ruido: 23.9522 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.5398 -> 23.4244 | Vel: 0 | Heat+0 -1.15398
+[DEBUG-SENSOR] Temp Real: 23.4244 | Com Ruido: 24.0889 | Inteiro: 24
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.4244 -> 23.3101 | Vel: 0 | Heat+0 -1.14244
+[DEBUG-MONITOR] Temperatura Real (Driver): 23.3101 C
+[DEBUG-SENSOR] Temp Real: 23.3101 | Com Ruido: 23.201 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.3101 -> 23.197 | Vel: 0 | Heat+0 -1.13101
+[DEBUG-SENSOR] Temp Real: 23.197 | Com Ruido: 23.4013 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.197 -> 23.0851 | Vel: 0 | Heat+0 -1.1197
+[DEBUG-MONITOR] Temperatura Real (Driver): 23.0851 C
+[DEBUG-SENSOR] Temp Real: 23.0851 | Com Ruido: 22.4896 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 23.0851 -> 22.9742 | Vel: 0 | Heat+0 -1.10851
+[DEBUG-SENSOR] Temp Real: 22.9742 | Com Ruido: 23.352 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.9742 -> 22.8645 | Vel: 0 | Heat+0 -1.09742
+[DEBUG-MONITOR] Temperatura Real (Driver): 22.8645 C
+[DEBUG-SENSOR] Temp Real: 22.8645 | Com Ruido: 23.0214 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.8645 -> 22.7558 | Vel: 0 | Heat+0 -1.08645
+[DEBUG-SENSOR] Temp Real: 22.7558 | Com Ruido: 22.5985 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.7558 -> 22.6483 | Vel: 0 | Heat+0 -1.07558
+[DEBUG-MONITOR] Temperatura Real (Driver): 22.6483 C
+[DEBUG-SENSOR] Temp Real: 22.6483 | Com Ruido: 22.2634 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.6483 -> 22.5418 | Vel: 0 | Heat+0 -1.06483
+[DEBUG-SENSOR] Temp Real: 22.5418 | Com Ruido: 22.7093 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.5418 -> 22.4364 | Vel: 0 | Heat+0 -1.05418
+[DEBUG-MONITOR] Temperatura Real (Driver): 22.4364 C
+[DEBUG-SENSOR] Temp Real: 22.4364 | Com Ruido: 23.1702 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.4364 -> 22.332 | Vel: 0 | Heat+0 -1.04364
+[DEBUG-SENSOR] Temp Real: 22.332 | Com Ruido: 21.7449 | Inteiro: 21
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.332 -> 22.2287 | Vel: 0 | Heat+0 -1.0332
+[DEBUG-MONITOR] Temperatura Real (Driver): 22.2287 C
+[DEBUG-SENSOR] Temp Real: 22.2287 | Com Ruido: 23.6051 | Inteiro: 23
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.2287 -> 22.1264 | Vel: 0 | Heat+0 -1.02287
+[DEBUG-SENSOR] Temp Real: 22.1264 | Com Ruido: 21.8726 | Inteiro: 21
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.1264 -> 22.0251 | Vel: 0 | Heat+0 -1.01264
+[DEBUG-MONITOR] Temperatura Real (Driver): 22.0251 C
+[DEBUG-SENSOR] Temp Real: 22.0251 | Com Ruido: 22.0093 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 22.0251 -> 21.9249 | Vel: 0 | Heat+0 -1.00251
+[DEBUG-SENSOR] Temp Real: 21.9249 | Com Ruido: 22.2357 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.9249 -> 21.8256 | Vel: 0 | Heat+0 -0.992489
+[DEBUG-MONITOR] Temperatura Real (Driver): 21.8256 C
+[DEBUG-SENSOR] Temp Real: 21.8256 | Com Ruido: 21.8606 | Inteiro: 21
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.8256 -> 21.7274 | Vel: 0 | Heat+0 -0.982564
+[DEBUG-SENSOR] Temp Real: 21.7274 | Com Ruido: 22.8061 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.7274 -> 21.6301 | Vel: 0 | Heat+0 -0.972738
+[DEBUG-MONITOR] Temperatura Real (Driver): 21.6301 C
+[DEBUG-SENSOR] Temp Real: 21.6301 | Com Ruido: 22.2012 | Inteiro: 22
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.6301 -> 21.5338 | Vel: 0 | Heat+0 -0.963011
+[DEBUG-SENSOR] Temp Real: 21.5338 | Com Ruido: 21.3466 | Inteiro: 21
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.5338 -> 21.4385 | Vel: 0 | Heat+0 -0.953381
+[DEBUG-MONITOR] Temperatura Real (Driver): 21.4385 C
+[DEBUG-SENSOR] Temp Real: 21.4385 | Com Ruido: 21.1872 | Inteiro: 21
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.4385 -> 21.3441 | Vel: 0 | Heat+0 -0.943847
+[DEBUG-SENSOR] Temp Real: 21.3441 | Com Ruido: 20.7803 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.3441 -> 21.2506 | Vel: 0 | Heat+0 -0.934408
+[DEBUG-MONITOR] Temperatura Real (Driver): 21.2506 C
+[DEBUG-SENSOR] Temp Real: 21.2506 | Com Ruido: 20.8303 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.2506 -> 21.1581 | Vel: 0 | Heat+0 -0.925064
+[DEBUG-SENSOR] Temp Real: 21.1581 | Com Ruido: 20.894 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.1581 -> 21.0666 | Vel: 0 | Heat+0 -0.915813
+[DEBUG-MONITOR] Temperatura Real (Driver): 21.0666 C
+[DEBUG-SENSOR] Temp Real: 21.0666 | Com Ruido: 21.9569 | Inteiro: 21
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 21.0666 -> 20.9759 | Vel: 0 | Heat+0 -0.906655
+[DEBUG-SENSOR] Temp Real: 20.9759 | Com Ruido: 20.696 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.9759 -> 20.8861 | Vel: 0 | Heat+0 -0.897589
+[DEBUG-MONITOR] Temperatura Real (Driver): 20.8861 C
+[DEBUG-SENSOR] Temp Real: 20.8861 | Com Ruido: 20.4934 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.8861 -> 20.7973 | Vel: 0 | Heat+0 -0.888613
+[DEBUG-SENSOR] Temp Real: 20.7973 | Com Ruido: 20.8281 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.7973 -> 20.7093 | Vel: 0 | Heat+0 -0.879727
+[DEBUG-MONITOR] Temperatura Real (Driver): 20.7093 C
+[DEBUG-SENSOR] Temp Real: 20.7093 | Com Ruido: 21.4382 | Inteiro: 21
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.7093 -> 20.6222 | Vel: 0 | Heat+0 -0.870929
+[DEBUG-SENSOR] Temp Real: 20.6222 | Com Ruido: 20.5775 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.6222 -> 20.536 | Vel: 0 | Heat+0 -0.86222
+[DEBUG-MONITOR] Temperatura Real (Driver): 20.536 C
+[DEBUG-SENSOR] Temp Real: 20.536 | Com Ruido: 19.5984 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.536 -> 20.4506 | Vel: 0 | Heat+0 -0.853598
+[DEBUG-SENSOR] Temp Real: 20.4506 | Com Ruido: 20.9457 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.4506 -> 20.3661 | Vel: 0 | Heat+0 -0.845062
+[DEBUG-MONITOR] Temperatura Real (Driver): 20.3661 C
+[DEBUG-SENSOR] Temp Real: 20.3661 | Com Ruido: 19.7756 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.3661 -> 20.2824 | Vel: 0 | Heat+0 -0.836611
+[DEBUG-SENSOR] Temp Real: 20.2824 | Com Ruido: 19.5086 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.2824 -> 20.1996 | Vel: 0 | Heat+0 -0.828245
+[DEBUG-MONITOR] Temperatura Real (Driver): 20.1996 C
+[DEBUG-SENSOR] Temp Real: 20.1996 | Com Ruido: 20.4382 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.1996 -> 20.1176 | Vel: 0 | Heat+0 -0.819963
+[DEBUG-SENSOR] Temp Real: 20.1176 | Com Ruido: 20.0331 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.1176 -> 20.0365 | Vel: 0 | Heat+0 -0.811763
+[DEBUG-MONITOR] Temperatura Real (Driver): 20.0365 C
+[DEBUG-SENSOR] Temp Real: 20.0365 | Com Ruido: 20.7105 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 20.0365 -> 19.9561 | Vel: 0 | Heat+0 -0.803645
+[DEBUG-SENSOR] Temp Real: 19.9561 | Com Ruido: 19.9418 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.9561 -> 19.8765 | Vel: 0 | Heat+0 -0.795609
+[DEBUG-MONITOR] Temperatura Real (Driver): 19.8765 C
+[DEBUG-SENSOR] Temp Real: 19.8765 | Com Ruido: 20.5633 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.8765 -> 19.7978 | Vel: 0 | Heat+0 -0.787653
+[DEBUG-SENSOR] Temp Real: 19.7978 | Com Ruido: 20.152 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.7978 -> 19.7198 | Vel: 0 | Heat+0 -0.779776
+[DEBUG-MONITOR] Temperatura Real (Driver): 19.7198 C
+[DEBUG-SENSOR] Temp Real: 19.7198 | Com Ruido: 19.2397 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.7198 -> 19.6426 | Vel: 0 | Heat+0 -0.771978
+[DEBUG-SENSOR] Temp Real: 19.6426 | Com Ruido: 19.7817 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.6426 -> 19.5662 | Vel: 0 | Heat+0 -0.764258
+[DEBUG-MONITOR] Temperatura Real (Driver): 19.5662 C
+[DEBUG-SENSOR] Temp Real: 19.5662 | Com Ruido: 19.5294 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.5662 -> 19.4905 | Vel: 0 | Heat+0 -0.756616
+[DEBUG-SENSOR] Temp Real: 19.4905 | Com Ruido: 19.1069 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.4905 -> 19.4156 | Vel: 0 | Heat+0 -0.74905
+[DEBUG-MONITOR] Temperatura Real (Driver): 19.4156 C
+[DEBUG-SENSOR] Temp Real: 19.4156 | Com Ruido: 20.2039 | Inteiro: 20
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.4156 -> 19.3414 | Vel: 0 | Heat+0 -0.741559
+[DEBUG-SENSOR] Temp Real: 19.3414 | Com Ruido: 18.5405 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.3414 -> 19.268 | Vel: 0 | Heat+0 -0.734144
+[DEBUG-MONITOR] Temperatura Real (Driver): 19.268 C
+[DEBUG-SENSOR] Temp Real: 19.268 | Com Ruido: 19.0189 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.268 -> 19.1953 | Vel: 0 | Heat+0 -0.726802
+[DEBUG-SENSOR] Temp Real: 19.1953 | Com Ruido: 19.5136 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.1953 -> 19.1234 | Vel: 0 | Heat+0 -0.719534
+[DEBUG-MONITOR] Temperatura Real (Driver): 19.1234 C
+[DEBUG-SENSOR] Temp Real: 19.1234 | Com Ruido: 19.1294 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.1234 -> 19.0522 | Vel: 0 | Heat+0 -0.712339
+[DEBUG-SENSOR] Temp Real: 19.0522 | Com Ruido: 18.8388 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 19.0522 -> 18.9816 | Vel: 0 | Heat+0 -0.705216
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.9816 C
+[DEBUG-SENSOR] Temp Real: 18.9816 | Com Ruido: 19.6172 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.9816 -> 18.9118 | Vel: 0 | Heat+0 -0.698163
+[DEBUG-SENSOR] Temp Real: 18.9118 | Com Ruido: 19.5891 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.9118 -> 18.8427 | Vel: 0 | Heat+0 -0.691182
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.8427 C
+[DEBUG-SENSOR] Temp Real: 18.8427 | Com Ruido: 19.4144 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.8427 -> 18.7743 | Vel: 0 | Heat+0 -0.68427
+[DEBUG-SENSOR] Temp Real: 18.7743 | Com Ruido: 19.9256 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.7743 -> 18.7065 | Vel: 0 | Heat+0 -0.677427
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.7065 C
+[DEBUG-SENSOR] Temp Real: 18.7065 | Com Ruido: 18.9694 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.7065 -> 18.6395 | Vel: 0 | Heat+0 -0.670653
+[DEBUG-SENSOR] Temp Real: 18.6395 | Com Ruido: 18.9159 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.6395 -> 18.5731 | Vel: 0 | Heat+0 -0.663946
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.5731 C
+[DEBUG-SENSOR] Temp Real: 18.5731 | Com Ruido: 18.37 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.5731 -> 18.5073 | Vel: 0 | Heat+0 -0.657307
+[DEBUG-SENSOR] Temp Real: 18.5073 | Com Ruido: 17.8753 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.5073 -> 18.4423 | Vel: 0 | Heat+0 -0.650734
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.4423 C
+[DEBUG-SENSOR] Temp Real: 18.4423 | Com Ruido: 19.3936 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.4423 -> 18.3778 | Vel: 0 | Heat+0 -0.644226
+[DEBUG-SENSOR] Temp Real: 18.3778 | Com Ruido: 18.169 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.3778 -> 18.3141 | Vel: 0 | Heat+0 -0.637784
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.3141 C
+[DEBUG-SENSOR] Temp Real: 18.3141 | Com Ruido: 17.979 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.3141 -> 18.2509 | Vel: 0 | Heat+0 -0.631406
+[DEBUG-SENSOR] Temp Real: 18.2509 | Com Ruido: 19.0496 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.2509 -> 18.1884 | Vel: 0 | Heat+0 -0.625092
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.1884 C
+[DEBUG-SENSOR] Temp Real: 18.1884 | Com Ruido: 17.7387 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.1884 -> 18.1265 | Vel: 0 | Heat+0 -0.618841
+[DEBUG-SENSOR] Temp Real: 18.1265 | Com Ruido: 16.5023 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.1265 -> 18.0653 | Vel: 0 | Heat+0 -0.612653
+[DEBUG-MONITOR] Temperatura Real (Driver): 18.0653 C
+[DEBUG-SENSOR] Temp Real: 18.0653 | Com Ruido: 17.6688 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.0653 -> 18.0046 | Vel: 0 | Heat+0 -0.606526
+[DEBUG-SENSOR] Temp Real: 18.0046 | Com Ruido: 18.6423 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 18.0046 -> 17.9446 | Vel: 0 | Heat+0 -0.600461
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.9446 C
+[DEBUG-SENSOR] Temp Real: 17.9446 | Com Ruido: 18.1895 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.9446 -> 17.8851 | Vel: 0 | Heat+0 -0.594457
+[DEBUG-SENSOR] Temp Real: 17.8851 | Com Ruido: 19.2314 | Inteiro: 19
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.8851 -> 17.8263 | Vel: 0 | Heat+0 -0.588512
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.8263 C
+[DEBUG-SENSOR] Temp Real: 17.8263 | Com Ruido: 18.0437 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.8263 -> 17.768 | Vel: 0 | Heat+0 -0.582627
+[DEBUG-SENSOR] Temp Real: 17.768 | Com Ruido: 16.998 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.768 -> 17.7103 | Vel: 0 | Heat+0 -0.576801
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.7103 C
+[DEBUG-SENSOR] Temp Real: 17.7103 | Com Ruido: 17.2023 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.7103 -> 17.6532 | Vel: 0 | Heat+0 -0.571033
+[DEBUG-SENSOR] Temp Real: 17.6532 | Com Ruido: 18.4992 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.6532 -> 17.5967 | Vel: 0 | Heat+0 -0.565322
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.5967 C
+[DEBUG-SENSOR] Temp Real: 17.5967 | Com Ruido: 16.8339 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.5967 -> 17.5407 | Vel: 0 | Heat+0 -0.559669
+[DEBUG-SENSOR] Temp Real: 17.5407 | Com Ruido: 18.1291 | Inteiro: 18
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.5407 -> 17.4853 | Vel: 0 | Heat+0 -0.554072
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.4853 C
+[DEBUG-SENSOR] Temp Real: 17.4853 | Com Ruido: 17.1176 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.4853 -> 17.4305 | Vel: 0 | Heat+0 -0.548532
+[DEBUG-SENSOR] Temp Real: 17.4305 | Com Ruido: 17.3204 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.4305 -> 17.3762 | Vel: 0 | Heat+0 -0.543046
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.3762 C
+[DEBUG-SENSOR] Temp Real: 17.3762 | Com Ruido: 17.4223 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.3762 -> 17.3224 | Vel: 0 | Heat+0 -0.537616
+[DEBUG-SENSOR] Temp Real: 17.3224 | Com Ruido: 17.8612 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.3224 -> 17.2692 | Vel: 0 | Heat+0 -0.53224
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.2692 C
+[DEBUG-SENSOR] Temp Real: 17.2692 | Com Ruido: 16.9166 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.2692 -> 17.2165 | Vel: 0 | Heat+0 -0.526917
+[DEBUG-SENSOR] Temp Real: 17.2165 | Com Ruido: 17.1965 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.2165 -> 17.1643 | Vel: 0 | Heat+0 -0.521648
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.1643 C
+[DEBUG-SENSOR] Temp Real: 17.1643 | Com Ruido: 17.4435 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.1643 -> 17.1127 | Vel: 0 | Heat+0 -0.516432
+[DEBUG-SENSOR] Temp Real: 17.1127 | Com Ruido: 16.5865 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.1127 -> 17.0615 | Vel: 0 | Heat+0 -0.511267
+[DEBUG-MONITOR] Temperatura Real (Driver): 17.0615 C
+[DEBUG-SENSOR] Temp Real: 17.0615 | Com Ruido: 17.0993 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.0615 -> 17.0109 | Vel: 0 | Heat+0 -0.506155
+[DEBUG-SENSOR] Temp Real: 17.0109 | Com Ruido: 17.193 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 17.0109 -> 16.9608 | Vel: 0 | Heat+0 -0.501093
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.9608 C
+[DEBUG-SENSOR] Temp Real: 16.9608 | Com Ruido: 17.6488 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.9608 -> 16.9112 | Vel: 0 | Heat+0 -0.496082
+[DEBUG-SENSOR] Temp Real: 16.9112 | Com Ruido: 16.6054 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.9112 -> 16.8621 | Vel: 0 | Heat+0 -0.491121
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.8621 C
+[DEBUG-SENSOR] Temp Real: 16.8621 | Com Ruido: 17.1222 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.8621 -> 16.8135 | Vel: 0 | Heat+0 -0.48621
+[DEBUG-SENSOR] Temp Real: 16.8135 | Com Ruido: 16.9297 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.8135 -> 16.7653 | Vel: 0 | Heat+0 -0.481348
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.7653 C
+[DEBUG-SENSOR] Temp Real: 16.7653 | Com Ruido: 16.5793 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.7653 -> 16.7177 | Vel: 0 | Heat+0 -0.476535
+[DEBUG-SENSOR] Temp Real: 16.7177 | Com Ruido: 15.7232 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.7177 -> 16.6705 | Vel: 0 | Heat+0 -0.471769
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.6705 C
+[DEBUG-SENSOR] Temp Real: 16.6705 | Com Ruido: 16.1186 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.6705 -> 16.6238 | Vel: 0 | Heat+0 -0.467052
+[DEBUG-SENSOR] Temp Real: 16.6238 | Com Ruido: 16.9238 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.6238 -> 16.5776 | Vel: 0 | Heat+0 -0.462381
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.5776 C
+[DEBUG-SENSOR] Temp Real: 16.5776 | Com Ruido: 17.2285 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.5776 -> 16.5318 | Vel: 0 | Heat+0 -0.457757
+[DEBUG-SENSOR] Temp Real: 16.5318 | Com Ruido: 17.6374 | Inteiro: 17
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.5318 -> 16.4865 | Vel: 0 | Heat+0 -0.45318
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.4865 C
+[DEBUG-SENSOR] Temp Real: 16.4865 | Com Ruido: 16.9737 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.4865 -> 16.4416 | Vel: 0 | Heat+0 -0.448648
+[DEBUG-SENSOR] Temp Real: 16.4416 | Com Ruido: 16.3849 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.4416 -> 16.3972 | Vel: 0 | Heat+0 -0.444161
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.3972 C
+[DEBUG-SENSOR] Temp Real: 16.3972 | Com Ruido: 16.741 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.3972 -> 16.3532 | Vel: 0 | Heat+0 -0.43972
+[DEBUG-SENSOR] Temp Real: 16.3532 | Com Ruido: 15.1227 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.3532 -> 16.3097 | Vel: 0 | Heat+0 -0.435323
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.3097 C
+[DEBUG-SENSOR] Temp Real: 16.3097 | Com Ruido: 16.5974 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.3097 -> 16.2666 | Vel: 0 | Heat+0 -0.430969
+[DEBUG-SENSOR] Temp Real: 16.2666 | Com Ruido: 15.9135 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.2666 -> 16.2239 | Vel: 0 | Heat+0 -0.42666
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.2239 C
+[DEBUG-SENSOR] Temp Real: 16.2239 | Com Ruido: 15.604 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.2239 -> 16.1817 | Vel: 0 | Heat+0 -0.422393
+[DEBUG-SENSOR] Temp Real: 16.1817 | Com Ruido: 16.2426 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.1817 -> 16.1399 | Vel: 0 | Heat+0 -0.418169
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.1399 C
+[DEBUG-SENSOR] Temp Real: 16.1399 | Com Ruido: 15.6203 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.1399 -> 16.0985 | Vel: 0 | Heat+0 -0.413988
+[DEBUG-SENSOR] Temp Real: 16.0985 | Com Ruido: 15.4177 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.0985 -> 16.0575 | Vel: 0 | Heat+0 -0.409848
+[DEBUG-MONITOR] Temperatura Real (Driver): 16.0575 C
+[DEBUG-SENSOR] Temp Real: 16.0575 | Com Ruido: 15.7645 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.0575 -> 16.0169 | Vel: 0 | Heat+0 -0.405749
+[DEBUG-SENSOR] Temp Real: 16.0169 | Com Ruido: 15.9024 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 16.0169 -> 15.9767 | Vel: 0 | Heat+0 -0.401692
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.9767 C
+[DEBUG-SENSOR] Temp Real: 15.9767 | Com Ruido: 16.1062 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.9767 -> 15.937 | Vel: 0 | Heat+0 -0.397675
+[DEBUG-SENSOR] Temp Real: 15.937 | Com Ruido: 15.8854 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.937 -> 15.8976 | Vel: 0 | Heat+0 -0.393698
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.8976 C
+[DEBUG-SENSOR] Temp Real: 15.8976 | Com Ruido: 15.1222 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.8976 -> 15.8586 | Vel: 0 | Heat+0 -0.389761
+[DEBUG-SENSOR] Temp Real: 15.8586 | Com Ruido: 15.6701 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.8586 -> 15.82 | Vel: 0 | Heat+0 -0.385864
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.82 C
+[DEBUG-SENSOR] Temp Real: 15.82 | Com Ruido: 16.0345 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.82 -> 15.7818 | Vel: 0 | Heat+0 -0.382005
+[DEBUG-SENSOR] Temp Real: 15.7818 | Com Ruido: 16.0737 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.7818 -> 15.744 | Vel: 0 | Heat+0 -0.378185
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.744 C
+[DEBUG-SENSOR] Temp Real: 15.744 | Com Ruido: 15.2714 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.744 -> 15.7066 | Vel: 0 | Heat+0 -0.374403
+[DEBUG-SENSOR] Temp Real: 15.7066 | Com Ruido: 15.6636 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.7066 -> 15.6695 | Vel: 0 | Heat+0 -0.370659
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.6695 C
+[DEBUG-SENSOR] Temp Real: 15.6695 | Com Ruido: 15.7871 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.6695 -> 15.6328 | Vel: 0 | Heat+0 -0.366952
+[DEBUG-SENSOR] Temp Real: 15.6328 | Com Ruido: 15.6648 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.6328 -> 15.5965 | Vel: 0 | Heat+0 -0.363283
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.5965 C
+[DEBUG-SENSOR] Temp Real: 15.5965 | Com Ruido: 15.6551 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.5965 -> 15.5605 | Vel: 0 | Heat+0 -0.35965
+[DEBUG-SENSOR] Temp Real: 15.5605 | Com Ruido: 16.0304 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.5605 -> 15.5249 | Vel: 0 | Heat+0 -0.356053
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.5249 C
+[DEBUG-SENSOR] Temp Real: 15.5249 | Com Ruido: 16.0749 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.5249 -> 15.4897 | Vel: 0 | Heat+0 -0.352493
+[DEBUG-SENSOR] Temp Real: 15.4897 | Com Ruido: 15.9043 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.4897 -> 15.4548 | Vel: 0 | Heat+0 -0.348968
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.4548 C
+[DEBUG-SENSOR] Temp Real: 15.4548 | Com Ruido: 15.0599 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.4548 -> 15.4202 | Vel: 0 | Heat+0 -0.345478
+[DEBUG-SENSOR] Temp Real: 15.4202 | Com Ruido: 16.217 | Inteiro: 16
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.4202 -> 15.386 | Vel: 0 | Heat+0 -0.342023
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.386 C
+[DEBUG-SENSOR] Temp Real: 15.386 | Com Ruido: 14.75 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.386 -> 15.3522 | Vel: 0 | Heat+0 -0.338603
+[DEBUG-SENSOR] Temp Real: 15.3522 | Com Ruido: 15.967 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.3522 -> 15.3187 | Vel: 0 | Heat+0 -0.335217
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.3187 C
+[DEBUG-SENSOR] Temp Real: 15.3187 | Com Ruido: 15.6465 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.3187 -> 15.2855 | Vel: 0 | Heat+0 -0.331865
+[DEBUG-SENSOR] Temp Real: 15.2855 | Com Ruido: 15.6572 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.2855 -> 15.2526 | Vel: 0 | Heat+0 -0.328546
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.2526 C
+[DEBUG-SENSOR] Temp Real: 15.2526 | Com Ruido: 14.4664 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.2526 -> 15.2201 | Vel: 0 | Heat+0 -0.325261
+[DEBUG-SENSOR] Temp Real: 15.2201 | Com Ruido: 14.8932 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.2201 -> 15.1879 | Vel: 0 | Heat+0 -0.322008
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.1879 C
+[DEBUG-SENSOR] Temp Real: 15.1879 | Com Ruido: 15.1273 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.1879 -> 15.156 | Vel: 0 | Heat+0 -0.318788
+[DEBUG-SENSOR] Temp Real: 15.156 | Com Ruido: 14.8558 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.156 -> 15.1244 | Vel: 0 | Heat+0 -0.3156
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.1244 C
+[DEBUG-SENSOR] Temp Real: 15.1244 | Com Ruido: 14.0788 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.1244 -> 15.0932 | Vel: 0 | Heat+0 -0.312444
+[DEBUG-SENSOR] Temp Real: 15.0932 | Com Ruido: 15.6 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.0932 -> 15.0623 | Vel: 0 | Heat+0 -0.30932
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.0623 C
+[DEBUG-SENSOR] Temp Real: 15.0623 | Com Ruido: 14.986 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.0623 -> 15.0316 | Vel: 0 | Heat+0 -0.306227
+[DEBUG-SENSOR] Temp Real: 15.0316 | Com Ruido: 15.0456 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.0316 -> 15.0013 | Vel: 0 | Heat+0 -0.303164
+[DEBUG-MONITOR] Temperatura Real (Driver): 15.0013 C
+[DEBUG-SENSOR] Temp Real: 15.0013 | Com Ruido: 15.5607 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 15.0013 -> 14.9713 | Vel: 0 | Heat+0 -0.300133
+[DEBUG-SENSOR] Temp Real: 14.9713 | Com Ruido: 14.707 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.9713 -> 14.9416 | Vel: 0 | Heat+0 -0.297131
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.9416 C
+[DEBUG-SENSOR] Temp Real: 14.9416 | Com Ruido: 13.798 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.9416 -> 14.9122 | Vel: 0 | Heat+0 -0.29416
+[DEBUG-SENSOR] Temp Real: 14.9122 | Com Ruido: 14.6282 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.9122 -> 14.8831 | Vel: 0 | Heat+0 -0.291219
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.8831 C
+[DEBUG-SENSOR] Temp Real: 14.8831 | Com Ruido: 14.4841 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.8831 -> 14.8542 | Vel: 0 | Heat+0 -0.288306
+[DEBUG-SENSOR] Temp Real: 14.8542 | Com Ruido: 13.8702 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.8542 -> 14.8257 | Vel: 0 | Heat+0 -0.285423
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.8257 C
+[DEBUG-SENSOR] Temp Real: 14.8257 | Com Ruido: 14.633 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.8257 -> 14.7974 | Vel: 0 | Heat+0 -0.282569
+[DEBUG-SENSOR] Temp Real: 14.7974 | Com Ruido: 14.9034 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.7974 -> 14.7695 | Vel: 0 | Heat+0 -0.279743
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.7695 C
+[DEBUG-SENSOR] Temp Real: 14.7695 | Com Ruido: 14.5581 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.7695 -> 14.7418 | Vel: 0 | Heat+0 -0.276946
+[DEBUG-SENSOR] Temp Real: 14.7418 | Com Ruido: 15.0377 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.7418 -> 14.7143 | Vel: 0 | Heat+0 -0.274177
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.7143 C
+[DEBUG-SENSOR] Temp Real: 14.7143 | Com Ruido: 13.6178 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.7143 -> 14.6872 | Vel: 0 | Heat+0 -0.271435
+[DEBUG-SENSOR] Temp Real: 14.6872 | Com Ruido: 14.5872 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.6872 -> 14.6603 | Vel: 0 | Heat+0 -0.26872
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.6603 C
+[DEBUG-SENSOR] Temp Real: 14.6603 | Com Ruido: 14.3991 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.6603 -> 14.6337 | Vel: 0 | Heat+0 -0.266033
+[DEBUG-SENSOR] Temp Real: 14.6337 | Com Ruido: 14.5812 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.6337 -> 14.6074 | Vel: 0 | Heat+0 -0.263373
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.6074 C
+[DEBUG-SENSOR] Temp Real: 14.6074 | Com Ruido: 15.2246 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.6074 -> 14.5813 | Vel: 0 | Heat+0 -0.260739
+[DEBUG-SENSOR] Temp Real: 14.5813 | Com Ruido: 14.7005 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.5813 -> 14.5555 | Vel: 0 | Heat+0 -0.258132
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.5555 C
+[DEBUG-SENSOR] Temp Real: 14.5555 | Com Ruido: 14.8501 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.5555 -> 14.53 | Vel: 0 | Heat+0 -0.25555
+[DEBUG-SENSOR] Temp Real: 14.53 | Com Ruido: 15.029 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.53 -> 14.5047 | Vel: 0 | Heat+0 -0.252995
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.5047 C
+[DEBUG-SENSOR] Temp Real: 14.5047 | Com Ruido: 14.6882 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.5047 -> 14.4796 | Vel: 0 | Heat+0 -0.250465
+[DEBUG-SENSOR] Temp Real: 14.4796 | Com Ruido: 14.6242 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.4796 -> 14.4548 | Vel: 0 | Heat+0 -0.24796
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.4548 C
+[DEBUG-SENSOR] Temp Real: 14.4548 | Com Ruido: 14.9427 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.4548 -> 14.4303 | Vel: 0 | Heat+0 -0.245481
+[DEBUG-SENSOR] Temp Real: 14.4303 | Com Ruido: 13.5861 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.4303 -> 14.406 | Vel: 0 | Heat+0 -0.243026
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.406 C
+[DEBUG-SENSOR] Temp Real: 14.406 | Com Ruido: 13.5813 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.406 -> 14.3819 | Vel: 0 | Heat+0 -0.240596
+[DEBUG-SENSOR] Temp Real: 14.3819 | Com Ruido: 15.2613 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.3819 -> 14.3581 | Vel: 0 | Heat+0 -0.23819
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.3581 C
+[DEBUG-SENSOR] Temp Real: 14.3581 | Com Ruido: 13.9881 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.3581 -> 14.3345 | Vel: 0 | Heat+0 -0.235808
+[DEBUG-SENSOR] Temp Real: 14.3345 | Com Ruido: 15.5876 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.3345 -> 14.3112 | Vel: 0 | Heat+0 -0.23345
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.3112 C
+[DEBUG-SENSOR] Temp Real: 14.3112 | Com Ruido: 14.888 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.3112 -> 14.288 | Vel: 0 | Heat+0 -0.231115
+[DEBUG-SENSOR] Temp Real: 14.288 | Com Ruido: 14.9041 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.288 -> 14.2652 | Vel: 0 | Heat+0 -0.228804
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.2652 C
+[DEBUG-SENSOR] Temp Real: 14.2652 | Com Ruido: 14.1425 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.2652 -> 14.2425 | Vel: 0 | Heat+0 -0.226516
+[DEBUG-SENSOR] Temp Real: 14.2425 | Com Ruido: 13.3086 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.2425 -> 14.2201 | Vel: 0 | Heat+0 -0.224251
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.2201 C
+[DEBUG-SENSOR] Temp Real: 14.2201 | Com Ruido: 14.2362 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.2201 -> 14.1979 | Vel: 0 | Heat+0 -0.222009
+[DEBUG-SENSOR] Temp Real: 14.1979 | Com Ruido: 13.4631 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.1979 -> 14.1759 | Vel: 0 | Heat+0 -0.219788
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.1759 C
+[DEBUG-SENSOR] Temp Real: 14.1759 | Com Ruido: 15.0958 | Inteiro: 15
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.1759 -> 14.1541 | Vel: 0 | Heat+0 -0.217591
+[DEBUG-SENSOR] Temp Real: 14.1541 | Com Ruido: 13.6054 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.1541 -> 14.1326 | Vel: 0 | Heat+0 -0.215415
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.1326 C
+[DEBUG-SENSOR] Temp Real: 14.1326 | Com Ruido: 14.2647 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.1326 -> 14.1113 | Vel: 0 | Heat+0 -0.213261
+[DEBUG-SENSOR] Temp Real: 14.1113 | Com Ruido: 13.9369 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.1113 -> 14.0902 | Vel: 0 | Heat+0 -0.211128
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.0902 C
+[DEBUG-SENSOR] Temp Real: 14.0902 | Com Ruido: 13.8385 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.0902 -> 14.0693 | Vel: 0 | Heat+0 -0.209017
+[DEBUG-SENSOR] Temp Real: 14.0693 | Com Ruido: 14.6809 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.0693 -> 14.0486 | Vel: 0 | Heat+0 -0.206927
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.0486 C
+[DEBUG-SENSOR] Temp Real: 14.0486 | Com Ruido: 13.8252 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.0486 -> 14.0281 | Vel: 0 | Heat+0 -0.204857
+[DEBUG-SENSOR] Temp Real: 14.0281 | Com Ruido: 13.3591 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.0281 -> 14.0078 | Vel: 0 | Heat+0 -0.202809
+[DEBUG-MONITOR] Temperatura Real (Driver): 14.0078 C
+[DEBUG-SENSOR] Temp Real: 14.0078 | Com Ruido: 14.2974 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 14.0078 -> 13.9877 | Vel: 0 | Heat+0 -0.200781
+[DEBUG-SENSOR] Temp Real: 13.9877 | Com Ruido: 14.3964 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.9877 -> 13.9679 | Vel: 0 | Heat+0 -0.198773
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.9679 C
+[DEBUG-SENSOR] Temp Real: 13.9679 | Com Ruido: 14.1217 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.9679 -> 13.9482 | Vel: 0 | Heat+0 -0.196785
+[DEBUG-SENSOR] Temp Real: 13.9482 | Com Ruido: 14.2909 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.9482 -> 13.9287 | Vel: 0 | Heat+0 -0.194817
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.9287 C
+[DEBUG-SENSOR] Temp Real: 13.9287 | Com Ruido: 14.3167 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.9287 -> 13.9094 | Vel: 0 | Heat+0 -0.192869
+[DEBUG-SENSOR] Temp Real: 13.9094 | Com Ruido: 14.7102 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.9094 -> 13.8903 | Vel: 0 | Heat+0 -0.19094
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.8903 C
+[DEBUG-SENSOR] Temp Real: 13.8903 | Com Ruido: 14.3828 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.8903 -> 13.8714 | Vel: 0 | Heat+0 -0.189031
+[DEBUG-SENSOR] Temp Real: 13.8714 | Com Ruido: 14.3127 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.8714 -> 13.8527 | Vel: 0 | Heat+0 -0.187141
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.8527 C
+[DEBUG-SENSOR] Temp Real: 13.8527 | Com Ruido: 14.3172 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.8527 -> 13.8342 | Vel: 0 | Heat+0 -0.185269
+[DEBUG-SENSOR] Temp Real: 13.8342 | Com Ruido: 14.0788 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.8342 -> 13.8158 | Vel: 0 | Heat+0 -0.183417
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.8158 C
+[DEBUG-SENSOR] Temp Real: 13.8158 | Com Ruido: 13.7909 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.8158 -> 13.7977 | Vel: 0 | Heat+0 -0.181582
+[DEBUG-SENSOR] Temp Real: 13.7977 | Com Ruido: 13.6599 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.7977 -> 13.7797 | Vel: 0 | Heat+0 -0.179767
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.7797 C
+[DEBUG-SENSOR] Temp Real: 13.7797 | Com Ruido: 14.1699 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.7797 -> 13.7619 | Vel: 0 | Heat+0 -0.177969
+[DEBUG-SENSOR] Temp Real: 13.7619 | Com Ruido: 12.6759 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.7619 -> 13.7443 | Vel: 0 | Heat+0 -0.176189
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.7443 C
+[DEBUG-SENSOR] Temp Real: 13.7443 | Com Ruido: 14.2411 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.7443 -> 13.7268 | Vel: 0 | Heat+0 -0.174427
+[DEBUG-SENSOR] Temp Real: 13.7268 | Com Ruido: 13.5419 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.7268 -> 13.7096 | Vel: 0 | Heat+0 -0.172683
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.7096 C
+[DEBUG-SENSOR] Temp Real: 13.7096 | Com Ruido: 14.4216 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.7096 -> 13.6925 | Vel: 0 | Heat+0 -0.170956
+[DEBUG-SENSOR] Temp Real: 13.6925 | Com Ruido: 14.9457 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.6925 -> 13.6755 | Vel: 0 | Heat+0 -0.169247
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.6755 C
+[DEBUG-SENSOR] Temp Real: 13.6755 | Com Ruido: 14.1791 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.6755 -> 13.6588 | Vel: 0 | Heat+0 -0.167554
+[DEBUG-SENSOR] Temp Real: 13.6588 | Com Ruido: 13.5233 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.6588 -> 13.6422 | Vel: 0 | Heat+0 -0.165879
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.6422 C
+[DEBUG-SENSOR] Temp Real: 13.6422 | Com Ruido: 13.46 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.6422 -> 13.6258 | Vel: 0 | Heat+0 -0.16422
+[DEBUG-SENSOR] Temp Real: 13.6258 | Com Ruido: 13.9896 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.6258 -> 13.6095 | Vel: 0 | Heat+0 -0.162578
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.6095 C
+[DEBUG-SENSOR] Temp Real: 13.6095 | Com Ruido: 12.9061 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.6095 -> 13.5934 | Vel: 0 | Heat+0 -0.160952
+[DEBUG-SENSOR] Temp Real: 13.5934 | Com Ruido: 13.7594 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.5934 -> 13.5775 | Vel: 0 | Heat+0 -0.159342
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.5775 C
+[DEBUG-SENSOR] Temp Real: 13.5775 | Com Ruido: 12.6249 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.5775 -> 13.5617 | Vel: 0 | Heat+0 -0.157749
+[DEBUG-SENSOR] Temp Real: 13.5617 | Com Ruido: 14.1004 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.5617 -> 13.5461 | Vel: 0 | Heat+0 -0.156171
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.5461 C
+[DEBUG-SENSOR] Temp Real: 13.5461 | Com Ruido: 14.2903 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.5461 -> 13.5306 | Vel: 0 | Heat+0 -0.15461
+[DEBUG-SENSOR] Temp Real: 13.5306 | Com Ruido: 13.9906 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.5306 -> 13.5153 | Vel: 0 | Heat+0 -0.153064
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.5153 C
+[DEBUG-SENSOR] Temp Real: 13.5153 | Com Ruido: 13.4238 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.5153 -> 13.5002 | Vel: 0 | Heat+0 -0.151533
+[DEBUG-SENSOR] Temp Real: 13.5002 | Com Ruido: 14.1845 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.5002 -> 13.4852 | Vel: 0 | Heat+0 -0.150018
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.4852 C
+[DEBUG-SENSOR] Temp Real: 13.4852 | Com Ruido: 14.4313 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.4852 -> 13.4703 | Vel: 0 | Heat+0 -0.148518
+[DEBUG-SENSOR] Temp Real: 13.4703 | Com Ruido: 14.309 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.4703 -> 13.4556 | Vel: 0 | Heat+0 -0.147032
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.4556 C
+[DEBUG-SENSOR] Temp Real: 13.4556 | Com Ruido: 13.6847 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.4556 -> 13.4411 | Vel: 0 | Heat+0 -0.145562
+[DEBUG-SENSOR] Temp Real: 13.4411 | Com Ruido: 13.0841 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.4411 -> 13.4267 | Vel: 0 | Heat+0 -0.144106
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.4267 C
+[DEBUG-SENSOR] Temp Real: 13.4267 | Com Ruido: 12.1272 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.4267 -> 13.4124 | Vel: 0 | Heat+0 -0.142665
+[DEBUG-SENSOR] Temp Real: 13.4124 | Com Ruido: 13.5263 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.4124 -> 13.3983 | Vel: 0 | Heat+0 -0.141239
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.3983 C
+[DEBUG-SENSOR] Temp Real: 13.3983 | Com Ruido: 12.9102 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3983 -> 13.3843 | Vel: 0 | Heat+0 -0.139826
+[DEBUG-SENSOR] Temp Real: 13.3843 | Com Ruido: 12.7681 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3843 -> 13.3704 | Vel: 0 | Heat+0 -0.138428
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.3704 C
+[DEBUG-SENSOR] Temp Real: 13.3704 | Com Ruido: 14.1439 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3704 -> 13.3567 | Vel: 0 | Heat+0 -0.137044
+[DEBUG-SENSOR] Temp Real: 13.3567 | Com Ruido: 12.7303 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3567 -> 13.3432 | Vel: 0 | Heat+0 -0.135673
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.3432 C
+[DEBUG-SENSOR] Temp Real: 13.3432 | Com Ruido: 12.81 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3432 -> 13.3297 | Vel: 0 | Heat+0 -0.134317
+[DEBUG-SENSOR] Temp Real: 13.3297 | Com Ruido: 13.333 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3297 -> 13.3164 | Vel: 0 | Heat+0 -0.132973
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.3164 C
+[DEBUG-SENSOR] Temp Real: 13.3164 | Com Ruido: 13.7126 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3164 -> 13.3033 | Vel: 0 | Heat+0 -0.131644
+[DEBUG-SENSOR] Temp Real: 13.3033 | Com Ruido: 14.3561 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.3033 -> 13.2902 | Vel: 0 | Heat+0 -0.130327
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.2902 C
+[DEBUG-SENSOR] Temp Real: 13.2902 | Com Ruido: 12.7193 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.2902 -> 13.2773 | Vel: 0 | Heat+0 -0.129024
+[DEBUG-SENSOR] Temp Real: 13.2773 | Com Ruido: 13.5128 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.2773 -> 13.2646 | Vel: 0 | Heat+0 -0.127734
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.2646 C
+[DEBUG-SENSOR] Temp Real: 13.2646 | Com Ruido: 13.0026 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.2646 -> 13.2519 | Vel: 0 | Heat+0 -0.126456
+[DEBUG-SENSOR] Temp Real: 13.2519 | Com Ruido: 13.4974 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.2519 -> 13.2394 | Vel: 0 | Heat+0 -0.125192
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.2394 C
+[DEBUG-SENSOR] Temp Real: 13.2394 | Com Ruido: 14.2246 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.2394 -> 13.227 | Vel: 0 | Heat+0 -0.12394
+[DEBUG-SENSOR] Temp Real: 13.227 | Com Ruido: 12.9941 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.227 -> 13.2147 | Vel: 0 | Heat+0 -0.122701
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.2147 C
+[DEBUG-SENSOR] Temp Real: 13.2147 | Com Ruido: 13.1938 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.2147 -> 13.2026 | Vel: 0 | Heat+0 -0.121474
+[DEBUG-SENSOR] Temp Real: 13.2026 | Com Ruido: 13.2226 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.2026 -> 13.1906 | Vel: 0 | Heat+0 -0.120259
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.1906 C
+[DEBUG-SENSOR] Temp Real: 13.1906 | Com Ruido: 14.262 | Inteiro: 14
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1906 -> 13.1787 | Vel: 0 | Heat+0 -0.119056
+[DEBUG-SENSOR] Temp Real: 13.1787 | Com Ruido: 13.5773 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1787 -> 13.1669 | Vel: 0 | Heat+0 -0.117866
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.1669 C
+[DEBUG-SENSOR] Temp Real: 13.1669 | Com Ruido: 12.7804 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1669 -> 13.1552 | Vel: 0 | Heat+0 -0.116687
+[DEBUG-SENSOR] Temp Real: 13.1552 | Com Ruido: 13.35 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1552 -> 13.1437 | Vel: 0 | Heat+0 -0.11552
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.1437 C
+[DEBUG-SENSOR] Temp Real: 13.1437 | Com Ruido: 13.3868 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1437 -> 13.1322 | Vel: 0 | Heat+0 -0.114365
+[DEBUG-SENSOR] Temp Real: 13.1322 | Com Ruido: 12.9657 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1322 -> 13.1209 | Vel: 0 | Heat+0 -0.113221
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.1209 C
+[DEBUG-SENSOR] Temp Real: 13.1209 | Com Ruido: 13.1481 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1209 -> 13.1097 | Vel: 0 | Heat+0 -0.112089
+[DEBUG-SENSOR] Temp Real: 13.1097 | Com Ruido: 13.2518 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.1097 -> 13.0986 | Vel: 0 | Heat+0 -0.110968
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.0986 C
+[DEBUG-SENSOR] Temp Real: 13.0986 | Com Ruido: 13.2955 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0986 -> 13.0876 | Vel: 0 | Heat+0 -0.109859
+[DEBUG-SENSOR] Temp Real: 13.0876 | Com Ruido: 13.4276 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0876 -> 13.0767 | Vel: 0 | Heat+0 -0.10876
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.0767 C
+[DEBUG-SENSOR] Temp Real: 13.0767 | Com Ruido: 12.6148 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0767 -> 13.066 | Vel: 0 | Heat+0 -0.107672
+[DEBUG-SENSOR] Temp Real: 13.066 | Com Ruido: 12.494 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.066 -> 13.0553 | Vel: 0 | Heat+0 -0.106596
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.0553 C
+[DEBUG-SENSOR] Temp Real: 13.0553 | Com Ruido: 12.6174 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0553 -> 13.0447 | Vel: 0 | Heat+0 -0.10553
+[DEBUG-SENSOR] Temp Real: 13.0447 | Com Ruido: 13.4788 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0447 -> 13.0343 | Vel: 0 | Heat+0 -0.104474
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.0343 C
+[DEBUG-SENSOR] Temp Real: 13.0343 | Com Ruido: 13.4696 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0343 -> 13.024 | Vel: 0 | Heat+0 -0.10343
+[DEBUG-SENSOR] Temp Real: 13.024 | Com Ruido: 12.842 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.024 -> 13.0137 | Vel: 0 | Heat+0 -0.102395
+[DEBUG-MONITOR] Temperatura Real (Driver): 13.0137 C
+[DEBUG-SENSOR] Temp Real: 13.0137 | Com Ruido: 12.762 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0137 -> 13.0036 | Vel: 0 | Heat+0 -0.101371
+[DEBUG-SENSOR] Temp Real: 13.0036 | Com Ruido: 12.7589 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 13.0036 -> 12.9935 | Vel: 0 | Heat+0 -0.100358
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.9935 C
+[DEBUG-SENSOR] Temp Real: 12.9935 | Com Ruido: 13.2789 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9935 -> 12.9836 | Vel: 0 | Heat+0 -0.0993542
+[DEBUG-SENSOR] Temp Real: 12.9836 | Com Ruido: 12.5166 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9836 -> 12.9738 | Vel: 0 | Heat+0 -0.0983606
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.9738 C
+[DEBUG-SENSOR] Temp Real: 12.9738 | Com Ruido: 12.7699 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9738 -> 12.964 | Vel: 0 | Heat+0 -0.097377
+[DEBUG-SENSOR] Temp Real: 12.964 | Com Ruido: 13.3188 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.964 -> 12.9544 | Vel: 0 | Heat+0 -0.0964032
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.9544 C
+[DEBUG-SENSOR] Temp Real: 12.9544 | Com Ruido: 12.6567 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9544 -> 12.9448 | Vel: 0 | Heat+0 -0.0954392
+[DEBUG-SENSOR] Temp Real: 12.9448 | Com Ruido: 13.4229 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9448 -> 12.9354 | Vel: 0 | Heat+0 -0.0944847
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.9354 C
+[DEBUG-SENSOR] Temp Real: 12.9354 | Com Ruido: 13.1734 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9354 -> 12.926 | Vel: 0 | Heat+0 -0.0935399
+[DEBUG-SENSOR] Temp Real: 12.926 | Com Ruido: 11.9504 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.926 -> 12.9168 | Vel: 0 | Heat+0 -0.0926045
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.9168 C
+[DEBUG-SENSOR] Temp Real: 12.9168 | Com Ruido: 12.5047 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9168 -> 12.9076 | Vel: 0 | Heat+0 -0.0916785
+[DEBUG-SENSOR] Temp Real: 12.9076 | Com Ruido: 12.638 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.9076 -> 12.8985 | Vel: 0 | Heat+0 -0.0907618
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.8985 C
+[DEBUG-SENSOR] Temp Real: 12.8985 | Com Ruido: 13.2676 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8985 -> 12.8896 | Vel: 0 | Heat+0 -0.0898541
+[DEBUG-SENSOR] Temp Real: 12.8896 | Com Ruido: 13.2032 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8896 -> 12.8807 | Vel: 0 | Heat+0 -0.0889556
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.8807 C
+[DEBUG-SENSOR] Temp Real: 12.8807 | Com Ruido: 12.8121 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8807 -> 12.8719 | Vel: 0 | Heat+0 -0.088066
+[DEBUG-SENSOR] Temp Real: 12.8719 | Com Ruido: 12.9254 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8719 -> 12.8631 | Vel: 0 | Heat+0 -0.0871854
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.8631 C
+[DEBUG-SENSOR] Temp Real: 12.8631 | Com Ruido: 12.0156 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8631 -> 12.8545 | Vel: 0 | Heat+0 -0.0863135
+[DEBUG-SENSOR] Temp Real: 12.8545 | Com Ruido: 12.6829 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8545 -> 12.846 | Vel: 0 | Heat+0 -0.0854504
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.846 C
+[DEBUG-SENSOR] Temp Real: 12.846 | Com Ruido: 12.9439 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.846 -> 12.8375 | Vel: 0 | Heat+0 -0.0845959
+[DEBUG-SENSOR] Temp Real: 12.8375 | Com Ruido: 13.2496 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8375 -> 12.8291 | Vel: 0 | Heat+0 -0.0837499
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.8291 C
+[DEBUG-SENSOR] Temp Real: 12.8291 | Com Ruido: 12.5522 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8291 -> 12.8208 | Vel: 0 | Heat+0 -0.0829123
+[DEBUG-SENSOR] Temp Real: 12.8208 | Com Ruido: 13.4678 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8208 -> 12.8126 | Vel: 0 | Heat+0 -0.0820832
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.8126 C
+[DEBUG-SENSOR] Temp Real: 12.8126 | Com Ruido: 12.8926 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8126 -> 12.8045 | Vel: 0 | Heat+0 -0.0812624
+[DEBUG-SENSOR] Temp Real: 12.8045 | Com Ruido: 12.3913 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.8045 -> 12.7965 | Vel: 0 | Heat+0 -0.0804498
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.7965 C
+[DEBUG-SENSOR] Temp Real: 12.7965 | Com Ruido: 12.3718 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7965 -> 12.7885 | Vel: 0 | Heat+0 -0.0796453
+[DEBUG-SENSOR] Temp Real: 12.7885 | Com Ruido: 12.3935 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7885 -> 12.7806 | Vel: 0 | Heat+0 -0.0788488
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.7806 C
+[DEBUG-SENSOR] Temp Real: 12.7806 | Com Ruido: 11.7218 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7806 -> 12.7728 | Vel: 0 | Heat+0 -0.0780603
+[DEBUG-SENSOR] Temp Real: 12.7728 | Com Ruido: 13.0236 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7728 -> 12.7651 | Vel: 0 | Heat+0 -0.0772798
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.7651 C
+[DEBUG-SENSOR] Temp Real: 12.7651 | Com Ruido: 12.2615 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7651 -> 12.7574 | Vel: 0 | Heat+0 -0.076507
+[DEBUG-SENSOR] Temp Real: 12.7574 | Com Ruido: 12.6152 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7574 -> 12.7498 | Vel: 0 | Heat+0 -0.075742
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.7498 C
+[DEBUG-SENSOR] Temp Real: 12.7498 | Com Ruido: 12.4393 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7498 -> 12.7423 | Vel: 0 | Heat+0 -0.0749846
+[DEBUG-SENSOR] Temp Real: 12.7423 | Com Ruido: 13.0206 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7423 -> 12.7349 | Vel: 0 | Heat+0 -0.0742347
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.7349 C
+[DEBUG-SENSOR] Temp Real: 12.7349 | Com Ruido: 12.7015 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7349 -> 12.7276 | Vel: 0 | Heat+0 -0.0734923
+[DEBUG-SENSOR] Temp Real: 12.7276 | Com Ruido: 12.6275 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7276 -> 12.7203 | Vel: 0 | Heat+0 -0.0727574
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.7203 C
+[DEBUG-SENSOR] Temp Real: 12.7203 | Com Ruido: 12.8504 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7203 -> 12.7131 | Vel: 0 | Heat+0 -0.0720299
+[DEBUG-SENSOR] Temp Real: 12.7131 | Com Ruido: 12.176 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.7131 -> 12.706 | Vel: 0 | Heat+0 -0.0713096
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.706 C
+[DEBUG-SENSOR] Temp Real: 12.706 | Com Ruido: 11.6357 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.706 -> 12.6989 | Vel: 0 | Heat+0 -0.0705965
+[DEBUG-SENSOR] Temp Real: 12.6989 | Com Ruido: 13.1704 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6989 -> 12.6919 | Vel: 0 | Heat+0 -0.0698905
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6919 C
+[DEBUG-SENSOR] Temp Real: 12.6919 | Com Ruido: 11.9547 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6919 -> 12.685 | Vel: 0 | Heat+0 -0.0691916
+[DEBUG-SENSOR] Temp Real: 12.685 | Com Ruido: 13.021 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.685 -> 12.6781 | Vel: 0 | Heat+0 -0.0684997
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6781 C
+[DEBUG-SENSOR] Temp Real: 12.6781 | Com Ruido: 12.0331 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6781 -> 12.6714 | Vel: 0 | Heat+0 -0.0678146
+[DEBUG-SENSOR] Temp Real: 12.6714 | Com Ruido: 12.2185 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6714 -> 12.6647 | Vel: 0 | Heat+0 -0.0671365
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6647 C
+[DEBUG-SENSOR] Temp Real: 12.6647 | Com Ruido: 12.3668 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6647 -> 12.658 | Vel: 0 | Heat+0 -0.0664651
+[DEBUG-SENSOR] Temp Real: 12.658 | Com Ruido: 12.4933 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.658 -> 12.6514 | Vel: 0 | Heat+0 -0.0658005
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6514 C
+[DEBUG-SENSOR] Temp Real: 12.6514 | Com Ruido: 12.1691 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6514 -> 12.6449 | Vel: 0 | Heat+0 -0.0651424
+[DEBUG-SENSOR] Temp Real: 12.6449 | Com Ruido: 12.8801 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6449 -> 12.6385 | Vel: 0 | Heat+0 -0.064491
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6385 C
+[DEBUG-SENSOR] Temp Real: 12.6385 | Com Ruido: 12.1919 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6385 -> 12.6321 | Vel: 0 | Heat+0 -0.0638461
+[DEBUG-SENSOR] Temp Real: 12.6321 | Com Ruido: 11.921 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6321 -> 12.6258 | Vel: 0 | Heat+0 -0.0632076
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6258 C
+[DEBUG-SENSOR] Temp Real: 12.6258 | Com Ruido: 12.1962 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6258 -> 12.6195 | Vel: 0 | Heat+0 -0.0625755
+[DEBUG-SENSOR] Temp Real: 12.6195 | Com Ruido: 12.9114 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6195 -> 12.6133 | Vel: 0 | Heat+0 -0.0619497
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6133 C
+[DEBUG-SENSOR] Temp Real: 12.6133 | Com Ruido: 11.9663 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6133 -> 12.6072 | Vel: 0 | Heat+0 -0.0613302
+[DEBUG-SENSOR] Temp Real: 12.6072 | Com Ruido: 12.6871 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6072 -> 12.6011 | Vel: 0 | Heat+0 -0.0607169
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.6011 C
+[DEBUG-SENSOR] Temp Real: 12.6011 | Com Ruido: 12.0487 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.6011 -> 12.5951 | Vel: 0 | Heat+0 -0.0601097
+[DEBUG-SENSOR] Temp Real: 12.5951 | Com Ruido: 12.5898 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5951 -> 12.5891 | Vel: 0 | Heat+0 -0.0595086
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5891 C
+[DEBUG-SENSOR] Temp Real: 12.5891 | Com Ruido: 11.2375 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5891 -> 12.5832 | Vel: 0 | Heat+0 -0.0589135
+[DEBUG-SENSOR] Temp Real: 12.5832 | Com Ruido: 12.6772 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5832 -> 12.5774 | Vel: 0 | Heat+0 -0.0583243
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5774 C
+[DEBUG-SENSOR] Temp Real: 12.5774 | Com Ruido: 12.19 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5774 -> 12.5716 | Vel: 0 | Heat+0 -0.0577411
+[DEBUG-SENSOR] Temp Real: 12.5716 | Com Ruido: 13.0078 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5716 -> 12.5659 | Vel: 0 | Heat+0 -0.0571636
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5659 C
+[DEBUG-SENSOR] Temp Real: 12.5659 | Com Ruido: 13.4625 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5659 -> 12.5603 | Vel: 0 | Heat+0 -0.056592
+[DEBUG-SENSOR] Temp Real: 12.5603 | Com Ruido: 12.4527 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5603 -> 12.5547 | Vel: 0 | Heat+0 -0.0560261
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5547 C
+[DEBUG-SENSOR] Temp Real: 12.5547 | Com Ruido: 12.7773 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5547 -> 12.5491 | Vel: 0 | Heat+0 -0.0554658
+[DEBUG-SENSOR] Temp Real: 12.5491 | Com Ruido: 13.2775 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5491 -> 12.5436 | Vel: 0 | Heat+0 -0.0549111
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5436 C
+[DEBUG-SENSOR] Temp Real: 12.5436 | Com Ruido: 13.0749 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5436 -> 12.5382 | Vel: 0 | Heat+0 -0.054362
+[DEBUG-SENSOR] Temp Real: 12.5382 | Com Ruido: 12.327 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5382 -> 12.5328 | Vel: 0 | Heat+0 -0.0538184
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5328 C
+[DEBUG-SENSOR] Temp Real: 12.5328 | Com Ruido: 12.2662 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5328 -> 12.5275 | Vel: 0 | Heat+0 -0.0532803
+[DEBUG-SENSOR] Temp Real: 12.5275 | Com Ruido: 13.2128 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5275 -> 12.5222 | Vel: 0 | Heat+0 -0.0527474
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5222 C
+[DEBUG-SENSOR] Temp Real: 12.5222 | Com Ruido: 11.9961 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5222 -> 12.517 | Vel: 0 | Heat+0 -0.05222
+[DEBUG-SENSOR] Temp Real: 12.517 | Com Ruido: 12.6908 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.517 -> 12.5118 | Vel: 0 | Heat+0 -0.0516977
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5118 C
+[DEBUG-SENSOR] Temp Real: 12.5118 | Com Ruido: 12.4304 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5118 -> 12.5067 | Vel: 0 | Heat+0 -0.0511807
+[DEBUG-SENSOR] Temp Real: 12.5067 | Com Ruido: 12.6911 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5067 -> 12.5016 | Vel: 0 | Heat+0 -0.0506689
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.5016 C
+[DEBUG-SENSOR] Temp Real: 12.5016 | Com Ruido: 12.514 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.5016 -> 12.4966 | Vel: 0 | Heat+0 -0.0501622
+[DEBUG-SENSOR] Temp Real: 12.4966 | Com Ruido: 12.8252 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4966 -> 12.4916 | Vel: 0 | Heat+0 -0.0496606
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4916 C
+[DEBUG-SENSOR] Temp Real: 12.4916 | Com Ruido: 12.5374 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4916 -> 12.4867 | Vel: 0 | Heat+0 -0.049164
+[DEBUG-SENSOR] Temp Real: 12.4867 | Com Ruido: 12.7486 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4867 -> 12.4819 | Vel: 0 | Heat+0 -0.0486724
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4819 C
+[DEBUG-SENSOR] Temp Real: 12.4819 | Com Ruido: 13.1707 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4819 -> 12.477 | Vel: 0 | Heat+0 -0.0481856
+[DEBUG-SENSOR] Temp Real: 12.477 | Com Ruido: 12.1222 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.477 -> 12.4723 | Vel: 0 | Heat+0 -0.0477037
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4723 C
+[DEBUG-SENSOR] Temp Real: 12.4723 | Com Ruido: 11.5434 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4723 -> 12.4675 | Vel: 0 | Heat+0 -0.0472267
+[DEBUG-SENSOR] Temp Real: 12.4675 | Com Ruido: 13.0035 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4675 -> 12.4629 | Vel: 0 | Heat+0 -0.0467545
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4629 C
+[DEBUG-SENSOR] Temp Real: 12.4629 | Com Ruido: 12.5324 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4629 -> 12.4582 | Vel: 0 | Heat+0 -0.0462869
+[DEBUG-SENSOR] Temp Real: 12.4582 | Com Ruido: 12.3735 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4582 -> 12.4537 | Vel: 0 | Heat+0 -0.045824
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4537 C
+[DEBUG-SENSOR] Temp Real: 12.4537 | Com Ruido: 11.7815 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4537 -> 12.4491 | Vel: 0 | Heat+0 -0.0453657
+[DEBUG-SENSOR] Temp Real: 12.4491 | Com Ruido: 12.7266 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4491 -> 12.4446 | Vel: 0 | Heat+0 -0.0449121
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4446 C
+[DEBUG-SENSOR] Temp Real: 12.4446 | Com Ruido: 12.4643 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4446 -> 12.4402 | Vel: 0 | Heat+0 -0.044463
+[DEBUG-SENSOR] Temp Real: 12.4402 | Com Ruido: 12.5501 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4402 -> 12.4358 | Vel: 0 | Heat+0 -0.0440184
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4358 C
+[DEBUG-SENSOR] Temp Real: 12.4358 | Com Ruido: 11.9129 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4358 -> 12.4314 | Vel: 0 | Heat+0 -0.0435781
+[DEBUG-SENSOR] Temp Real: 12.4314 | Com Ruido: 12.7821 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4314 -> 12.4271 | Vel: 0 | Heat+0 -0.0431423
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4271 C
+[DEBUG-SENSOR] Temp Real: 12.4271 | Com Ruido: 12.077 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4271 -> 12.4228 | Vel: 0 | Heat+0 -0.0427109
+[DEBUG-SENSOR] Temp Real: 12.4228 | Com Ruido: 12.8371 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4228 -> 12.4186 | Vel: 0 | Heat+0 -0.0422837
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4186 C
+[DEBUG-SENSOR] Temp Real: 12.4186 | Com Ruido: 12.3516 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4186 -> 12.4144 | Vel: 0 | Heat+0 -0.0418609
+[DEBUG-SENSOR] Temp Real: 12.4144 | Com Ruido: 12.6296 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4144 -> 12.4103 | Vel: 0 | Heat+0 -0.0414423
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4103 C
+[DEBUG-SENSOR] Temp Real: 12.4103 | Com Ruido: 12.5108 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4103 -> 12.4062 | Vel: 0 | Heat+0 -0.0410278
+[DEBUG-SENSOR] Temp Real: 12.4062 | Com Ruido: 12.3628 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4062 -> 12.4021 | Vel: 0 | Heat+0 -0.0406176
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.4021 C
+[DEBUG-SENSOR] Temp Real: 12.4021 | Com Ruido: 12.2189 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.4021 -> 12.3981 | Vel: 0 | Heat+0 -0.0402114
+[DEBUG-SENSOR] Temp Real: 12.3981 | Com Ruido: 12.4037 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3981 -> 12.3941 | Vel: 0 | Heat+0 -0.0398093
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3941 C
+[DEBUG-SENSOR] Temp Real: 12.3941 | Com Ruido: 11.909 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3941 -> 12.3902 | Vel: 0 | Heat+0 -0.0394113
+[DEBUG-SENSOR] Temp Real: 12.3902 | Com Ruido: 12.5769 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3902 -> 12.3863 | Vel: 0 | Heat+0 -0.0390171
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3863 C
+[DEBUG-SENSOR] Temp Real: 12.3863 | Com Ruido: 12.3269 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3863 -> 12.3824 | Vel: 0 | Heat+0 -0.038627
+[DEBUG-SENSOR] Temp Real: 12.3824 | Com Ruido: 12.5876 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3824 -> 12.3786 | Vel: 0 | Heat+0 -0.0382407
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3786 C
+[DEBUG-SENSOR] Temp Real: 12.3786 | Com Ruido: 12.6333 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3786 -> 12.3748 | Vel: 0 | Heat+0 -0.0378583
+[DEBUG-SENSOR] Temp Real: 12.3748 | Com Ruido: 12.0664 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3748 -> 12.371 | Vel: 0 | Heat+0 -0.0374797
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.371 C
+[DEBUG-SENSOR] Temp Real: 12.371 | Com Ruido: 12.6099 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.371 -> 12.3673 | Vel: 0 | Heat+0 -0.0371049
+[DEBUG-SENSOR] Temp Real: 12.3673 | Com Ruido: 12.646 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3673 -> 12.3637 | Vel: 0 | Heat+0 -0.0367338
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3637 C
+[DEBUG-SENSOR] Temp Real: 12.3637 | Com Ruido: 11.7532 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3637 -> 12.36 | Vel: 0 | Heat+0 -0.0363665
+[DEBUG-SENSOR] Temp Real: 12.36 | Com Ruido: 11.9989 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.36 -> 12.3564 | Vel: 0 | Heat+0 -0.0360028
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3564 C
+[DEBUG-SENSOR] Temp Real: 12.3564 | Com Ruido: 11.6341 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3564 -> 12.3529 | Vel: 0 | Heat+0 -0.0356428
+[DEBUG-SENSOR] Temp Real: 12.3529 | Com Ruido: 12.3903 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3529 -> 12.3493 | Vel: 0 | Heat+0 -0.0352864
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3493 C
+[DEBUG-SENSOR] Temp Real: 12.3493 | Com Ruido: 11.7524 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3493 -> 12.3458 | Vel: 0 | Heat+0 -0.0349336
+[DEBUG-SENSOR] Temp Real: 12.3458 | Com Ruido: 11.883 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3458 -> 12.3424 | Vel: 0 | Heat+0 -0.0345842
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3424 C
+[DEBUG-SENSOR] Temp Real: 12.3424 | Com Ruido: 11.9514 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3424 -> 12.339 | Vel: 0 | Heat+0 -0.0342384
+[DEBUG-SENSOR] Temp Real: 12.339 | Com Ruido: 12.5708 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.339 -> 12.3356 | Vel: 0 | Heat+0 -0.0338961
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3356 C
+[DEBUG-SENSOR] Temp Real: 12.3356 | Com Ruido: 12.5208 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3356 -> 12.3322 | Vel: 0 | Heat+0 -0.0335571
+[DEBUG-SENSOR] Temp Real: 12.3322 | Com Ruido: 11.4353 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3322 -> 12.3289 | Vel: 0 | Heat+0 -0.0332215
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3289 C
+[DEBUG-SENSOR] Temp Real: 12.3289 | Com Ruido: 11.2512 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3289 -> 12.3256 | Vel: 0 | Heat+0 -0.0328893
+[DEBUG-SENSOR] Temp Real: 12.3256 | Com Ruido: 12.777 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3256 -> 12.3223 | Vel: 0 | Heat+0 -0.0325603
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3223 C
+[DEBUG-SENSOR] Temp Real: 12.3223 | Com Ruido: 12.4829 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3223 -> 12.3191 | Vel: 0 | Heat+0 -0.0322348
+[DEBUG-SENSOR] Temp Real: 12.3191 | Com Ruido: 12.3639 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3191 -> 12.3159 | Vel: 0 | Heat+0 -0.0319124
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3159 C
+[DEBUG-SENSOR] Temp Real: 12.3159 | Com Ruido: 12.2412 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3159 -> 12.3128 | Vel: 0 | Heat+0 -0.0315933
+[DEBUG-SENSOR] Temp Real: 12.3128 | Com Ruido: 12.3427 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3128 -> 12.3096 | Vel: 0 | Heat+0 -0.0312774
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3096 C
+[DEBUG-SENSOR] Temp Real: 12.3096 | Com Ruido: 12.2819 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3096 -> 12.3065 | Vel: 0 | Heat+0 -0.0309646
+[DEBUG-SENSOR] Temp Real: 12.3065 | Com Ruido: 11.6865 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3065 -> 12.3035 | Vel: 0 | Heat+0 -0.0306549
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.3035 C
+[DEBUG-SENSOR] Temp Real: 12.3035 | Com Ruido: 11.5572 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3035 -> 12.3004 | Vel: 0 | Heat+0 -0.0303484
+[DEBUG-SENSOR] Temp Real: 12.3004 | Com Ruido: 12.1196 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.3004 -> 12.2974 | Vel: 0 | Heat+0 -0.0300449
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2974 C
+[DEBUG-SENSOR] Temp Real: 12.2974 | Com Ruido: 11.9739 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2974 -> 12.2945 | Vel: 0 | Heat+0 -0.0297445
+[DEBUG-SENSOR] Temp Real: 12.2945 | Com Ruido: 11.9508 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2945 -> 12.2915 | Vel: 0 | Heat+0 -0.0294471
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2915 C
+[DEBUG-SENSOR] Temp Real: 12.2915 | Com Ruido: 12.624 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2915 -> 12.2886 | Vel: 0 | Heat+0 -0.0291526
+[DEBUG-SENSOR] Temp Real: 12.2886 | Com Ruido: 12.3031 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2886 -> 12.2857 | Vel: 0 | Heat+0 -0.028861
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2857 C
+[DEBUG-SENSOR] Temp Real: 12.2857 | Com Ruido: 12.9597 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2857 -> 12.2829 | Vel: 0 | Heat+0 -0.0285725
+[DEBUG-SENSOR] Temp Real: 12.2829 | Com Ruido: 12.9584 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2829 -> 12.28 | Vel: 0 | Heat+0 -0.0282867
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.28 C
+[DEBUG-SENSOR] Temp Real: 12.28 | Com Ruido: 12.0891 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.28 -> 12.2772 | Vel: 0 | Heat+0 -0.0280039
+[DEBUG-SENSOR] Temp Real: 12.2772 | Com Ruido: 13.5477 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2772 -> 12.2745 | Vel: 0 | Heat+0 -0.0277239
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2745 C
+[DEBUG-SENSOR] Temp Real: 12.2745 | Com Ruido: 13.0329 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2745 -> 12.2717 | Vel: 0 | Heat+0 -0.0274467
+[DEBUG-SENSOR] Temp Real: 12.2717 | Com Ruido: 12.749 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2717 -> 12.269 | Vel: 0 | Heat+0 -0.0271722
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.269 C
+[DEBUG-SENSOR] Temp Real: 12.269 | Com Ruido: 12.0601 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.269 -> 12.2663 | Vel: 0 | Heat+0 -0.0269005
+[DEBUG-SENSOR] Temp Real: 12.2663 | Com Ruido: 13.2431 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2663 -> 12.2637 | Vel: 0 | Heat+0 -0.0266315
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2637 C
+[DEBUG-SENSOR] Temp Real: 12.2637 | Com Ruido: 12.714 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2637 -> 12.261 | Vel: 0 | Heat+0 -0.0263651
+[DEBUG-SENSOR] Temp Real: 12.261 | Com Ruido: 13.2358 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.261 -> 12.2584 | Vel: 0 | Heat+0 -0.0261014
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2584 C
+[DEBUG-SENSOR] Temp Real: 12.2584 | Com Ruido: 12.2839 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2584 -> 12.2558 | Vel: 0 | Heat+0 -0.0258404
+[DEBUG-SENSOR] Temp Real: 12.2558 | Com Ruido: 11.656 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2558 -> 12.2533 | Vel: 0 | Heat+0 -0.0255819
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2533 C
+[DEBUG-SENSOR] Temp Real: 12.2533 | Com Ruido: 11.5553 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2533 -> 12.2507 | Vel: 0 | Heat+0 -0.0253262
+[DEBUG-SENSOR] Temp Real: 12.2507 | Com Ruido: 12.3326 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2507 -> 12.2482 | Vel: 0 | Heat+0 -0.0250729
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2482 C
+[DEBUG-SENSOR] Temp Real: 12.2482 | Com Ruido: 12.0237 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2482 -> 12.2457 | Vel: 0 | Heat+0 -0.0248221
+[DEBUG-SENSOR] Temp Real: 12.2457 | Com Ruido: 12.2195 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2457 -> 12.2433 | Vel: 0 | Heat+0 -0.0245739
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2433 C
+[DEBUG-SENSOR] Temp Real: 12.2433 | Com Ruido: 11.6408 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2433 -> 12.2408 | Vel: 0 | Heat+0 -0.0243281
+[DEBUG-SENSOR] Temp Real: 12.2408 | Com Ruido: 12.2893 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2408 -> 12.2384 | Vel: 0 | Heat+0 -0.0240849
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2384 C
+[DEBUG-SENSOR] Temp Real: 12.2384 | Com Ruido: 11.7769 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2384 -> 12.2361 | Vel: 0 | Heat+0 -0.0238441
+[DEBUG-SENSOR] Temp Real: 12.2361 | Com Ruido: 12.5547 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2361 -> 12.2337 | Vel: 0 | Heat+0 -0.0236056
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2337 C
+[DEBUG-SENSOR] Temp Real: 12.2337 | Com Ruido: 12.4411 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2337 -> 12.2314 | Vel: 0 | Heat+0 -0.0233696
+[DEBUG-SENSOR] Temp Real: 12.2314 | Com Ruido: 12.103 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2314 -> 12.229 | Vel: 0 | Heat+0 -0.0231359
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.229 C
+[DEBUG-SENSOR] Temp Real: 12.229 | Com Ruido: 12.2495 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.229 -> 12.2268 | Vel: 0 | Heat+0 -0.0229046
+[DEBUG-SENSOR] Temp Real: 12.2268 | Com Ruido: 11.9385 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2268 -> 12.2245 | Vel: 0 | Heat+0 -0.0226755
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2245 C
+[DEBUG-SENSOR] Temp Real: 12.2245 | Com Ruido: 12.8473 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2245 -> 12.2222 | Vel: 0 | Heat+0 -0.0224487
+[DEBUG-SENSOR] Temp Real: 12.2222 | Com Ruido: 12.0643 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2222 -> 12.22 | Vel: 0 | Heat+0 -0.0222242
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.22 C
+[DEBUG-SENSOR] Temp Real: 12.22 | Com Ruido: 11.1022 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.22 -> 12.2178 | Vel: 0 | Heat+0 -0.022002
+[DEBUG-SENSOR] Temp Real: 12.2178 | Com Ruido: 12.4789 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2178 -> 12.2156 | Vel: 0 | Heat+0 -0.021782
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2156 C
+[DEBUG-SENSOR] Temp Real: 12.2156 | Com Ruido: 12.0503 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2156 -> 12.2135 | Vel: 0 | Heat+0 -0.0215642
+[DEBUG-SENSOR] Temp Real: 12.2135 | Com Ruido: 11.5845 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2135 -> 12.2114 | Vel: 0 | Heat+0 -0.0213486
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2114 C
+[DEBUG-SENSOR] Temp Real: 12.2114 | Com Ruido: 13.2731 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2114 -> 12.2092 | Vel: 0 | Heat+0 -0.021135
+[DEBUG-SENSOR] Temp Real: 12.2092 | Com Ruido: 11.9386 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2092 -> 12.2071 | Vel: 0 | Heat+0 -0.0209237
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.2071 C
+[DEBUG-SENSOR] Temp Real: 12.2071 | Com Ruido: 12.0991 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2071 -> 12.2051 | Vel: 0 | Heat+0 -0.0207145
+[DEBUG-SENSOR] Temp Real: 12.2051 | Com Ruido: 12.2372 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.2051 -> 12.203 | Vel: 0 | Heat+0 -0.0205073
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.203 C
+[DEBUG-SENSOR] Temp Real: 12.203 | Com Ruido: 11.2993 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.203 -> 12.201 | Vel: 0 | Heat+0 -0.0203023
+[DEBUG-SENSOR] Temp Real: 12.201 | Com Ruido: 11.937 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.201 -> 12.199 | Vel: 0 | Heat+0 -0.0200993
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.199 C
+[DEBUG-SENSOR] Temp Real: 12.199 | Com Ruido: 10.896 | Inteiro: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.199 -> 12.197 | Vel: 0 | Heat+0 -0.0198982
+[DEBUG-SENSOR] Temp Real: 12.197 | Com Ruido: 11.6302 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.197 -> 12.195 | Vel: 0 | Heat+0 -0.0196993
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.195 C
+[DEBUG-SENSOR] Temp Real: 12.195 | Com Ruido: 12.1834 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.195 -> 12.1931 | Vel: 0 | Heat+0 -0.0195023
+[DEBUG-SENSOR] Temp Real: 12.1931 | Com Ruido: 12.9485 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1931 -> 12.1911 | Vel: 0 | Heat+0 -0.0193072
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1911 C
+[DEBUG-SENSOR] Temp Real: 12.1911 | Com Ruido: 12.7058 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1911 -> 12.1892 | Vel: 0 | Heat+0 -0.0191141
+[DEBUG-SENSOR] Temp Real: 12.1892 | Com Ruido: 12.3004 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1892 -> 12.1873 | Vel: 0 | Heat+0 -0.018923
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1873 C
+[DEBUG-SENSOR] Temp Real: 12.1873 | Com Ruido: 11.8244 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1873 -> 12.1855 | Vel: 0 | Heat+0 -0.0187338
+[DEBUG-SENSOR] Temp Real: 12.1855 | Com Ruido: 12.5532 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1855 -> 12.1836 | Vel: 0 | Heat+0 -0.0185465
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1836 C
+[DEBUG-SENSOR] Temp Real: 12.1836 | Com Ruido: 12.5271 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1836 -> 12.1818 | Vel: 0 | Heat+0 -0.018361
+[DEBUG-SENSOR] Temp Real: 12.1818 | Com Ruido: 12.101 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1818 -> 12.18 | Vel: 0 | Heat+0 -0.0181774
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.18 C
+[DEBUG-SENSOR] Temp Real: 12.18 | Com Ruido: 12.92 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.18 -> 12.1782 | Vel: 0 | Heat+0 -0.0179956
+[DEBUG-SENSOR] Temp Real: 12.1782 | Com Ruido: 11.6583 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1782 -> 12.1764 | Vel: 0 | Heat+0 -0.0178157
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1764 C
+[DEBUG-SENSOR] Temp Real: 12.1764 | Com Ruido: 12.7975 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1764 -> 12.1746 | Vel: 0 | Heat+0 -0.0176375
+[DEBUG-SENSOR] Temp Real: 12.1746 | Com Ruido: 12.6927 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1746 -> 12.1729 | Vel: 0 | Heat+0 -0.0174612
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1729 C
+[DEBUG-SENSOR] Temp Real: 12.1729 | Com Ruido: 12.1886 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1729 -> 12.1711 | Vel: 0 | Heat+0 -0.0172866
+[DEBUG-SENSOR] Temp Real: 12.1711 | Com Ruido: 13.0025 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1711 -> 12.1694 | Vel: 0 | Heat+0 -0.0171137
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1694 C
+[DEBUG-SENSOR] Temp Real: 12.1694 | Com Ruido: 12.0514 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1694 -> 12.1677 | Vel: 0 | Heat+0 -0.0169426
+[DEBUG-SENSOR] Temp Real: 12.1677 | Com Ruido: 10.7599 | Inteiro: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1677 -> 12.1661 | Vel: 0 | Heat+0 -0.0167731
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1661 C
+[DEBUG-SENSOR] Temp Real: 12.1661 | Com Ruido: 11.7722 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1661 -> 12.1644 | Vel: 0 | Heat+0 -0.0166054
+[DEBUG-SENSOR] Temp Real: 12.1644 | Com Ruido: 11.4774 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1644 -> 12.1627 | Vel: 0 | Heat+0 -0.0164393
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1627 C
+[DEBUG-SENSOR] Temp Real: 12.1627 | Com Ruido: 11.8269 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1627 -> 12.1611 | Vel: 0 | Heat+0 -0.0162749
+[DEBUG-SENSOR] Temp Real: 12.1611 | Com Ruido: 11.4359 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1611 -> 12.1595 | Vel: 0 | Heat+0 -0.0161121
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1595 C
+[DEBUG-SENSOR] Temp Real: 12.1595 | Com Ruido: 11.8012 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1595 -> 12.1579 | Vel: 0 | Heat+0 -0.0159511
+[DEBUG-SENSOR] Temp Real: 12.1579 | Com Ruido: 12.0195 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1579 -> 12.1563 | Vel: 0 | Heat+0 -0.0157915
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1563 C
+[DEBUG-SENSOR] Temp Real: 12.1563 | Com Ruido: 12.1709 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1563 -> 12.1548 | Vel: 0 | Heat+0 -0.0156336
+[DEBUG-SENSOR] Temp Real: 12.1548 | Com Ruido: 12.0497 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1548 -> 12.1532 | Vel: 0 | Heat+0 -0.0154773
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1532 C
+[DEBUG-SENSOR] Temp Real: 12.1532 | Com Ruido: 13.2779 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1532 -> 12.1517 | Vel: 0 | Heat+0 -0.0153225
+[DEBUG-SENSOR] Temp Real: 12.1517 | Com Ruido: 12.3873 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1517 -> 12.1502 | Vel: 0 | Heat+0 -0.0151692
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1502 C
+[DEBUG-SENSOR] Temp Real: 12.1502 | Com Ruido: 12.7168 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1502 -> 12.1487 | Vel: 0 | Heat+0 -0.0150175
+[DEBUG-SENSOR] Temp Real: 12.1487 | Com Ruido: 12.0794 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1487 -> 12.1472 | Vel: 0 | Heat+0 -0.0148673
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1472 C
+[DEBUG-SENSOR] Temp Real: 12.1472 | Com Ruido: 11.9598 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1472 -> 12.1457 | Vel: 0 | Heat+0 -0.0147186
+[DEBUG-SENSOR] Temp Real: 12.1457 | Com Ruido: 13.4015 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1457 -> 12.1443 | Vel: 0 | Heat+0 -0.0145715
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1443 C
+[DEBUG-SENSOR] Temp Real: 12.1443 | Com Ruido: 12.356 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1443 -> 12.1428 | Vel: 0 | Heat+0 -0.0144258
+[DEBUG-SENSOR] Temp Real: 12.1428 | Com Ruido: 11.7927 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1428 -> 12.1414 | Vel: 0 | Heat+0 -0.0142815
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1414 C
+[DEBUG-SENSOR] Temp Real: 12.1414 | Com Ruido: 12.3701 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1414 -> 12.14 | Vel: 0 | Heat+0 -0.0141386
+[DEBUG-SENSOR] Temp Real: 12.14 | Com Ruido: 12.3748 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.14 -> 12.1386 | Vel: 0 | Heat+0 -0.0139972
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1386 C
+[DEBUG-SENSOR] Temp Real: 12.1386 | Com Ruido: 11.6953 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1386 -> 12.1372 | Vel: 0 | Heat+0 -0.0138572
+[DEBUG-SENSOR] Temp Real: 12.1372 | Com Ruido: 12.6017 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1372 -> 12.1358 | Vel: 0 | Heat+0 -0.0137186
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1358 C
+[DEBUG-SENSOR] Temp Real: 12.1358 | Com Ruido: 11.3213 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1358 -> 12.1345 | Vel: 0 | Heat+0 -0.0135815
+[DEBUG-SENSOR] Temp Real: 12.1345 | Com Ruido: 11.7971 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1345 -> 12.1331 | Vel: 0 | Heat+0 -0.0134457
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1331 C
+[DEBUG-SENSOR] Temp Real: 12.1331 | Com Ruido: 11.9445 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1331 -> 12.1318 | Vel: 0 | Heat+0 -0.0133112
+[DEBUG-SENSOR] Temp Real: 12.1318 | Com Ruido: 13.3309 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1318 -> 12.1305 | Vel: 0 | Heat+0 -0.0131781
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1305 C
+[DEBUG-SENSOR] Temp Real: 12.1305 | Com Ruido: 11.8159 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1305 -> 12.1292 | Vel: 0 | Heat+0 -0.0130463
+[DEBUG-SENSOR] Temp Real: 12.1292 | Com Ruido: 12.6781 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1292 -> 12.1279 | Vel: 0 | Heat+0 -0.0129158
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1279 C
+[DEBUG-SENSOR] Temp Real: 12.1279 | Com Ruido: 12.0937 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1279 -> 12.1266 | Vel: 0 | Heat+0 -0.0127867
+[DEBUG-SENSOR] Temp Real: 12.1266 | Com Ruido: 12.152 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1266 -> 12.1253 | Vel: 0 | Heat+0 -0.0126588
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1253 C
+[DEBUG-SENSOR] Temp Real: 12.1253 | Com Ruido: 12.4666 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1253 -> 12.1241 | Vel: 0 | Heat+0 -0.0125322
+[DEBUG-SENSOR] Temp Real: 12.1241 | Com Ruido: 11.4756 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1241 -> 12.1228 | Vel: 0 | Heat+0 -0.0124069
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1228 C
+[DEBUG-SENSOR] Temp Real: 12.1228 | Com Ruido: 11.4424 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1228 -> 12.1216 | Vel: 0 | Heat+0 -0.0122828
+[DEBUG-SENSOR] Temp Real: 12.1216 | Com Ruido: 11.8981 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1216 -> 12.1204 | Vel: 0 | Heat+0 -0.01216
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1204 C
+[DEBUG-SENSOR] Temp Real: 12.1204 | Com Ruido: 12.8878 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1204 -> 12.1192 | Vel: 0 | Heat+0 -0.0120384
+[DEBUG-SENSOR] Temp Real: 12.1192 | Com Ruido: 12.3038 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1192 -> 12.118 | Vel: 0 | Heat+0 -0.0119181
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.118 C
+[DEBUG-SENSOR] Temp Real: 12.118 | Com Ruido: 11.9191 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.118 -> 12.1168 | Vel: 0 | Heat+0 -0.0117989
+[DEBUG-SENSOR] Temp Real: 12.1168 | Com Ruido: 12.9213 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1168 -> 12.1156 | Vel: 0 | Heat+0 -0.0116809
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1156 C
+[DEBUG-SENSOR] Temp Real: 12.1156 | Com Ruido: 12.2392 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1156 -> 12.1145 | Vel: 0 | Heat+0 -0.0115641
+[DEBUG-SENSOR] Temp Real: 12.1145 | Com Ruido: 11.5611 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1145 -> 12.1133 | Vel: 0 | Heat+0 -0.0114484
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1133 C
+[DEBUG-SENSOR] Temp Real: 12.1133 | Com Ruido: 12.3812 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1133 -> 12.1122 | Vel: 0 | Heat+0 -0.0113339
+[DEBUG-SENSOR] Temp Real: 12.1122 | Com Ruido: 12.0617 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1122 -> 12.1111 | Vel: 0 | Heat+0 -0.0112206
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1111 C
+[DEBUG-SENSOR] Temp Real: 12.1111 | Com Ruido: 11.8767 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1111 -> 12.11 | Vel: 0 | Heat+0 -0.0111084
+[DEBUG-SENSOR] Temp Real: 12.11 | Com Ruido: 12.8262 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.11 -> 12.1089 | Vel: 0 | Heat+0 -0.0109973
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1089 C
+[DEBUG-SENSOR] Temp Real: 12.1089 | Com Ruido: 12.669 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1089 -> 12.1078 | Vel: 0 | Heat+0 -0.0108873
+[DEBUG-SENSOR] Temp Real: 12.1078 | Com Ruido: 12.8692 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1078 -> 12.1067 | Vel: 0 | Heat+0 -0.0107784
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1067 C
+[DEBUG-SENSOR] Temp Real: 12.1067 | Com Ruido: 11.84 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1067 -> 12.1056 | Vel: 0 | Heat+0 -0.0106707
+[DEBUG-SENSOR] Temp Real: 12.1056 | Com Ruido: 11.8172 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1056 -> 12.1046 | Vel: 0 | Heat+0 -0.0105639
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1046 C
+[DEBUG-SENSOR] Temp Real: 12.1046 | Com Ruido: 12.007 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1046 -> 12.1035 | Vel: 0 | Heat+0 -0.0104583
+[DEBUG-SENSOR] Temp Real: 12.1035 | Com Ruido: 12.8707 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1035 -> 12.1025 | Vel: 0 | Heat+0 -0.0103537
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1025 C
+[DEBUG-SENSOR] Temp Real: 12.1025 | Com Ruido: 12.6221 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1025 -> 12.1015 | Vel: 0 | Heat+0 -0.0102501
+[DEBUG-SENSOR] Temp Real: 12.1015 | Com Ruido: 12.4321 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1015 -> 12.1005 | Vel: 0 | Heat+0 -0.0101476
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.1005 C
+[DEBUG-SENSOR] Temp Real: 12.1005 | Com Ruido: 12.5139 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.1005 -> 12.0995 | Vel: 0 | Heat+0 -0.0100461
+[DEBUG-SENSOR] Temp Real: 12.0995 | Com Ruido: 12.0178 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0995 -> 12.0985 | Vel: 0 | Heat+0 -0.00994568
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0985 C
+[DEBUG-SENSOR] Temp Real: 12.0985 | Com Ruido: 12.8596 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0985 -> 12.0975 | Vel: 0 | Heat+0 -0.00984621
+[DEBUG-SENSOR] Temp Real: 12.0975 | Com Ruido: 12.1074 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0975 -> 12.0965 | Vel: 0 | Heat+0 -0.00974779
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0965 C
+[DEBUG-SENSOR] Temp Real: 12.0965 | Com Ruido: 13.0967 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0965 -> 12.0955 | Vel: 0 | Heat+0 -0.00965033
+[DEBUG-SENSOR] Temp Real: 12.0955 | Com Ruido: 12.3509 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0955 -> 12.0946 | Vel: 0 | Heat+0 -0.00955381
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0946 C
+[DEBUG-SENSOR] Temp Real: 12.0946 | Com Ruido: 10.7683 | Inteiro: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0946 -> 12.0936 | Vel: 0 | Heat+0 -0.00945826
+[DEBUG-SENSOR] Temp Real: 12.0936 | Com Ruido: 11.6634 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0936 -> 12.0927 | Vel: 0 | Heat+0 -0.00936365
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0927 C
+[DEBUG-SENSOR] Temp Real: 12.0927 | Com Ruido: 12.4669 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0927 -> 12.0918 | Vel: 0 | Heat+0 -0.00927
+[DEBUG-SENSOR] Temp Real: 12.0918 | Com Ruido: 12.429 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0918 -> 12.0909 | Vel: 0 | Heat+0 -0.0091773
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0909 C
+[DEBUG-SENSOR] Temp Real: 12.0909 | Com Ruido: 12.7598 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0909 -> 12.0899 | Vel: 0 | Heat+0 -0.00908556
+[DEBUG-SENSOR] Temp Real: 12.0899 | Com Ruido: 12.2469 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0899 -> 12.089 | Vel: 0 | Heat+0 -0.00899468
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.089 C
+[DEBUG-SENSOR] Temp Real: 12.089 | Com Ruido: 11.3853 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.089 -> 12.0882 | Vel: 0 | Heat+0 -0.00890474
+[DEBUG-SENSOR] Temp Real: 12.0882 | Com Ruido: 11.939 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0882 -> 12.0873 | Vel: 0 | Heat+0 -0.00881567
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0873 C
+[DEBUG-SENSOR] Temp Real: 12.0873 | Com Ruido: 11.774 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0873 -> 12.0864 | Vel: 0 | Heat+0 -0.00872755
+[DEBUG-SENSOR] Temp Real: 12.0864 | Com Ruido: 11.4584 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0864 -> 12.0855 | Vel: 0 | Heat+0 -0.00864029
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0855 C
+[DEBUG-SENSOR] Temp Real: 12.0855 | Com Ruido: 12.1701 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0855 -> 12.0847 | Vel: 0 | Heat+0 -0.00855389
+[DEBUG-SENSOR] Temp Real: 12.0847 | Com Ruido: 12.7978 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0847 -> 12.0838 | Vel: 0 | Heat+0 -0.00846834
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0838 C
+[DEBUG-SENSOR] Temp Real: 12.0838 | Com Ruido: 12.2876 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0838 -> 12.083 | Vel: 0 | Heat+0 -0.00838366
+[DEBUG-SENSOR] Temp Real: 12.083 | Com Ruido: 12.2107 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.083 -> 12.0822 | Vel: 0 | Heat+0 -0.00829983
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0822 C
+[DEBUG-SENSOR] Temp Real: 12.0822 | Com Ruido: 12.3081 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0822 -> 12.0813 | Vel: 0 | Heat+0 -0.00821686
+[DEBUG-SENSOR] Temp Real: 12.0813 | Com Ruido: 12.2932 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0813 -> 12.0805 | Vel: 0 | Heat+0 -0.00813465
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0805 C
+[DEBUG-SENSOR] Temp Real: 12.0805 | Com Ruido: 12.5551 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0805 -> 12.0797 | Vel: 0 | Heat+0 -0.0080533
+[DEBUG-SENSOR] Temp Real: 12.0797 | Com Ruido: 11.2034 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0797 -> 12.0789 | Vel: 0 | Heat+0 -0.00797281
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0789 C
+[DEBUG-SENSOR] Temp Real: 12.0789 | Com Ruido: 12.3978 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0789 -> 12.0781 | Vel: 0 | Heat+0 -0.00789309
+[DEBUG-SENSOR] Temp Real: 12.0781 | Com Ruido: 12.9658 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0781 -> 12.0774 | Vel: 0 | Heat+0 -0.00781412
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0774 C
+[DEBUG-SENSOR] Temp Real: 12.0774 | Com Ruido: 11.7698 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0774 -> 12.0766 | Vel: 0 | Heat+0 -0.00773602
+[DEBUG-SENSOR] Temp Real: 12.0766 | Com Ruido: 12.6251 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0766 -> 12.0758 | Vel: 0 | Heat+0 -0.00765867
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0758 C
+[DEBUG-SENSOR] Temp Real: 12.0758 | Com Ruido: 10.9673 | Inteiro: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0758 -> 12.0751 | Vel: 0 | Heat+0 -0.00758209
+[DEBUG-SENSOR] Temp Real: 12.0751 | Com Ruido: 12.4828 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0751 -> 12.0743 | Vel: 0 | Heat+0 -0.00750628
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0743 C
+[DEBUG-SENSOR] Temp Real: 12.0743 | Com Ruido: 11.4083 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0743 -> 12.0736 | Vel: 0 | Heat+0 -0.00743122
+[DEBUG-SENSOR] Temp Real: 12.0736 | Com Ruido: 11.798 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0736 -> 12.0728 | Vel: 0 | Heat+0 -0.00735693
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0728 C
+[DEBUG-SENSOR] Temp Real: 12.0728 | Com Ruido: 12.3966 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0728 -> 12.0721 | Vel: 0 | Heat+0 -0.0072834
+[DEBUG-SENSOR] Temp Real: 12.0721 | Com Ruido: 11.9866 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0721 -> 12.0714 | Vel: 0 | Heat+0 -0.00721054
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0714 C
+[DEBUG-SENSOR] Temp Real: 12.0714 | Com Ruido: 13.3952 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0714 -> 12.0707 | Vel: 0 | Heat+0 -0.00713844
+[DEBUG-SENSOR] Temp Real: 12.0707 | Com Ruido: 11.5094 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0707 -> 12.07 | Vel: 0 | Heat+0 -0.00706701
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.07 C
+[DEBUG-SENSOR] Temp Real: 12.07 | Com Ruido: 11.6225 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.07 -> 12.0693 | Vel: 0 | Heat+0 -0.00699635
+[DEBUG-SENSOR] Temp Real: 12.0693 | Com Ruido: 11.5544 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0693 -> 12.0686 | Vel: 0 | Heat+0 -0.00692635
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0686 C
+[DEBUG-SENSOR] Temp Real: 12.0686 | Com Ruido: 11.7385 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0686 -> 12.0679 | Vel: 0 | Heat+0 -0.00685711
+[DEBUG-SENSOR] Temp Real: 12.0679 | Com Ruido: 12.489 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0679 -> 12.0672 | Vel: 0 | Heat+0 -0.00678854
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0672 C
+[DEBUG-SENSOR] Temp Real: 12.0672 | Com Ruido: 11.9381 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0672 -> 12.0665 | Vel: 0 | Heat+0 -0.00672064
+[DEBUG-SENSOR] Temp Real: 12.0665 | Com Ruido: 12.3038 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0665 -> 12.0659 | Vel: 0 | Heat+0 -0.0066534
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0659 C
+[DEBUG-SENSOR] Temp Real: 12.0659 | Com Ruido: 12.5034 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0659 -> 12.0652 | Vel: 0 | Heat+0 -0.00658684
+[DEBUG-SENSOR] Temp Real: 12.0652 | Com Ruido: 11.535 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0652 -> 12.0646 | Vel: 0 | Heat+0 -0.00652094
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0646 C
+[DEBUG-SENSOR] Temp Real: 12.0646 | Com Ruido: 11.393 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0646 -> 12.0639 | Vel: 0 | Heat+0 -0.00645571
+[DEBUG-SENSOR] Temp Real: 12.0639 | Com Ruido: 11.8245 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0639 -> 12.0633 | Vel: 0 | Heat+0 -0.00639114
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0633 C
+[DEBUG-SENSOR] Temp Real: 12.0633 | Com Ruido: 12.2623 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0633 -> 12.0626 | Vel: 0 | Heat+0 -0.00632725
+[DEBUG-SENSOR] Temp Real: 12.0626 | Com Ruido: 12.4886 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0626 -> 12.062 | Vel: 0 | Heat+0 -0.00626402
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.062 C
+[DEBUG-SENSOR] Temp Real: 12.062 | Com Ruido: 12.0594 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.062 -> 12.0614 | Vel: 0 | Heat+0 -0.00620136
+[DEBUG-SENSOR] Temp Real: 12.0614 | Com Ruido: 11.6101 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0614 -> 12.0608 | Vel: 0 | Heat+0 -0.00613937
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0608 C
+[DEBUG-SENSOR] Temp Real: 12.0608 | Com Ruido: 12.8188 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0608 -> 12.0602 | Vel: 0 | Heat+0 -0.00607796
+[DEBUG-SENSOR] Temp Real: 12.0602 | Com Ruido: 12.1334 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0602 -> 12.0596 | Vel: 0 | Heat+0 -0.00601721
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0596 C
+[DEBUG-SENSOR] Temp Real: 12.0596 | Com Ruido: 10.6661 | Inteiro: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0596 -> 12.059 | Vel: 0 | Heat+0 -0.00595703
+[DEBUG-SENSOR] Temp Real: 12.059 | Com Ruido: 12.5714 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.059 -> 12.0584 | Vel: 0 | Heat+0 -0.00589743
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0584 C
+[DEBUG-SENSOR] Temp Real: 12.0584 | Com Ruido: 12.8167 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0584 -> 12.0578 | Vel: 0 | Heat+0 -0.00583849
+[DEBUG-SENSOR] Temp Real: 12.0578 | Com Ruido: 11.507 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0578 -> 12.0572 | Vel: 0 | Heat+0 -0.00578012
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0572 C
+[DEBUG-SENSOR] Temp Real: 12.0572 | Com Ruido: 10.9805 | Inteiro: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0572 -> 12.0567 | Vel: 0 | Heat+0 -0.00572233
+[DEBUG-SENSOR] Temp Real: 12.0567 | Com Ruido: 12.1049 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0567 -> 12.0561 | Vel: 0 | Heat+0 -0.00566511
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0561 C
+[DEBUG-SENSOR] Temp Real: 12.0561 | Com Ruido: 11.6828 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0561 -> 12.0555 | Vel: 0 | Heat+0 -0.00560846
+[DEBUG-SENSOR] Temp Real: 12.0555 | Com Ruido: 11.7179 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0555 -> 12.055 | Vel: 0 | Heat+0 -0.00555239
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.055 C
+[DEBUG-SENSOR] Temp Real: 12.055 | Com Ruido: 11.1796 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.055 -> 12.0544 | Vel: 0 | Heat+0 -0.00549688
+[DEBUG-SENSOR] Temp Real: 12.0544 | Com Ruido: 12.082 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0544 -> 12.0539 | Vel: 0 | Heat+0 -0.00544195
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0539 C
+[DEBUG-SENSOR] Temp Real: 12.0539 | Com Ruido: 13.3093 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0539 -> 12.0533 | Vel: 0 | Heat+0 -0.0053875
+[DEBUG-SENSOR] Temp Real: 12.0533 | Com Ruido: 11.7044 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0533 -> 12.0528 | Vel: 0 | Heat+0 -0.00533361
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0528 C
+[DEBUG-SENSOR] Temp Real: 12.0528 | Com Ruido: 12.436 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0528 -> 12.0523 | Vel: 0 | Heat+0 -0.0052803
+[DEBUG-SENSOR] Temp Real: 12.0523 | Com Ruido: 12.267 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0523 -> 12.0518 | Vel: 0 | Heat+0 -0.00522747
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0518 C
+[DEBUG-SENSOR] Temp Real: 12.0518 | Com Ruido: 11.9596 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0518 -> 12.0512 | Vel: 0 | Heat+0 -0.00517521
+[DEBUG-SENSOR] Temp Real: 12.0512 | Com Ruido: 12.0769 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0512 -> 12.0507 | Vel: 0 | Heat+0 -0.00512342
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0507 C
+[DEBUG-SENSOR] Temp Real: 12.0507 | Com Ruido: 12.1708 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0507 -> 12.0502 | Vel: 0 | Heat+0 -0.00507221
+[DEBUG-SENSOR] Temp Real: 12.0502 | Com Ruido: 11.4847 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0502 -> 12.0497 | Vel: 0 | Heat+0 -0.00502148
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0497 C
+[DEBUG-SENSOR] Temp Real: 12.0497 | Com Ruido: 13.0791 | Inteiro: 13
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0497 -> 12.0492 | Vel: 0 | Heat+0 -0.00497122
+[DEBUG-SENSOR] Temp Real: 12.0492 | Com Ruido: 11.8131 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0492 -> 12.0487 | Vel: 0 | Heat+0 -0.00492153
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0487 C
+[DEBUG-SENSOR] Temp Real: 12.0487 | Com Ruido: 10.9825 | Inteiro: 10
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0487 -> 12.0482 | Vel: 0 | Heat+0 -0.00487232
+[DEBUG-SENSOR] Temp Real: 12.0482 | Com Ruido: 12.3467 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0482 -> 12.0478 | Vel: 0 | Heat+0 -0.00482359
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0478 C
+[DEBUG-SENSOR] Temp Real: 12.0478 | Com Ruido: 12.6997 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0478 -> 12.0473 | Vel: 0 | Heat+0 -0.00477533
+[DEBUG-SENSOR] Temp Real: 12.0473 | Com Ruido: 11.8409 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0473 -> 12.0468 | Vel: 0 | Heat+0 -0.00472755
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0468 C
+[DEBUG-SENSOR] Temp Real: 12.0468 | Com Ruido: 12.5417 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0468 -> 12.0463 | Vel: 0 | Heat+0 -0.00468025
+[DEBUG-SENSOR] Temp Real: 12.0463 | Com Ruido: 12.0737 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0463 -> 12.0459 | Vel: 0 | Heat+0 -0.00463343
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0459 C
+[DEBUG-SENSOR] Temp Real: 12.0459 | Com Ruido: 12.3693 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0459 -> 12.0454 | Vel: 0 | Heat+0 -0.00458708
+[DEBUG-SENSOR] Temp Real: 12.0454 | Com Ruido: 12.0144 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0454 -> 12.045 | Vel: 0 | Heat+0 -0.00454121
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.045 C
+[DEBUG-SENSOR] Temp Real: 12.045 | Com Ruido: 11.8665 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.045 -> 12.0445 | Vel: 0 | Heat+0 -0.00449581
+[DEBUG-SENSOR] Temp Real: 12.0445 | Com Ruido: 11.1994 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0445 -> 12.0441 | Vel: 0 | Heat+0 -0.00445089
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0441 C
+[DEBUG-SENSOR] Temp Real: 12.0441 | Com Ruido: 12.3992 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0441 -> 12.0436 | Vel: 0 | Heat+0 -0.00440636
+[DEBUG-SENSOR] Temp Real: 12.0436 | Com Ruido: 11.4025 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0436 -> 12.0432 | Vel: 0 | Heat+0 -0.0043623
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0432 C
+[DEBUG-SENSOR] Temp Real: 12.0432 | Com Ruido: 12.4022 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0432 -> 12.0428 | Vel: 0 | Heat+0 -0.00431871
+[DEBUG-SENSOR] Temp Real: 12.0428 | Com Ruido: 12.2578 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0428 -> 12.0423 | Vel: 0 | Heat+0 -0.00427551
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0423 C
+[DEBUG-SENSOR] Temp Real: 12.0423 | Com Ruido: 11.7223 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0423 -> 12.0419 | Vel: 0 | Heat+0 -0.00423279
+[DEBUG-SENSOR] Temp Real: 12.0419 | Com Ruido: 11.9173 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0419 -> 12.0415 | Vel: 0 | Heat+0 -0.00419044
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0415 C
+[DEBUG-SENSOR] Temp Real: 12.0415 | Com Ruido: 11.3976 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0415 -> 12.0411 | Vel: 0 | Heat+0 -0.00414858
+[DEBUG-SENSOR] Temp Real: 12.0411 | Com Ruido: 12.0341 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0411 -> 12.0407 | Vel: 0 | Heat+0 -0.00410709
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0407 C
+[DEBUG-SENSOR] Temp Real: 12.0407 | Com Ruido: 12.2555 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0407 -> 12.0403 | Vel: 0 | Heat+0 -0.00406599
+[DEBUG-SENSOR] Temp Real: 12.0403 | Com Ruido: 12.3297 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0403 -> 12.0399 | Vel: 0 | Heat+0 -0.00402536
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0399 C
+[DEBUG-SENSOR] Temp Real: 12.0399 | Com Ruido: 11.2645 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0399 -> 12.0395 | Vel: 0 | Heat+0 -0.00398512
+[DEBUG-SENSOR] Temp Real: 12.0395 | Com Ruido: 11.8212 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0395 -> 12.0391 | Vel: 0 | Heat+0 -0.00394526
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0391 C
+[DEBUG-SENSOR] Temp Real: 12.0391 | Com Ruido: 11.9892 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0391 -> 12.0387 | Vel: 0 | Heat+0 -0.00390577
+[DEBUG-SENSOR] Temp Real: 12.0387 | Com Ruido: 11.3472 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0387 -> 12.0383 | Vel: 0 | Heat+0 -0.00386667
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0383 C
+[DEBUG-SENSOR] Temp Real: 12.0383 | Com Ruido: 11.0212 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0383 -> 12.0379 | Vel: 0 | Heat+0 -0.00382805
+[DEBUG-SENSOR] Temp Real: 12.0379 | Com Ruido: 12.6727 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0379 -> 12.0375 | Vel: 0 | Heat+0 -0.00378981
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0375 C
+[DEBUG-SENSOR] Temp Real: 12.0375 | Com Ruido: 12.3286 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0375 -> 12.0371 | Vel: 0 | Heat+0 -0.00375195
+[DEBUG-SENSOR] Temp Real: 12.0371 | Com Ruido: 11.5258 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0371 -> 12.0368 | Vel: 0 | Heat+0 -0.00371447
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0368 C
+[DEBUG-SENSOR] Temp Real: 12.0368 | Com Ruido: 12.0494 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0368 -> 12.0364 | Vel: 0 | Heat+0 -0.00367737
+[DEBUG-SENSOR] Temp Real: 12.0364 | Com Ruido: 11.672 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0364 -> 12.036 | Vel: 0 | Heat+0 -0.00364056
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.036 C
+[DEBUG-SENSOR] Temp Real: 12.036 | Com Ruido: 12.3959 | Inteiro: 12
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.036 -> 12.0357 | Vel: 0 | Heat+0 -0.00360413
+[DEBUG-SENSOR] Temp Real: 12.0357 | Com Ruido: 11.5656 | Inteiro: 11
+[DEBUG-ATUADOR] Recebido: Acel=0% | Dir=0°
+[DEBUG-FISICA] Vel: 0 | Acel: 0% | Ang: 0°
+[DEBUG-FISICA] Temp: 12.0357 -> 12.0353 | Vel: 0 | Heat+0 -0.00356808
+[DEBUG-MONITOR] Temperatura Real (Driver): 12.0353 C
