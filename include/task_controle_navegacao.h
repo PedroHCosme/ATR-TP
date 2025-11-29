@@ -8,6 +8,8 @@
 
 #include "gerenciador_dados.h"
 
+class IVeiculoDriver;
+
 /**
  * @brief Tarefa responsável pelo controle de navegação do veículo.
  *
@@ -17,7 +19,8 @@
  * ou reagir a obstáculos.
  *
  * @param gerenciadorDados Referência para o objeto compartilhado GerenciadorDados.
+ * @param driver Referência para o driver universal (interface de controle do veículo).
  */
-void task_controle_navegacao(GerenciadorDados& gerenciadorDados);
+void task_controle_navegacao(GerenciadorDados& gerenciadorDados, IVeiculoDriver& driver);
 
 #endif // TASK_CONTROLE_NAVEGACAO_H

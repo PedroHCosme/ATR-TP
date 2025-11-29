@@ -1,10 +1,11 @@
 #include "task_logica_comando.h"
+#include "interfaces/i_veiculo_driver.h"
 #include "utils/sleep_asynch.h" // Inclua seu utilitário
 #include <boost/asio.hpp>       // Necessário para o motor de tempo
 #include <iostream>
 #include <functional>           // Para std::function
 
-void task_logica_comando(GerenciadorDados& gerenciadorDados) {
+void task_logica_comando(GerenciadorDados& gerenciadorDados, EventosSistema& eventos, IVeiculoDriver& driver) {
     // 1. Configuração do Motor de Tempo Local (Exclusivo desta thread)
     boost::asio::io_context io;
     SleepAsynch timer(io);

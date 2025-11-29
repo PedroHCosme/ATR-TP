@@ -9,6 +9,7 @@
 #include "simulacao_mina.h"
 #include "drivers/simulacao_driver.h"
 #include "utils/sleep_asynch.h"
+#include "eventos_sistema.h"
 
 // Includes das Tasks
 #include "task_tratamento_sensores.h"
@@ -41,6 +42,9 @@ int main() {
     // O Adaptador (HAL - Hardware Abstraction Layer)
     // Ele conecta a simulação às interfaces ISensorDriver e IVeiculoDriver
     SimulacaoDriver driverUniversal(simulacao);
+
+    // Sistema de Eventos (Sinalização de Falhas)
+    EventosSistema eventos;
 
     // --- 3. CONFIGURAÇÃO DE ESTADO INICIAL ---
     EstadoVeiculo estadoInicial = {false, false}; // Sem defeito, modo manual
@@ -102,7 +106,7 @@ int main() {
     
     // Thread 2: Lógica de Comando (CONSUMIDOR / GERENTE)
     // Lê do buffer e atualiza o estado (Auto/Manual/Falha)
-    std::thread t2(task_logica_comando, std::ref(gerenciadorDados));
+    std::thread t2(task_logica_comando, std::ref(gerenciadorDados), std::ref(eventos), std::ref(driverUniversal));
 
     // Thread 3: Controle de Navegação (CONSUMIDOR / PILOTO)
     // Lê estado e envia comandos para o driverUniversal (como IVeiculoDriver)

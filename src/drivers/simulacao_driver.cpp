@@ -1,6 +1,6 @@
 #include "drivers/simulacao_driver.h"
 
-SimulacaoDriver::SimulacaoDriver(SimulacaoMina& sim) : simulacao(sim) {}
+// Construtor já está definido inline no header, não precisa repetir aqui
 
 CaminhaoFisico SimulacaoDriver::readSensorData(int id_caminhao) {
     return simulacao.getEstadoReal(id_caminhao);
