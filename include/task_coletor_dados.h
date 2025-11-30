@@ -5,6 +5,7 @@
 #include "gerenciador_dados.h"
 
 // Task function prototype
-void task_coletor_dados(GerenciadorDados &dados, EventosSistema &eventos);
+void task_coletor_dados(GerenciadorDados &dados, EventosSistema &eventos,
+                        int truck_id);
 
 #endif // TASK_COLETOR_DADOS_H

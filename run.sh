@@ -52,6 +52,10 @@ if ! command -v xterm &> /dev/null; then
 fi
 
 echo "Starting Interface (Local)..."
+# Ensure DISPLAY is set
+if [ -z "$DISPLAY" ]; then
+    export DISPLAY=:0
+fi
 ./venv/bin/python3 interface_mina.py
 
 # 4. Cleanup

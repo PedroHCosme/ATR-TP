@@ -1,16 +1,83 @@
 #include "interface_caminhao.h"
-#include <iomanip>
+#include <boost/asio.hpp>
+#include <chrono> // Required for std::chrono::seconds
+#include <chrono>
 #include <iostream>
-#include <sstream>
+#include <thread>
+#include <thread> // Required for std::this_thread::sleep_for
 #include <unistd.h>
 
-InterfaceCaminhao::InterfaceCaminhao(GerenciadorDados &d, EventosSistema &e)
-    : dados(d), eventos(e), running(false) {
+InterfaceCaminhao::InterfaceCaminhao(int truck_id)
+    : running(true), current_truck_id(truck_id), tcp_socket(nullptr) {
+  // Inicializa ncurses
+  initscr();
+  cbreak();
+  noecho();
+  keypad(stdscr, TRUE);
+  nodelay(stdscr, TRUE); // Non-blocking input
+
   win_header = nullptr;
   win_telemetry = nullptr;
   win_status = nullptr;
   win_controls = nullptr;
   win_logs = nullptr;
+
+  // Initialize cache
+  cached_sensores = {0};
+  cached_estado = {0};
+  current_commands = {0};
+
+  connect_to_truck(current_truck_id);
+}
+
+void InterfaceCaminhao::connect_to_truck(int truck_id) {
+  using boost::asio::ip::tcp;
+
+  if (tcp_socket) {
+    tcp_socket->close();
+    delete tcp_socket;
+    tcp_socket = nullptr;
+  }
+  tcp_socket = new tcp::socket(io_context);
+
+  int port = BASE_PORT + truck_id;
+  int retries = 0;
+
+  while (true) {
+    try {
+      tcp_socket->connect(tcp::endpoint(
+          boost::asio::ip::address::from_string("127.0.0.1"), port));
+      break; // Connected!
+    } catch (std::exception &e) {
+      // Ignore and retry
+    }
+
+    mvprintw(0, 0, "Conectando ao Truck %d (Porta %d)... Tentativa %d",
+             truck_id, port, ++retries);
+    refresh();
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+    if (retries > 20) {
+      if (retries % 10 == 0) {
+        mvprintw(1, 0, "Verifique se o bin/app para o Truck %d esta rodando.",
+                 truck_id);
+        refresh();
+      }
+    }
+
+    int ch = getch();
+    if (ch == 'q' || ch == 'Q') {
+      running = false;
+      return;
+    }
+  }
+  clear();
+}
+
+void InterfaceCaminhao::switch_truck(int truck_id) {
+  current_truck_id = truck_id;
+  connect_to_truck(current_truck_id);
+  draw_borders();
 }
 
 InterfaceCaminhao::~InterfaceCaminhao() { close(); }
@@ -92,8 +159,8 @@ void InterfaceCaminhao::draw_borders() {
   // Header
   wclear(win_header);
   box(win_header, 0, 0);
-  mvwprintw(win_header, 1, 2,
-            "SISTEMA DE CONTROLE - CAMINHAO AUTONOMO (COCKPIT)");
+  mvwprintw(win_header, 1, 2, "SISTEMA DE CONTROLE - CAMINHAO %d (COCKPIT)",
+            current_truck_id);
   wnoutrefresh(win_header);
 
   // Telemetry
@@ -136,8 +203,24 @@ void InterfaceCaminhao::draw_borders() {
 }
 
 void InterfaceCaminhao::update_telemetry() {
-  // Acessando via DadosSensores
-  DadosSensores sensores = dados.lerUltimoEstado();
+  // Read from Socket
+  if (tcp_socket && tcp_socket->is_open()) {
+    try {
+      if (tcp_socket->available() > 0) {
+        ServerToClientPacket rx_packet;
+        boost::system::error_code error;
+        size_t len = tcp_socket->read_some(
+            boost::asio::buffer(&rx_packet, sizeof(rx_packet)), error);
+        if (!error && len == sizeof(rx_packet)) {
+          cached_sensores = rx_packet.sensores;
+          cached_estado = rx_packet.estado;
+        }
+      }
+    } catch (...) {
+    }
+  }
+
+  DadosSensores sensores = cached_sensores;
 
   // Atualiza apenas os valores (com padding para limpar lixo anterior)
   wattron(win_telemetry, A_BOLD);
@@ -161,8 +244,9 @@ void InterfaceCaminhao::update_telemetry() {
 }
 
 void InterfaceCaminhao::update_status() {
-  EstadoVeiculo estado = dados.getEstadoVeiculo();
-  ComandosOperador cmd = dados.getComandosOperador();
+  EstadoVeiculo estado = cached_estado;
+  ComandosOperador cmd = current_commands;
+  DadosSensores sensores = cached_sensores;
 
   if (estado.e_automatico) {
     wattron(win_status, COLOR_PAIR(5) | A_BOLD);
@@ -187,8 +271,7 @@ void InterfaceCaminhao::update_status() {
     // have fault code passed here easily yet) Ideally we would check the fault
     // code from 'eventos', but 'estado.e_defeito' is a bool. Let's check the
     // Lidar distance from 'dados'.
-    DadosSensores s = dados.lerUltimoEstado();
-    if (s.i_lidar_distancia < 8.0f) { // SAFE_DISTANCE
+    if (sensores.i_lidar_distancia < 8.0f) { // SAFE_DISTANCE
       mvwprintw(win_status, 6, 22, "OBSTACULO DETECTADO!");
     }
     wattroff(win_status, COLOR_PAIR(3));
@@ -233,6 +316,7 @@ void InterfaceCaminhao::update_controls() {
   y++;
   mvwprintw(win_controls, y++, x,
             "[ Q ] - Sair do Cockpit (Encerra Simulacao)");
+  mvwprintw(win_controls, y++, x, "[ 0-2 ] - Alternar Caminhao");
 
   wnoutrefresh(win_controls);
 }
@@ -240,7 +324,7 @@ void InterfaceCaminhao::update_controls() {
 void InterfaceCaminhao::handle_input() {
   int ch = getch();
 
-  ComandosOperador cmd = dados.getComandosOperador();
+  ComandosOperador cmd = current_commands;
 
   // Reset de comandos momentâneos no modo manual
   // Se nenhuma tecla for pressionada (ch == ERR), ou se for outra tecla,
@@ -288,8 +372,30 @@ void InterfaceCaminhao::handle_input() {
       // Freio
       cmd.c_acelerar = false;
       break;
+    case '0':
+      switch_truck(0);
+      return; // Skip writing to old SHM
+    case '1':
+      switch_truck(1);
+      return;
+    case '2':
+      switch_truck(2);
+      return;
     }
   }
 
-  dados.setComandosOperador(cmd);
+  current_commands = cmd;
+
+  // Write to Socket (Send heartbeat/commands)
+  if (tcp_socket && tcp_socket->is_open()) {
+    try {
+      ClientToServerPacket tx_packet;
+      tx_packet.comandos = current_commands;
+      boost::system::error_code ignored_error;
+      boost::asio::write(*tcp_socket,
+                         boost::asio::buffer(&tx_packet, sizeof(tx_packet)),
+                         ignored_error);
+    } catch (...) {
+    }
+  }
 }

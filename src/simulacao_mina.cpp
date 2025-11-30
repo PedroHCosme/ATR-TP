@@ -5,8 +5,8 @@
 
 // Constantes do Mapa e Veículo (Movidas para cá)
 const float CELL_SIZE = 10.0f;
-const float TRUCK_WIDTH = 4.0f;
-const float TRUCK_LENGTH = 6.0f;
+const float TRUCK_WIDTH = 3.2f;
+const float TRUCK_LENGTH = 4.8f;
 
 SimulacaoMina::SimulacaoMina(const std::vector<std::vector<char>> &mapa_ref,
                              int num_caminhoes)
@@ -29,8 +29,16 @@ SimulacaoMina::SimulacaoMina(const std::vector<std::vector<char>> &mapa_ref,
       }
     }
 
-    c.i_posicao_x = start_x;
-    c.i_posicao_y = start_y;
+    // Deterministic offset to ensure separation
+    // Truck 0: Center
+    // Truck 1: +10m X
+    // Truck 2: +20m X
+    // Add small random jitter to look natural
+    float jitter_x = (rand() % 20 - 10) / 10.0f; // -1.0 to 1.0
+    float jitter_y = (rand() % 20 - 10) / 10.0f;
+
+    c.i_posicao_x = start_x + (i * 8.0f) + jitter_x;
+    c.i_posicao_y = start_y + jitter_y;
     c.i_angulo_x = 0.0f;
     c.velocidade = 0.0f;
     c.o_aceleracao = 0.0f;

@@ -35,24 +35,34 @@ SIM_SRCS = \
 INT_SIM_SRCS = \
 	$(SRC_DIR)/interface_simulacao.cpp
 
+# Sources for the Cockpit Interface (Separate Process)
+COCKPIT_SRCS = \
+	$(SRC_DIR)/cockpit_main.cpp \
+	$(SRC_DIR)/interface_caminhao.cpp
+
 APP_OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(APP_SRCS))
 SIM_OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SIM_SRCS))
 INT_SIM_OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(INT_SIM_SRCS))
+COCKPIT_OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(COCKPIT_SRCS))
 
 APP_TARGET = $(BIN_DIR)/app
 SIM_TARGET = $(BIN_DIR)/simulador
 INT_SIM_TARGET = $(BIN_DIR)/interface_simulacao
+COCKPIT_TARGET = $(BIN_DIR)/cockpit
 
-all: $(APP_TARGET) $(SIM_TARGET) $(INT_SIM_TARGET)
+all: $(APP_TARGET) $(SIM_TARGET) $(INT_SIM_TARGET) $(COCKPIT_TARGET)
 
 $(APP_TARGET): $(APP_OBJS) | $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses -lmosquitto
+	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses -lmosquitto -lrt
 
 $(SIM_TARGET): $(SIM_OBJS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ -lmosquitto
 
 $(INT_SIM_TARGET): $(INT_SIM_OBJS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses -lmosquitto
+
+$(COCKPIT_TARGET): $(COCKPIT_OBJS) | $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses -lrt
 
 # Pattern rule for objects
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
@@ -64,9 +74,8 @@ $(BIN_DIR):
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
 
-run: $(TARGET)
-	./$(TARGET)
+run: $(APP_TARGET)
+	./$(APP_TARGET)
 
 .PHONY: all clean run

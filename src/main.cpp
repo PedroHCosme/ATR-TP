@@ -8,7 +8,7 @@
 #include "drivers/mqtt_driver.h" // Driver MQTT
 #include "eventos_sistema.h"
 #include "gerenciador_dados.h"
-#include "interface_caminhao.h" // Cockpit
+// #include "interface_caminhao.h" // Cockpit separado
 #include "utils/sleep_asynch.h"
 
 // Includes das Tasks
@@ -23,7 +23,19 @@
 /**
  * @brief Função principal do sistema de controle (Embarcado).
  */
-int main() {
+int main(int argc, char *argv[]) {
+  // Parse Truck ID
+  int truck_id = 0;
+  if (argc > 1) {
+    try {
+      truck_id = std::stoi(argv[1]);
+    } catch (...) {
+      std::cerr << "Invalid Truck ID argument. Defaulting to 0." << std::endl;
+    }
+  }
+  std::cout << "[Main] Starting Controller for Truck ID: " << truck_id
+            << std::endl;
+
   // Redireciona logs para arquivo (REMOVIDO PARA DEBUG)
   // std::ofstream logfile("controlador.log");
   // std::streambuf *cout_backup = std::cout.rdbuf();
@@ -35,14 +47,14 @@ int main() {
   boost::asio::io_context io;
 
   // --- 2. INSTANCIAÇÃO DOS OBJETOS ---
+  // 1. Instancia Objetos Compartilhados
   GerenciadorDados gerenciadorDados;
   EventosSistema eventos;
 
+  // 2. Instancia Drivers
   // Driver MQTT conecta ao broker local (Mosquitto)
   // O Simulador Headless estará rodando em outro processo e publicando dados
-  // Driver MQTT conecta ao broker local (Mosquitto)
-  // O Simulador Headless estará rodando em outro processo e publicando dados
-  MqttDriver mqttDriver("127.0.0.1");
+  MqttDriver mqtt_driver("127.0.0.1", 1883, truck_id);
 
   // --- 3. CONFIGURAÇÃO DE ESTADO INICIAL ---
   EstadoVeiculo estadoInicial = {false, true}; // Modo Automático
@@ -56,7 +68,7 @@ int main() {
 
   // Thread 1: Tratamento de Sensores (Lê do MQTT)
   std::thread t1(task_tratamento_sensores, std::ref(gerenciadorDados),
-                 std::ref(mqttDriver), 0);
+                 std::ref(mqtt_driver), 0);
 
   // Thread 2: Lógica de Comando
   std::thread t2(task_logica_comando, std::ref(gerenciadorDados),
@@ -67,53 +79,49 @@ int main() {
                           std::ref(eventos));
 
   std::thread t_coletor(task_coletor_dados, std::ref(gerenciadorDados),
-                        std::ref(eventos));
+                        std::ref(eventos), truck_id);
 
   // 4. Aguardar as threads (embora elas rodem indefinidamente)o de Falhas (Atua
   // via MQTT se precisar parar)
   std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados),
-                 std::ref(eventos), std::ref(mqttDriver));
+                 std::ref(eventos), std::ref(mqtt_driver));
 
   // Thread 5: Collision Avoidance System (CAS) - Alta Prioridade
   std::thread t_cas(task_collision_avoidance, std::ref(gerenciadorDados),
-                    std::ref(eventos), std::ref(mqttDriver));
+                    std::ref(eventos), std::ref(mqtt_driver));
 
   // Thread 6: Planejamento de Rota (O General)
   std::thread t_rota(task_planejamento_rota, std::ref(gerenciadorDados),
-                     std::ref(mqttDriver));
+                     std::ref(mqtt_driver));
 
   // Thread 5: Loop de Atuação (Envia comandos de controle para o MQTT)
   // Precisamos de uma task que pegue o comando do GerenciadorDados e envie para
   // o Driver Antes isso era feito no loop de simulação. Agora precisamos de um
   // loop dedicado de atuação.
-  std::thread t_atuacao([&gerenciadorDados, &mqttDriver, &eventos]() {
+  std::thread t_atuacao([&gerenciadorDados, &mqtt_driver, &eventos]() {
     while (true) {
       ComandosAtuador cmd = gerenciadorDados.getComandosAtuador();
-      mqttDriver.setAtuadores(cmd.aceleracao, cmd.direcao);
+      mqtt_driver.setAtuadores(cmd.aceleracao, cmd.direcao);
 
       // Sincroniza estado do sistema com o simulador/interface
       EstadoVeiculo estado = gerenciadorDados.getEstadoVeiculo();
       bool isFault = eventos.verificar_estado_falha();
-      mqttDriver.publishSystemState(estado.e_automatico == false, isFault);
+      mqtt_driver.publishSystemState(estado.e_automatico == false, isFault);
 
       std::this_thread::sleep_for(std::chrono::milliseconds(100)); // 10Hz
     }
   });
 
   // --- 5. INTERFACE LOCAL (COCKPIT) ---
-  // --- 5. INTERFACE LOCAL (COCKPIT) ---
-  try {
-    InterfaceCaminhao cockpit(gerenciadorDados, eventos);
-    cockpit.init();
-    cockpit.run();
-    cockpit.close();
-  } catch (...) {
-    std::cerr << "Erro na interface ou modo headless detectado. Rodando em "
-                 "background..."
-              << std::endl;
-    while (true) {
-      std::this_thread::sleep_for(std::chrono::seconds(1));
-    }
+  // O Cockpit agora roda em um processo separado (bin/cockpit)
+  // O main.cpp atua apenas como servidor IPC e controlador headless.
+
+  std::cout << "[Main] Sistema iniciado. Aguardando conexoes IPC..."
+            << std::endl;
+
+  // Mantém a thread principal viva
+  while (true) {
+    std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 
   // --- 6. ENCERRAMENTO ---

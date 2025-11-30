@@ -9,6 +9,7 @@
 #include <sstream>
 #include <string>
 #include <thread>
+#include <unistd.h>
 #include <vector>
 
 using json = nlohmann::json;
@@ -228,7 +229,8 @@ void draw_interface() {
 
 int main() {
   mosquitto_lib_init();
-  struct mosquitto *mosq = mosquitto_new("interface_simulacao", true, NULL);
+  std::string client_id = "interface_simulacao_" + std::to_string(getpid());
+  struct mosquitto *mosq = mosquitto_new(client_id.c_str(), true, NULL);
 
   if (!mosq) {
     std::cerr << "Erro ao criar cliente MQTT" << std::endl;

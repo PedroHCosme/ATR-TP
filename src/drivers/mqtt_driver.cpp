@@ -2,15 +2,16 @@
 #include <cstring>
 #include <iostream>
 
-MqttDriver::MqttDriver(const std::string &broker_ip, int port)
-    : broker_ip(broker_ip), port(port), conectado(false) {
+MqttDriver::MqttDriver(const std::string &broker_ip, int port, int truck_id)
+    : broker_ip(broker_ip), port(port), truck_id(truck_id), conectado(false) {
 
   // Inicializa dados com zeros
   // Inicializa dados com zeros, mas LiDAR com distância segura
   ultimos_dados = {0, 0, 0, 0, 0, 0, false, false, 100};
 
   mosquitto_lib_init();
-  mosq = mosquitto_new("ATR_Control_System", true, this);
+  std::string client_id = "ATR_Control_System_" + std::to_string(truck_id);
+  mosq = mosquitto_new(client_id.c_str(), true, this);
 
   if (!mosq) {
     std::cerr << "[MqttDriver] Erro ao criar instancia mosquitto" << std::endl;
@@ -83,8 +84,12 @@ void MqttDriver::handle_sensor_message(const std::string &payload) {
     auto j = json::parse(payload);
     std::lock_guard<std::mutex> lock(dados_mtx);
 
-    if (j.contains("id"))
-      ultimos_dados.id = j["id"];
+    if (j.contains("id")) {
+      int msg_id = j["id"];
+      if (msg_id != truck_id)
+        return; // Ignore messages for other trucks
+      ultimos_dados.id = msg_id;
+    }
     if (j.contains("x"))
       ultimos_dados.i_posicao_x = j["x"];
     if (j.contains("y"))
@@ -140,6 +145,7 @@ void MqttDriver::setAtuadores(int aceleracao, int direcao) {
     return;
 
   json j;
+  j["id"] = truck_id;
   j["acel"] = aceleracao;
   j["dir"] = direcao;
 
@@ -162,8 +168,24 @@ void MqttDriver::publishSystemState(bool manual, bool fault) {
 }
 
 void MqttDriver::handle_route_message(const std::string &payload) {
-  std::lock_guard<std::mutex> lock(route_mtx);
-  last_route_json = payload;
+  try {
+    auto j = json::parse(payload);
+    if (j.contains("id")) {
+      int msg_id = j["id"];
+      if (msg_id != truck_id) {
+        // std::cout << "[MqttDriver] Ignorando rota para ID " << msg_id << "
+        // (Sou " << truck_id << ")" << std::endl;
+        return;
+      }
+      std::cout << "[MqttDriver] Rota recebida para MIM (ID " << truck_id << ")"
+                << std::endl;
+    }
+
+    std::lock_guard<std::mutex> lock(route_mtx);
+    last_route_json = payload;
+  } catch (const std::exception &e) {
+    std::cerr << "[MqttDriver] Erro ao parsear rota: " << e.what() << std::endl;
+  }
 }
 
 std::string MqttDriver::checkNewRoute() {

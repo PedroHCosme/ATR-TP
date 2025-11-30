@@ -17,13 +17,17 @@ private:
   struct mosquitto *mosq;
   std::string broker_ip;
   int port;
+  int truck_id; // Added member
 
   DadosSensores ultimos_dados;
   std::mutex dados_mtx;
-  std::atomic<bool> conectado;
+  std::atomic<bool> conectado; // Kept as std::atomic<bool> based on original
+                               // context, assuming the diff's `bool conectado;`
+                               // was a partial or incorrect snippet.
 
 public:
-  MqttDriver(const std::string &broker_ip, int port = 1883);
+  MqttDriver(const std::string &broker_ip, int port,
+             int truck_id = 0); // Updated constructor signature
   ~MqttDriver();
 
   // ISensorDriver

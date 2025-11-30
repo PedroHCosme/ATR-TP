@@ -14,8 +14,8 @@ using json = nlohmann::json;
 
 // Variáveis globais para o simulador headless
 struct mosquitto *mosq = nullptr;
-std::atomic<int> cmd_acel(0);
-std::atomic<int> cmd_dir(0);
+std::atomic<int> global_cmd_acel[3];
+std::atomic<int> global_cmd_dir[3];
 
 // Objetos globais para comunicação com ServerIPC
 GerenciadorDados dadosDummy;
@@ -39,10 +39,28 @@ void on_message(struct mosquitto *m, void *obj,
   if (topic == "caminhao/atuadores") {
     try {
       auto j = json::parse(payload);
+      int id = 0;
+      if (j.contains("id"))
+        id = j["id"];
+
+      int acel = 0;
+      int dir = 0;
       if (j.contains("acel"))
-        cmd_acel = j["acel"];
+        acel = j["acel"];
       if (j.contains("dir"))
-        cmd_dir = j["dir"];
+        dir = j["dir"];
+
+      // Apply directly to simulation (thread-safe via mutex in SimulacaoMina)
+      // We need access to 'simulacao' object here.
+      // But 'simulacao' is in main(). We need to make it global or pass it.
+      // It is currently local in main.
+      // Let's make 'simulacao' global or use the 'cmd_acel' arrays.
+
+      // For now, let's use global arrays for commands.
+      if (id >= 0 && id < 3) {
+        global_cmd_acel[id] = acel;
+        global_cmd_dir[id] = dir;
+      }
     } catch (...) {
       std::cerr << "[Simulador] Erro JSON atuadores" << std::endl;
     }
@@ -94,7 +112,7 @@ int main() {
   // 2. Setup Física
   MineGenerator mineGen(61, 61);
   mineGen.generate();
-  SimulacaoMina simulacao(mineGen.getMinefield(), 1);
+  SimulacaoMina simulacao(mineGen.getMinefield(), 3);
 
   // Publicar Mapa (Retained)
   json j_map;
@@ -122,7 +140,11 @@ int main() {
 
     // 1. Aplica comandos recebidos via MQTT
     // std::cout << "[Simulador] Loop tick" << std::endl;
-    simulacao.setComandoAtuador(0, cmd_acel, cmd_dir);
+    // 1. Aplica comandos recebidos via MQTT
+    // std::cout << "[Simulador] Loop tick" << std::endl;
+    for (int i = 0; i < 3; ++i) {
+      simulacao.setComandoAtuador(i, global_cmd_acel[i], global_cmd_dir[i]);
+    }
 
     // 2. Passo de tempo
     // std::cout << "[Simulador] Step 2" << std::endl;
@@ -130,20 +152,23 @@ int main() {
 
     // 3. Publica estado via MQTT
     // std::cout << "[Simulador] Step 3" << std::endl;
-    CaminhaoFisico estado = simulacao.getEstadoReal(0);
-    json j;
-    j["id"] = 0;
-    j["x"] = estado.i_posicao_x;
-    j["y"] = estado.i_posicao_y;
-    j["angle"] = estado.i_angulo_x;
-    j["vel"] = estado.velocidade;
-    j["temp"] = estado.i_temperatura;
-    j["lidar"] = estado.i_lidar_distancia;
+    // 3. Publica estado via MQTT
+    // std::cout << "[Simulador] Step 3" << std::endl;
+    for (int i = 0; i < 3; ++i) {
+      CaminhaoFisico estado = simulacao.getEstadoReal(i);
+      json j;
+      j["id"] = i;
+      j["x"] = estado.i_posicao_x;
+      j["y"] = estado.i_posicao_y;
+      j["angle"] = estado.i_angulo_x;
+      j["vel"] = estado.velocidade;
+      j["temp"] = estado.i_temperatura;
+      j["lidar"] = estado.i_lidar_distancia;
 
-    std::string payload = j.dump();
-    mosquitto_publish(mosq, NULL, "caminhao/sensores", payload.length(),
-                      payload.c_str(), 0, false);
-    // std::cout << "[Simulador] Publicado: " << payload << std::endl;
+      std::string payload = j.dump();
+      mosquitto_publish(mosq, NULL, "caminhao/sensores", payload.length(),
+                        payload.c_str(), 0, false);
+    }
 
     // 4. Atualiza dados para o Visualizador (Pygame)
     // O ServerIPC lê direto da 'simulacao', então ok.
