@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Prepare XAuthority for Podman
+if [ -z "$XAUTHORITY" ]; then
+    export XAUTHORITY=$HOME/.Xauthority
+fi
+# Ensure file exists to avoid Docker mount error
+touch $XAUTHORITY 2>/dev/null || true
+
 # 1. Build the C++ Docker Image
 echo "Building C++ Docker Image (atr_cpp)..."
 docker build -t atr_cpp .
@@ -10,26 +17,32 @@ echo "Starting Mosquitto..."
 mkdir -p mosquitto/config mosquitto/data mosquitto/log
 touch mosquitto/log/mosquitto.log
 # Start only mosquitto service
-docker compose up -d mosquitto
+XAUTHORITY=$XAUTHORITY docker compose up -d mosquitto
 
 # 3. Run the Python Interface Locally
 echo "Setting up Python environment..."
 
-PYTHON_CMD="python3"
-
-# Try to create virtual environment
-if python3 -m venv venv 2>/dev/null; then
-    echo "Virtual environment created."
-    ./venv/bin/pip install pygame paho-mqtt
-    PYTHON_CMD="./venv/bin/python3"
-else
-    echo "WARNING: Could not create virtual environment (missing python3-venv?)."
-    echo "Attempting to install dependencies to user library..."
-    pip3 install --user pygame paho-mqtt
+# Create virtual environment if it doesn't exist
+if [ ! -d "venv" ]; then
+    echo "Creating virtual environment..."
+    python3 -m venv venv
+    if [ $? -ne 0 ]; then
+        echo "venv creation failed. Attempting to install python3-venv..."
+        sudo apt-get update && sudo apt-get install -y python3-venv
+        python3 -m venv venv
+        if [ $? -ne 0 ]; then
+            echo "Error: Failed to create virtual environment. Please install python3-venv manually."
+            exit 1
+        fi
+    fi
 fi
 
+# Install dependencies
+echo "Installing dependencies..."
+./venv/bin/pip install pygame paho-mqtt
+
 echo "Starting Interface (Local)..."
-$PYTHON_CMD interface_mina.py
+./venv/bin/python3 interface_mina.py
 
 # 4. Cleanup
 echo "Stopping Mosquitto..."
