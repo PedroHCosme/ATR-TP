@@ -23,41 +23,45 @@ void MineGenerator::generate() {
   recursiveBacktracker(1, 1);
 
   // 2. Alarga os túneis (Dilation)
-  // Transforma 20% das paredes adjacentes a caminhos em caminhos
-  widenTunnels(0.2f);
+  // Aumentado para 80% para criar corredores MUITO largos
+  widenTunnels(0.8f);
+  // Segunda passada para garantir que não haja gargalos
+  widenTunnels(0.3f);
 
   // 3. Adiciona salas de escavação (Rooms)
-  // Adiciona 5 salas de 5x5
-  addRooms(5);
+  // Salas maiores (10x10) e mais numerosas (8)
+  addRooms(8);
 
-  // 4. Cria zona segura de 10x10 no início para evitar colisão imediata
+  // 4. Cria zona segura de 15x15 no início
   createStartRoom();
 
-  // 5. Define Start/End (garante que não foram sobrescritos)
-  minefield[1][1] = 'A';
+  // 5. Define Start/End
+  // Start no centro da sala 15x15 (8,8)
+  minefield[8][8] = 'A';
   minefield[lastY][lastX] = 'B';
 }
 
 void MineGenerator::createStartRoom() {
-  // Garante uma área livre de 10x10 a partir de (1,1)
-  for (int y = 1; y <= 10 && y < height - 1; ++y) {
-    for (int x = 1; x <= 10 && x < width - 1; ++x) {
+  // Garante uma área livre de 15x15 a partir de (1,1)
+  // Isso cria um "hub" central grande para o início
+  for (int y = 1; y <= 15 && y < height - 1; ++y) {
+    for (int x = 1; x <= 15 && x < width - 1; ++x) {
       minefield[y][x] = '0';
     }
   }
 }
 
 void MineGenerator::addRooms(int numRooms) {
-  std::uniform_int_distribution<int> distX(1, width - 6);
-  std::uniform_int_distribution<int> distY(1, height - 6);
+  std::uniform_int_distribution<int> distX(1, width - 11);
+  std::uniform_int_distribution<int> distY(1, height - 11);
 
   for (int i = 0; i < numRooms; ++i) {
     int rx = distX(rng);
     int ry = distY(rng);
 
-    // Cria uma sala 5x5
-    for (int y = ry; y < ry + 5; ++y) {
-      for (int x = rx; x < rx + 5; ++x) {
+    // Cria uma sala 10x10 (antes era 5x5)
+    for (int y = ry; y < ry + 10; ++y) {
+      for (int x = rx; x < rx + 10; ++x) {
         if (y < height - 1 && x < width - 1) {
           minefield[y][x] = '0';
         }
@@ -136,18 +140,19 @@ void MineGenerator::print() {
     for (char cell : row) {
       // Imprime '##' para parede e '  ' para caminho vazio para melhor
       // visualização
-      if (cell == '1')
-        std::cout << "##";
-      else if (cell == '0')
-        std::cout << "  ";
-      else if (cell == 'A')
-        std::cout << "AA";
-      else if (cell == 'B')
-        std::cout << "BB";
-      else
-        std::cout << "??";
+      if (cell == '1') {
+        // std::cout << "##";
+      } else if (cell == '0') {
+        // std::cout << "  ";
+      } else if (cell == 'A') {
+        // std::cout << "AA";
+      } else if (cell == 'B') {
+        // std::cout << "BB";
+      } else {
+        // std::cout << "??";
+      }
     }
-    std::cout << std::endl;
+    // std::cout << std::endl;
   }
 }
 

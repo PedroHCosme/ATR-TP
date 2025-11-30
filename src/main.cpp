@@ -12,6 +12,7 @@
 #include "utils/sleep_asynch.h"
 
 // Includes das Tasks
+#include "task_coletor_dados.h"
 #include "task_collision_avoidance.h"
 #include "task_controle_navegacao.h"
 #include "task_logica_comando.h"
@@ -23,12 +24,12 @@
  * @brief Função principal do sistema de controle (Embarcado).
  */
 int main() {
-  // Redireciona logs para arquivo
-  std::ofstream logfile("controlador.log");
-  std::streambuf *cout_backup = std::cout.rdbuf();
-  std::cout.rdbuf(logfile.rdbuf());
-  std::streambuf *cerr_backup = std::cerr.rdbuf();
-  std::cerr.rdbuf(logfile.rdbuf());
+  // Redireciona logs para arquivo (REMOVIDO PARA DEBUG)
+  // std::ofstream logfile("controlador.log");
+  // std::streambuf *cout_backup = std::cout.rdbuf();
+  // std::cout.rdbuf(logfile.rdbuf());
+  // std::streambuf *cerr_backup = std::cerr.rdbuf();
+  // std::cerr.rdbuf(logfile.rdbuf());
 
   // --- 1. SETUP INICIAL ---
   boost::asio::io_context io;
@@ -65,7 +66,11 @@ int main() {
   std::thread t_navegacao(task_controle_navegacao, std::ref(gerenciadorDados),
                           std::ref(eventos));
 
-  // Thread 4: Monitoramento de Falhas (Atua via MQTT se precisar parar)
+  std::thread t_coletor(task_coletor_dados, std::ref(gerenciadorDados),
+                        std::ref(eventos));
+
+  // 4. Aguardar as threads (embora elas rodem indefinidamente)o de Falhas (Atua
+  // via MQTT se precisar parar)
   std::thread t3(task_monitoramento_falhas, std::ref(gerenciadorDados),
                  std::ref(eventos), std::ref(mqttDriver));
 
@@ -112,8 +117,8 @@ int main() {
   }
 
   // --- 6. ENCERRAMENTO ---
-  std::cout.rdbuf(cout_backup);
-  std::cerr.rdbuf(cerr_backup);
+  // std::cout.rdbuf(cout_backup);
+  // std::cerr.rdbuf(cerr_backup);
 
   t1.detach();
   t2.detach();
@@ -121,6 +126,7 @@ int main() {
   t_cas.detach();
   t_rota.detach();
   t_navegacao.detach();
+  t_coletor.detach();
   t_atuacao.detach();
 
   return 0;

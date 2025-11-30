@@ -23,7 +23,7 @@ EventosSistema eventosDummy;
 
 void on_connect(struct mosquitto *m, void *obj, int rc) {
   if (rc == 0) {
-    std::cout << "[Simulador] Conectado ao broker MQTT!" << std::endl;
+    // std::cout << "[Simulador] Conectado ao broker MQTT!" << std::endl;
     mosquitto_subscribe(m, NULL, "caminhao/atuadores", 0);
     mosquitto_subscribe(m, NULL, "caminhao/estado_sistema", 0);
   } else {
@@ -73,8 +73,8 @@ void on_message(struct mosquitto *m, void *obj,
 }
 
 int main() {
-  std::cout << "--- INICIANDO SIMULADOR HEADLESS (FISICA + MQTT) ---"
-            << std::endl;
+  // std::cout << "--- INICIANDO SIMULADOR HEADLESS (FISICA + MQTT) ---"
+  // << std::endl;
 
   // 1. Setup MQTT
   mosquitto_lib_init();
@@ -99,10 +99,12 @@ int main() {
   // Publicar Mapa (Retained)
   json j_map;
   j_map["map"] = mineGen.getMinefield();
+  j_map["width"] = 61; // Hardcoded for now based on mineGen(61, 61)
+  j_map["height"] = 61;
   std::string map_payload = j_map.dump();
   mosquitto_publish(mosq, NULL, "caminhao/mapa", map_payload.length(),
                     map_payload.c_str(), 0, true);
-  std::cout << "[Simulador] Mapa publicado (retained)." << std::endl;
+  // std::cout << "[Simulador] Mapa publicado (retained)." << std::endl;
 
   // 3. Setup Interface Visual (Pygame) - Mantemos para ver o que acontece
   // Precisamos de objetos dummy para o ServerIPC, pois ele espera
@@ -112,36 +114,36 @@ int main() {
                          mineGen.getMinefield());
   visualServer.start();
 
-  std::cout << "Simulacao rodando..." << std::endl;
+  // std::cout << "Simulacao rodando..." << std::endl;
 
   // Loop de Física (10Hz)
   while (true) {
     auto start_time = std::chrono::steady_clock::now();
 
     // 1. Aplica comandos recebidos via MQTT
-    std::cout << "[Simulador] Loop tick" << std::endl;
+    // std::cout << "[Simulador] Loop tick" << std::endl;
     simulacao.setComandoAtuador(0, cmd_acel, cmd_dir);
 
     // 2. Passo de tempo
-    std::cout << "[Simulador] Step 2" << std::endl;
+    // std::cout << "[Simulador] Step 2" << std::endl;
     simulacao.atualizar_passo_tempo();
 
     // 3. Publica estado via MQTT
-    std::cout << "[Simulador] Step 3" << std::endl;
+    // std::cout << "[Simulador] Step 3" << std::endl;
     CaminhaoFisico estado = simulacao.getEstadoReal(0);
     json j;
     j["id"] = 0;
-    j["x"] = (int)estado.i_posicao_x;
-    j["y"] = (int)estado.i_posicao_y;
-    j["angle"] = (int)estado.i_angulo_x;
-    j["vel"] = (int)estado.velocidade;
-    j["temp"] = (int)estado.i_temperatura;
-    j["lidar"] = (int)estado.i_lidar_distancia;
+    j["x"] = estado.i_posicao_x;
+    j["y"] = estado.i_posicao_y;
+    j["angle"] = estado.i_angulo_x;
+    j["vel"] = estado.velocidade;
+    j["temp"] = estado.i_temperatura;
+    j["lidar"] = estado.i_lidar_distancia;
 
     std::string payload = j.dump();
     mosquitto_publish(mosq, NULL, "caminhao/sensores", payload.length(),
                       payload.c_str(), 0, false);
-    std::cout << "[Simulador] Publicado: " << payload << std::endl;
+    // std::cout << "[Simulador] Publicado: " << payload << std::endl;
 
     // 4. Atualiza dados para o Visualizador (Pygame)
     // O ServerIPC lê direto da 'simulacao', então ok.

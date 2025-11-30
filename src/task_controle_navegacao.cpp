@@ -8,11 +8,19 @@
 #include <iostream>
 
 struct ControladorEstado {
-  float setpoint_velocidade = 8000.0f;
-  float setpoint_angulo = 0.0f;
+  // Speed Control (IP)
+  float kp_vel = 20.0f;
+  float ki_vel = 20.0f;
+  float integral_vel = 0.0f;
 
-  float kp_vel = 1.0f;
+  // Heading Control (IP)
   float kp_ang = 1.0f;
+  float ki_ang = 0.5f;
+  float integral_ang = 0.0f;
+
+  // State Feedback Setpoints (Internal)
+  float setpoint_velocidade = 0.0f;
+  float setpoint_angulo = 0.0f;
 };
 
 void task_controle_navegacao(GerenciadorDados &dados, EventosSistema &eventos) {
@@ -28,6 +36,7 @@ void task_controle_navegacao(GerenciadorDados &dados, EventosSistema &eventos) {
 
   loop_controle = [&]() {
     // --- INÍCIO DA LÓGICA DE CONTROLE (Crítica: deve rodar rápido) ---
+    float dt = 0.1f; // 10Hz
 
     // Ler Snapshot (Estado mais recente sem consumir do buffer de log)
     DadosSensores leituraAtual = dados.lerUltimoEstado();
@@ -37,14 +46,19 @@ void task_controle_navegacao(GerenciadorDados &dados, EventosSistema &eventos) {
     int saida_aceleracao = 0;
     int saida_direcao = 0;
 
+    // NEW: Read the Planner's order (Moved up for scope)
+    ObjetivoNavegacao objetivo = dados.getObjetivo();
+
     // VERIFICAÇÃO DE SEGURANÇA VIA EVENTOS (Linha Vermelha)
     if (eventos.verificar_estado_falha()) {
-      saida_aceleracao = 0;
-      // Se houver falha crítica, paramos imediatamente.
+      saida_aceleracao = -100;      // Emergency Brake
+      controlador.integral_vel = 0; // Reset integrators on fault
+      controlador.integral_ang = 0;
 
     } else if (estado.e_defeito) {
       saida_aceleracao = 0;
-      // Mantido para compatibilidade com flags antigas
+      controlador.integral_vel = 0;
+      controlador.integral_ang = 0;
 
     } else if (!estado.e_automatico) {
       // --- MODO MANUAL ---
@@ -60,71 +74,145 @@ void task_controle_navegacao(GerenciadorDados &dados, EventosSistema &eventos) {
       else
         saida_direcao = 0;
 
-      // Bumpless Transfer: Atualiza setpoints para a realidade atual
-      controlador.setpoint_velocidade =
-          static_cast<float>(leituraAtual.i_velocidade);
-      controlador.setpoint_angulo = static_cast<float>(leituraAtual.i_angulo_x);
+      // Bumpless Transfer: Sync setpoints to current state
+      // This ensures that when switching to Auto, the error starts at zero.
+      controlador.setpoint_velocidade = (float)leituraAtual.i_velocidade;
+      controlador.setpoint_angulo = (float)leituraAtual.i_angulo_x;
+
+      // Also reset integrators to avoid windup from previous auto sessions
+      controlador.integral_vel = 0;
+      controlador.integral_ang = 0;
 
     } else {
 
-      // NEW: Read the Planner's order
-      ObjetivoNavegacao objetivo = dados.getObjetivo();
-
       if (estado.e_automatico && objetivo.ativo) {
-        // --- AUTOMATIC MODE ---
+        // --- AUTOMATIC MODE (State Space Control - IP Topology) ---
 
-        // 1. Calculate Heading Error based on X,Y Target
-        float dx = objetivo.x_alvo - (float)leituraAtual.i_posicao_x;
-        float dy = objetivo.y_alvo - (float)leituraAtual.i_posicao_y;
+        // 1. Calculate Heading Error FIRST (needed for cornering speed)
+        float theta_atual = (float)leituraAtual.i_angulo_x;
+        float x_atual = (float)leituraAtual.i_posicao_x;
+        float y_atual = (float)leituraAtual.i_posicao_y;
 
-        // Desired angle (Atan2 returns radians, convert to degrees)
-        // atan2(y, x) returns angle from X axis (East).
-        // Our system: 0=East, 90=South (Wait, let's verify coordinates)
-        // If 0=East, 90=North? Or South?
-        // Standard math: 0=East, 90=North (Counter-Clockwise).
-        // Our truck: "0 = Leste", "90 = Sul" (Clockwise?) -> This is common in
-        // screen coords (Y down). Let's assume standard atan2 and check sign.
-        // atan2(dy, dx) gives angle in radians.
+        float dx = objetivo.x_alvo - x_atual;
+        float dy = objetivo.y_alvo - y_atual;
+        float theta_ref = std::atan2(dy, dx) * 180.0f / M_PI;
 
-        float angulo_desejado_rad = std::atan2(dy, dx);
-        float angulo_desejado_graus = angulo_desejado_rad * (180.0f / 3.14159f);
-
-        // 2. Feed the PIDs
-        // Control Speed
-        float erro_vel =
-            objetivo.velocidade_alvo - (float)leituraAtual.i_velocidade;
-        saida_aceleracao = (int)(erro_vel * controlador.kp_vel);
-
-        // Control Steering
-        float erro_ang = angulo_desejado_graus - (float)leituraAtual.i_angulo_x;
-
-        // Normalize error -180 to 180
+        float erro_ang = theta_ref - theta_atual;
+        // Normalize error to [-180, 180]
         while (erro_ang > 180)
           erro_ang -= 360;
         while (erro_ang < -180)
           erro_ang += 360;
 
-        // Deadband to prevent jitter
-        if (std::abs(erro_ang) < 2.0f) {
-          erro_ang = 0.0f;
+        // 2. Speed Control (IP) with Cornering Slowdown
+        float v_atual = (float)leituraAtual.i_velocidade;
+        float v_ref = objetivo.velocidade_alvo;
+
+        // Cornering Logic: Slow down if error is large
+        // If error > 10 degrees, reduce speed.
+        float erro_abs = std::abs(erro_ang);
+        if (erro_abs > 10.0f) {
+          // User requested 4 m/s at 90 degrees (Base 20 m/s).
+          // Factor = 4/20 = 0.2.
+          // 0.2 = 1.0 - (90 / X) -> X = 112.5.
+          float factor = 1.0f - (std::min(erro_abs, 112.5f) / 112.5f);
+
+          v_ref = v_ref * factor;
+          // Min speed 2.0f to allow slowing down to 4.0f
+          if (v_ref < 2.0f)
+            v_ref = 2.0f;
         }
 
-        saida_direcao = (int)(erro_ang * controlador.kp_ang);
+        float erro_vel = v_ref - v_atual;
+        controlador.integral_vel += erro_vel * dt;
 
-        // Saturação (Clamp)
+        // Anti-windup (Speed)
+        if (controlador.integral_vel > 100.0f)
+          controlador.integral_vel = 100.0f;
+        if (controlador.integral_vel < -100.0f)
+          controlador.integral_vel = -100.0f;
+
+        // IP Control Law: u = -Kp*y + Ki*Integral(e)
+        float u_acc = -controlador.kp_vel * v_atual +
+                      controlador.ki_vel * controlador.integral_vel;
+        saida_aceleracao = (int)u_acc;
+
+        // 3. Heading Control (Pure Pursuit)
+        // Replaces PID with a geometric path tracking algorithm.
+
+        const float WHEELBASE = 6.0f; // Truck Length/Wheelbase
+        const float K_LOOKAHEAD =
+            1.1f; // Lookahead gain (seconds) - User requested 1.1
+        const float MIN_LOOKAHEAD =
+            2.8f; // Minimum lookahead distance (meters) - User requested 2.8
+
+        // Calculate dynamic Lookahead Distance (Ld)
+        float ld = std::max(MIN_LOOKAHEAD, v_atual * K_LOOKAHEAD);
+
+        // Calculate distance to target waypoint
+        float dist_to_wp = std::sqrt(dx * dx + dy * dy);
+
+        // Determine Lookahead Point
+        float target_x, target_y;
+        if (dist_to_wp > ld) {
+          float ratio = ld / dist_to_wp;
+          target_x = x_atual + dx * ratio;
+          target_y = y_atual + dy * ratio;
+        } else {
+          // If waypoint is closer, aim at the waypoint.
+          target_x = objetivo.x_alvo;
+          target_y = objetivo.y_alvo;
+          // CRITICAL FIX: Do NOT reduce 'ld' to 'dist_to_wp'.
+          // Keeping 'ld' large acts as a dampener when close to the target,
+          // preventing infinite steering gain and oscillation.
+        }
+
+        // Calculate Alpha (Angle between truck heading and lookahead point)
+        float dx_p = target_x - x_atual;
+        float dy_p = target_y - y_atual;
+        float angle_to_p = std::atan2(dy_p, dx_p) * 180.0f / M_PI;
+
+        float alpha = angle_to_p - theta_atual;
+        while (alpha > 180)
+          alpha -= 360;
+        while (alpha < -180)
+          alpha += 360;
+
+        // Pure Pursuit Control Law
+        // steering_angle = atan(2 * L * sin(alpha) / Ld)
+        // Note: alpha must be in radians for sin(), result is radians.
+        float alpha_rad = alpha * M_PI / 180.0f;
+        float steering_rad =
+            std::atan((2.0f * WHEELBASE * std::sin(alpha_rad)) / ld);
+        float steering_deg = steering_rad * 180.0f / M_PI;
+
+        // Apply correction to current heading
+        // Command = Current Heading + Steering Angle
+        float cmd_direcao = theta_atual + steering_deg;
+
+        // Normalize Command to 0-360
+        while (cmd_direcao > 360)
+          cmd_direcao -= 360;
+        while (cmd_direcao < 0)
+          cmd_direcao += 360;
+
+        saida_direcao = (int)cmd_direcao;
+
+        // Saturação (Clamp Outputs)
         if (saida_aceleracao > 100)
           saida_aceleracao = 100;
         if (saida_aceleracao < -100)
           saida_aceleracao = -100;
-        if (saida_direcao > 180)
-          saida_direcao = 180;
-        if (saida_direcao < -180)
-          saida_direcao = -180;
+        // Direction is 0-360, no clamp needed other than normalization above.
 
       } else if (estado.e_automatico && !objetivo.ativo) {
-        // Auto mode but no mission? Stop.
-        saida_aceleracao = 0;
-        saida_direcao = 0;
+        // Auto mode but no mission? Stop safely.
+        saida_aceleracao = -100; // Brake
+        // Keep current heading to avoid spinning while braking
+        saida_direcao = (int)leituraAtual.i_angulo_x;
+
+        controlador.integral_vel = 0;
+        controlador.integral_ang = 0;
       }
     }
 
@@ -134,12 +222,23 @@ void task_controle_navegacao(GerenciadorDados &dados, EventosSistema &eventos) {
     cmd.direcao = saida_direcao;
     dados.setComandosAtuador(cmd);
 
+    // DEBUG: Print controller state every 1s (approx 10 cycles)
+    static int debug_counter = 0;
+    if (++debug_counter >= 10) {
+      debug_counter = 0;
+      // std::cout << "[NAV-DEBUG] Auto:" << estado.e_automatico
+      //           << " Obj:" << objetivo.ativo
+      //           << " V_Ref:" << objetivo.velocidade_alvo
+      //           << " V_Act:" << leituraAtual.i_velocidade
+      //           << " Int_Vel:" << controlador.integral_vel
+      //           << " U_Acc:" << saida_aceleracao
+      //           << " Fault:" << eventos.verificar_estado_falha() <<
+      //           std::endl;
+    }
+
     // --- FIM DA LÓGICA ---
 
     // 3. Agendamento Preciso (Heartbeat de 10Hz)
-    // O wait_next_tick calcula o tempo de sono baseando-se no início do ciclo
-    // anterior. Se a lógica acima demorar 5ms, ele dorme 95ms. Se demorar
-    // 20ms, dorme 80ms.
     timer.wait_next_tick(std::chrono::milliseconds(100),
                          [&](const boost::system::error_code &ec) {
                            if (!ec)

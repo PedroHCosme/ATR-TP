@@ -41,9 +41,10 @@ SimulacaoMina::SimulacaoMina(const std::vector<std::vector<char>> &mapa_ref,
     c.i_falha_hidraulica = false;
     c.i_lidar_distancia = 100.0f; // Distância inicial segura
 
-    std::cout << "[DEBUG-INIT] Caminhao " << i << " criado. Pos: (" << start_x
-              << "," << start_y << ") Vel: " << c.velocidade
-              << " Acel: " << c.o_aceleracao << std::endl;
+    // std::cout << "[DEBUG-INIT] Caminhao " << i << " criado. Pos: (" <<
+    // start_x
+    //<< "," << start_y << ") Vel: " << c.velocidade
+    //<< " Acel: " << c.o_aceleracao << std::endl;
 
     frota.push_back(c);
   }
@@ -101,8 +102,8 @@ void SimulacaoMina::modelo_bicicleta(CaminhaoFisico &caminhao) {
 
   if (verificar_colisao(next_x, next_y, caminhao.i_angulo_x)) {
     // Colisão detectada: Para o caminhão e inverte direção
-    std::cout << "!!! COLISÃO DETECTADA (Simulação) !!! Parando e virando..."
-              << std::endl;
+    // std::cout << "!!! COLISÃO DETECTADA (Simulação) !!! Parando e virando..."
+    //           << std::endl;
     caminhao.velocidade = 0.0f; // Para imediatamente
     caminhao.i_angulo_x += 180.0f + (std::rand() % 60 - 30);
     if (caminhao.i_angulo_x >= 360.0f)
@@ -120,25 +121,41 @@ void SimulacaoMina::modelo_bicicleta(CaminhaoFisico &caminhao) {
   //           << " | Acel: " << caminhao.o_aceleracao
   //           << "% | Ang: " << caminhao.i_angulo_x << "°" << std::endl;
 
-  // --- SIMULAÇÃO DE OBSTÁCULO DINÂMICO (LIDAR) ---
-  // Se o caminhão estiver andando, a distância para o obstáculo diminui.
-  // Se parar ou colidir, reseta.
-  if (caminhao.velocidade > 0.1f) {
-    caminhao.i_lidar_distancia -= caminhao.velocidade * dt;
-    if (caminhao.i_lidar_distancia < 0.0f)
-      caminhao.i_lidar_distancia = 0.0f;
-  } else {
-    // Se parou, vamos supor que o obstáculo foi removido ou resetamos para
-    // teste Vamos dar um delay ou resetar devagar? Para teste simples: se vel <
-    // 0.1, reseta para 100m gradualmente ou instantaneo? Vamos fazer
-    // instantâneo para facilitar o teste de "anda e para".
-    if (caminhao.i_lidar_distancia < 5.0f) {
-      // Só reseta se estava muito perto (evita resetar em paradas normais longe
-      // de obstaculos) Mas como o obstáculo é "imaginário" e sempre na
-      // frente... Vamos resetar se a velocidade for zero.
-      caminhao.i_lidar_distancia = 100.0f;
+  // --- SIMULAÇÃO DE OBSTÁCULO DINÂMICO (LIDAR REAL) ---
+  caminhao.i_lidar_distancia = calcular_lidar(caminhao);
+}
+
+float SimulacaoMina::calcular_lidar(const CaminhaoFisico &caminhao) {
+  float x = caminhao.i_posicao_x;
+  float y = caminhao.i_posicao_y;
+  float ang_rad = caminhao.i_angulo_x * M_PI / 180.0f;
+  float dx = std::cos(ang_rad);
+  float dy = std::sin(ang_rad);
+
+  float max_dist = 100.0f;
+  float step_size = 1.0f; // 1 meter precision (was CELL_SIZE/2 = 5m)
+  float dist = 0.0f;
+
+  while (dist < max_dist) {
+    dist += step_size;
+    float check_x = x + dx * dist;
+    float check_y = y + dy * dist;
+
+    int grid_x = static_cast<int>(check_x / CELL_SIZE);
+    int grid_y = static_cast<int>(check_y / CELL_SIZE);
+
+    // Check bounds
+    if (grid_y < 0 || grid_y >= (int)mapa.size() || grid_x < 0 ||
+        grid_x >= (int)mapa[0].size()) {
+      return dist; // Hit world edge
+    }
+
+    // Check wall
+    if (mapa[grid_y][grid_x] == '1') {
+      return dist; // Hit wall
     }
   }
+  return max_dist;
 }
 
 void SimulacaoMina::modelo_maquina_termica(CaminhaoFisico &caminhao) {
@@ -180,14 +197,15 @@ bool SimulacaoMina::verificar_colisao(float x, float y, float angulo) {
 
     if (grid_x < 0 || grid_x >= map_width || grid_y < 0 ||
         grid_y >= map_height) {
-      std::cout << "[DEBUG-COLISAO] Fora do mapa: " << grid_x << "," << grid_y
-                << std::endl;
+      // std::cout << "[DEBUG-COLISAO] Fora do mapa: " << grid_x << "," <<
+      // grid_y
+      //<< std::endl;
       return true;
     }
     if (mapa[grid_y][grid_x] == '1') {
-      std::cout << "[DEBUG-COLISAO] Parede em: " << grid_x << "," << grid_y
-                << " (Global: " << global_x << "," << global_y << ")"
-                << std::endl;
+      // std::cout << "[DEBUG-COLISAO] Parede em: " << grid_x << "," << grid_y
+      //           << " (Global: " << global_x << "," << global_y << ")"
+      //           << std::endl;
       return true;
     }
   }

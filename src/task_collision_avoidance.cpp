@@ -5,12 +5,12 @@
 #include <thread>
 
 // Configurações de Segurança
-const float SAFE_DISTANCE_METERS = 10.0f; // Distância mínima segura
-const int FAULT_CODE_OBSTACLE = 4;        // Código de falha para obstáculo
+const float SAFE_DISTANCE_METERS = 8.0f; // Distância mínima segura (Refined)
+const int FAULT_CODE_OBSTACLE = 4;       // Código de falha para obstáculo
 
 void task_collision_avoidance(GerenciadorDados &dados, EventosSistema &eventos,
                               IVeiculoDriver &driver) {
-  std::cout << "[CAS] Task de Prevenção de Colisão INICIADA." << std::endl;
+  // std::cout << "[CAS] Task de Prevenção de Colisão INICIADA." << std::endl;
 
   while (true) {
     // 1. Leitura de Alta Prioridade (Snapshot)
@@ -22,23 +22,22 @@ void task_collision_avoidance(GerenciadorDados &dados, EventosSistema &eventos,
     if (distancia < SAFE_DISTANCE_METERS) {
       // --- SITUAÇÃO DE PERIGO DETECTADA ---
       // Violação de segurança detectada!
-      std::cout << "[CAS] PERIGO! Obstaculo detectado a " << distancia
-                << "m (Limiar: " << SAFE_DISTANCE_METERS << "m)" << std::endl;
+      // std::cout << "[CAS] PERIGO! Obstaculo detectado a " << distancia
+      //           << "m (Limiar: " << SAFE_DISTANCE_METERS << "m)" <<
+      //           std::endl;
 
       // A. Override Imediato dos Atuadores (Freio de Emergência)
-      // Envia comando direto para o driver, ignorando a task de navegação
-      // FIX: Frenagem ativa (aceleração negativa) para parar caminhão pesado
-      // Ação de mitigação: Freio total
-      driver.setAtuadores(-100,
-                          0); // -100% aceleração (freio), mantém direção para o
-                              // driver, ignorando a task de navegação
+      // REMOVED: Direct write causes race condition with main control loop.
+      // The fault signal below will trigger the main loop to send -100.
+      // driver.setAtuadores(-100, 0);
 
       // B. Sinalização de Falha (Intertrava o sistema)
       // Isso fará com que a task de navegação pare de enviar comandos também
       if (!eventos.verificar_estado_falha()) {
-        std::cerr << "!!! [CAS] OBSTÁCULO DETECTADO ("
-                  << estado.i_lidar_distancia << "m) !!! PARADA DE EMERGÊNCIA."
-                  << std::endl;
+        // std::cerr << "!!! [CAS] OBSTÁCULO DETECTADO ("
+        //           << estado.i_lidar_distancia << "m) !!! PARADA DE
+        //           EMERGÊNCIA."
+        //           << std::endl;
         eventos.sinalizar_falha(FAULT_CODE_OBSTACLE);
       }
 

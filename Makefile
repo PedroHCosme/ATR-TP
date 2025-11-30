@@ -18,6 +18,7 @@ APP_SRCS = \
 	$(SRC_DIR)/task_monitoramento_falhas.cpp \
 	$(SRC_DIR)/task_collision_avoidance.cpp \
 	$(SRC_DIR)/task_planejamento_rota.cpp \
+	$(SRC_DIR)/task_coletor_dados.cpp \
 	$(SRC_DIR)/utils/sleep_asynch.cpp
 
 # Sources for the Headless Simulator
@@ -30,19 +31,28 @@ SIM_SRCS = \
 	$(SRC_DIR)/eventos_sistema.cpp \
 	$(SRC_DIR)/utils/sleep_asynch.cpp
 
+# Sources for the Simulation Interface
+INT_SIM_SRCS = \
+	$(SRC_DIR)/interface_simulacao.cpp
+
 APP_OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(APP_SRCS))
 SIM_OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SIM_SRCS))
+INT_SIM_OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(INT_SIM_SRCS))
 
 APP_TARGET = $(BIN_DIR)/app
 SIM_TARGET = $(BIN_DIR)/simulador
+INT_SIM_TARGET = $(BIN_DIR)/interface_simulacao
 
-all: $(APP_TARGET) $(SIM_TARGET)
+all: $(APP_TARGET) $(SIM_TARGET) $(INT_SIM_TARGET)
 
 $(APP_TARGET): $(APP_OBJS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses -lmosquitto
 
 $(SIM_TARGET): $(SIM_OBJS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ -lmosquitto
+
+$(INT_SIM_TARGET): $(INT_SIM_OBJS) | $(BIN_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses -lmosquitto
 
 # Pattern rule for objects
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp

@@ -87,9 +87,9 @@ void task_tratamento_sensores(GerenciadorDados &gerenciadorDados,
     novosDados.i_temperatura = raw_temp;
 
     // Debug: Print da temperatura lida pelo sensor
-    std::cout << "[DEBUG-SENSOR] Temp Real: " << estadoReal.i_temperatura
-              << " | Com Ruido: " << raw_temp_f << " | Inteiro: " << raw_temp
-              << std::endl;
+    // std::cout << "[DEBUG-SENSOR] Temp Real: " << estadoReal.i_temperatura
+    //           << " | Com Ruido: " << raw_temp_f << " | Inteiro: " << raw_temp
+    //           << std::endl;
 
     novosDados.i_posicao_x = static_cast<int>(ema_pos_x);
     novosDados.i_posicao_y = static_cast<int>(ema_pos_y);

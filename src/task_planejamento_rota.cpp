@@ -20,15 +20,16 @@ void task_planejamento_rota(GerenciadorDados &dados, MqttDriver &mqtt) {
   // Internal Route Queue (The "Mission")
   std::deque<Point> rota;
 
-  std::cout << "[PLANNER] Task de Planejamento de Rota INICIADA." << std::endl;
+  // std::cout << "[PLANNER] Task de Planejamento de Rota INICIADA." <<
+  // std::endl;
 
   // Hardcoded mission for Phase 1 testing (A square lap)
 
-  // Hardcoded mission for Phase 1 testing (A square lap)
-  rota.push_back({100, 0, 20});
-  rota.push_back({100, 100, 20});
-  rota.push_back({0, 100, 20});
-  rota.push_back({0, 0, 0}); // Stop at home
+  // Hardcoded mission removed. Waiting for MQTT route.
+  // rota.push_back({100, 0, 20});
+  // rota.push_back({100, 100, 20});
+  // rota.push_back({0, 100, 20});
+  // rota.push_back({0, 0, 0}); // Stop at home
 
   // Acceptance radius (in meters)
   const float RAIO_CHEGADA = 5.0f;
@@ -48,8 +49,9 @@ void task_planejamento_rota(GerenciadorDados &dados, MqttDriver &mqtt) {
         auto j = json::parse(nova_missao);
         if (j.contains("route") && j["route"].is_array()) {
           rota.clear();
-          std::cout << "[PLANNER] Nova rota recebida com " << j["route"].size()
-                    << " pontos." << std::endl;
+          // std::cout << "[PLANNER] Nova rota recebida com " <<
+          // j["route"].size()
+          //           << " pontos." << std::endl;
           for (const auto &p : j["route"]) {
             float x = p["x"];
             float y = p["y"];
@@ -80,8 +82,9 @@ void task_planejamento_rota(GerenciadorDados &dados, MqttDriver &mqtt) {
 
       // Are we there yet?
       if (dist < RAIO_CHEGADA) {
-        std::cout << "[PLANNER] Waypoint reached! (" << alvo.x << "," << alvo.y
-                  << ")" << std::endl;
+        // std::cout << "[PLANNER] Waypoint reached! (" << alvo.x << "," <<
+        // alvo.y
+        //           << ")" << std::endl;
         rota.pop_front(); // Remove current, move to next
 
         // If route finished, stop immediately

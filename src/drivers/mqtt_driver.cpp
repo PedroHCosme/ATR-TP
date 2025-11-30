@@ -41,7 +41,7 @@ MqttDriver::~MqttDriver() {
 void MqttDriver::on_connect(struct mosquitto *mosq, void *obj, int rc) {
   MqttDriver *driver = static_cast<MqttDriver *>(obj);
   if (rc == 0) {
-    std::cout << "[MqttDriver] Conectado ao broker!" << std::endl;
+    // std::cout << "[MqttDriver] Conectado ao broker!" << std::endl;
     driver->conectado = true;
     int sub_rc = mosquitto_subscribe(mosq, NULL, "caminhao/sensores", 0);
     if (sub_rc != MOSQ_ERR_SUCCESS) {
@@ -54,7 +54,7 @@ void MqttDriver::on_connect(struct mosquitto *mosq, void *obj, int rc) {
       std::cerr << "[MqttDriver] Erro no subscribe rota: " << sub_rc
                 << std::endl;
     } else {
-      std::cout << "[MqttDriver] Subscribe OK em caminhao/rota" << std::endl;
+      // std::cout << "[MqttDriver] Subscribe OK em caminhao/rota" << std::endl;
     }
 
   } else {
@@ -73,7 +73,7 @@ void MqttDriver::on_message(struct mosquitto *mosq, void *obj,
     // payload.size() << std::endl;
     driver->handle_sensor_message(payload);
   } else if (topic == "caminhao/rota") {
-    std::cout << "[MqttDriver] Nova rota recebida!" << std::endl;
+    // std::cout << "[MqttDriver] Nova rota recebida!" << std::endl;
     driver->handle_route_message(payload);
   }
 }
@@ -104,9 +104,9 @@ void MqttDriver::handle_sensor_message(const std::string &payload) {
     if (j.contains("falha_hidraulica"))
       ultimos_dados.i_falha_hidraulica = j["falha_hidraulica"];
 
-    std::cout << "[MqttDriver] Recebido: x=" << ultimos_dados.i_posicao_x
-              << " y=" << ultimos_dados.i_posicao_y
-              << " lidar=" << ultimos_dados.i_lidar_distancia << std::endl;
+    // std::cout << "[MqttDriver] Recebido: x=" << ultimos_dados.i_posicao_x
+    //           << " y=" << ultimos_dados.i_posicao_y
+    //           << " lidar=" << ultimos_dados.i_lidar_distancia << std::endl;
 
   } catch (const std::exception &e) {
     std::cerr << "[MqttDriver] Erro ao parsear JSON: " << e.what() << std::endl;

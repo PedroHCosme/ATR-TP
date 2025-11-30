@@ -1,300 +1,442 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATR - Documentação do Projeto de Caminhão Autônomo</title>
+    <title>ATR - Documentação do Sistema de Caminhão Autônomo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --code-bg: #f8f9fa;
-            --border-color: #e9ecef;
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --bg-color: #f8fafc;
+            --sidebar-bg: #1e293b;
+            --text-color: #334155;
+            --heading-color: #0f172a;
+            --code-bg: #1e1e1e;
+            --code-text: #d4d4d4;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
             color: var(--text-color);
             margin: 0;
             display: flex;
+            background-color: var(--bg-color);
         }
 
-        /* Sidebar Navigation */
+        /* Sidebar */
         nav {
-            width: 250px;
-            background-color: var(--primary-color);
-            color: white;
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            color: #e2e8f0;
             height: 100vh;
             position: fixed;
             overflow-y: auto;
-            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
         }
 
-        nav h3 {
-            padding-left: 20px;
-            font-size: 1.2rem;
-            color: #ecf0f1;
-            border-bottom: 1px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+        nav .brand {
+            padding: 24px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            border-bottom: 1px solid #334155;
+            background: linear-gradient(45deg, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav a {
             display: block;
-            padding: 10px 20px;
-            color: #bdc3c7;
+            padding: 12px 24px;
+            color: #94a3b8;
             text-decoration: none;
-            transition: 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
         }
 
-        nav a:hover {
-            background-color: var(--secondary-color);
+        nav a:hover,
+        nav a.active {
+            background-color: #334155;
             color: white;
-            padding-left: 25px;
+            border-left-color: var(--primary-color);
+        }
+
+        nav .section-title {
+            padding: 20px 24px 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            font-weight: 700;
         }
 
         /* Main Content */
         main {
-            margin-left: 250px;
-            padding: 40px;
+            margin-left: 280px;
+            padding: 40px 60px;
+            max-width: 1000px;
             width: 100%;
         }
 
-        h1, h2, h3 {
-            color: var(--primary-color);
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--heading-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        h1 { border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; }
-        h2 { margin-top: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
 
-        /* Code Blocks & Structs */
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Code Blocks */
         pre {
             background-color: var(--code-bg);
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid var(--border-color);
+            color: var(--code-text);
+            padding: 20px;
+            border-radius: 8px;
             overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            border: 1px solid #333;
         }
 
         code {
-            font-family: 'Consolas', 'Monaco', monospace;
-            color: #e83e8c;
-            background-color: var(--code-bg);
-            padding: 2px 4px;
-            border-radius: 3px;
+            font-family: 'Fira Code', monospace;
+            background-color: #e2e8f0;
+            color: #d63384;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
         }
 
-        .class-card {
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
         }
 
+        /* Lists */
         .member-list dt {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-top: 10px;
-        }
-        
-        .member-list dd {
-            margin-left: 20px;
-            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-top: 12px;
         }
 
+        .member-list dd {
+            margin-left: 0;
+            margin-bottom: 12px;
+            color: #475569;
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid;
+        }
+
+        .alert-info {
+            background-color: #eff6ff;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .alert-warning {
+            background-color: #fffbeb;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+
+        /* Tags */
         .tag {
             display: inline-block;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 5px;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 8px;
         }
-        .tag-thread { background-color: #e1f5fe; color: #0288d1; }
-        .tag-struct { background-color: #f3e5f5; color: #7b1fa2; }
-        .tag-logic { background-color: #e8f5e9; color: #388e3c; }
+
+        .tag-thread {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .tag-struct {
+            background-color: #f3e8ff;
+            color: #7e22ce;
+        }
+
+        .tag-logic {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
 
         footer {
-            margin-top: 50px;
-            padding-top: 20px;
+            margin-top: 80px;
+            padding-top: 40px;
             border-top: 1px solid var(--border-color);
+            color: #94a3b8;
             font-size: 0.9rem;
-            color: #7f8c8d;
         }
     </style>
 </head>
+
 <body>
 
-<nav>
-    <h3>ATR - Automação</h3>
-    <ul>
-        <li><a href="#visao-geral">Visão Geral</a></li>
-        <li><a href="#arquitetura">Arquitetura do Sistema</a></li>
-        <li><a href="#estruturas-dados">Estruturas de Dados</a></li>
-        <li><a href="#gerenciador-dados">Gerenciador de Dados</a></li>
-        <li><a href="#tasks">Tasks (Threads)</a></li>
-        <li><a href="#dependencias">Dependências</a></li>
-    </ul>
-</nav>
+    <nav>
+        <div class="brand">ATR System</div>
 
-<main>
-    <section id="visao-geral">
-        <h1>Visão Geral do Projeto</h1>
-        <p>
-            Este projeto implementa o software embarcado para um <strong>Caminhão de Mineração Autônomo</strong>. 
-            O sistema opera em tempo real, utilizando arquitetura multithread para processar sensores, 
-            tomar decisões de navegação e monitorar falhas simultaneamente.
-        </p>
-        <p>
-            O núcleo do sistema utiliza o padrão <em>Produtor-Consumidor</em> mediado por um gerenciador de dados thread-safe, 
-            permitindo que múltiplas tarefas (tratamento de sensores, lógica de comando, monitoramento) acessem o estado do veículo de forma segura.
-        </p>
-    </section>
-
-    <section id="arquitetura">
-        <h2>Arquitetura do Sistema</h2>
-        <p>O sistema é composto pelos seguintes módulos principais:</p>
+        <div class="section-title">Introdução</div>
         <ul>
-            <li><strong>Main Loop (Simulação):</strong> Utiliza <code>boost::asio</code> para gerenciar o passo de tempo da simulação física da mina de forma assíncrona.</li>
-            <li><strong>Shared Memory (Gerenciador):</strong> Um monitor que protege o acesso aos dados dos sensores e comandos.</li>
-            <li><strong>Tasks:</strong> Threads independentes que realizam funções específicas (Leitura, Controle, Monitoramento).</li>
+            <li><a href="#visao-geral">Visão Geral</a></li>
+            <li><a href="#como-executar">Como Executar</a></li>
         </ul>
-    </section>
 
-    <section id="estruturas-dados">
-        <h2>Estruturas de Dados Globais</h2>
-        <p>Definidas em <code>include/dados.h</code>. Estas estruturas são a base da comunicação entre as threads.</p>
+        <div class="section-title">Desenvolvimento</div>
+        <ul>
+            <li><a href="#arquitetura">Arquitetura</a></li>
+            <li><a href="#estruturas-dados">Estruturas de Dados</a></li>
+            <li><a href="#tasks">Tasks & Threads</a></li>
+        </ul>
 
-        <div class="class-card">
-            <h3><span class="tag tag-struct">struct</span> DadosSensores</h3>
-            <p>Armazena a telemetria crua ou pré-processada do veículo.</p>
-            <dl class="member-list">
-                <dt><code>int id</code></dt>
-                <dd>Identificador único do veículo na mina.</dd>
-                
-                <dt><code>int i_posicao_x, i_posicao_y</code></dt>
-                <dd>Coordenadas absolutas no solo.</dd>
+        <div class="section-title">Avançado</div>
+        <ul>
+            <li><a href="#configuracao">Configuração</a></li>
+            <li><a href="#multi-truck">Múltiplos Caminhões</a></li>
+        </ul>
+    </nav>
 
-                <dt><code>int i_angulo_x</code></dt>
-                <dd>Direção angular (Head) do veículo (0 = Leste).</dd>
+    <main>
+        <section id="visao-geral">
+            <h1>Documentação do Projeto</h1>
+            <p class="lead">
+                Bem-vindo à documentação oficial do sistema de controle para <strong>Caminhões de Mineração
+                    Autônomos</strong>.
+                Este projeto implementa uma arquitetura de software embarcado robusta, capaz de operar em tempo real,
+                gerenciar sensores,
+                executar navegação autônoma e garantir a segurança operacional através de monitoramento contínuo.
+            </p>
 
-                <dt><code>int i_temperatura</code></dt>
-                <dd>Temperatura do motor (-100 a +200). 
-                    <br><em>Alerta: > 95°C | Defeito: > 120°C</em></dd>
+            <div class="alert alert-info">
+                <strong>Destaque:</strong> O sistema utiliza uma arquitetura baseada em
+                <strong>Produtor-Consumidor</strong> com comunicação via MQTT, permitindo desacoplamento total entre o
+                simulador físico (Mundo) e o controlador (Cérebro).
+            </div>
+        </section>
 
-                <dt><code>bool i_falha_eletrica, i_falha_hidraulica</code></dt>
-                <dd>Flags booleanas indicando falhas críticas nos subsistemas.</dd>
+        <section id="como-executar">
+            <h2>Como Executar o Projeto</h2>
+            <p>O sistema é dividido em três componentes principais que devem rodar simultaneamente:</p>
+            <ol>
+                <li><strong>Broker MQTT (Mosquitto)</strong>: O canal de comunicação.</li>
+                <li><strong>Simulador Headless</strong>: A física da mina e dos caminhões.</li>
+                <li><strong>Controlador</strong>: O software embarcado que controla o caminhão.</li>
+            </ol>
 
-                <dt><code>int o_aceleracao</code></dt>
-                <dd>Output de aceleração (-100% a 100%).</dd>
+            <h3>Passo a Passo</h3>
+            <pre><code># 1. Compile todo o projeto
+make all
 
-                <dt><code>int o_direcao</code></dt>
-                <dd>Output de esterçamento (-180° a 180°).</dd>
-            </dl>
-        </div>
+# 2. Inicie o Simulador (Terminal 1)
+# Este processo gera a mina e simula a física
+./bin/simulador
 
-        <div class="class-card">
-            <h3><span class="tag tag-struct">struct</span> EstadoVeiculo</h3>
-            <p>Define o modo de operação e saúde do sistema.</p>
-            <dl class="member-list">
-                <dt><code>bool e_defeito</code></dt>
-                <dd>1: Veículo em estado de falha (parada de emergência). 0: Operacional.</dd>
-                <dt><code>bool e_automatico</code></dt>
-                <dd>1: Modo Autônomo. 0: Modo Manual.</dd>
-            </dl>
-        </div>
+# 3. Inicie o Controlador (Terminal 2)
+# Este é o "cérebro" do caminhão
+./bin/controlador
 
-        <div class="class-card">
-            <h3><span class="tag tag-struct">struct</span> ComandosOperador</h3>
-            <p>Inputs recebidos da estação de controle ou joystick.</p>
-            <dl class="member-list">
-                <dt><code>bool c_automatico / c_man</code></dt>
-                <dd>Solicitação de troca de modo (Auto/Manual).</dd>
-                <dt><code>bool c_rearme</code></dt>
-                <dd>Tentativa de limpar o estado de defeito.</dd>
-                <dt><code>bool c_acelerar, c_direita, c_esquerda</code></dt>
-                <dd>Comandos de movimentação manual.</dd>
-            </dl>
-        </div>
-    </section>
+# 4. (Opcional) Inicie a Interface Visual Python
+python3 interface_mina.py</code></pre>
+        </section>
 
-    <section id="gerenciador-dados">
-        <h2>Classe: GerenciadorDados</h2>
-        <p>Localização: <code>include/gerenciador_dados.h</code></p>
-        <p>Atua como um Monitor (Thread-Safe) protegendo os recursos compartilhados. Utiliza <code>std::mutex</code> para garantir exclusão mútua.</p>
-
-        <h3>Métodos Principais</h3>
-        <pre><code>// Define os dados dos sensores (usado pelas tasks produtoras)
-void setDados(const DadosSensores& dados);
-
-// Recupera dados (usado pelas tasks consumidoras)
-DadosSensores getDados();
-
-// Atualiza e recupera o estado da máquina de estados do veículo
-void setEstadoVeiculo(const EstadoVeiculo& estado);
-EstadoVeiculo getEstadoVeiculo() const;
-
-// Interface para comandos do operador
-void setComandosOperador(const ComandosOperador& comandos);</code></pre>
-    </section>
-
-    <section id="tasks">
-        <h2>Tasks (Threads do Sistema)</h2>
-        <p>As tarefas são funções executadas em threads paralelas (<code>std::thread</code>), instanciadas no <code>main.cpp</code>.</p>
-
-        <div class="class-card">
-            <h3><span class="tag tag-thread">Thread T1</span> task_tratamento_sensores</h3>
-            <p><strong>Responsabilidade:</strong> Aquisição de Dados e Filtragem.</p>
-            <p>Lê os dados brutos da <code>SimulacaoMina</code>, aplica filtros (como Média Móvel Exponencial) para reduzir ruído e escreve no <code>GerenciadorDados</code>.</p>
-            <p><em>Filtro implementado:</em> <code>calcular_media_movel_exponencial(valor_atual, media_anterior)</code>.</p>
-        </div>
-
-        <div class="class-card">
-            <h3><span class="tag tag-thread">Thread T2</span> task_logica_comando</h3>
-            <p><strong>Responsabilidade:</strong> Tomada de Decisão (Cérebro).</p>
-            <p>Consome dados do <code>GerenciadorDados</code>. Baseado no modo (Manual/Automático) e nos sensores, define a aceleração e direção do veículo.</p>
-            <p>Recebe também eventos do sistema (ex: falhas detectadas).</p>
-        </div>
-
-        <div class="class-card">
-            <h3><span class="tag tag-thread">Thread T3</span> task_monitoramento_falhas</h3>
-            <p><strong>Responsabilidade:</strong> Segurança e Diagnóstico.</p>
-            <p>Monitora continuamente os sensores em busca de anomalias (ex: temperatura > 120°C, flags de falha elétrica/hidráulica). Se uma falha é detectada, deve sinalizar para o sistema parar ou entrar em modo de segurança.</p>
-        </div>
-
-        <div class="class-card">
-            <h3><span class="tag tag-logic">Main Loop</span> Simulação Assíncrona</h3>
-            <p>Localização: <code>src/main.cpp</code></p>
-            <p>O loop principal não roda em uma thread <code>while(true)</code> comum, mas sim agendado via <code>boost::asio</code> e <code>SleepAsynch</code>.</p>
+        <section id="arquitetura">
+            <h2>Arquitetura do Sistema</h2>
+            <p>O sistema segue uma abordagem modular:</p>
             <ul>
-                <li>Gera o mapa da mina (<code>MineGenerator</code>).</li>
-                <li>Atualiza a física da simulação a cada 100ms.</li>
-                <li>Coordena a execução das threads de tasks.</li>
+                <li><strong>Camada de Hardware (Simulada):</strong> Representada pelo <code>SimuladorMina</code>, que
+                    publica dados de sensores via MQTT.</li>
+                <li><strong>Camada de Drivers:</strong> <code>MqttDriver</code> recebe JSONs e converte para structs
+                    C++.</li>
+                <li><strong>Camada de Dados:</strong> <code>GerenciadorDados</code> atua como um monitor thread-safe
+                    (Mutex) centralizando o estado.</li>
+                <li><strong>Camada de Aplicação (Tasks):</strong> Threads independentes para Controle, Navegação e
+                    Monitoramento.</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <section id="dependencias">
-        <h2>Dependências e Bibliotecas</h2>
-        <ul>
-            <li><strong>C++ Standard Library (STL):</strong> Threading, Mutex, Vector, Functional.</li>
-            <li><strong>Boost.Asio:</strong> Para gerenciamento assíncrono de temporizadores e I/O (Contexto de execução da simulação).</li>
-        </ul>
-    </section>
+        <section id="estruturas-dados">
+            <h2>Estruturas de Dados Principais</h2>
+            <p>Definidas em <code>include/dados.h</code>.</p>
 
-    <footer>
-        <p>Gerado automaticamente com base nos arquivos fonte do projeto ATR-TP.</p>
-    </footer>
-</main>
+            <div class="card">
+                <h3><span class="tag tag-struct">struct</span> DadosSensores</h3>
+                <p>Representa a telemetria completa do veículo.</p>
+                <dl class="member-list">
+                    <dt>int id</dt>
+                    <dd>ID único do caminhão (ex: 0, 1, 2...).</dd>
+                    <dt>int i_posicao_x, i_posicao_y</dt>
+                    <dd>Posição global no mapa (em metros).</dd>
+                    <dt>int i_angulo_x</dt>
+                    <dd>Orientação (Heading) em graus (0-360).</dd>
+                    <dt>int i_lidar_distancia</dt>
+                    <dd>Distância até o obstáculo mais próximo à frente.</dd>
+                    <dt>bool i_falha_eletrica</dt>
+                    <dd>Flag de erro no sistema elétrico.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section id="tasks">
+            <h2>Tasks (Threads)</h2>
+            <div class="card">
+                <h3><span class="tag tag-thread">T1</span> Tratamento de Sensores</h3>
+                <p>Responsável por ler a fila de mensagens do MQTT, deserializar o JSON e atualizar o
+                    <code>GerenciadorDados</code>.</p>
+            </div>
+            <div class="card">
+                <h3><span class="tag tag-thread">T2</span> Lógica de Comando</h3>
+                <p>Decide a ação baseada no modo (Auto/Manual). Em modo Auto, segue a rota planejada. Em Manual, obedece
+                    ao operador.</p>
+            </div>
+            <div class="card">
+                <h3><span class="tag tag-thread">T3</span> Monitoramento de Falhas</h3>
+                <p>Watchdog que verifica temperaturas críticas e falhas de subsistemas. Tem autoridade para parar o
+                    veículo imediatamente.</p>
+            </div>
+        </section>
+
+        <section id="configuracao">
+            <h2>Configuração do Sistema</h2>
+            <p>A maioria das configurações está definida como constantes no código ou argumentos no
+                <code>main.cpp</code>.</p>
+
+            <h3>Alterar Tamanho da Mina</h3>
+            <p>No arquivo <code>src/simulador_headless.cpp</code>:</p>
+            <pre><code>// Altere os valores 61, 61 para o tamanho desejado
+MineGenerator mineGen(61, 61);</code></pre>
+        </section>
+
+        <section id="multi-truck">
+            <h2>Como Simular Múltiplos Caminhões</h2>
+            <div class="alert alert-warning">
+                <strong>Atenção:</strong> O código atual vem configurado por padrão para <strong>1 caminhão</strong>.
+                Para simular uma frota, alterações no código fonte são necessárias.
+            </div>
+
+            <p>Para expandir a simulação para múltiplos veículos, siga este guia de implementação:</p>
+
+            <h3>1. Instanciar Múltiplos Caminhões no Simulador</h3>
+            <p>Edite <code>src/simulador_headless.cpp</code>. O construtor de <code>SimulacaoMina</code> aceita o número
+                de caminhões.</p>
+            <pre><code>// Mude o segundo argumento de 1 para N (ex: 3 caminhões)
+SimulacaoMina simulacao(mineGen.getMinefield(), 3);</code></pre>
+            <p>Isso fará com que o simulador crie 3 objetos físicos, cada um com IDs 0, 1 e 2.</p>
+
+            <h3>2. Atualizar o Loop de Publicação (Simulador)</h3>
+            <p>Ainda em <code>src/simulador_headless.cpp</code>, o loop principal publica apenas o caminhão 0. Você deve
+                iterar sobre todos:</p>
+            <pre><code>// Dentro do while(true)
+for (int i = 0; i < 3; i++) {
+    CaminhaoFisico estado = simulacao.getEstadoReal(i);
+    // ... criar JSON ...
+    // IMPORTANTE: O tópico deve incluir o ID ou o JSON deve ter o ID
+    // Sugestão: publicar em "caminhao/sensores" mas garantir que o JSON tem "id": i
+}</code></pre>
+
+            <h3>3. Atualizar o Controlador (MqttDriver)</h3>
+            <p>O <code>MqttDriver.cpp</code> atualmente recebe todas as mensagens do tópico
+                <code>caminhao/sensores</code> e sobrescreve os dados locais. Se houver múltiplos caminhões publicando
+                no mesmo tópico, os dados ficarão oscilando entre eles.</p>
+
+            <h4>Solução A: Tópicos Separados (Recomendado)</h4>
+            <p>Faça o simulador publicar em <code>caminhao/0/sensores</code>, <code>caminhao/1/sensores</code>, etc.</p>
+            <p>No <code>main.cpp</code> do controlador, passe o ID do caminhão que este processo deve controlar:</p>
+            <pre><code>// Exemplo de instanciação
+int meu_id = 0; // Passado via argv
+MqttDriver mqttDriver("127.0.0.1", meu_id); // Modificar construtor para aceitar ID</code></pre>
+
+            <h4>Solução B: Filtragem por ID</h4>
+            <p>Mantenha um único tópico, mas no <code>MqttDriver::handle_sensor_message</code>, ignore mensagens onde
+                <code>json["id"] != meu_id</code>.</p>
+
+            <h3>4. Rodar Múltiplas Instâncias</h3>
+            <p>Com as alterações acima, você precisará rodar um processo <code>./bin/controlador</code> para cada
+                caminhão simulado.</p>
+            <pre><code># Terminal 1
+./bin/simulador
+
+# Terminal 2
+./bin/controlador 0
+
+# Terminal 3
+./bin/controlador 1</code></pre>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 ATR Project. Documentação gerada automaticamente.</p>
+        </footer>
+    </main>
 
 </body>
+
 </html>

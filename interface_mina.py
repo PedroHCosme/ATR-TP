@@ -53,13 +53,16 @@ class MineManagementSystem:
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         pygame.display.set_caption("Sistema de Gestão de Mina - ATR")
         self.clock = pygame.time.Clock()
-        self.font = pygame.font.SysFont('Arial', 14)
+        # Use Monospaced Font
+        self.font = pygame.font.SysFont('monospace', 14, bold=True)
+        self.title_font = pygame.font.SysFont('monospace', 18, bold=True)
         
         # Estado do Sistema
         self.running_simulation = False
         self.processes = []
-        self.truck_state = {'x': 0, 'y': 0, 'angle': 0, 'vel': 0, 'temp': 0, 'lidar': 0}
+        self.truck_state = {'x': 0, 'y': 0, 'angle': 0, 'vel': 0, 'temp': 0, 'lidar': 0, 'id': 0}
         self.map_data = []
+        self.blink_timer = 0
         
         # Planejamento de Rota
         self.planned_route = [] # Lista de (x, y)
@@ -83,17 +86,31 @@ class MineManagementSystem:
         self.connected = True
         client.subscribe("caminhao/sensores")
         client.subscribe("caminhao/mapa")
+        client.subscribe("caminhao/estado_sistema")
         
     def on_message(self, client, userdata, msg):
         try:
             payload = msg.payload.decode()
             data = json.loads(payload)
             if msg.topic == "caminhao/sensores":
-                self.truck_state = data
+                # Update sensor data, but preserve fault/auto state if not present
+                current_fault = self.truck_state.get('fault', False)
+                current_auto = self.truck_state.get('auto', True)
+                self.truck_state.update(data)
+                # Ensure we don't overwrite state if sensors don't have it (they usually don't)
+                if 'fault' not in data: self.truck_state['fault'] = current_fault
+                if 'auto' not in data: self.truck_state['auto'] = current_auto
+                
             elif msg.topic == "caminhao/mapa":
                 if 'map' in data:
                     self.map_data = data['map']
                     print("Mapa recebido!")
+            
+            elif msg.topic == "caminhao/estado_sistema":
+                # Payload: {"manual": bool, "fault": bool}
+                self.truck_state['fault'] = data.get('fault', False)
+                self.truck_state['auto'] = not data.get('manual', False)
+                
         except Exception as e:
             print(f"Erro MQTT: {e}")
 
@@ -121,9 +138,16 @@ class MineManagementSystem:
             self.processes.append(p_sim)
             time.sleep(1)
             
-            # 4. Start Controller
-            p_app = subprocess.Popen(["./bin/app"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            # 4. Start Controller (Cockpit in new terminal)
+            # Launch in gnome-terminal so ncurses interface is visible
+            # Geometry: 81 cols x 24 rows (10% smaller than 90x27)
+            p_app = subprocess.Popen(["gnome-terminal", "--geometry=81x24", "--title=Cockpit Caminhão", "--", "./bin/app"])
             self.processes.append(p_app)
+
+            # 5. Start Simulation Interface (Minimalist)
+            # Geometry: 100 cols x 20 rows (Wider for table)
+            p_int_sim = subprocess.Popen(["gnome-terminal", "--geometry=100x20", "--title=Simulação Mina", "--", "./bin/interface_simulacao"])
+            self.processes.append(p_int_sim)
             
             self.running_simulation = True
             
@@ -175,12 +199,21 @@ class MineManagementSystem:
             
             self.planned_route.append((grid_x, grid_y))
 
+    def draw_zone(self, x, y, w, h, color, alpha):
+        s = pygame.Surface((w, h))
+        s.set_alpha(alpha)
+        s.fill(color)
+        self.screen.blit(s, (x, y))
+
     def draw(self):
         self.screen.fill(BLACK)
+        self.blink_timer += 1
         
-        # --- Draw Map Area ---
-        # pygame.draw.rect(self.screen, (20, 20, 20), (0, 0, MAP_WIDTH, WINDOW_HEIGHT))
-        
+        # --- Draw Zones (Semi-transparent) ---
+        # User requested to remove the visual squares
+        # self.draw_zone(0, 0, 150, 150, GREEN, 50)
+        # self.draw_zone(MAP_WIDTH - 150, WINDOW_HEIGHT - 150, 150, 150, BLUE, 50)
+
         # Draw Map from Data
         if self.map_data:
             for y, row in enumerate(self.map_data):
@@ -192,18 +225,18 @@ class MineManagementSystem:
                     rect = pygame.Rect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE)
                     if cell == '1': # Wall
                         pygame.draw.rect(self.screen, (100, 50, 50), rect)
-                    elif cell == '0': # Path
-                        pygame.draw.rect(self.screen, (200, 200, 200), rect)
-                    elif cell == 'A': # Start
+                    # elif cell == '0': # Path - Don't draw path to keep it clean, just black background
+                    #     pygame.draw.rect(self.screen, (20, 20, 20), rect)
+                    elif cell == 'A': # Start Point
                         pygame.draw.rect(self.screen, GREEN, rect)
-                    elif cell == 'B': # End
-                        pygame.draw.rect(self.screen, RED, rect)
-        else:
-            # Draw Grid if no map
-            for x in range(0, MAP_WIDTH, CELL_SIZE):
-                pygame.draw.line(self.screen, (30, 30, 30), (x, 0), (x, WINDOW_HEIGHT))
-            for y in range(0, WINDOW_HEIGHT, CELL_SIZE):
-                pygame.draw.line(self.screen, (30, 30, 30), (0, y), (MAP_WIDTH, y))
+                    elif cell == 'B': # End Point
+                        pygame.draw.rect(self.screen, BLUE, rect) # Changed to Blue
+        
+        # Draw Grid Overlay (White lines as requested)
+        for x in range(0, MAP_WIDTH, CELL_SIZE):
+            pygame.draw.line(self.screen, (50, 50, 50), (x, 0), (x, WINDOW_HEIGHT))
+        for y in range(0, WINDOW_HEIGHT, CELL_SIZE):
+            pygame.draw.line(self.screen, (50, 50, 50), (0, y), (MAP_WIDTH, y))
 
         # Draw Planned Route
         if len(self.planned_route) > 1:
@@ -215,6 +248,7 @@ class MineManagementSystem:
         tx = self.truck_state.get('x', 0)
         ty = self.truck_state.get('y', 0)
         angle = self.truck_state.get('angle', 0)
+        truck_id = self.truck_state.get('id', 0)
         
         # Triangle
         rad = math.radians(angle)
@@ -227,38 +261,57 @@ class MineManagementSystem:
             ry = px * sin_a + py * cos_a
             rot_points.append((tx + rx, ty + ry))
         
-        color = GREEN
-        if self.truck_state.get('fault', False): color = RED
-        elif not self.truck_state.get('auto', True): color = YELLOW # Manual
+        color = YELLOW # Default Normal
+        is_fault = self.truck_state.get('fault', False)
+        
+        if is_fault:
+            # Blink Red
+            if (self.blink_timer // 10) % 2 == 0:
+                color = RED
+            else:
+                color = (100, 0, 0)
+        elif not self.truck_state.get('auto', True): 
+            color = (200, 200, 0) # Darker Yellow for Manual
         
         pygame.draw.polygon(self.screen, color, rot_points)
+        
+        # Nametag
+        tag_surf = self.font.render(f"ID:{truck_id}", True, WHITE)
+        self.screen.blit(tag_surf, (tx - 15, ty - 25))
 
-        # --- Draw Sidebar ---
-        pygame.draw.rect(self.screen, LIGHT_GRAY, (MAP_WIDTH, 0, WINDOW_WIDTH - MAP_WIDTH, WINDOW_HEIGHT))
+        # --- Draw Sidebar (HUD) ---
+        # Dark Background
+        pygame.draw.rect(self.screen, (40, 40, 40), (MAP_WIDTH, 0, WINDOW_WIDTH - MAP_WIDTH, WINDOW_HEIGHT))
+        pygame.draw.line(self.screen, (100, 100, 100), (MAP_WIDTH, 0), (MAP_WIDTH, WINDOW_HEIGHT), 2)
         
         for btn in self.buttons:
             btn.draw(self.screen)
             
-        # Status Info
-        info_y = 300
-        lines = [
-            f"Status: {'RODANDO' if self.running_simulation else 'PARADO'}",
-            f"MQTT: {'CONECTADO' if self.connected else 'DESCONECTADO'}",
-            "",
-            "--- CAMINHÃO ---",
-            f"Pos: ({tx:.1f}, {ty:.1f})",
-            f"Vel: {self.truck_state.get('vel', 0):.1f} m/s",
-            f"Temp: {self.truck_state.get('temp', 0)} C",
-            f"Lidar: {self.truck_state.get('lidar', 0)} m",
-            "",
-            "--- ROTA ---",
-            f"Waypoints: {len(self.planned_route)}"
-        ]
+        # Status Info Panel
+        info_y = 260
         
-        for line in lines:
-            surf = self.font.render(line, True, BLACK)
-            self.screen.blit(surf, (MAP_WIDTH + 10, info_y))
-            info_y += 20
+        # Title
+        title = self.title_font.render("STATUS DO SISTEMA", True, WHITE)
+        self.screen.blit(title, (MAP_WIDTH + 20, info_y))
+        info_y += 30
+        
+        # Connection
+        conn_color = GREEN if self.connected else RED
+        conn_text = "CONECTADO" if self.connected else "DESCONECTADO"
+        self.screen.blit(self.font.render(f"MQTT: {conn_text}", True, conn_color), (MAP_WIDTH + 20, info_y))
+        info_y += 25
+        
+        # Simulation State
+        sim_color = GREEN if self.running_simulation else YELLOW
+        sim_text = "RODANDO" if self.running_simulation else "PARADO"
+        self.screen.blit(self.font.render(f"Simulacao: {sim_text}", True, sim_color), (MAP_WIDTH + 20, info_y))
+        info_y += 40
+        
+        # Route Info
+        title_route = self.title_font.render("ROTA", True, WHITE)
+        self.screen.blit(title_route, (MAP_WIDTH + 20, info_y))
+        info_y += 30
+        self.screen.blit(self.font.render(f"Waypoints: {len(self.planned_route)}", True, LIGHT_GRAY), (MAP_WIDTH + 20, info_y))
 
         pygame.display.flip()
 
