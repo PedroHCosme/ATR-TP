@@ -25,4 +25,8 @@ __pycache__/
 Thumbs.db
 
 # Data files (if generated)
+# Data files (if generated)
 sensor_data.csv
+
+# Virtual Environment
+venv/
