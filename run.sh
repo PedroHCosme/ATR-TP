@@ -41,6 +41,16 @@ fi
 echo "Installing dependencies..."
 ./venv/bin/pip install pygame paho-mqtt
 
+# Ensure xterm is installed (fallback for gnome-terminal)
+if ! command -v xterm &> /dev/null; then
+    echo "xterm not found. Attempting to install..."
+    sudo apt-get update && sudo apt-get install -y xterm
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to install xterm. Please install it manually."
+        exit 1
+    fi
+fi
+
 echo "Starting Interface (Local)..."
 ./venv/bin/python3 interface_mina.py
 
