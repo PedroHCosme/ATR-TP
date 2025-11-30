@@ -16,6 +16,8 @@ APP_SRCS = \
 	$(SRC_DIR)/task_logica_comando.cpp \
 	$(SRC_DIR)/task_controle_navegacao.cpp \
 	$(SRC_DIR)/task_monitoramento_falhas.cpp \
+	$(SRC_DIR)/task_collision_avoidance.cpp \
+	$(SRC_DIR)/task_planejamento_rota.cpp \
 	$(SRC_DIR)/utils/sleep_asynch.cpp
 
 # Sources for the Headless Simulator

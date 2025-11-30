@@ -2,85 +2,100 @@
 #include <iostream>
 
 GerenciadorDados::GerenciadorDados() : bufferHistorico(TAMANHO_BUFFER) {
-    // Inicializa o snapshot zerado para evitar leitura de lixo antes do primeiro sensor
-    ultimoEstado = {0}; 
+  // Inicializa o snapshot zerado para evitar leitura de lixo antes do primeiro
+  // sensor
+  // Inicializa o snapshot zerado para evitar leitura de lixo antes do primeiro
+  // sensor
+  ultimoEstado = {0};
+  estadoVeiculo = {false, true}; // Sem defeito, Modo Automático Ligado
 }
 
-void GerenciadorDados::setDados(const DadosSensores& dados) {
-    std::lock_guard<std::mutex> lock(mtx);
-    
-    // 1. Alimenta o Stream (Histórico)
-    // O circular_buffer cuida de sobrescrever o antigo se estiver cheio
-    bufferHistorico.push_back(dados);
-    
-    // 2. Atualiza o Snapshot (Tempo Real)
-    ultimoEstado = dados;
-    
-    // Notifica quem estiver esperando por dados novos no histórico (Logger)
-    cv_dados.notify_one();
+void GerenciadorDados::setDados(const DadosSensores &dados) {
+  std::lock_guard<std::mutex> lock(mtx);
+
+  // 1. Alimenta o Stream (Histórico)
+  // O circular_buffer cuida de sobrescrever o antigo se estiver cheio
+  bufferHistorico.push_back(dados);
+
+  // 2. Atualiza o Snapshot (Tempo Real)
+  ultimoEstado = dados;
+
+  // Notifica quem estiver esperando por dados novos no histórico (Logger)
+  cv_dados.notify_one();
 }
 
 DadosSensores GerenciadorDados::consumirDados() {
-    std::unique_lock<std::mutex> lock(mtx);
-    
-    // Bloqueia se não houver histórico para consumir
-    cv_dados.wait(lock, [this] { return !bufferHistorico.empty(); });
-    
-    DadosSensores dados = bufferHistorico.front();
-    bufferHistorico.pop_front(); // Remove da fila!
-    
-    return dados;
+  std::unique_lock<std::mutex> lock(mtx);
+
+  // Bloqueia se não houver histórico para consumir
+  cv_dados.wait(lock, [this] { return !bufferHistorico.empty(); });
+
+  DadosSensores dados = bufferHistorico.front();
+  bufferHistorico.pop_front(); // Remove da fila!
+
+  return dados;
 }
 
 DadosSensores GerenciadorDados::lerUltimoEstado() const {
-    std::lock_guard<std::mutex> lock(mtx);
-    // Apenas lê a variável. Rápido e não interfere no buffer.
-    return ultimoEstado;
+  std::lock_guard<std::mutex> lock(mtx);
+  // Apenas lê a variável. Rápido e não interfere no buffer.
+  return ultimoEstado;
 }
 
 // --- Métodos Boilerplate (Mantidos) ---
 
-void GerenciadorDados::setEstadoVeiculo(const EstadoVeiculo& estado) {
-    std::lock_guard<std::mutex> lock(mtx);
-    estadoVeiculo = estado;
+void GerenciadorDados::setEstadoVeiculo(const EstadoVeiculo &estado) {
+  std::lock_guard<std::mutex> lock(mtx);
+  estadoVeiculo = estado;
 }
 
 EstadoVeiculo GerenciadorDados::getEstadoVeiculo() const {
-    std::lock_guard<std::mutex> lock(mtx);
-    return estadoVeiculo;
+  std::lock_guard<std::mutex> lock(mtx);
+  return estadoVeiculo;
 }
 
-void GerenciadorDados::setComandosOperador(const ComandosOperador& comandos) {
-    std::lock_guard<std::mutex> lock(mtx);
-    comandosOperador = comandos;
+void GerenciadorDados::setComandosOperador(const ComandosOperador &comandos) {
+  std::lock_guard<std::mutex> lock(mtx);
+  comandosOperador = comandos;
 }
 
 ComandosOperador GerenciadorDados::getComandosOperador() const {
-    std::lock_guard<std::mutex> lock(mtx);
-    return comandosOperador;
+  std::lock_guard<std::mutex> lock(mtx);
+  return comandosOperador;
 }
 
-void GerenciadorDados::atualizarEstadoVeiculo(const EstadoVeiculo& estado) {
-    std::lock_guard<std::mutex> lock(mtx);
-    estadoVeiculo = estado;
+void GerenciadorDados::atualizarEstadoVeiculo(const EstadoVeiculo &estado) {
+  std::lock_guard<std::mutex> lock(mtx);
+  estadoVeiculo = estado;
 }
 
-void GerenciadorDados::atualizarComandosOperador(const ComandosOperador& comandos) {
-    std::lock_guard<std::mutex> lock(mtx);
-    comandosOperador = comandos;
+void GerenciadorDados::atualizarComandosOperador(
+    const ComandosOperador &comandos) {
+  std::lock_guard<std::mutex> lock(mtx);
+  comandosOperador = comandos;
 }
 
-void GerenciadorDados::setComandosAtuador(const ComandosAtuador& comandos) {
-    std::lock_guard<std::mutex> lock(mtx);
-    comandosAtuador = comandos;
+void GerenciadorDados::setComandosAtuador(const ComandosAtuador &comandos) {
+  std::lock_guard<std::mutex> lock(mtx);
+  comandosAtuador = comandos;
 }
 
 ComandosAtuador GerenciadorDados::getComandosAtuador() const {
-    std::lock_guard<std::mutex> lock(mtx);
-    return comandosAtuador;
+  std::lock_guard<std::mutex> lock(mtx);
+  return comandosAtuador;
+}
+
+void GerenciadorDados::setObjetivo(const ObjetivoNavegacao &obj) {
+  std::lock_guard<std::mutex> lock(mtx);
+  objetivoAtual = obj;
+}
+
+ObjetivoNavegacao GerenciadorDados::getObjetivo() const {
+  std::lock_guard<std::mutex> lock(mtx);
+  return objetivoAtual;
 }
 
 int GerenciadorDados::getContadorDados() const {
-    std::lock_guard<std::mutex> lock(mtx);
-    return bufferHistorico.size();
+  std::lock_guard<std::mutex> lock(mtx);
+  return bufferHistorico.size();
 }
