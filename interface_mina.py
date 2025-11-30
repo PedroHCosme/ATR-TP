@@ -33,7 +33,8 @@ class Button:
         self.text = text
         self.color = color
         self.action = action
-        self.font = pygame.font.SysFont('Arial', 14, bold=True)
+        self.action = action
+        self.font = pygame.font.Font(None, 20)
 
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.rect)
@@ -49,13 +50,21 @@ class Button:
 
 class MineManagementSystem:
     def __init__(self):
+        print(f"DEBUG: Initializing MineManagementSystem...", flush=True)
+        print(f"DEBUG: DISPLAY env var: {os.environ.get('DISPLAY')}", flush=True)
+        
         pygame.init()
+        print("DEBUG: Pygame initialized", flush=True)
+        
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+        print("DEBUG: Window created", flush=True)
+        
         pygame.display.set_caption("Sistema de Gestão de Mina - ATR")
         self.clock = pygame.time.Clock()
-        # Use Monospaced Font
-        self.font = pygame.font.SysFont('monospace', 14, bold=True)
-        self.title_font = pygame.font.SysFont('monospace', 18, bold=True)
+        self.clock = pygame.time.Clock()
+        # Use Default Font (Safe for Docker)
+        self.font = pygame.font.Font(None, 20)
+        self.title_font = pygame.font.Font(None, 24)
         
         # Estado do Sistema
         self.running_simulation = False
@@ -121,32 +130,46 @@ class MineManagementSystem:
 
         print("Iniciando simulação...")
         try:
-            # 1. Start Mosquitto
-            p_mosq = subprocess.Popen(["mosquitto", "-c", "mosquitto.conf", "-d"])
-            self.processes.append(p_mosq)
-            time.sleep(1)
+            # 1. Start Mosquitto (Managed by run.sh, but we can check connection)
+            if not self.connected:
+                 print("Aguardando conexão com Mosquitto...")
             
-            # 2. Connect MQTT Client
-            try:
-                self.mqtt_client.connect(BROKER, PORT, 60)
-                self.mqtt_client.loop_start()
-            except:
-                print("Aguardando broker...")
-            
-            # 3. Start Simulator
-            p_sim = subprocess.Popen(["./bin/simulador"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            # 2. Connect MQTT Client (Already handled in init/loop, but ensure it's running)
+            if not self.mqtt_client.is_connected():
+                 try:
+                    self.mqtt_client.connect(BROKER, PORT, 60)
+                    self.mqtt_client.loop_start()
+                 except:
+                    print("Erro ao conectar MQTT")
+
+            # 3. Start Simulator (Docker Container)
+            # Run in background, host network to talk to local Mosquitto
+            print("Iniciando Simulador (Docker)...")
+            p_sim = subprocess.Popen(["docker", "run", "--rm", "--network=host", "atr_cpp", "./bin/simulador"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             self.processes.append(p_sim)
             time.sleep(1)
             
-            # 4. Start Controller (Cockpit in new terminal)
-            # Launch in gnome-terminal so ncurses interface is visible
-            # Geometry: 81 cols x 24 rows (10% smaller than 90x27)
-            p_app = subprocess.Popen(["gnome-terminal", "--geometry=81x24", "--title=Cockpit Caminhão", "--", "./bin/app"])
+            # 4. Start Controller (Cockpit) - Docker Container in New Terminal
+            print("Iniciando Cockpit (Docker)...")
+            # Try gnome-terminal first, then xterm
+            cmd_app = ["docker", "run", "-it", "--rm", "--network=host", "atr_cpp", "./bin/app"]
+            
+            try:
+                p_app = subprocess.Popen(["gnome-terminal", "--", "bash", "-c", " ".join(cmd_app)])
+            except FileNotFoundError:
+                p_app = subprocess.Popen(["xterm", "-e", " ".join(cmd_app)])
+                
             self.processes.append(p_app)
 
-            # 5. Start Simulation Interface (Minimalist)
-            # Geometry: 100 cols x 20 rows (Wider for table)
-            p_int_sim = subprocess.Popen(["gnome-terminal", "--geometry=100x20", "--title=Simulação Mina", "--", "./bin/interface_simulacao"])
+            # 5. Start Simulation Interface (Table) - Docker Container in New Terminal
+            print("Iniciando Interface Simulação (Docker)...")
+            cmd_int = ["docker", "run", "-it", "--rm", "--network=host", "atr_cpp", "./bin/interface_simulacao"]
+            
+            try:
+                p_int_sim = subprocess.Popen(["gnome-terminal", "--", "bash", "-c", " ".join(cmd_int)])
+            except FileNotFoundError:
+                p_int_sim = subprocess.Popen(["xterm", "-e", " ".join(cmd_int)])
+                
             self.processes.append(p_int_sim)
             
             self.running_simulation = True
@@ -160,9 +183,8 @@ class MineManagementSystem:
             p.terminate()
         
         # Kill force just in case
-        os.system("pkill -f bin/simulador")
-        os.system("pkill -f bin/app")
-        os.system("pkill -f mosquitto")
+        # Kill Docker containers if any remain
+        os.system("docker kill $(docker ps -q --filter ancestor=atr_cpp) 2>/dev/null")
         
         self.processes = []
         self.running_simulation = False

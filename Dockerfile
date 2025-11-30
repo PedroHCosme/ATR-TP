@@ -1,60 +1,45 @@
 FROM ubuntu:22.04
 
-# Avoid interactive prompts during package installation
+# Prevent interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install dependencies
+# Update and install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
-    mosquitto \
-    mosquitto-clients \
+    cmake \
+    g++ \
+    make \
     libmosquitto-dev \
     libncurses5-dev \
     libncursesw5-dev \
     python3 \
     python3-pip \
-    python3-pygame \
-    python3-pandas \
-    python3-matplotlib \
-    x11-apps \
+    python3-tk \
+    mosquitto-clients \
+    xterm \
+    git \
+    libboost-all-dev \
+    nlohmann-json3-dev \
+    fontconfig \
     && rm -rf /var/lib/apt/lists/*
 
-# Create working directory
+# Install Python dependencies
+RUN pip3 install pygame paho-mqtt
+
+# Set working directory
 WORKDIR /app
 
-# Copy source code
+# Copy project files
 COPY . /app
 
-# Build the C++ project
-RUN make
+# Build the C++ applications
+RUN make all
 
-# Create a startup script
-RUN echo '#!/bin/bash\n\
-    # Start Mosquitto in background\n\
-    mosquitto -c mosquitto.conf -d\n\
-    echo "Mosquitto started."\n\
-    \n\
-    # Start Simulator in background\n\
-    ./bin/simulador > simulator.log 2>&1 &\n\
-    SIM_PID=$!\n\
-    echo "Simulator started (PID $SIM_PID)."\n\
-    \n\
-    # Start Pygame Interface in background\n\
-    python3 interface_mina.py &\n\
-    PY_PID=$!\n\
-    echo "Pygame Interface started (PID $PY_PID)."\n\
-    \n\
-    # Start Control App (Interactive)\n\
-    echo "Starting Control App..."\n\
-    ./bin/app\n\
-    \n\
-    # Cleanup on exit\n\
-    kill $SIM_PID\n\
-    kill $PY_PID\n\
-    ' > start.sh && chmod +x start.sh
+# Create necessary directories for logs if they don't exist
+RUN mkdir -p logs bin
 
-# Expose MQTT port
-EXPOSE 1883
+# Set environment variable to indicate Docker environment
+ENV IS_DOCKER_CONTAINER=true
 
-# Default command
-CMD ["./start.sh"]
+# Default command (can be overridden in docker-compose)
+CMD ["python3", "interface_mina.py"]

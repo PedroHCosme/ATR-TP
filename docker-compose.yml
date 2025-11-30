@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   mosquitto:
     image: eclipse-mosquitto:latest
@@ -7,6 +8,28 @@ services:
       - "1883:1883"
       - "9001:9001"
     volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
+      - ./mosquitto/config:/mosquitto/config:z
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    network_mode: host
+
+  app:
+    build: .
+    container_name: atr_app
+    depends_on:
+      - mosquitto
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - XAUTHORITY=/root/.Xauthority
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${XAUTHORITY}:/root/.Xauthority:z
+      - .:/app:z
+    network_mode: host
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
