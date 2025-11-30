@@ -13,23 +13,6 @@ services:
       - mosquitto_log:/mosquitto/log
     network_mode: host
 
-  app:
-    build: .
-    container_name: atr_app
-    depends_on:
-      - mosquitto
-    environment:
-      - DISPLAY=${DISPLAY}
-      - QT_X11_NO_MITSHM=1
-      - XAUTHORITY=/root/.Xauthority
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - ${XAUTHORITY}:/root/.Xauthority:z
-      - .:/app:z
-    network_mode: host
-    stdin_open: true # docker run -i
-    tty: true # docker run -t
-
 volumes:
   mosquitto_data:
   mosquitto_log:
