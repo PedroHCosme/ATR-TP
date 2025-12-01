@@ -83,7 +83,9 @@ void task_tratamento_sensores(GerenciadorDados &gerenciadorDados,
     }
 
     // --- 4. Empacotamento e Envio ---
-    DadosSensores novosDados;
+    DadosSensores novosDados = {
+        0}; // Initialize with zeros to avoid stack garbage
+    novosDados.id = id_caminhao;
     novosDados.i_temperatura = raw_temp;
 
     // Debug: Print da temperatura lida pelo sensor
@@ -100,6 +102,12 @@ void task_tratamento_sensores(GerenciadorDados &gerenciadorDados,
     novosDados.i_falha_hidraulica = estadoReal.i_falha_hidraulica;
     novosDados.i_lidar_distancia = static_cast<int>(
         estadoReal.i_lidar_distancia); // Sem ruído por enquanto
+
+    // Debug: Print values before setting
+    std::cout << "[SensorTask] Writing: ID=" << novosDados.id
+              << " X=" << novosDados.i_posicao_x
+              << " Y=" << novosDados.i_posicao_y
+              << " Temp=" << novosDados.i_temperatura << std::endl;
 
     gerenciadorDados.setDados(novosDados);
 

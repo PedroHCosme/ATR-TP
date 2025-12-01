@@ -159,6 +159,7 @@ void MqttDriver::publishSystemState(bool manual, bool fault) {
     return;
 
   json j;
+  j["id"] = truck_id;
   j["manual"] = manual;
   j["fault"] = fault;
 

@@ -1,8 +1,10 @@
 #include "task_logica_comando.h"
 #include "utils/sleep_asynch.h" // Inclua seu utilitário
 #include <boost/asio.hpp>       // Necessário para o motor de tempo
+#include <chrono>
 #include <functional>
 #include <iostream>
+#include <thread>
 
 void task_logica_comando(GerenciadorDados &gerenciadorDados,
                          EventosSistema &eventos) {
@@ -21,50 +23,46 @@ void task_logica_comando(GerenciadorDados &gerenciadorDados,
     ComandosOperador comandos = gerenciadorDados.getComandosOperador();
     EstadoVeiculo estado = gerenciadorDados.getEstadoVeiculo();
 
-    // Monitoramento de Falhas via Eventos (Linha Vermelha)
-    // A Lógica de Comando reage ao evento setando o estado oficial do veículo
+    // --- LÓGICA DE REARME (Prioridade Máxima) ---
+    if (comandos.c_rearme) {
+      bool falha_ativa = eventos.verificar_estado_falha();
+      int codigo = eventos.getCodigoFalha();
+
+      // Se houver falha de colisão (Código 4), executa manobra de recuo
+      if (falha_ativa && codigo == 4) {
+        // std::cout << "[Logica] Rearme de COLISÃO. Iniciando Back-Off..." <<
+        // std::endl;
+
+        // 1. Recuar (Ré)
+        gerenciadorDados.setComandosAtuador({-50, 0}); // -50% força, 0 direção
+        std::this_thread::sleep_for(std::chrono::seconds(2)); // Bloqueia por 2s
+
+        // 2. Parar
+        gerenciadorDados.setComandosAtuador({0, 0});
+
+        // std::cout << "[Logica] Back-Off concluído." << std::endl;
+      }
+
+      // Resetar falhas (para qualquer tipo de falha)
+      eventos.resetar_falhas();
+
+      // Modos de Operação (Prioridade para MANUAL)
+      if (comandos.c_man) {
+        estado.e_automatico = false;
+      } else if (comandos.c_automatico) {
+        estado.e_automatico = true;
+      }
+      estado.e_defeito = false;
+
+      // std::cout << "[Logica] Sistema REARMADO." << std::endl;
+    }
+
+    // Monitoramento de Falhas (Se não foi rearmado agora)
     if (eventos.verificar_estado_falha()) {
       if (!estado.e_defeito) {
         estado.e_defeito = true;
-        // std::cout << "[Logica] Evento de falha detectado! Entrando em modo
-        // DEFEITO." << std::endl;
-      }
-    } else {
-      // Se já está em DEFEITO, verifica se houve comando de REARME (Reset)
-      // O rearme só é processado se o operador solicitar (via botão/tecla)
-      // ComandosOperador cmd = dados.getComandosOperador(); // 'dados' não tem
-      // getComandosOperador, usar 'comandos'
-      if (comandos.c_rearme) { // Usando 'comandos' que já foi lido
-        // Resetar falhas
-        eventos.resetar_falhas();
-
-        // Voltar para MANUAL inicialmente por segurança
-        estado.e_defeito = false;
-        estado.e_automatico = false;
-
-        // std::cout << "[Logica] REARME recebido. Resetando falhas e
-        // reiniciando sistema.\n";
       }
     }
-
-    // Modos de Operação
-    if (comandos.c_automatico) {
-      estado.e_automatico = true;
-    } else if (comandos.c_man) {
-      estado.e_automatico = false;
-    }
-
-    // Rearme (Esta parte foi movida/integrada no bloco 'else' acima para evitar
-    // duplicação e garantir lógica correta) A lógica de rearme agora está
-    // dentro do 'else' do verificar_estado_falha() para garantir que o rearme
-    // só ocorra se não houver falha ativa no momento da verificação. Se o
-    // rearme for acionado enquanto uma falha ainda está presente, ele não terá
-    // efeito imediato. A linha abaixo é redundante se a lógica de rearme
-    // estiver no 'else' acima. if (comandos.c_rearme && estado.e_defeito) {
-    //     std::cout << "[Logica] REARME recebido. Resetando falhas e
-    //     reiniciando sistema.\n"; estado.e_defeito = false;
-    //     eventos.resetar_falhas(); // Limpa a flag no sistema de eventos
-    // }
 
     gerenciadorDados.atualizarEstadoVeiculo(estado);
 

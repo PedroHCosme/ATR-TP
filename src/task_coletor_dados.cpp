@@ -44,6 +44,15 @@ void task_coletor_dados(GerenciadorDados &dados, EventosSistema &eventos,
           tx_packet.estado = dados.getEstadoVeiculo();
 
           // 2. Send Data (Write)
+          // DEBUG: Log packet content
+          unsigned char *p = (unsigned char *)&tx_packet;
+          std::cout << "[Coletor] Sending " << sizeof(tx_packet) << " bytes: ";
+          for (size_t i = 0; i < sizeof(tx_packet); ++i) {
+            std::cout << std::hex << std::setw(2) << std::setfill('0')
+                      << (int)p[i] << " ";
+          }
+          std::cout << std::dec << std::endl;
+
           boost::system::error_code ignored_error;
           boost::asio::write(socket,
                              boost::asio::buffer(&tx_packet, sizeof(tx_packet)),
@@ -58,20 +67,21 @@ void task_coletor_dados(GerenciadorDados &dados, EventosSistema &eventos,
           // loop should match this loop frequency. Let's try to read. If
           // Cockpit sends heartbeat, this works.
 
-          if (socket.available() > 0) {
+          // Drain buffer: Read all available packets, keep the latest
+          while (socket.available() >= sizeof(ClientToServerPacket)) {
             ClientToServerPacket rx_packet;
             boost::system::error_code error;
-            size_t len = socket.read_some(
-                boost::asio::buffer(&rx_packet, sizeof(rx_packet)), error);
+            boost::asio::read(
+                socket, boost::asio::buffer(&rx_packet, sizeof(rx_packet)),
+                error);
 
             if (error == boost::asio::error::eof)
-              break; // Connection closed
+              throw std::runtime_error("Connection closed");
             if (error)
               throw boost::system::system_error(error);
 
-            if (len == sizeof(rx_packet)) {
-              dados.setComandosOperador(rx_packet.comandos);
-            }
+            // Update with the latest packet
+            dados.setComandosOperador(rx_packet.comandos);
           }
 
           // 4. Logging (Keep existing logging logic)

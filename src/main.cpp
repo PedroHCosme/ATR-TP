@@ -8,7 +8,7 @@
 #include "drivers/mqtt_driver.h" // Driver MQTT
 #include "eventos_sistema.h"
 #include "gerenciador_dados.h"
-// #include "interface_caminhao.h" // Cockpit separado
+#include "interface_caminhao.h" // Cockpit Integrado
 #include "utils/sleep_asynch.h"
 
 // Includes das Tasks
@@ -36,12 +36,12 @@ int main(int argc, char *argv[]) {
   std::cout << "[Main] Starting Controller for Truck ID: " << truck_id
             << std::endl;
 
-  // Redireciona logs para arquivo (REMOVIDO PARA DEBUG)
-  // std::ofstream logfile("controlador.log");
-  // std::streambuf *cout_backup = std::cout.rdbuf();
-  // std::cout.rdbuf(logfile.rdbuf());
-  // std::streambuf *cerr_backup = std::cerr.rdbuf();
-  // std::cerr.rdbuf(logfile.rdbuf());
+  // Redireciona logs para arquivo (NECESSARIO PARA COCKPIT EMBARCADO)
+  std::ofstream logfile("controlador.log");
+  std::streambuf *cout_backup = std::cout.rdbuf();
+  std::cout.rdbuf(logfile.rdbuf());
+  std::streambuf *cerr_backup = std::cerr.rdbuf();
+  std::cerr.rdbuf(logfile.rdbuf());
 
   // --- 1. SETUP INICIAL ---
   boost::asio::io_context io;
@@ -113,20 +113,17 @@ int main(int argc, char *argv[]) {
   });
 
   // --- 5. INTERFACE LOCAL (COCKPIT) ---
-  // O Cockpit agora roda em um processo separado (bin/cockpit)
-  // O main.cpp atua apenas como servidor IPC e controlador headless.
-
-  std::cout << "[Main] Sistema iniciado. Aguardando conexoes IPC..."
-            << std::endl;
+  // Cockpit Reintegrado (Direct Buffer Access)
+  std::cout << "[Main] Iniciando Cockpit Integrado..." << std::endl;
+  InterfaceCaminhao interface(truck_id, gerenciadorDados);
+  std::thread t_ui(&InterfaceCaminhao::run, &interface);
 
   // Mantém a thread principal viva
-  while (true) {
-    std::this_thread::sleep_for(std::chrono::seconds(1));
-  }
+  t_ui.join(); // Wait for UI to close (user presses Q)
 
   // --- 6. ENCERRAMENTO ---
-  // std::cout.rdbuf(cout_backup);
-  // std::cerr.rdbuf(cerr_backup);
+  std::cout.rdbuf(cout_backup);
+  std::cerr.rdbuf(cerr_backup);
 
   t1.detach();
   t2.detach();

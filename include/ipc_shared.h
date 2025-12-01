@@ -6,7 +6,7 @@
 #include <string>
 
 // Base Port for Truck 0. Truck 1 = 9001, Truck 2 = 9002.
-const int BASE_PORT = 9000;
+const int BASE_PORT = 9100;
 
 /**
  * @struct ServerToClientPacket

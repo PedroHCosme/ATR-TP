@@ -70,12 +70,12 @@ void on_message(struct mosquitto *mosq, void *obj,
       // estado_sistema
 
     } else if (topic == "caminhao/estado_sistema") {
-      // This topic currently doesn't have ID, assume ID 0 or apply to all known
-      // For now, let's update ID 0 if it exists, or create it.
-      // Better: Update all trucks or just the primary one.
-      // Let's assume ID 0 is the main one controlled by the interface.
-      TruckState &t = trucks[0];
-      t.id = 0; // Ensure it exists
+      int id = 0;
+      if (j.contains("id")) {
+        id = j["id"];
+      }
+      TruckState &t = trucks[id];
+      t.id = id; // Ensure it exists
       if (j.contains("manual"))
         t.is_auto = !j["manual"].get<bool>();
       if (j.contains("fault"))

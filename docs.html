@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATR - Documentação do Sistema de Caminhão Autônomo</title>
+    <title>ATR - Documentação Técnica do Sistema</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
@@ -13,13 +13,14 @@
             --primary-color: #2563eb;
             --primary-dark: #1e40af;
             --bg-color: #f8fafc;
-            --sidebar-bg: #1e293b;
+            --sidebar-bg: #0f172a;
             --text-color: #334155;
             --heading-color: #0f172a;
             --code-bg: #1e1e1e;
             --code-text: #d4d4d4;
             --border-color: #e2e8f0;
             --card-bg: #ffffff;
+            --accent-color: #10b981;
         }
 
         * {
@@ -45,6 +46,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            border-right: 1px solid #1e293b;
         }
 
         nav .brand {
@@ -76,13 +78,13 @@
 
         nav a:hover,
         nav a.active {
-            background-color: #334155;
+            background-color: #1e293b;
             color: white;
             border-left-color: var(--primary-color);
         }
 
         nav .section-title {
-            padding: 20px 24px 8px;
+            padding: 24px 24px 8px;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -94,7 +96,7 @@
         main {
             margin-left: 280px;
             padding: 40px 60px;
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
         }
 
@@ -118,11 +120,12 @@
             font-size: 1.8rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
+            color: var(--primary-dark);
         }
 
         h3 {
             font-size: 1.4rem;
-            color: var(--primary-dark);
+            margin-top: 2rem;
         }
 
         p {
@@ -172,17 +175,63 @@
             padding: 0;
         }
 
-        /* Lists */
-        .member-list dt {
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-top: 12px;
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .member-list dd {
-            margin-left: 0;
-            margin-bottom: 12px;
-            color: #475569;
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+
+        .tag-thread {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .tag-mqtt {
+            background-color: #fef3c7;
+            color: #b45309;
+        }
+
+        .tag-math {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        .tag-interface {
+            background-color: #f3e8ff;
+            color: #7e22ce;
         }
 
         /* Alerts */
@@ -205,38 +254,13 @@
             color: #92400e;
         }
 
-        /* Tags */
-        .tag {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-right: 8px;
-        }
-
-        .tag-thread {
-            background-color: #e0f2fe;
-            color: #0369a1;
-        }
-
-        .tag-struct {
-            background-color: #f3e8ff;
-            color: #7e22ce;
-        }
-
-        .tag-logic {
-            background-color: #dcfce7;
-            color: #15803d;
-        }
-
         footer {
             margin-top: 80px;
             padding-top: 40px;
             border-top: 1px solid var(--border-color);
             color: #94a3b8;
             font-size: 0.9rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -244,196 +268,302 @@
 <body>
 
     <nav>
-        <div class="brand">ATR System</div>
+        <div class="brand">ATR Docs</div>
 
-        <div class="section-title">Introdução</div>
+        <div class="section-title">Sistema</div>
         <ul>
             <li><a href="#visao-geral">Visão Geral</a></li>
-            <li><a href="#como-executar">Como Executar</a></li>
-        </ul>
-
-        <div class="section-title">Desenvolvimento</div>
-        <ul>
             <li><a href="#arquitetura">Arquitetura</a></li>
-            <li><a href="#estruturas-dados">Estruturas de Dados</a></li>
             <li><a href="#tasks">Tasks & Threads</a></li>
         </ul>
 
-        <div class="section-title">Avançado</div>
+        <div class="section-title">Comunicação</div>
         <ul>
-            <li><a href="#configuracao">Configuração</a></li>
-            <li><a href="#multi-truck">Múltiplos Caminhões</a></li>
+            <li><a href="#mqtt">Serviço MQTT</a></li>
+            <li><a href="#coletor">Coletor de Dados</a></li>
+            <li><a href="#interfaces">Interfaces</a></li>
+        </ul>
+
+        <div class="section-title">Modelagem</div>
+        <ul>
+            <li><a href="#cinematico">Modelo Cinemático</a></li>
+            <li><a href="#termodinamico">Modelo Termodinâmico</a></li>
+            <li><a href="#controle">Controle e Rota</a></li>
         </ul>
     </nav>
 
     <main>
         <section id="visao-geral">
-            <h1>Documentação do Projeto</h1>
+            <h1>Documentação Técnica do Sistema</h1>
             <p class="lead">
-                Bem-vindo à documentação oficial do sistema de controle para <strong>Caminhões de Mineração
+                Esta documentação detalha a implementação do sistema de controle para <strong>Caminhões de Mineração
                     Autônomos</strong>.
-                Este projeto implementa uma arquitetura de software embarcado robusta, capaz de operar em tempo real,
-                gerenciar sensores,
-                executar navegação autônoma e garantir a segurança operacional através de monitoramento contínuo.
+                O projeto simula um ambiente de mina a céu aberto e implementa um sistema embarcado completo, operando
+                em tempo real
+                com arquitetura distribuída.
             </p>
-
             <div class="alert alert-info">
-                <strong>Destaque:</strong> O sistema utiliza uma arquitetura baseada em
-                <strong>Produtor-Consumidor</strong> com comunicação via MQTT, permitindo desacoplamento total entre o
-                simulador físico (Mundo) e o controlador (Cérebro).
+                <strong>Foco:</strong> O sistema prioriza a separação entre o "Mundo Físico" (Simulador) e o "Cérebro"
+                (Controlador),
+                utilizando MQTT para comunicação assíncrona e desacoplada.
             </div>
-        </section>
-
-        <section id="como-executar">
-            <h2>Como Executar o Projeto</h2>
-            <p>O sistema é dividido em três componentes principais que devem rodar simultaneamente:</p>
-            <ol>
-                <li><strong>Broker MQTT (Mosquitto)</strong>: O canal de comunicação.</li>
-                <li><strong>Simulador Headless</strong>: A física da mina e dos caminhões.</li>
-                <li><strong>Controlador</strong>: O software embarcado que controla o caminhão.</li>
-            </ol>
-
-            <h3>Passo a Passo</h3>
-            <pre><code># 1. Compile todo o projeto
-make all
-
-# 2. Inicie o Simulador (Terminal 1)
-# Este processo gera a mina e simula a física
-./bin/simulador
-
-# 3. Inicie o Controlador (Terminal 2)
-# Este é o "cérebro" do caminhão
-./bin/controlador
-
-# 4. (Opcional) Inicie a Interface Visual Python
-python3 interface_mina.py</code></pre>
         </section>
 
         <section id="arquitetura">
             <h2>Arquitetura do Sistema</h2>
-            <p>O sistema segue uma abordagem modular:</p>
-            <ul>
-                <li><strong>Camada de Hardware (Simulada):</strong> Representada pelo <code>SimuladorMina</code>, que
-                    publica dados de sensores via MQTT.</li>
-                <li><strong>Camada de Drivers:</strong> <code>MqttDriver</code> recebe JSONs e converte para structs
-                    C++.</li>
-                <li><strong>Camada de Dados:</strong> <code>GerenciadorDados</code> atua como um monitor thread-safe
-                    (Mutex) centralizando o estado.</li>
-                <li><strong>Camada de Aplicação (Tasks):</strong> Threads independentes para Controle, Navegação e
-                    Monitoramento.</li>
-            </ul>
-        </section>
-
-        <section id="estruturas-dados">
-            <h2>Estruturas de Dados Principais</h2>
-            <p>Definidas em <code>include/dados.h</code>.</p>
-
+            <p>O sistema é composto por três blocos principais que rodam em processos distintos:</p>
             <div class="card">
-                <h3><span class="tag tag-struct">struct</span> DadosSensores</h3>
-                <p>Representa a telemetria completa do veículo.</p>
-                <dl class="member-list">
-                    <dt>int id</dt>
-                    <dd>ID único do caminhão (ex: 0, 1, 2...).</dd>
-                    <dt>int i_posicao_x, i_posicao_y</dt>
-                    <dd>Posição global no mapa (em metros).</dd>
-                    <dt>int i_angulo_x</dt>
-                    <dd>Orientação (Heading) em graus (0-360).</dd>
-                    <dt>int i_lidar_distancia</dt>
-                    <dd>Distância até o obstáculo mais próximo à frente.</dd>
-                    <dt>bool i_falha_eletrica</dt>
-                    <dd>Flag de erro no sistema elétrico.</dd>
-                </dl>
+                <h3>1. Simulador Headless (Mundo Físico)</h3>
+                <p>Responsável por simular a física dos caminhões, gerar o mapa da mina e calcular interações (colisões,
+                    temperatura).
+                    Atua como a "planta" do sistema de controle.</p>
+            </div>
+            <div class="card">
+                <h3>2. Controlador Embarcado (Cérebro)</h3>
+                <p>O software principal. Roda múltiplas threads para processar sensores, planejar rotas, executar
+                    controle PID/Pure Pursuit
+                    e monitorar falhas. Possui uma interface local (Cockpit).</p>
+            </div>
+            <div class="card">
+                <h3>3. Interfaces Externas</h3>
+                <p>Visualizadores (Pygame) e clientes de telemetria que se conectam ao sistema via MQTT ou TCP para
+                    monitoramento remoto.</p>
             </div>
         </section>
 
         <section id="tasks">
-            <h2>Tasks (Threads)</h2>
+            <h2>Tasks e Threads</h2>
+            <p>O controlador embarcado (<code>main.cpp</code>) orquestra diversas threads concorrentes. Cada thread
+                possui uma responsabilidade específica:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task / Thread</th>
+                        <th>Função Principal</th>
+                        <th>Frequência</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag tag-thread">T1</span> Tratamento Sensores</td>
+                        <td>Consome mensagens do MQTT, deserializa JSON e atualiza o <code>GerenciadorDados</code>
+                            (Memória Compartilhada).</td>
+                        <td>Assíncrono (Event-driven)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-thread">T2</span> Lógica de Comando</td>
+                        <td>Gerencia a máquina de estados (AUTO/MANUAL). Processa inputs do operador local.</td>
+                        <td>10 Hz</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-thread">T3</span> Monitoramento Falhas</td>
+                        <td>Watchdog. Verifica superaquecimento, falhas elétricas/hidráulicas e aciona parada de
+                            emergência.</td>
+                        <td>10 Hz</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-thread">T_Nav</span> Controle Navegação</td>
+                        <td>Executa os algoritmos de controle (IP para velocidade, Pure Pursuit para direção).</td>
+                        <td>10 Hz</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-thread">T_Rota</span> Planejamento Rota</td>
+                        <td>Gerencia a fila de waypoints. Recebe novas missões via MQTT e define o alvo atual para a
+                            navegação.</td>
+                        <td>10 Hz</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-thread">T_CAS</span> Collision Avoidance</td>
+                        <td>Sistema de segurança de alta prioridade. Freia o caminhão se o LiDAR detectar obstáculo
+                            próximo.</td>
+                        <td>20 Hz</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-thread">T_Atua</span> Atuação</td>
+                        <td>Lê os comandos gerados pelas outras tasks e publica no tópico MQTT de atuadores.</td>
+                        <td>10 Hz</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-thread">T_Coletor</span> Coletor Dados</td>
+                        <td>Servidor TCP para streaming de telemetria para clientes externos.</td>
+                        <td>Sob demanda</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="mqtt">
+            <h2>Serviço MQTT (Pub/Sub)</h2>
+            <p>O <strong>Mosquitto</strong> atua como barramento central de comunicação. O protocolo MQTT permite que o
+                Simulador e o Controlador
+                não precisem saber da existência um do outro (Desacoplamento Temporal e Espacial).</p>
+
+            <h3>Tópicos Utilizados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tópico</th>
+                        <th>Direção</th>
+                        <th>Conteúdo (JSON)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>caminhao/sensores</code></td>
+                        <td>Simulador &rarr; Controlador</td>
+                        <td><code>{id, x, y, angle, vel, temp, lidar, falhas...}</code><br>Telemetria completa do
+                            veículo.</td>
+                    </tr>
+                    <tr>
+                        <td><code>caminhao/atuadores</code></td>
+                        <td>Controlador &rarr; Simulador</td>
+                        <td><code>{id, acel, dir}</code><br>Comandos de aceleração (-100 a 100) e direção (0-360).</td>
+                    </tr>
+                    <tr>
+                        <td><code>caminhao/estado_sistema</code></td>
+                        <td>Controlador &rarr; Simulador</td>
+                        <td><code>{id, manual, fault}</code><br>Informa se está em modo manual ou falha (para
+                            visualização).</td>
+                    </tr>
+                    <tr>
+                        <td><code>caminhao/rota</code></td>
+                        <td>Cliente &rarr; Controlador</td>
+                        <td><code>{id, route: [{x,y,speed}, ...]}</code><br>Injeção de novas missões de navegação.</td>
+                    </tr>
+                    <tr>
+                        <td><code>caminhao/mapa</code></td>
+                        <td>Simulador &rarr; Todos</td>
+                        <td>Matriz do mapa estático (Retained Message).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="interfaces">
+            <h2>Interfaces do Sistema</h2>
+
             <div class="card">
-                <h3><span class="tag tag-thread">T1</span> Tratamento de Sensores</h3>
-                <p>Responsável por ler a fila de mensagens do MQTT, deserializar o JSON e atualizar o
-                    <code>GerenciadorDados</code>.</p>
+                <h3>🖥️ Cockpit Embarcado (Ncurses)</h3>
+                <p>Interface de texto integrada ao binário do controlador. Permite:</p>
+                <ul>
+                    <li>Visualização em tempo real de velocidade, temperatura e coordenadas.</li>
+                    <li>Controle manual do veículo (Setas direcionais).</li>
+                    <li>Visualização de logs do sistema.</li>
+                </ul>
+                <p><em>Implementação: <code>src/interface_caminhao.cpp</code></em></p>
             </div>
+
             <div class="card">
-                <h3><span class="tag tag-thread">T2</span> Lógica de Comando</h3>
-                <p>Decide a ação baseada no modo (Auto/Manual). Em modo Auto, segue a rota planejada. Em Manual, obedece
-                    ao operador.</p>
-            </div>
-            <div class="card">
-                <h3><span class="tag tag-thread">T3</span> Monitoramento de Falhas</h3>
-                <p>Watchdog que verifica temperaturas críticas e falhas de subsistemas. Tem autoridade para parar o
-                    veículo imediatamente.</p>
+                <h3>🎮 Visualizador Gráfico (Pygame)</h3>
+                <p>Interface externa escrita em Python. Conecta-se ao sistema para desenhar o mapa da mina e os
+                    caminhões em movimento.</p>
+                <p><em>Implementação: <code>interface_mina.py</code></em></p>
             </div>
         </section>
 
-        <section id="configuracao">
-            <h2>Configuração do Sistema</h2>
-            <p>A maioria das configurações está definida como constantes no código ou argumentos no
-                <code>main.cpp</code>.</p>
+        <section id="cinematico">
+            <h2>Modelo Cinemático da Bicicleta</h2>
+            <p>O simulador utiliza um modelo de bicicleta (Bicycle Model) simplificado para calcular a física do
+                caminhão.</p>
 
-            <h3>Alterar Tamanho da Mina</h3>
-            <p>No arquivo <code>src/simulador_headless.cpp</code>:</p>
-            <pre><code>// Altere os valores 61, 61 para o tamanho desejado
-MineGenerator mineGen(61, 61);</code></pre>
-        </section>
-
-        <section id="multi-truck">
-            <h2>Como Simular Múltiplos Caminhões</h2>
             <div class="alert alert-warning">
-                <strong>Atenção:</strong> O código atual vem configurado por padrão para <strong>1 caminhão</strong>.
-                Para simular uma frota, alterações no código fonte são necessárias.
+                <strong>Localização no Código:</strong> <code>src/simulacao_mina.cpp</code> &rarr;
+                <code>modelo_bicicleta()</code>
             </div>
 
-            <p>Para expandir a simulação para múltiplos veículos, siga este guia de implementação:</p>
+            <h3>Equações de Movimento</h3>
+            <pre><code>// 1. Aceleração (Conversão de % para m/s²)
+a = comando_aceleracao * 0.2  (Máx 20 m/s²)
 
-            <h3>1. Instanciar Múltiplos Caminhões no Simulador</h3>
-            <p>Edite <code>src/simulador_headless.cpp</code>. O construtor de <code>SimulacaoMina</code> aceita o número
-                de caminhões.</p>
-            <pre><code>// Mude o segundo argumento de 1 para N (ex: 3 caminhões)
-SimulacaoMina simulacao(mineGen.getMinefield(), 3);</code></pre>
-            <p>Isso fará com que o simulador crie 3 objetos físicos, cada um com IDs 0, 1 e 2.</p>
+// 2. Velocidade (Integração de Euler)
+v(t+1) = v(t) + a * dt
+v_clamped = clamp(v, 0, 25)   (Máx ~90 km/h)
 
-            <h3>2. Atualizar o Loop de Publicação (Simulador)</h3>
-            <p>Ainda em <code>src/simulador_headless.cpp</code>, o loop principal publica apenas o caminhão 0. Você deve
-                iterar sobre todos:</p>
-            <pre><code>// Dentro do while(true)
-for (int i = 0; i < 3; i++) {
-    CaminhaoFisico estado = simulacao.getEstadoReal(i);
-    // ... criar JSON ...
-    // IMPORTANTE: O tópico deve incluir o ID ou o JSON deve ter o ID
-    // Sugestão: publicar em "caminhao/sensores" mas garantir que o JSON tem "id": i
-}</code></pre>
+// 3. Direção (Taxa de Giro Limitada)
+// Simula a inércia do volante/sistema hidráulico
+theta(t+1) = theta(t) + clamp(erro_angular, -50°/s, +50°/s) * dt
 
-            <h3>3. Atualizar o Controlador (MqttDriver)</h3>
-            <p>O <code>MqttDriver.cpp</code> atualmente recebe todas as mensagens do tópico
-                <code>caminhao/sensores</code> e sobrescreve os dados locais. Se houver múltiplos caminhões publicando
-                no mesmo tópico, os dados ficarão oscilando entre eles.</p>
+// 4. Posição (Cinemática Básica)
+x(t+1) = x(t) + v * cos(theta) * dt
+y(t+1) = y(t) + v * sin(theta) * dt</code></pre>
+        </section>
 
-            <h4>Solução A: Tópicos Separados (Recomendado)</h4>
-            <p>Faça o simulador publicar em <code>caminhao/0/sensores</code>, <code>caminhao/1/sensores</code>, etc.</p>
-            <p>No <code>main.cpp</code> do controlador, passe o ID do caminhão que este processo deve controlar:</p>
-            <pre><code>// Exemplo de instanciação
-int meu_id = 0; // Passado via argv
-MqttDriver mqttDriver("127.0.0.1", meu_id); // Modificar construtor para aceitar ID</code></pre>
+        <section id="termodinamico">
+            <h2>Modelo Termodinâmico</h2>
+            <p>Simula o aquecimento do motor baseado no esforço e o resfriamento passivo.</p>
 
-            <h4>Solução B: Filtragem por ID</h4>
-            <p>Mantenha um único tópico, mas no <code>MqttDriver::handle_sensor_message</code>, ignore mensagens onde
-                <code>json["id"] != meu_id</code>.</p>
+            <div class="alert alert-warning">
+                <strong>Localização no Código:</strong> <code>src/simulacao_mina.cpp</code> &rarr;
+                <code>modelo_maquina_termica()</code>
+            </div>
 
-            <h3>4. Rodar Múltiplas Instâncias</h3>
-            <p>Com as alterações acima, você precisará rodar um processo <code>./bin/controlador</code> para cada
-                caminhão simulado.</p>
-            <pre><code># Terminal 1
-./bin/simulador
+            <h3>Equação de Calor</h3>
+            <p>A variação de temperatura \( \Delta T \) é dada por:</p>
+            <pre><code>// Geração de Calor (Proporcional à velocidade/esforço)
+heat_gen = abs(velocidade) * 0.5
 
-# Terminal 2
-./bin/controlador 0
+// Dissipação de Calor (Lei de Resfriamento de Newton)
+heat_loss = 0.1 * (temperatura_atual - temperatura_ambiente)
 
-# Terminal 3
-./bin/controlador 1</code></pre>
+// Atualização
+temperatura += (heat_gen - heat_loss) * dt</code></pre>
+            <p>Isso cria um comportamento onde o caminhão aquece ao andar rápido e esfria quando parado, tendendo ao
+                equilíbrio.</p>
+        </section>
+
+        <section id="controle">
+            <h2>Planejamento de Rota e Controle</h2>
+
+            <div class="card">
+                <h3>Planejamento (Planner)</h3>
+                <p>O planejador mantém uma fila (Deque) de waypoints <code>(x, y, velocidade)</code>. Ele verifica a
+                    distância atual até o próximo ponto.
+                    Se <code>distancia < 5.0m</code>, o ponto é considerado atingido e removido da fila.</p>
+            </div>
+
+            <div class="card">
+                <h3>Controle Longitudinal (Velocidade)</h3>
+                <p>Utiliza um controlador <strong>IP (Integral-Proporcional)</strong>.</p>
+                <ul>
+                    <li>Diferente do PI clássico, o termo Proporcional atua apenas na variável de processo (velocidade),
+                        não no erro.</li>
+                    <li>Isso suaviza a resposta a degraus de referência (mudanças bruscas de setpoint).</li>
+                    <li>Inclui lógica de redução de velocidade em curvas acentuadas.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Controle Lateral (Direção)</h3>
+                <p>Utiliza o algoritmo <strong>Pure Pursuit</strong> (Perseguição Pura).</p>
+                <ol>
+                    <li>Calcula um ponto de "Lookahead" na rota, a uma distância \( L_d \) à frente do veículo.</li>
+                    <li>\( L_d \) é dinâmico: aumenta com a velocidade (\( L_d = k \cdot v \)).</li>
+                    <li>Calcula a curvatura necessária para atingir esse ponto com um arco circular constante.</li>
+                    <li>Define o ângulo de esterçamento das rodas.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="coletor">
+            <h2>Coletor de Dados</h2>
+            <p>O <strong>Coletor de Dados</strong> (<code>task_coletor_dados.cpp</code>) é um servidor TCP que roda na
+                porta <code>8080 + ID_CAMINHAO</code>.</p>
+            <p>Ele permite extração de dados em alta frequência sem sobrecarregar o broker MQTT com assinantes externos
+                pesados.</p>
+
+            <h3>Protocolo Binário</h3>
+            <p>A comunicação é feita via structs binárias (Little Endian):</p>
+            <ul>
+                <li><strong>Server -> Client:</strong> Envia pacote contendo <code>DadosSensores</code> e
+                    <code>EstadoVeiculo</code>.</li>
+                <li><strong>Client -> Server:</strong> Envia pacote contendo <code>ComandosOperador</code> (para
+                    controle remoto via TCP).</li>
+            </ul>
         </section>
 
         <footer>
-            <p>&copy; 2024 ATR Project. Documentação gerada automaticamente.</p>
+            <p>&copy; 2024 ATR Project. Documentação Técnica Detalhada.</p>
         </footer>
     </main>
 

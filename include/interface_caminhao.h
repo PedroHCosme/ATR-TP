@@ -12,10 +12,7 @@
 class InterfaceCaminhao {
 private:
   bool running;
-
-  // Socket Members
-  boost::asio::io_context io_context;
-  boost::asio::ip::tcp::socket *tcp_socket;
+  GerenciadorDados &dados; // Reference to local data manager
 
   // Local Data Cache
   DadosSensores cached_sensores;
@@ -29,20 +26,22 @@ private:
   WINDOW *win_logs;
 
 public:
-  InterfaceCaminhao(int truck_id = 0);
+  InterfaceCaminhao(int truck_id, GerenciadorDados &d);
   ~InterfaceCaminhao();
 
   void init();
+  void init_windows(); // Helper to create/recreate windows
   void run();
   void close();
-  void switch_truck(int truck_id);
+  void draw_borders();
+  // void switch_truck(int truck_id); // Removed: Embedded cockpit is bound to
+  // one truck
 
 private:
   int current_truck_id;
-  void connect_to_truck(int truck_id);
+  // void connect_to_truck(int truck_id); // Removed
 
 private:
-  void draw_borders();
   void update_telemetry();
   void update_status();
   void update_controls();

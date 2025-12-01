@@ -5,7 +5,12 @@ if [ -z "$XAUTHORITY" ]; then
     export XAUTHORITY=$HOME/.Xauthority
 fi
 # Ensure file exists to avoid Docker mount error
+# Ensure file exists to avoid Docker mount error
 touch $XAUTHORITY 2>/dev/null || true
+
+# 0. Nuke everything to prevent zombies
+chmod +x nuke.sh
+./nuke.sh
 
 # 1. Build the C++ Docker Image
 echo "Building C++ Docker Image (atr_cpp)..."

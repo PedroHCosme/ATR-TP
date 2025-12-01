@@ -50,7 +50,7 @@ SIM_TARGET = $(BIN_DIR)/simulador
 INT_SIM_TARGET = $(BIN_DIR)/interface_simulacao
 COCKPIT_TARGET = $(BIN_DIR)/cockpit
 
-all: $(APP_TARGET) $(SIM_TARGET) $(INT_SIM_TARGET) $(COCKPIT_TARGET)
+all: $(APP_TARGET) $(SIM_TARGET) $(INT_SIM_TARGET)
 
 $(APP_TARGET): $(APP_OBJS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ -lncurses -lmosquitto -lrt
