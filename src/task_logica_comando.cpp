@@ -62,6 +62,13 @@ void task_logica_comando(GerenciadorDados &gerenciadorDados,
       if (!estado.e_defeito) {
         estado.e_defeito = true;
       }
+    } else if (!estado.e_defeito) {
+      // Se não há falhas e não está em defeito, processa troca de modo
+      if (comandos.c_man) {
+        estado.e_automatico = false;
+      } else if (comandos.c_automatico) {
+        estado.e_automatico = true;
+      }
     }
 
     gerenciadorDados.atualizarEstadoVeiculo(estado);

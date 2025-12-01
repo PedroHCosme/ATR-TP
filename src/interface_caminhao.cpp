@@ -138,7 +138,7 @@ void InterfaceCaminhao::draw_borders() {
   mvwprintw(win_status, 4, 2, "Integridade:");
 
   // DEBUG INFO
-  mvwprintw(win_status, 8, 2, "Mode: DIRECT BUFFER ACCESS");
+  mvwprintw(win_status, 8, 2, "                          ");
 
   wrefresh(win_status);
 
